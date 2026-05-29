@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
-import ContactButton from '../components/ContactButton'
-
-const PORTRAIT = 'https://shrug-person-78902957.figma.site/_components/v2/d24c01ad3a56fc65e942a1f501eb73db42d7cf9a/Rectangle_40443.81459862.png'
+import { useTheme } from '../context/ThemeContext'
+import profileImg from '../assets/profile.jpeg'
 
 const anim = (delay: number, y = 30) => ({
   initial: { opacity: 0, y },
@@ -10,10 +9,12 @@ const anim = (delay: number, y = 30) => ({
 })
 
 export default function HeroSection() {
+  const { theme } = useTheme()
+  const isLight = theme === 'light'
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-end overflow-hidden px-6 md:px-12 pb-14 md:pb-16"
+      className="relative min-h-screen flex flex-col overflow-hidden px-6 md:px-12 pt-20 sm:pt-24 pb-14 md:pb-16"
     >
       {/* Glow */}
       <div
@@ -25,67 +26,128 @@ export default function HeroSection() {
         style={{ background: 'linear-gradient(90deg,transparent,#1C2130,transparent)' }}
       />
 
-      {/* Portrait */}
-      <motion.div
-        className="absolute right-[6%] md:right-[8%] top-1/2 -translate-y-1/2 w-[200px] sm:w-[280px] md:w-[340px] lg:w-[400px]"
-        {...anim(0.6, 30)}
-      >
-        <img
-          src={PORTRAIT}
-          alt="Juan Pablo Gutiérrez"
-          className="w-full"
-          style={{
-            filter: 'grayscale(15%) contrast(1.05)',
-            animation: 'floatY 6s ease-in-out infinite',
-          }}
-        />
-      </motion.div>
+      {/* Desktop spacer - pushes content to bottom on large screens */}
+      <div className="hidden lg:block flex-1" />
 
-      {/* Tag */}
-      <motion.div
-        className="flex items-center gap-3 font-mono text-xs tracking-widest uppercase mb-5"
-        style={{ color: 'var(--accent2)' }}
-        {...anim(0)}
-      >
-        <span className="w-10 h-px" style={{ background: 'var(--accent2)' }} />
-        Disponible para proyectos
-      </motion.div>
-
-      {/* Heading */}
-      <div className="overflow-hidden mb-9">
-        <motion.h1
-          className="font-syne font-black uppercase leading-none tracking-tight whitespace-nowrap"
-          style={{ fontSize: 'clamp(60px,9vw,140px)', color: 'var(--white)' }}
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-        >
-          Juan{' '}
-          <span className="gradient-heading">Pablo.</span>
-        </motion.h1>
+      {/* Portrait - top center on mobile/tablet, right side on desktop */}
+      <div className="relative z-10 flex justify-center items-center lg:absolute lg:right-[4%] lg:top-1/2 lg:-translate-y-1/2 lg:w-[400px] xl:w-[440px] lg:pointer-events-none mt-12 lg:mt-0 mb-4 lg:mb-0">
+        <div className="w-[140px] sm:w-[180px] md:w-[220px] lg:w-full">
+          {isLight ? (
+            <div
+              className="absolute -inset-4 sm:-inset-6 md:-inset-8 lg:-inset-12 rounded-full opacity-10"
+              style={{
+                background: 'radial-gradient(ellipse at 60% 40%, rgba(79,127,255,0.2) 0%, transparent 70%)',
+              }}
+            />
+          ) : (
+            <div
+              className="absolute -inset-4 sm:-inset-6 md:-inset-8 lg:-inset-12 rounded-full opacity-20"
+              style={{
+                background: 'radial-gradient(ellipse at 60% 40%, rgba(79,127,255,0.15) 0%, transparent 70%)',
+              }}
+            />
+          )}
+          <motion.div
+            className="relative rounded-3xl"
+            {...anim(0.4, 20)}
+            style={{
+              animation: 'floatPremium 7s ease-in-out infinite',
+              boxShadow: isLight
+                ? '0 4px 20px rgba(0,0,0,0.08), 0 0 40px rgba(79,127,255,0.06)'
+                : '0 0 40px rgba(79,127,255,0.12), 0 0 80px rgba(0,229,195,0.04)',
+            }}
+          >
+            {isLight ? (
+              <div
+                className="absolute inset-0 rounded-3xl"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(79,127,255,0.04), rgba(0,196,162,0.02))',
+                  filter: 'blur(16px)',
+                }}
+              />
+            ) : (
+              <div
+                className="absolute inset-0 rounded-3xl"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(79,127,255,0.08), rgba(0,229,195,0.04))',
+                  filter: 'blur(24px)',
+                }}
+              />
+            )}
+            <img
+              src={profileImg}
+              alt="Juan Pablo Gutiérrez Díaz"
+              fetchPriority="high"
+              decoding="async"
+              className="w-full relative z-10"
+              style={{
+                filter: 'grayscale(10%) contrast(1.05)',
+                borderRadius: 'inherit',
+                maskImage: isLight ? 'none' : 'linear-gradient(to bottom, black 80%, transparent 100%)',
+                WebkitMaskImage: isLight ? 'none' : 'linear-gradient(to bottom, black 80%, transparent 100%)',
+                border: isLight ? '1px solid rgba(0,0,0,0.06)' : 'none',
+              }}
+            />
+          </motion.div>
+        </div>
       </div>
 
-      {/* Bottom row */}
-      <div className="flex items-end justify-between gap-8">
-        <motion.p
-          className="font-mono font-light leading-relaxed"
-          style={{ fontSize: 'clamp(0.75rem,1.3vw,1rem)', color: 'var(--muted)', maxWidth: 280 }}
-          {...anim(0.35, 20)}
+      {/* Content */}
+      <div className="relative z-20">
+        {/* Tag */}
+        <motion.div
+          className="flex items-center gap-3 font-mono text-xs tracking-widest uppercase mb-5"
+          style={{ color: 'var(--accent2)' }}
+          {...anim(0)}
         >
-          <strong style={{ color: 'var(--text)', fontWeight: 400 }}>Desarrollo web</strong> &amp;{' '}
-          <strong style={{ color: 'var(--text)', fontWeight: 400 }}>Marketing digital</strong>
-          <br />
-          para empresas que quieren crecer en Colombia y Latam.
-        </motion.p>
-
-        <motion.div {...anim(0.5, 20)}>
-          <ContactButton />
+          <span className="w-10 h-px" style={{ background: 'var(--accent2)' }} />
+          Disponible para proyectos
         </motion.div>
+
+        {/* Heading */}
+        <div className="overflow-hidden mb-9">
+          <motion.h1
+            className="font-syne font-black uppercase leading-[0.9] tracking-tight"
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <span className="block" style={{ fontSize: 'clamp(32px,7vw,100px)', color: 'var(--white)' }}>
+              Juan
+            </span>
+            <span className="block gradient-heading" style={{ fontSize: 'clamp(36px,7.5vw,110px)' }}>
+              Pablo
+            </span>
+            <span className="block" style={{ fontSize: 'clamp(20px,4vw,64px)', color: 'var(--white)' }}>
+              Gutiérrez
+            </span>
+            <span className="block" style={{ fontSize: 'clamp(24px,4.5vw,72px)', color: 'var(--white)' }}>
+              Díaz
+            </span>
+          </motion.h1>
+        </div>
+
+        {/* Bottom row */}
+        <div className="flex gap-6 sm:gap-8">
+          <motion.p
+            className="font-mono font-light leading-relaxed"
+            style={{ fontSize: 'clamp(0.7rem,1.2vw,1rem)', color: 'var(--muted)', maxWidth: 300 }}
+            {...anim(0.35, 20)}
+          >
+            <strong style={{ color: 'var(--text)', fontWeight: 400 }}>Desarrollo web</strong> &amp;{' '}
+            <strong style={{ color: 'var(--text)', fontWeight: 400 }}>Marketing digital</strong>
+            <br />
+            para empresas que quieren crecer en Colombia y Latam.
+          </motion.p>
+        </div>
       </div>
+
+      {/* Mobile spacer - fills remaining space on mobile */}
+      <div className="flex-1 lg:hidden" />
 
       {/* Scroll hint */}
       <motion.div
-        className="absolute bottom-14 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-14 inset-x-0 flex justify-center flex-col items-center gap-2 z-20"
         style={{ color: 'var(--muted)' }}
         {...anim(1.2)}
       >
@@ -97,9 +159,10 @@ export default function HeroSection() {
       </motion.div>
 
       <style>{`
-        @keyframes floatY {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-18px); }
+        @keyframes floatPremium {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          33% { transform: translateY(-10px) rotate(0.6deg); }
+          66% { transform: translateY(-5px) rotate(-0.3deg); }
         }
         @keyframes scrollLine {
           0% { transform: scaleY(0); transform-origin: top; }

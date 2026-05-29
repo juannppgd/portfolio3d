@@ -1,7 +1,8 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
+import { FORMAL_EDUCATION, CERTIFICATIONS } from '../data'
 
 const TEXT =
   'Con más de cinco años creando soluciones digitales, me especializo en desarrollo web, marketing digital y automatización. Trabajo con empresarios y emprendedores que quieren destacar en línea y ver resultados reales. Construyamos algo increíble juntos.'
@@ -14,19 +15,21 @@ export default function AboutSection() {
   })
 
   const chars = TEXT.split('')
+  const [showAllCerts, setShowAllCerts] = useState(false)
+  const visibleCerts = showAllCerts ? CERTIFICATIONS : CERTIFICATIONS.slice(0, 3)
 
   return (
     <section
       id="about"
-      className="px-6 md:px-12 py-32 md:py-40 relative"
+      className="px-6 md:px-12 py-24 md:py-20 lg:py-24 relative"
       style={{ borderTop: '1px solid var(--border)' }}
     >
-      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-center">
+      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 md:gap-6 lg:gap-12 items-center">
         {/* Left heading */}
         <FadeIn y={40}>
           <h2
-            className="font-syne font-black uppercase leading-none tracking-tight gradient-heading-mono"
-            style={{ fontSize: 'clamp(56px,7vw,110px)' }}
+            className="font-syne font-black uppercase leading-none tracking-tight gradient-heading-mono break-words"
+            style={{ fontSize: 'clamp(42px,7vw,110px)' }}
           >
             Sobre<br />mí.
           </h2>
@@ -44,8 +47,8 @@ export default function AboutSection() {
           {/* Animated character-by-character text */}
           <p
             ref={paraRef}
-            className="leading-relaxed mb-10 relative"
-            style={{ fontSize: 'clamp(1rem,1.8vw,1.2rem)', color: 'transparent' }}
+            className="leading-relaxed mb-10 relative break-words"
+            style={{ fontSize: 'clamp(0.95rem,1.8vw,1.15rem)', color: 'transparent', maxWidth: '100%' }}
             aria-label={TEXT}
           >
             {chars.map((char, i) => {
@@ -90,6 +93,66 @@ export default function AboutSection() {
 
           <ContactButton label="Hablemos" />
         </FadeIn>
+      </div>
+
+      {/* Formación Académica & Certificaciones */}
+      <div className="max-w-4xl mx-auto mt-10 md:mt-8 lg:mt-12 pt-8 md:pt-6 lg:pt-8" style={{ borderTop: '1px solid var(--border)' }}>
+        <div className="grid md:grid-cols-2 gap-6 md:gap-6 lg:gap-10">
+          {/* Formal Education */}
+          <FadeIn y={30}>
+            <span className="font-mono text-xs tracking-widest uppercase block mb-6" style={{ color: 'var(--accent2)' }}>
+              // Formación Académica
+            </span>
+            <div className="space-y-5">
+              {FORMAL_EDUCATION.map((item) => (
+                <div key={item.title} className="pb-5" style={{ borderBottom: '1px solid var(--border)' }}>
+                  <div className="font-syne font-bold tracking-tight" style={{ fontSize: 'clamp(14px,1.3vw,16px)', color: 'var(--white)' }}>
+                    {item.title}
+                  </div>
+                  <span className="font-mono text-[11px] tracking-widest uppercase" style={{ color: item.status === 'En curso' ? 'var(--accent)' : 'var(--muted)' }}>
+                    {item.status}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* Certifications */}
+          <FadeIn y={30} delay={0.1}>
+            <span className="font-mono text-xs tracking-widest uppercase block mb-6" style={{ color: 'var(--accent2)' }}>
+              // Certificaciones & Cursos
+            </span>
+            <div className="space-y-5">
+              {visibleCerts.map((group) => (
+                <div key={group.category}>
+                  <span className="font-mono text-[11px] tracking-widest uppercase block mb-2" style={{ color: 'var(--muted)' }}>
+                    {group.category}
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {group.items.map((item) => (
+                      <span
+                        key={item}
+                        className="font-mono text-[11px] tracking-wider px-3 py-1.5 rounded-full transition-colors duration-200"
+                        style={{ border: '1px solid var(--border)', color: 'var(--text)' }}
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            {CERTIFICATIONS.length > 3 && (
+              <button
+                onClick={() => setShowAllCerts(!showAllCerts)}
+                className="flex items-center gap-2 font-mono text-xs tracking-widest uppercase mt-5 transition-colors duration-200 hover:text-accent"
+                style={{ color: 'var(--muted)' }}
+              >
+                {showAllCerts ? '▲ Mostrar menos' : '▼ Ver más'}
+              </button>
+            )}
+          </FadeIn>
+        </div>
       </div>
     </section>
   )

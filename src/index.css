@@ -13,10 +13,22 @@
   --white: #F0F4FF;
 }
 
+.light {
+  --bg: #F4F6FA;
+  --surface: #FFFFFF;
+  --border: #E0E4EA;
+  --accent: #4F7FFF;
+  --accent2: #00C4A2;
+  --text: #1A1D26;
+  --muted: #6B7280;
+  --white: #1A1D26;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
 html,
@@ -27,6 +39,7 @@ body,
   font-family: 'Syne', sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 ::-webkit-scrollbar {

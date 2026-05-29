@@ -28,12 +28,20 @@ export default function MarqueeSection() {
       className="py-20 overflow-hidden"
       style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}
     >
-      <p
-        className="font-mono text-center text-xs tracking-widest uppercase mb-10"
-        style={{ color: 'var(--muted)' }}
-      >
-        Proyectos &amp; referencias visuales
-      </p>
+      <div className="text-center mb-10 md:mb-14 max-w-[90vw] mx-auto">
+        <h2
+          className="font-syne font-black uppercase leading-none tracking-tight gradient-heading break-words"
+          style={{ fontSize: 'clamp(32px,5vw,80px)' }}
+        >
+          Proyectos
+        </h2>
+        <p
+          className="font-syne font-bold uppercase tracking-tight mt-2 break-words"
+          style={{ fontSize: 'clamp(14px,2.4vw,28px)', color: 'var(--text)' }}
+        >
+          &amp; referencias visuales
+        </p>
+      </div>
 
       {/* Row 1 — moves right */}
       <div className="overflow-hidden mb-4">

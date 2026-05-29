@@ -22,10 +22,10 @@ function ProjectCard({ project, index, total }: CardProps) {
   return (
     <div
       ref={cardRef}
-      className="h-[85vh] flex items-start"
+      className="min-h-[50vh] md:min-h-[70vh] lg:min-h-[85vh] flex items-start"
     >
       <motion.div
-        className="w-full p-6 md:p-8"
+        className="w-full p-6 md:p-8 transition-all duration-300"
         style={{
           position: 'sticky',
           top: `${80 + index * 28}px`,
@@ -35,6 +35,8 @@ function ProjectCard({ project, index, total }: CardProps) {
           scale,
           transformOrigin: 'top center',
         }}
+        onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(79,127,255,0.25)' }}
+        onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
       >
         {/* Top row */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
@@ -68,8 +70,8 @@ function ProjectCard({ project, index, total }: CardProps) {
 
         {/* Images grid */}
         <div
-          className="grid gap-3"
-          style={{ gridTemplateColumns: '2fr 3fr', height: 'clamp(200px,38vh,360px)' }}
+          className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-3"
+          style={{ height: 'clamp(200px,38vh,360px)' }}
         >
           <div className="flex flex-col gap-3">
             {project.col1.map((src, i) => (
@@ -100,7 +102,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="proyectos"
-      className="px-6 md:px-12 pt-24 md:pt-28 relative z-20"
+      className="px-6 md:px-12 pt-20 md:pt-16 lg:pt-20 pb-10 md:pb-14 lg:pb-20 relative z-20"
       style={{
         background: 'var(--bg)',
         borderRadius: '40px 40px 0 0',
@@ -109,11 +111,11 @@ export default function ProjectsSection() {
       }}
     >
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-16 md:mb-20">
+      <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-10 md:mb-8 lg:mb-12">
         <FadeIn>
           <h2
             className="font-syne font-black uppercase leading-none tracking-tight gradient-heading"
-            style={{ fontSize: 'clamp(48px,6vw,100px)' }}
+            style={{ fontSize: 'clamp(56px,7vw,120px)' }}
           >
             Proyectos.
           </h2>
