@@ -17,6 +17,16 @@ import {
 } from './data/schema'
 import { FAQ } from './data'
 
+function useGtagPageview() {
+  const location = useLocation()
+  useEffect(() => {
+    const gtag = (window as any).gtag
+    if (gtag) {
+      gtag('config', 'G-DY35DM1SRJ', { page_path: location.pathname + location.search })
+    }
+  }, [location])
+}
+
 const MarqueeSection = lazy(() => import('./sections/MarqueeSection'))
 const AboutSection = lazy(() => import('./sections/AboutSection'))
 const ServicesSection = lazy(() => import('./sections/ServicesSection'))
@@ -134,6 +144,8 @@ function HomePage() {
 function AppShell() {
   const location = useLocation()
   const page = location.pathname === '/' ? 'home' : location.pathname.slice(1) as Page
+
+  useGtagPageview()
 
   return (
     <div style={{ overflowX: 'clip' }}>
