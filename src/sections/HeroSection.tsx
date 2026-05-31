@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
 import { useTheme } from '../context/ThemeContext'
-import profileImg from '../assets/juanpablogutierrez.jpeg'
+import profileWebp230 from '../assets/juanpablogutierrez-230w.webp'
+import profileWebp400 from '../assets/juanpablogutierrez-400w.webp'
+import profileWebp440 from '../assets/juanpablogutierrez-440w.webp'
+import profileFallback from '../assets/juanpablogutierrez.jpeg'
 
 const anim = (delay: number, y = 30) => ({
   initial: { opacity: 0, y },
@@ -72,24 +75,31 @@ export default function HeroSection() {
               filter: `blur(${isLight ? '16px' : '24px'})`,
             }}
           />
-          <img
-            src={profileImg}
-            alt="Juan Pablo Gutiérrez Díaz — Desarrollador Web y Marketing Digital en Tunja, Colombia"
-            fetchPriority="high"
-            decoding="async"
-            loading="eager"
-            width={440}
-            height={440}
-            className="hero-portrait-img relative z-10"
-            style={{
-              display: 'block',
-              filter: 'grayscale(10%) contrast(1.05)',
-              borderRadius: 'inherit',
-              maskImage: isLight ? 'none' : 'linear-gradient(to bottom, black 80%, transparent 100%)',
-              WebkitMaskImage: isLight ? 'none' : 'linear-gradient(to bottom, black 80%, transparent 100%)',
-              border: isLight ? '1px solid rgba(0,0,0,0.06)' : 'none',
-            }}
-          />
+          <picture>
+            <source
+              srcSet={`${profileWebp230} 230w, ${profileWebp400} 400w, ${profileWebp440} 440w`}
+              sizes="(max-width: 1023px) clamp(140px, 42vw, 230px), 440px"
+              type="image/webp"
+            />
+            <img
+              src={profileFallback}
+              alt="Juan Pablo Gutiérrez Díaz — Desarrollador Web y Marketing Digital en Tunja, Colombia"
+              fetchPriority="high"
+              decoding="async"
+              loading="eager"
+              width={440}
+              height={440}
+              className="hero-portrait-img relative z-10"
+              style={{
+                display: 'block',
+                filter: 'grayscale(10%) contrast(1.05)',
+                borderRadius: 'inherit',
+                maskImage: isLight ? 'none' : 'linear-gradient(to bottom, black 80%, transparent 100%)',
+                WebkitMaskImage: isLight ? 'none' : 'linear-gradient(to bottom, black 80%, transparent 100%)',
+                border: isLight ? '1px solid rgba(0,0,0,0.06)' : 'none',
+              }}
+            />
+          </picture>
         </motion.div>
       </div>
 

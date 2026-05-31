@@ -139,16 +139,18 @@ function AppShell() {
     <div style={{ overflowX: 'clip' }}>
       <PageSEO page={page} />
       <Navbar currentPage={page} />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/apoyo-academico" element={<Suspense fallback={<LoadingScreen />}><ApoyoAcademicoPage /></Suspense>} />
-        <Route path="/clases-programacion" element={<Suspense fallback={<LoadingScreen />}><ClasesProgramacionPage /></Suspense>} />
-        <Route path="/ventas-online" element={<Suspense fallback={<LoadingScreen />}><VentasOnlinePage /></Suspense>} />
-        <Route path="/optimizacion-cv" element={<Suspense fallback={<LoadingScreen />}><OptimizacionCVPage /></Suspense>} />
-        <Route path="/plantilla-gastos" element={<Suspense fallback={<LoadingScreen />}><PlantillaGastosPage /></Suspense>} />
-        <Route path="/plantilla-habitos" element={<Suspense fallback={<LoadingScreen />}><PlantillaHabitosPage /></Suspense>} />
-        <Route path="/ia-local" element={<Suspense fallback={<LoadingScreen />}><IaLocalPage /></Suspense>} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/apoyo-academico" element={<Suspense fallback={<LoadingScreen />}><ApoyoAcademicoPage /></Suspense>} />
+          <Route path="/clases-programacion" element={<Suspense fallback={<LoadingScreen />}><ClasesProgramacionPage /></Suspense>} />
+          <Route path="/ventas-online" element={<Suspense fallback={<LoadingScreen />}><VentasOnlinePage /></Suspense>} />
+          <Route path="/optimizacion-cv" element={<Suspense fallback={<LoadingScreen />}><OptimizacionCVPage /></Suspense>} />
+          <Route path="/plantilla-gastos" element={<Suspense fallback={<LoadingScreen />}><PlantillaGastosPage /></Suspense>} />
+          <Route path="/plantilla-habitos" element={<Suspense fallback={<LoadingScreen />}><PlantillaHabitosPage /></Suspense>} />
+          <Route path="/ia-local" element={<Suspense fallback={<LoadingScreen />}><IaLocalPage /></Suspense>} />
+        </Routes>
+      </main>
     </div>
   )
 }
