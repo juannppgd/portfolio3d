@@ -9,10 +9,6 @@ import { MAIN_SERVICES, SERVICE_BENEFITS, ADDITIONAL_SERVICES, TEMPLATES, LOCAL_
 
 type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local'
 
-interface ServicesSectionProps {
-  onNavigateToService?: (page: Page) => void
-}
-
 function CountdownTimer() {
   const [time, setTime] = useState('')
   useEffect(() => {
@@ -44,11 +40,10 @@ const getServicePage = (title: string): Page | null => {
 }
 
 const openPage = (page: Page) => {
-  const url = `${window.location.origin}${window.location.pathname}#/${page}`
-  window.open(url, '_blank', 'noopener,noreferrer')
+  window.open(`/${page}`, '_blank', 'noopener,noreferrer')
 }
 
-export default function ServicesSection({ onNavigateToService }: ServicesSectionProps) {
+export default function ServicesSection() {
   return (
     <section
       id="servicios"
@@ -146,7 +141,7 @@ export default function ServicesSection({ onNavigateToService }: ServicesSection
               </p>
 
               <button
-                onClick={() => { if (onNavigateToService) { onNavigateToService('home'); document.querySelector('#contacto')?.scrollIntoView({ behavior: 'smooth' }) } }}
+                onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
                 className="self-center font-syne font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-250 hover:-translate-y-0.5"
                 style={{
                   background: 'linear-gradient(135deg,#4F7FFF,#00E5C3)',

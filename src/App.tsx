@@ -1,4 +1,5 @@
-import { lazy, Suspense, useState, useCallback, useEffect } from 'react'
+import { lazy, Suspense, useCallback, useEffect } from 'react'
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
@@ -34,11 +35,6 @@ const IaLocalPage = lazy(() => import('./pages/IaLocalPage'))
 
 type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local'
 
-const ALL_PAGES: Page[] = [
-  'home', 'apoyo-academico', 'clases-programacion', 'ventas-online',
-  'optimizacion-cv', 'plantilla-gastos', 'plantilla-habitos', 'ia-local',
-]
-
 function SectionFallback() {
   return <div className="h-32" />
 }
@@ -52,7 +48,7 @@ function PageSEO({ page }: { page: Page }) {
   if (!meta) return null
 
   const schemas: Record<string, unknown>[] = [personSchema, websiteSchema]
-  const basePath = meta.path.replace('/#/', '/')
+  const basePath = meta.path
 
   if (page === 'plantilla-gastos') {
     schemas.push(productSchema(
@@ -92,82 +88,78 @@ function PageSEO({ page }: { page: Page }) {
   )
 }
 
-export default function App() {
-  const [currentPage, setCurrentPage] = useState<Page>('home')
+function HomePage() {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const scrollToSection = useCallback((id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  }, [])
 
   useEffect(() => {
-    const hash = window.location.hash.replace('#/', '')
-    if (hash && (ALL_PAGES as readonly string[]).includes(hash)) {
-      setCurrentPage(hash as Page)
-    }
-  }, [])
-
-  const scrollToSection = useCallback((id: string) => {
-    if (currentPage !== 'home') {
-      setCurrentPage('home')
+    const state = location.state as Record<string, string> | null
+    if (state?.scrollTo) {
+      const id = state.scrollTo
       setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 100)
-    } else {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+      window.history.replaceState({}, '')
     }
-  }, [currentPage])
+  }, [location.state])
 
-  const handleShare = useCallback(() => {
-    const url = window.location.href
-    if (navigator.share) {
-      navigator.share({ title: 'Juan Pablo Portfolio', url })
-    } else {
-      navigator.clipboard?.writeText(url)
-    }
-  }, [])
+  return (
+    <>
+      <HeroSection />
+      <Suspense fallback={<SectionFallback />}><MarqueeSection /></Suspense>
+      <Suspense fallback={<SectionFallback />}><AboutSection /></Suspense>
+      <Suspense fallback={<SectionFallback />}><ServicesSection /></Suspense>
+      <Suspense fallback={<SectionFallback />}><KnowledgeSection /></Suspense>
+      <Suspense fallback={<SectionFallback />}><FaqSection /></Suspense>
+      <Suspense fallback={<SectionFallback />}><ContactSection /></Suspense>
+      <Suspense fallback={<SectionFallback />}><Footer /></Suspense>
+      <Chatbot
+        onShare={() => {
+          const url = window.location.href
+          if (navigator.share) {
+            navigator.share({ title: 'Juan Pablo Portfolio', url })
+          } else {
+            navigator.clipboard?.writeText(url)
+          }
+        }}
+        onScrollToContact={() => scrollToSection('contacto')}
+        onScrollToFooter={() => scrollToSection('footer')}
+        onNavigateToPage={(page) => navigate(`/${page}`)}
+      />
+    </>
+  )
+}
 
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'apoyo-academico':
-        return <Suspense fallback={<LoadingScreen />}><ApoyoAcademicoPage /></Suspense>
-      case 'clases-programacion':
-        return <Suspense fallback={<LoadingScreen />}><ClasesProgramacionPage /></Suspense>
-      case 'ventas-online':
-        return <Suspense fallback={<LoadingScreen />}><VentasOnlinePage /></Suspense>
-      case 'optimizacion-cv':
-        return <Suspense fallback={<LoadingScreen />}><OptimizacionCVPage /></Suspense>
-      case 'plantilla-gastos':
-        return <Suspense fallback={<LoadingScreen />}><PlantillaGastosPage /></Suspense>
-      case 'plantilla-habitos':
-        return <Suspense fallback={<LoadingScreen />}><PlantillaHabitosPage /></Suspense>
-      case 'ia-local':
-        return <Suspense fallback={<LoadingScreen />}><IaLocalPage /></Suspense>
-      default:
-        return (
-          <>
-            <HeroSection />
-            <Suspense fallback={<SectionFallback />}><MarqueeSection /></Suspense>
-            <Suspense fallback={<SectionFallback />}><AboutSection /></Suspense>
-            <Suspense fallback={<SectionFallback />}>
-              <ServicesSection onNavigateToService={setCurrentPage} />
-            </Suspense>
-            <Suspense fallback={<SectionFallback />}><KnowledgeSection /></Suspense>
-            <Suspense fallback={<SectionFallback />}><FaqSection /></Suspense>
-            <Suspense fallback={<SectionFallback />}><ContactSection /></Suspense>
-            <Suspense fallback={<SectionFallback />}><Footer /></Suspense>
-            <Chatbot
-              onShare={handleShare}
-              onScrollToContact={() => scrollToSection('contacto')}
-              onScrollToFooter={() => scrollToSection('footer')}
-              onNavigateToPage={setCurrentPage}
-            />
-          </>
-        )
-    }
-  }
+function AppShell() {
+  const location = useLocation()
+  const page = location.pathname === '/' ? 'home' : location.pathname.slice(1) as Page
 
+  return (
+    <div style={{ overflowX: 'clip' }}>
+      <PageSEO page={page} />
+      <Navbar currentPage={page} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/apoyo-academico" element={<Suspense fallback={<LoadingScreen />}><ApoyoAcademicoPage /></Suspense>} />
+        <Route path="/clases-programacion" element={<Suspense fallback={<LoadingScreen />}><ClasesProgramacionPage /></Suspense>} />
+        <Route path="/ventas-online" element={<Suspense fallback={<LoadingScreen />}><VentasOnlinePage /></Suspense>} />
+        <Route path="/optimizacion-cv" element={<Suspense fallback={<LoadingScreen />}><OptimizacionCVPage /></Suspense>} />
+        <Route path="/plantilla-gastos" element={<Suspense fallback={<LoadingScreen />}><PlantillaGastosPage /></Suspense>} />
+        <Route path="/plantilla-habitos" element={<Suspense fallback={<LoadingScreen />}><PlantillaHabitosPage /></Suspense>} />
+        <Route path="/ia-local" element={<Suspense fallback={<LoadingScreen />}><IaLocalPage /></Suspense>} />
+      </Routes>
+    </div>
+  )
+}
+
+export default function App() {
   return (
     <HelmetProvider>
       <ThemeProvider>
-        <div style={{ overflowX: 'clip' }}>
-          <PageSEO page={currentPage} />
-          <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
-          {renderPage()}
-        </div>
+        <BrowserRouter>
+          <AppShell />
+        </BrowserRouter>
       </ThemeProvider>
     </HelmetProvider>
   )

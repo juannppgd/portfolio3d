@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import ThemeToggle from './ThemeToggle'
 import { useTheme } from '../context/ThemeContext'
@@ -8,7 +9,6 @@ type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online'
 
 interface NavbarProps {
   currentPage: Page
-  setCurrentPage: (page: Page) => void
 }
 
 const links = [
@@ -19,10 +19,11 @@ const links = [
   { label: 'Contacto', href: '#contacto' },
 ]
 
-export default function Navbar({ currentPage, setCurrentPage }: NavbarProps) {
+export default function Navbar({ currentPage }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false)
   const { theme } = useTheme()
   const activeSection = useActiveSection()
+  const navigate = useNavigate()
 
   const scrollTo = (id: string) => {
     setMenuOpen(false)
@@ -30,13 +31,17 @@ export default function Navbar({ currentPage, setCurrentPage }: NavbarProps) {
   }
 
   const handleServiceClick = (service: Page) => {
-    setCurrentPage(service)
     setMenuOpen(false)
+    if (service === 'home') {
+      navigate('/')
+    } else {
+      navigate(`/${service}`)
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const goHome = () => {
-    setCurrentPage('home')
+    navigate('/')
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
