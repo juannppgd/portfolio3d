@@ -1,11 +1,20 @@
 import { useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import {
+  FaServer, FaCode, FaBullhorn, FaMobileAlt, FaNewspaper,
+  FaLaptop, FaChartLine, FaRocket, FaAd, FaChartBar, FaGlobe, FaShieldAlt, FaHeartbeat,
+} from 'react-icons/fa'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
 import { FORMAL_EDUCATION, CERTIFICATIONS } from '../data'
 
+const ICONS: Record<string, React.ComponentType<{ className?: string; size?: number }>> = {
+  FaServer, FaCode, FaBullhorn, FaMobileAlt, FaNewspaper,
+  FaLaptop, FaChartLine, FaRocket, FaAd, FaChartBar, FaGlobe, FaShieldAlt, FaHeartbeat,
+}
+
 const TEXT =
-  'Con más de cinco años creando soluciones digitales, me especializo en desarrollo web, marketing digital y automatización. Trabajo con empresarios y emprendedores que quieren destacar en línea y ver resultados reales. Construyamos algo increíble juntos.'
+  'Con más de cinco años creando soluciones digitales, me especializo en desarrollo web, marketing digital y automatización. Trabajo con empresarios y emprendedores que quieren destacar en línea y ver resultados reales.'
 
 export default function AboutSection() {
   const paraRef = useRef<HTMLParagraphElement>(null)
@@ -21,7 +30,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="px-6 md:px-12 py-24 md:py-20 lg:py-24 relative"
+      className="px-6 md:px-12 pt-12 md:pt-10 lg:pt-12 pb-20 md:pb-16 lg:pb-20 relative"
       style={{ borderTop: '1px solid var(--border)' }}
     >
       <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 md:gap-6 lg:gap-12 items-center">
@@ -47,7 +56,7 @@ export default function AboutSection() {
           {/* Animated character-by-character text */}
           <p
             ref={paraRef}
-            className="leading-relaxed mb-10 relative break-words"
+            className="leading-relaxed mb-8 relative break-words"
             style={{ fontSize: 'clamp(0.95rem,1.8vw,1.15rem)', color: 'transparent', maxWidth: '100%' }}
             aria-label={TEXT}
           >
@@ -68,7 +77,7 @@ export default function AboutSection() {
           </p>
 
           {/* Stats */}
-          <div className="flex gap-10 mb-12">
+          <div className="flex gap-10 mb-2">
             {[
               { num: '5+', label: 'Años de exp.' },
               { num: '30+', label: 'Proyectos' },
@@ -87,16 +96,15 @@ export default function AboutSection() {
                 >
                   {s.label}
                 </div>
-              </div>
-            ))}
-          </div>
+                </div>
+              ))}
+            </div>
 
-          <ContactButton label="Hablemos" />
         </FadeIn>
       </div>
 
       {/* Formación Académica & Certificaciones */}
-      <div className="max-w-4xl mx-auto mt-10 md:mt-8 lg:mt-12 pt-8 md:pt-6 lg:pt-8" style={{ borderTop: '1px solid var(--border)' }}>
+      <div className="max-w-4xl mx-auto mt-8 md:mt-6 lg:mt-10 pt-8 md:pt-6 lg:pt-8" style={{ borderTop: '1px solid var(--border)' }}>
         <div className="grid md:grid-cols-2 gap-6 md:gap-6 lg:gap-10">
           {/* Formal Education */}
           <FadeIn y={30}>
@@ -104,16 +112,19 @@ export default function AboutSection() {
               // Formación Académica
             </span>
             <div className="space-y-5">
-              {FORMAL_EDUCATION.map((item) => (
+              {FORMAL_EDUCATION.map((item) => {
+                const EduIcon = item.icon ? ICONS[item.icon] : null
+                return (
                 <div key={item.title} className="pb-5" style={{ borderBottom: '1px solid var(--border)' }}>
-                  <div className="font-syne font-bold tracking-tight" style={{ fontSize: 'clamp(14px,1.3vw,16px)', color: 'var(--white)' }}>
+                  <div className="flex items-center gap-2 font-syne font-bold tracking-tight" style={{ fontSize: 'clamp(14px,1.3vw,16px)', color: 'var(--white)' }}>
+                    {EduIcon && <span style={{ color: 'var(--accent)' }}><EduIcon size={16} /></span>}
                     {item.title}
                   </div>
                   <span className="font-mono text-[11px] tracking-widest uppercase" style={{ color: item.status === 'En curso' ? 'var(--accent)' : 'var(--muted)' }}>
                     {item.status}
                   </span>
                 </div>
-              ))}
+              )})}
             </div>
           </FadeIn>
 
@@ -125,7 +136,11 @@ export default function AboutSection() {
             <div className="space-y-5">
               {visibleCerts.map((group) => (
                 <div key={group.category}>
-                  <span className="font-mono text-[11px] tracking-widest uppercase block mb-2" style={{ color: 'var(--muted)' }}>
+                  <span className="flex items-center gap-1.5 font-mono text-[11px] tracking-widest uppercase mb-2" style={{ color: 'var(--muted)' }}>
+                    {(() => {
+                      const CatIcon = group.icon ? ICONS[group.icon] : null
+                      return CatIcon ? <CatIcon size={12} /> : null
+                    })()}
                     {group.category}
                   </span>
                   <div className="flex flex-wrap gap-2">

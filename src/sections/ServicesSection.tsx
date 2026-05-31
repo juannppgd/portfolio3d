@@ -1,6 +1,17 @@
 import { useEffect, useState } from 'react'
+import {
+  FaGraduationCap, FaLaptopCode, FaStore, FaFileAlt,
+  FaClock, FaLaptop, FaChartLine, FaServer, FaComments,
+  FaWallet, FaCalendarCheck, FaBrain,
+} from 'react-icons/fa'
 import FadeIn from '../components/FadeIn'
 import { MAIN_SERVICES, SERVICE_BENEFITS, ADDITIONAL_SERVICES, TEMPLATES, LOCAL_AI } from '../data'
+
+type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local'
+
+interface ServicesSectionProps {
+  onNavigateToService?: (page: Page) => void
+}
 
 function CountdownTimer() {
   const [time, setTime] = useState('')
@@ -18,14 +29,30 @@ function CountdownTimer() {
     return () => clearInterval(id)
   }, [])
   if (!time) return null
-  return <span className="tabular-nums">⏰ {time}</span>
+  return <span className="tabular-nums inline-flex items-center gap-1"><FaClock size={12} /> {time}</span>
 }
 
-export default function ServicesSection() {
+const getServicePage = (title: string): Page | null => {
+  if (title.includes('Desarrollo de trabajos') || title.includes('académicos')) return 'apoyo-academico'
+  if (title.includes('Clases de programación')) return 'clases-programacion'
+  if (title.includes('Venta de garaje') || title.includes('Marketplace')) return 'ventas-online'
+  if (title.includes('CV') || title.includes('Hoja de Vida')) return 'optimizacion-cv'
+  if (title.includes('Control de Gastos') || title.includes('Gastos')) return 'plantilla-gastos'
+  if (title.includes('Rastreo de Hábitos') || title.includes('Hábitos')) return 'plantilla-habitos'
+  if (title.includes('IA Local') || title.includes('IA local')) return 'ia-local'
+  return null
+}
+
+const openPage = (page: Page) => {
+  const url = `${window.location.origin}${window.location.pathname}#/${page}`
+  window.open(url, '_blank', 'noopener,noreferrer')
+}
+
+export default function ServicesSection({ onNavigateToService }: ServicesSectionProps) {
   return (
     <section
       id="servicios"
-      className="px-6 md:px-12 py-20 md:py-16 lg:py-20 relative z-10"
+      className="px-6 md:px-12 py-12 md:py-10 lg:py-12 relative z-10"
       style={{
         background: 'var(--surface)',
         borderRadius: '40px 40px 0 0',
@@ -67,17 +94,26 @@ export default function ServicesSection() {
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent)' }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
             >
-              {/* Discount badge */}
-              <span
-                className="inline-flex items-center gap-2 font-mono text-[11px] tracking-widest uppercase px-4 py-1.5 rounded-full self-start mb-4"
-                style={{
-                  background: 'linear-gradient(135deg,rgba(79,127,255,0.15),rgba(0,229,195,0.1))',
-                  color: 'var(--accent2)',
-                  border: '1px solid rgba(0,229,195,0.2)',
-                }}
-              >
-                <span style={{ color: 'var(--accent)' }}>¡{svc.discount}!</span> <CountdownTimer />
-              </span>
+              <div className="flex items-center gap-4 mb-4">
+                <div
+                  className="flex items-center justify-center w-14 h-14 rounded-2xl shrink-0"
+                  style={{
+                    background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
+                  }}
+                >
+                  {svc.id === 'web' ? <FaLaptop size={26} className="text-white" /> : <FaChartLine size={26} className="text-white" />}
+                </div>
+                <span
+                  className="inline-flex items-center gap-2 font-mono text-[11px] tracking-widest uppercase px-4 py-1.5 rounded-full"
+                  style={{
+                    background: 'linear-gradient(135deg,rgba(79,127,255,0.15),rgba(0,229,195,0.1))',
+                    color: 'var(--accent2)',
+                    border: '1px solid rgba(0,229,195,0.2)',
+                  }}
+                >
+                  <span style={{ color: 'var(--accent)' }}>¡{svc.discount}!</span> <CountdownTimer />
+                </span>
+              </div>
 
               <h3
                 className="font-syne font-bold uppercase tracking-tight mb-4"
@@ -93,7 +129,6 @@ export default function ServicesSection() {
                 {svc.description}
               </p>
 
-              {/* Targets */}
               <ul className="space-y-1.5 mb-4 flex-1">
                 {svc.targets.map((t) => (
                   <li key={t} className="flex items-start gap-2 font-mono text-sm" style={{ color: 'var(--text)' }}>
@@ -111,6 +146,7 @@ export default function ServicesSection() {
               </p>
 
               <button
+                onClick={() => { if (onNavigateToService) { onNavigateToService('home'); document.querySelector('#contacto')?.scrollIntoView({ behavior: 'smooth' }) } }}
                 className="self-start font-syne font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-250 hover:-translate-y-0.5"
                 style={{
                   background: 'linear-gradient(135deg,#4F7FFF,#00E5C3)',
@@ -138,7 +174,7 @@ export default function ServicesSection() {
           {SERVICE_BENEFITS.map((b, i) => (
             <FadeIn key={b.title} delay={i * 0.1} y={20}>
               <div
-                className="p-6 md:p-8 transition-all duration-300 hover:-translate-y-0.5"
+                className="p-6 md:p-8 h-full flex flex-col transition-all duration-300 hover:-translate-y-0.5"
                 style={{
                   border: '1px solid var(--border)',
                   borderRadius: 24,
@@ -147,16 +183,14 @@ export default function ServicesSection() {
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <span
-                    className="font-syne font-bold text-lg"
+                  <div
+                    className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0"
                     style={{
-                      background: 'linear-gradient(135deg,#4F7FFF,#00E5C3)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
+                      background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
                     }}
                   >
-                    ✦
-                  </span>
+                    {b.title.includes('Hosting') ? <FaServer size={22} className="text-white" /> : <FaComments size={22} className="text-white" />}
+                  </div>
                   <div>
                     <h4 className="font-syne font-bold uppercase text-sm tracking-tight" style={{ color: 'var(--white)' }}>
                       {b.title}
@@ -166,7 +200,7 @@ export default function ServicesSection() {
                     </span>
                   </div>
                 </div>
-                <ul className="space-y-2 mb-5">
+                <ul className="space-y-2 flex-1">
                   {b.items.map((item) => (
                     <li key={item} className="flex items-start gap-2 font-mono text-sm" style={{ color: 'var(--text)' }}>
                       <span style={{ color: 'var(--accent2)' }}>✓</span>
@@ -174,12 +208,6 @@ export default function ServicesSection() {
                     </li>
                   ))}
                 </ul>
-                <button
-                  className="font-mono text-xs tracking-widest uppercase transition-colors duration-200 hover:text-accent"
-                  style={{ color: 'var(--accent2)' }}
-                >
-                  {b.cta} →
-                </button>
               </div>
             </FadeIn>
           ))}
@@ -197,39 +225,62 @@ export default function ServicesSection() {
           </h3>
         </FadeIn>
         <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
-          {ADDITIONAL_SERVICES.map((svc, i) => (
-            <FadeIn key={svc.title} delay={i * 0.08} y={20}>
-              <div
-                className="p-5 md:p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1"
-                style={{
-                  border: '1px solid var(--border)',
-                  borderRadius: 20,
-                  background: 'var(--bg)',
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent)' }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
-              >
-                <h4
-                  className="font-syne font-bold uppercase tracking-tight mb-2"
-                  style={{ fontSize: 'clamp(14px,1.3vw,16px)', color: 'var(--white)' }}
+          {ADDITIONAL_SERVICES.map((svc, i) => {
+            const servicePage = getServicePage(svc.title)
+            return (
+              <FadeIn key={svc.title} delay={i * 0.08} y={20}>
+                <div
+                  className="p-5 md:p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1"
+                  style={{
+                    border: '1px solid var(--border)',
+                    borderRadius: 20,
+                    background: 'var(--bg)',
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent)' }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
                 >
-                  {svc.title}
-                </h4>
-                <p
-                  className="font-mono font-light leading-relaxed mb-4 flex-1"
-                  style={{ fontSize: 'clamp(0.7rem,1vw,0.85rem)', color: 'var(--muted)' }}
-                >
-                  {svc.desc}
-                </p>
-                <button
-                  className="self-start font-mono text-[11px] tracking-widest uppercase transition-colors duration-200 hover:text-accent"
-                  style={{ color: 'var(--accent2)' }}
-                >
-                  {svc.cta} →
-                </button>
-              </div>
-            </FadeIn>
-          ))}
+                  <h4
+                    className="font-syne font-bold uppercase tracking-tight mb-2"
+                    style={{ fontSize: 'clamp(14px,1.3vw,16px)', color: 'var(--white)' }}
+                  >
+                    {svc.title}
+                  </h4>
+                  <div
+                    className="flex items-center justify-center w-14 h-14 rounded-2xl mx-auto my-3"
+                    style={{
+                      background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
+                    }}
+                  >
+                    {svc.title.includes('Desarrollo') ? (
+                      <FaGraduationCap size={24} className="text-white" />
+                    ) : svc.title.includes('Clases') ? (
+                      <FaLaptopCode size={24} className="text-white" />
+                    ) : svc.title.includes('Venta') ? (
+                      <FaStore size={24} className="text-white" />
+                    ) : (
+                      <FaFileAlt size={24} className="text-white" />
+                    )}
+                  </div>
+                  <p
+                    className="font-mono font-light leading-relaxed mb-4 flex-1"
+                    style={{ fontSize: 'clamp(0.7rem,1vw,0.85rem)', color: 'var(--muted)' }}
+                  >
+                    {svc.desc}
+                  </p>
+                  <button
+                    onClick={() => { if (servicePage) openPage(servicePage) }}
+                    className="self-center font-syne font-bold text-[11px] tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-250 hover:-translate-y-0.5 mt-auto"
+                    style={{
+                      background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
+                      color: '#fff',
+                    }}
+                  >
+                    {svc.cta}
+                  </button>
+                </div>
+              </FadeIn>
+            )
+          })}
         </div>
       </div>
 
@@ -249,11 +300,11 @@ export default function ServicesSection() {
             Herramientas Excel profesionales para mejorar tu productividad y finanzas personales. Acceso inmediato por solo $7 USD cada una.
           </p>
         </FadeIn>
-        <div className="grid sm:grid-cols-2 gap-6 md:gap-8 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {TEMPLATES.map((t, i) => (
             <FadeIn key={t.title} delay={i * 0.1} y={20}>
               <div
-                className="p-6 md:p-8 text-center transition-all duration-300 hover:-translate-y-1"
+                className="p-5 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1"
                 style={{
                   border: '1px solid var(--border)',
                   borderRadius: 24,
@@ -262,36 +313,49 @@ export default function ServicesSection() {
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
               >
                 <div
-                  className="font-syne font-black text-3xl mb-3"
+                  className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0"
                   style={{
-                    background: 'linear-gradient(135deg,#4F7FFF,#00E5C3)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
+                    background: 'linear-gradient(135deg, rgba(79,127,255,0.15), rgba(0,229,195,0.1))',
+                    color: 'var(--accent2)',
                   }}
                 >
-                  {t.price}
+                  {t.title.includes('Gastos') ? <FaWallet size={22} /> : <FaCalendarCheck size={22} />}
                 </div>
-                <h4 className="font-syne font-bold uppercase tracking-tight mb-2" style={{ color: 'var(--white)' }}>
-                  {t.title}
-                </h4>
-                <p
-                  className="font-mono font-light leading-relaxed mb-5 text-sm"
-                  style={{ color: 'var(--muted)' }}
-                >
-                  {t.desc}
-                </p>
-                <button
-                  className="font-syne font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-250"
-                  style={{
-                    border: '1px solid var(--accent)',
-                    color: 'var(--accent)',
-                    background: 'transparent',
-                  }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--bg)' }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--accent)' }}
-                >
-                  {t.cta}
-                </button>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1 flex-wrap">
+                    <h4 className="font-syne font-bold uppercase tracking-tight" style={{ color: 'var(--white)' }}>
+                      {t.title}
+                    </h4>
+                    <span
+                      className="font-mono text-[10px] tracking-widest px-2 py-0.5 rounded-full shrink-0"
+                      style={{ background: 'rgba(79,127,255,0.1)', color: 'var(--accent)' }}
+                    >
+                      {t.price}
+                    </span>
+                  </div>
+                  <p
+                    className="font-mono font-light leading-relaxed mb-3 text-sm"
+                    style={{ color: 'var(--muted)' }}
+                  >
+                    {t.desc}
+                  </p>
+                  <button
+                    onClick={() => {
+                      const page = getServicePage(t.title)
+                      if (page) openPage(page)
+                    }}
+                    className="font-syne font-bold text-[11px] tracking-widest uppercase px-4 py-2 rounded-full transition-all duration-250"
+                    style={{
+                      border: '1px solid var(--accent)',
+                      color: 'var(--accent)',
+                      background: 'transparent',
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--bg)' }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--accent)' }}
+                  >
+                    {t.cta}
+                  </button>
+                </div>
               </div>
             </FadeIn>
           ))}
@@ -309,12 +373,34 @@ export default function ServicesSection() {
               background: 'var(--bg)',
             }}
           >
-            <h4
-              className="font-syne font-bold uppercase tracking-tight mb-3"
+            <h3
+              className="font-syne font-bold uppercase tracking-tight mb-3 flex items-center justify-between gap-3"
               style={{ fontSize: 'clamp(16px,1.5vw,20px)', color: 'var(--white)' }}
             >
-              IA Local
-            </h4>
+              <div className="flex items-center gap-3">
+                <div
+                  className="flex items-center justify-center w-10 h-10 rounded-xl"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(79,127,255,0.15), rgba(0,229,195,0.1))',
+                    color: 'var(--accent2)',
+                  }}
+                >
+                  <FaBrain size={20} />
+                </div>
+                IA Local
+              </div>
+              <button
+                type="button"
+                onClick={() => openPage('ia-local')}
+                className="font-mono text-xs tracking-widest uppercase flex items-center gap-1.5 transition-colors duration-200 hover:text-accent shrink-0"
+                style={{ color: 'var(--accent)' }}
+              >
+                Conocer más
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </h3>
             <p
               className="font-mono font-light leading-relaxed mb-5 text-sm"
               style={{ color: 'var(--muted)' }}

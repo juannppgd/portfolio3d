@@ -49,7 +49,7 @@ export default function FaqSection() {
   return (
     <section
       id="faq"
-      className="px-6 md:px-12 py-20 md:py-16 lg:py-20 relative z-30"
+      className="px-6 md:px-12 pt-12 md:pt-10 lg:pt-12 pb-20 md:pb-16 lg:pb-20 relative z-30"
       style={{
         background: 'var(--surface)',
         borderRadius: '40px 40px 0 0',

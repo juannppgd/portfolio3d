@@ -1,28 +1,33 @@
 import { motion } from 'framer-motion'
+import {
+  FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaYoutube,
+  FaTelegram, FaPinterest, FaSnapchat, FaDiscord, FaWhatsapp,
+} from 'react-icons/fa'
+import { SiX, SiKick, SiThreads } from 'react-icons/si'
 import FadeIn from './FadeIn'
 import { SOCIAL_LINKS_FULL } from '../data'
 
-const FOOTER_LINKS = [
-  { label: 'Inspiración', href: '#hero' },
-  { label: 'Preguntas', href: '#faq' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Contacto', href: '#contacto' },
-]
+type IconComponent = React.ComponentType<{ className?: string; size?: number }>
+
+const SOCIAL_ICONS: Record<string, IconComponent> = {
+  FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaYoutube,
+  FaTelegram, FaPinterest, FaSnapchat, FaDiscord, FaWhatsapp,
+  SiX, SiKick, SiThreads,
+}
 
 const SOCIAL_COLORS: Record<string, string> = {
   Facebook: '#1877F2',
   Instagram: '#E4405F',
   LinkedIn: '#0A66C2',
-  X: '#000000',
-  TikTok: '#000000',
+  X: 'var(--text)',
+  TikTok: 'var(--text)',
   YouTube: '#FF0000',
   Telegram: '#26A5E4',
   Pinterest: '#BD081C',
   Snapchat: '#FFFC00',
   Kick: '#53FC18',
   Discord: '#5865F2',
-  Threads: '#000000',
-  GitHub: '#181717',
+  Threads: 'var(--text)',
   WhatsApp: '#25D366',
 }
 
@@ -39,18 +44,13 @@ const SOCIAL_BG: Record<string, string> = {
   Kick: 'rgba(83,252,24,0.1)',
   Discord: 'rgba(88,101,242,0.1)',
   Threads: 'rgba(0,0,0,0.08)',
-  GitHub: 'rgba(24,23,23,0.08)',
   WhatsApp: 'rgba(37,211,102,0.1)',
 }
 
 export default function Footer() {
-  const scrollTo = (id: string) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
-    <footer
-      className="px-6 md:px-12 pt-16 md:pt-14 lg:pt-20 pb-8 relative z-30"
+    <footer id="footer"
+      className="px-6 md:px-12 pt-12 md:pt-10 lg:pt-12 pb-8 relative z-30"
       style={{
         background: 'var(--bg)',
         borderTop: '1px solid var(--border)',
@@ -58,7 +58,7 @@ export default function Footer() {
     >
       <div className="max-w-5xl mx-auto">
         {/* Top: centrado */}
-        <div className="text-center mb-14 md:mb-12 lg:mb-16">
+        <div className="text-center mb-10 md:mb-8 lg:mb-10">
           <FadeIn y={15}>
             <h3
               className="font-syne font-black uppercase leading-none tracking-tight mb-4 break-words"
@@ -103,12 +103,15 @@ export default function Footer() {
                     card.style.background = 'transparent'
                   }}
                 >
-                  {/* Initial avatar */}
+                  {/* Brand icon */}
                   <div
-                    className="flex items-center justify-center w-8 h-8 rounded-full text-xs font-syne font-black uppercase transition-transform duration-300 group-hover:scale-110"
+                    className="flex items-center justify-center w-8 h-8 rounded-full transition-transform duration-300 group-hover:scale-110"
                     style={{ background: brandBg, color: brandColor }}
                   >
-                    {s.name[0]}
+                    {(() => {
+                      const Ic = s.icon ? SOCIAL_ICONS[s.icon] : null
+                      return Ic ? <Ic size={18} /> : <span className="text-xs font-syne font-black uppercase">{s.name[0]}</span>
+                    })()}
                   </div>
                   <span
                     className="font-syne font-bold text-xs uppercase tracking-tight transition-colors duration-300"
@@ -129,37 +132,22 @@ export default function Footer() {
         </div>
 
         {/* Middle: dos columnas */}
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 mb-14 md:mb-12 lg:mb-16">
-          {/* Left: crédito + links rápidos */}
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 mb-8 md:mb-6 lg:mb-8">
+          {/* Left: crédito */}
           <FadeIn y={15}>
             <p
-              className="font-mono font-light leading-relaxed text-sm mb-6"
+              className="font-mono font-light leading-relaxed text-sm"
               style={{ color: 'var(--muted)' }}
             >
               Diseñado y desarrollado por{' '}
               <strong className="font-syne font-bold" style={{ color: 'var(--text)' }}>Juan Pablo Gutiérrez Díaz</strong>
               , especialista en desarrollo web y marketing digital, creando experiencias digitales ágiles y orientadas a resultados.
             </p>
-            <div className="flex flex-wrap justify-start gap-x-6 gap-y-2">
-              {FOOTER_LINKS.map((l) => (
-                <button
-                  key={l.href}
-                  onClick={() => scrollTo(l.href)}
-                  className="font-mono text-xs tracking-widest uppercase py-2 transition-colors duration-200 hover:text-accent"
-                  style={{ color: 'var(--muted)' }}
-                >
-                  {l.label}
-                </button>
-              ))}
-            </div>
           </FadeIn>
 
-          {/* Right: compartir */}
+          {/* Right: compartir + pagos */}
           <div>
             <FadeIn y={15}>
-              <span className="font-syne font-bold uppercase tracking-tight block mb-3 text-left" style={{ fontSize: 'clamp(16px,1.5vw,20px)', color: 'var(--white)' }}>
-                Compartir sitio
-              </span>
               <button
                 onClick={() => { navigator.clipboard?.writeText(window.location.href) }}
                 className="font-mono text-xs tracking-widest uppercase px-5 py-3 rounded-full transition-all duration-200 hover:text-accent"
@@ -169,15 +157,30 @@ export default function Footer() {
               >
                 Comparte este sitio web
               </button>
+              <div className="mt-4">
+                <span className="font-mono text-[10px] tracking-widest uppercase block mb-2" style={{ color: 'var(--muted)' }}>
+                  Métodos de pago aceptados
+                </span>
+                <div className="flex flex-wrap gap-x-3 gap-y-1">
+                  {['PayPal', 'Transferencias', 'Llaves', 'PSE', 'Efecty', 'Tarjetas'].map((m) => (
+                    <span
+                      key={m}
+                      className="font-mono text-[10px] tracking-widest px-2 py-0.5 rounded-full"
+                      style={{ background: 'var(--surface)', color: 'var(--accent)', border: '1px solid var(--border)' }}
+                    >
+                      {m}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </FadeIn>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div
-          className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6"
-          style={{ borderTop: '1px solid var(--border)' }}
-        >
+          className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4"
+          style={{ borderTop: '1px solid var(--border)' }}>
           <span className="font-mono text-xs tracking-widest text-center sm:text-left" style={{ color: 'var(--muted)' }}>
             © 2026 Juan Pablo Gutiérrez Díaz. Todos los derechos reservados.
           </span>

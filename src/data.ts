@@ -92,19 +92,19 @@ export const ADDITIONAL_SERVICES = [
     cta: 'Solicitar apoyo académico',
   },
   {
-    title: 'Clases de programación personalizadas 1 a 1',
+    title: 'Clases de programación 1 a 1',
     desc: 'Clases personalizadas enfocadas en tu nivel, ritmo y objetivos. Aprende programación de forma práctica y aplicada. Recibes Materiales y Certificado',
-    cta: 'Contáctame haciendo clic aquí',
+    cta: 'Solicitar clases programación',
   },
   {
     title: 'Venta de garaje en línea por Marketplace y MercadoLibre',
     desc: 'Conoce mi modalidad de Publicación, gestión y optimización de productos en plataformas de venta online para que adquieras los tuyos completamente garantizados.',
-    cta: 'Explorar tiendas y aprender a vender',
+    cta: 'Solicitar venta en línea',
   },
   {
     title: 'Asesoría en creación de tu CV para que entres al trabajo de tus sueños',
     desc: 'Diseño un currículum profesional para un CV estratégico, atractivo y optimizado para procesos de selección laboral, filtros avanzados ATS.',
-    cta: 'Contáctame haciendo clic aquí',
+    cta: 'Solicitar asesoría CV',
   },
 ]
 
@@ -150,22 +150,22 @@ export const LOCAL_AI = {
 }
 
 export const FORMAL_EDUCATION = [
-  { title: 'Ingeniería de Sistemas', status: 'En curso' },
-  { title: 'Tecnólogo en Análisis y Desarrollo de Software', status: 'En curso' },
-  { title: 'Tecnólogo en Desarrollo Publicitario', status: 'Certificado 2025' },
-  { title: 'Técnico en Programación Web y Desarrollo de Apps Móviles', status: 'Certificado 2024' },
-  { title: 'Comunicación Social y Periodismo', status: 'Estudios parciales 20%' },
+  { title: 'Ingeniería de Sistemas', status: 'En curso', icon: 'FaServer' },
+  { title: 'Tecnólogo en Análisis y Desarrollo de Software', status: 'En curso', icon: 'FaCode' },
+  { title: 'Tecnólogo en Desarrollo Publicitario', status: 'Certificado 2025', icon: 'FaBullhorn' },
+  { title: 'Técnico en Programación Web y Desarrollo de Apps Móviles', status: 'Certificado 2024', icon: 'FaMobileAlt' },
+  { title: 'Comunicación Social y Periodismo', status: 'Estudios parciales 30%', icon: 'FaNewspaper' },
 ]
 
 export const CERTIFICATIONS = [
-  { category: 'Tecnología', items: ['Bootcamp En Inteligencia Artificial', 'Bootcamp En Programación', 'Fundamentos de UX', 'Big Data'] },
-  { category: 'Marketing', items: ['Marketing Digital (2025)', 'Marketing Digital (2022)', 'Analítica Web', 'Growth Hacking', 'Networking y Marketing Personal', 'Creación de Contenidos Digitales'] },
-  { category: 'Productividad', items: ['Excel Avanzado', 'Power BI', 'Administración de Servicios 365 y Herramientas de Productividad 4.0'] },
-  { category: 'Publicidad', items: ['Google Ads'] },
-  { category: 'Análisis', items: ['Gestión de Procesos de Análisis de Negocio'] },
-  { category: 'Idiomas', items: ['Inglés'] },
-  { category: 'Seguridad', items: ['Apropiación de Conceptos en Ciberseguridad', 'Sistema de Gestión de la Seguridad y Salud en el Trabajo SG-SST'] },
-  { category: 'Salud', items: ['Nutrición y Alimentación en el Desarrollo Humano'] },
+  { category: 'Tecnología', icon: 'FaLaptop', items: ['Bootcamp En Inteligencia Artificial', 'Bootcamp En Programación', 'Fundamentos de UX', 'Big Data'] },
+  { category: 'Marketing', icon: 'FaChartLine', items: ['Marketing Digital (2025)', 'Marketing Digital (2022)', 'Analítica Web', 'Growth Hacking', 'Networking y Marketing Personal', 'Creación de Contenidos Digitales'] },
+  { category: 'Productividad', icon: 'FaRocket', items: ['Excel Avanzado', 'Power BI', 'Administración de Servicios 365 y Herramientas de Productividad 4.0'] },
+  { category: 'Publicidad', icon: 'FaAd', items: ['Google Ads'] },
+  { category: 'Análisis', icon: 'FaChartBar', items: ['Gestión de Procesos de Análisis de Negocio'] },
+  { category: 'Idiomas', icon: 'FaGlobe', items: ['Inglés'] },
+  { category: 'Seguridad', icon: 'FaShieldAlt', items: ['Apropiación de Conceptos en Ciberseguridad', 'Sistema de Gestión de la Seguridad y Salud en el Trabajo SG-SST'] },
+  { category: 'Salud', icon: 'FaHeartbeat', items: ['Nutrición y Alimentación en el Desarrollo Humano'] },
 ]
 
 const CF = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2F'
@@ -204,38 +204,38 @@ export const PROJECTS = [
 ]
 
 export const SKILLS = [
-  { name: 'Pensamiento Crítico y Analítico', pct: 95 },
-  { name: 'Producción audiovisual', pct: 90 },
-  { name: 'Análisis y Gestión de Datos', pct: 85 },
-  { name: 'Pruebas A/B y Optimización', pct: 95 },
-  { name: 'CRM HubSpot & Masivian', pct: 85 },
-  { name: 'Maquetado web con HTML/CSS', pct: 97 },
-  { name: 'Desarrollo con React, Vite y Tailwind CSS', pct: 89 },
-  { name: 'Programación en JavaScript & Python (AI)', pct: 85 },
+  { name: 'Pensamiento Crítico y Analítico', pct: 95, icon: 'FaBrain' },
+  { name: 'Producción audiovisual', pct: 90, icon: 'FaVideo' },
+  { name: 'Análisis y Gestión de Datos', pct: 85, icon: 'FaChartBar' },
+  { name: 'Pruebas A/B y Optimización', pct: 95, icon: 'FaFlask' },
+  { name: 'CRM HubSpot & Masivian', pct: 85, icon: 'FaHandshake' },
+  { name: 'Maquetado web con HTML/CSS', pct: 97, icon: 'FaCode' },
+  { name: 'Desarrollo con React, Vite y Tailwind CSS', pct: 89, icon: 'FaReact' },
+  { name: 'Programación en JavaScript & Python (AI)', pct: 85, icon: 'FaJsSquare' },
 ]
 
 export const SOFTWARE_TOOLS = [
-  { name: 'HubSpot & Masivian', cat: 'CRM' },
-  { name: 'EmailJS Automation', cat: 'Email Marketing' },
-  { name: 'Google Ads', cat: 'Advertising' },
-  { name: 'Meta Business Suite', cat: 'Social Media' },
-  { name: 'Google Analytics', cat: 'Analytics' },
-  { name: 'Visual Studio Code', cat: 'Development' },
-  { name: 'MySQL', cat: 'Database' },
-  { name: 'Canva', cat: 'Design' },
-  { name: 'CapCut', cat: 'Edit' },
-  { name: 'Figma', cat: 'Design Tools' },
+  { name: 'HubSpot & Masivian', cat: 'CRM', icon: 'FaHandshake' },
+  { name: 'EmailJS Automation', cat: 'Email Marketing', icon: 'FaEnvelope' },
+  { name: 'Google Ads', cat: 'Advertising', icon: 'FaAd' },
+  { name: 'Meta Business Suite', cat: 'Social Media', icon: 'FaFacebook' },
+  { name: 'Google Analytics', cat: 'Analytics', icon: 'FaChartLine' },
+  { name: 'Visual Studio Code', cat: 'Development', icon: 'FaCode' },
+  { name: 'MySQL', cat: 'Database', icon: 'FaDatabase' },
+  { name: 'Canva', cat: 'Design', icon: 'SiCanva' },
+  { name: 'CapCut', cat: 'Edit', icon: 'FaCut' },
+  { name: 'Figma', cat: 'Design Tools', icon: 'SiFigma' },
 ]
 
 export const DEV_STACK = [
-  { name: 'HTML5, CSS y JavaScript', desc: 'Arquitectura digital para sitios web modernos' },
-  { name: 'Frontend con ReactJS', desc: 'Interfaces dinámicas y adaptables' },
-  { name: 'Backend con NodeJS', desc: 'Servicios backend eficientes y confiables' },
-  { name: 'Bases de datos SQL', desc: 'Gestión inteligente de información y datos' },
-  { name: 'Git & GitHub', desc: 'Control de versiones y trabajo en equipo' },
-  { name: 'React Native', desc: 'Apps móviles nativas para Android y iOS' },
-  { name: 'Python', desc: 'Automatización e inteligencia artificial' },
-  { name: 'Vite + Tailwind CSS', desc: 'Desarrollo rápido y diseño elegante' },
+  { name: 'HTML5, CSS y JavaScript', desc: 'Arquitectura digital para sitios web modernos', icon: 'FaHtml5' },
+  { name: 'Frontend con ReactJS', desc: 'Interfaces dinámicas y adaptables', icon: 'FaReact' },
+  { name: 'Backend con NodeJS', desc: 'Servicios backend eficientes y confiables', icon: 'FaNodeJs' },
+  { name: 'Bases de datos SQL', desc: 'Gestión inteligente de información y datos', icon: 'FaDatabase' },
+  { name: 'Git & GitHub', desc: 'Control de versiones y trabajo en equipo', icon: 'FaGitAlt' },
+  { name: 'React Native', desc: 'Apps móviles nativas para Android y iOS', icon: 'FaMobileAlt' },
+  { name: 'Python', desc: 'Automatización e inteligencia artificial', icon: 'FaPython' },
+  { name: 'Vite + Tailwind CSS', desc: 'Desarrollo rápido y diseño elegante', icon: 'SiVite' },
 ]
 
 export const FAQ = [
@@ -264,9 +264,19 @@ export const REVIEWS = [
     text: 'Juan Pablo hizo realidad mi sueño de tener una tienda en línea. Su trabajo es increíble, todo se ve perfecto y fácil de usar. Mis ventas subieron mucho gracias a él.',
   },
   {
+    name: 'Sofia Ramírez',
+    role: 'Estudiante Universitaria — Proyecto Académico',
+    text: 'Juan Pablo me ayudó con mi tesis de grado. Su apoyo en el desarrollo académico fue excepcional, entregó todo a tiempo y con la calidad que necesitaba. ¡Altamente recomendado!',
+  },
+  {
     name: 'Carlos Rodríguez',
     role: 'Gerente de Marketing — Tech',
     text: 'Trabajar con Juan fue una gran experiencia. Sus ideas para promocionar nuestro negocio nos dieron mucho más alcance y conexión con la gente.',
+  },
+  {
+    name: 'Miguel Ángel',
+    role: 'Desarrollador Junior — Clases de Programación',
+    text: 'Las clases personalizadas de Juan Pablo fueron increíbles. Aprendí programación de manera práctica y aplicada. Los materiales y el certificado que incluye son un plus excelente.',
   },
   {
     name: 'Ana López',
@@ -274,25 +284,44 @@ export const REVIEWS = [
     text: 'Mi nuevo portafolio luce fantástico. Juan Pa lo hizo todo tan bonito y profesional que ahora recibo más trabajos. ¡Estoy encantada!',
   },
   {
+    name: 'Roberto Silva',
+    role: 'Emprendedor — Venta Online',
+    text: 'Juan Pablo optimizó mi tienda en MercadoLibre y otros marketplaces. Sus estrategias de publicación y gestión hicieron que mis ventas se multiplicaran. ¡Un experto en ventas digitales!',
+  },
+  {
     name: 'Pedro Martínez',
     role: 'Propietario — Restaurante Local',
     text: 'Desde que tengo mi sitio web, más personas vienen a mi restaurante. Todo está cuidado al detalle y es muy fácil de navegar tanto en móvil como en computadora.',
   },
+  {
+    name: 'Isabella Morales',
+    role: 'Profesional — Asesoría de CV',
+    text: 'Juan Pablo creó mi CV profesional y optimizado para ATS. Su asesoría fue clave para conseguir el trabajo de mis sueños. ¡Totalmente transformó mi presentación laboral!',
+  },
+  {
+    name: 'Laura Sánchez',
+    role: 'Directora de Marketing — Startup Innovadora',
+    text: 'Juan Pablo logra que cada foto y video se vean impecables. Su edición realza la calidad y aporta un toque creativo que hace destacar nuestro contenido.',
+  },
+  {
+    name: 'Diego Torres',
+    role: 'Consultor Independiente — Consultoría Digital',
+    text: 'La mezcla de creatividad y resultados es perfecta. Mi sitio web es rápido, atractivo y realmente trae más clientes.',
+  },
 ]
 
 export const SOCIAL_LINKS_FULL = [
-  { name: 'Facebook', url: 'https://www.facebook.com/juannppgd', cat: 'Social & Updates' },
-  { name: 'Instagram', url: 'https://www.instagram.com/juannppgd', cat: 'Visual Content' },
-  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/juannppgd', cat: 'Professional' },
-  { name: 'X', url: 'https://x.com/juannppgd', cat: 'Social Network' },
-  { name: 'TikTok', url: 'https://www.tiktok.com/@juannppgd', cat: 'Short Videos' },
-  { name: 'YouTube', url: 'https://www.youtube.com/@juannppgd', cat: 'Videos' },
-  { name: 'Telegram', url: 'https://t.me/juannppgd', cat: 'Secure Chat' },
-  { name: 'Pinterest', url: 'https://www.pinterest.com/juannppgd', cat: 'Inspiration' },
-  { name: 'Snapchat', url: 'https://www.snapchat.com/add/juannppgd', cat: 'Add Me' },
-  { name: 'Kick', url: 'https://kick.com/juannppgd', cat: 'Streaming' },
-  { name: 'Discord', url: 'https://discord.com/users/juannppgd', cat: 'Community' },
-  { name: 'Threads', url: 'https://www.threads.com/@juannppgd', cat: 'Social' },
-  { name: 'GitHub', url: 'https://github.com/juannppgd', cat: 'Code' },
-  { name: 'WhatsApp', url: 'https://wa.link/ukyqpg', cat: 'Chat' },
+  { name: 'Facebook', url: 'https://www.facebook.com/juannppgd', cat: 'Social & Updates', icon: 'FaFacebook' },
+  { name: 'Instagram', url: 'https://www.instagram.com/juannppgd', cat: 'Visual Content', icon: 'FaInstagram' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/juannppgd', cat: 'Professional', icon: 'FaLinkedin' },
+  { name: 'X', url: 'https://x.com/juannppgd', cat: 'Social Network', icon: 'SiX' },
+  { name: 'TikTok', url: 'https://www.tiktok.com/@juannppgd', cat: 'Short Videos', icon: 'FaTiktok' },
+  { name: 'YouTube', url: 'https://www.youtube.com/@juannppgd', cat: 'Videos', icon: 'FaYoutube' },
+  { name: 'Telegram', url: 'https://t.me/juannppgd', cat: 'Secure Chat', icon: 'FaTelegram' },
+  { name: 'Pinterest', url: 'https://www.pinterest.com/juannppgd', cat: 'Inspiration', icon: 'FaPinterest' },
+  { name: 'Snapchat', url: 'https://www.snapchat.com/add/juannppgd', cat: 'Add Me', icon: 'FaSnapchat' },
+  { name: 'Kick', url: 'https://kick.com/juannppgd', cat: 'Streaming', icon: 'SiKick' },
+  { name: 'Discord', url: 'https://discord.com/users/juannppgd', cat: 'Community', icon: 'FaDiscord' },
+  { name: 'Threads', url: 'https://www.threads.com/@juannppgd', cat: 'Social', icon: 'SiThreads' },
+  { name: 'WhatsApp', url: 'https://wa.link/ukyqpg', cat: 'Chat', icon: 'FaWhatsapp' },
 ]

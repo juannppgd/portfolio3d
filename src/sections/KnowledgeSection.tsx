@@ -1,16 +1,35 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import {
+  FaHtml5, FaReact, FaNodeJs, FaDatabase, FaGitAlt, FaMobileAlt, FaPython,
+  FaBrain, FaVideo, FaChartBar, FaFlask, FaHandshake, FaCode, FaJsSquare,
+  FaEnvelope, FaAd, FaFacebook, FaChartLine, FaCut,
+} from 'react-icons/fa'
+import { SiVite, SiCanva, SiFigma } from 'react-icons/si'
 import FadeIn from '../components/FadeIn'
 import { SKILLS, SOFTWARE_TOOLS, DEV_STACK } from '../data'
 
-function SkillBar({ name, pct, index }: { name: string; pct: number; index: number }) {
+type IconComponent = React.ComponentType<{ className?: string; size?: number }>
+
+const ICONS: Record<string, IconComponent> = {
+  FaHtml5, FaReact, FaNodeJs, FaDatabase, FaGitAlt, FaMobileAlt, FaPython,
+  FaBrain, FaVideo, FaChartBar, FaFlask, FaHandshake, FaCode, FaJsSquare,
+  FaEnvelope, FaAd, FaFacebook, FaChartLine, FaCut,
+  SiVite, SiCanva, SiFigma,
+}
+
+function SkillBar({ name, pct, index, icon }: { name: string; pct: number; index: number; icon?: string }) {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-50px' })
+  const Icon = icon ? ICONS[icon] : null
 
   return (
     <div ref={ref}>
       <div className="flex items-center justify-between mb-1.5">
-        <span className="font-mono text-sm" style={{ color: 'var(--text)' }}>{name}</span>
+        <span className="flex items-center gap-2 font-mono text-sm" style={{ color: 'var(--text)' }}>
+          {Icon && <span style={{ color: 'var(--accent)' }}><Icon size={14} /></span>}
+          {name}
+        </span>
         <span className="font-mono text-xs tabular-nums" style={{ color: 'var(--accent)' }}>{pct}%</span>
       </div>
       <div
@@ -35,7 +54,7 @@ export default function KnowledgeSection() {
   return (
     <section
       id="conocimientos"
-      className="px-6 md:px-12 py-20 md:py-16 lg:py-20 relative z-20"
+      className="px-6 md:px-12 pt-12 md:pt-10 lg:pt-12 pb-20 md:pb-16 lg:pb-20 relative z-20"
       style={{
         background: 'var(--bg)',
         borderTop: '1px solid var(--border)',
@@ -71,7 +90,7 @@ export default function KnowledgeSection() {
             <div className="space-y-4">
               {SKILLS.map((s, i) => (
                 <FadeIn key={s.name} delay={i * 0.05} y={10}>
-                  <SkillBar name={s.name} pct={s.pct} index={i} />
+                  <SkillBar name={s.name} pct={s.pct} index={i} icon={s.icon} />
                 </FadeIn>
               ))}
             </div>
@@ -96,7 +115,11 @@ export default function KnowledgeSection() {
                     onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent)' }}
                     onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
                   >
-                    <span className="font-syne font-bold text-[11px] uppercase tracking-tight mb-1.5" style={{ color: 'var(--white)' }}>
+                    <span className="flex items-center gap-1.5 font-syne font-bold text-[11px] uppercase tracking-tight mb-1.5" style={{ color: 'var(--white)' }}>
+                      {(() => {
+                        const Ic = t.icon ? ICONS[t.icon] : null
+                        return Ic ? <Ic size={12} /> : null
+                      })()}
                       {t.name}
                     </span>
                     <span
@@ -134,11 +157,21 @@ export default function KnowledgeSection() {
                   onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(79,127,255,0.3)' }}
                   onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
                 >
-                  <div
-                    className="font-syne font-bold text-xs uppercase tracking-tight mb-2"
-                    style={{ color: 'var(--white)' }}
-                  >
-                    {item.name}
+                  <div className="flex items-center gap-2 mb-2">
+                    {(() => {
+                      const Icon = ICONS[item.icon]
+                      return Icon ? (
+                        <span className="shrink-0" style={{ color: 'var(--accent)' }}>
+                          <Icon size={16} />
+                        </span>
+                      ) : null
+                    })()}
+                    <div
+                      className="font-syne font-bold text-xs uppercase tracking-tight"
+                      style={{ color: 'var(--white)' }}
+                    >
+                      {item.name}
+                    </div>
                   </div>
                   <p
                     className="font-mono text-xs font-light leading-relaxed"
