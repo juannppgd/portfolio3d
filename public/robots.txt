@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://juanpablogutierrez.space/sitemap.xml
+Sitemap: https://juanpablogd.com/sitemap.xml
