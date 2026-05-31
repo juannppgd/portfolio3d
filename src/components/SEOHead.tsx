@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 
-const SITE_URL = 'https://juanpablogutierrez.space'
-const BASE = '/portfolio3d'
+const SITE_URL = 'https://juanpablogd.com'
+const BASE = ''
 const DEFAULT_OG_IMAGE = `${SITE_URL}/apple-touch-icon.png`
 
 interface SEOHeadProps {

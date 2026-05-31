@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import { ViteMinifyPlugin } from 'vite-plugin-minify'
 
 export default defineConfig({
-  base: '/portfolio3d/',
+  base: '/',
   plugins: [
     react(),
     ViteMinifyPlugin({}),

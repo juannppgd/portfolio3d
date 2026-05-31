@@ -1,5 +1,5 @@
-const SITE_URL = 'https://juanpablogutierrez.space'
-const BASE = '/portfolio3d'
+const SITE_URL = 'https://juanpablogd.com'
+const BASE = ''
 
 export const personSchema = {
   '@context': 'https://schema.org',
