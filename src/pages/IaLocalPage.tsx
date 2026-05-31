@@ -276,7 +276,7 @@ export default function IaLocalPage() {
                     href={wa('Hola, vine por el servicio de IA local (B2B)')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-full font-syne font-bold text-sm tracking-widest uppercase text-white transition-transform duration-250 hover:-translate-y-1 self-start"
+                    className="inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-full font-syne font-bold text-sm tracking-widest uppercase text-white transition-transform duration-200 hover:-translate-y-1 self-start"
                     style={{
                       background: 'linear-gradient(135deg,#4F7FFF,#00E5C3)',
                       boxShadow: '0 0 40px rgba(79,127,255,0.25)',

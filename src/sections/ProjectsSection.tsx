@@ -61,7 +61,7 @@ function ProjectCard({ project, index, total }: CardProps) {
             </span>
           </div>
           <button
-            className="self-start sm:self-auto flex items-center gap-2 font-mono text-xs tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-250 hover:border-accent hover:text-accent"
+            className="self-start sm:self-auto flex items-center gap-2 font-mono text-xs tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-200 hover:border-accent hover:text-accent"
             style={{ border: '1px solid var(--border)', color: 'var(--muted)', background: 'transparent' }}
           >
             ↗ Ver proyecto
@@ -80,6 +80,8 @@ function ProjectCard({ project, index, total }: CardProps) {
                 src={src}
                 alt={`${project.name} ${i + 1}`}
                 loading="lazy"
+                width={640}
+                height={360}
                 className="flex-1 w-full object-cover min-h-0"
                 style={{ borderRadius: 20 }}
               />
@@ -89,6 +91,8 @@ function ProjectCard({ project, index, total }: CardProps) {
             src={project.col2}
             alt={project.name}
             loading="lazy"
+            width={960}
+            height={540}
             className="w-full h-full object-cover"
             style={{ borderRadius: 20 }}
           />

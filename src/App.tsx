@@ -4,7 +4,6 @@ import { HelmetProvider } from 'react-helmet-async'
 import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import HeroSection from './sections/HeroSection'
-import Chatbot from './components/Chatbot'
 import SEOHead from './components/SEOHead'
 import JsonLd from './components/JsonLd'
 import { PAGE_META } from './data/pageSeo'
@@ -42,6 +41,7 @@ const OptimizacionCVPage = lazy(() => import('./pages/OptimizacionCVPage'))
 const PlantillaGastosPage = lazy(() => import('./pages/PlantillaGastosPage'))
 const PlantillaHabitosPage = lazy(() => import('./pages/PlantillaHabitosPage'))
 const IaLocalPage = lazy(() => import('./pages/IaLocalPage'))
+const Chatbot = lazy(() => import('./components/Chatbot'))
 
 type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local'
 
@@ -124,19 +124,21 @@ function HomePage() {
       <Suspense fallback={<SectionFallback />}><FaqSection /></Suspense>
       <Suspense fallback={<SectionFallback />}><ContactSection /></Suspense>
       <Suspense fallback={<SectionFallback />}><Footer /></Suspense>
-      <Chatbot
-        onShare={() => {
-          const url = window.location.href
-          if (navigator.share) {
-            navigator.share({ title: 'Juan Pablo Portfolio', url })
-          } else {
-            navigator.clipboard?.writeText(url)
-          }
-        }}
-        onScrollToContact={() => scrollToSection('contacto')}
-        onScrollToFooter={() => scrollToSection('footer')}
-        onNavigateToPage={(page) => navigate(`/${page}`)}
-      />
+      <Suspense fallback={null}>
+        <Chatbot
+          onShare={() => {
+            const url = window.location.href
+            if (navigator.share) {
+              navigator.share({ title: 'Juan Pablo Portfolio', url })
+            } else {
+              navigator.clipboard?.writeText(url)
+            }
+          }}
+          onScrollToContact={() => scrollToSection('contacto')}
+          onScrollToFooter={() => scrollToSection('footer')}
+          onNavigateToPage={(page) => navigate(`/${page}`)}
+        />
+      </Suspense>
     </>
   )
 }

@@ -29,7 +29,9 @@ export default defineConfig({
         manualChunks: {
           'framer-motion': ['framer-motion'],
           'react-vendor': ['react', 'react-dom'],
+          'router': ['react-router-dom'],
           'helmet': ['react-helmet-async'],
+          'icons': ['react-icons'],
         },
       },
     },

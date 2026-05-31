@@ -108,7 +108,7 @@ export default function VentasOnlinePage() {
 
                   <a
                     href={store.url}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-syne font-bold text-sm uppercase tracking-tight text-white transition-transform duration-250 hover:-translate-y-1"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-syne font-bold text-sm uppercase tracking-tight text-white transition-transform duration-200 hover:-translate-y-1"
                     style={{
                       background: store.color,
                       boxShadow: `0 0 30px ${store.color}40`,

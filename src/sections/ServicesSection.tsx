@@ -142,7 +142,7 @@ export default function ServicesSection() {
 
               <button
                 onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
-                className="self-center font-syne font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-250 hover:-translate-y-0.5"
+                className="self-center font-syne font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-200 hover:-translate-y-0.5"
                 style={{
                   background: 'linear-gradient(135deg,#4F7FFF,#00E5C3)',
                   color: '#FFFFFF',
@@ -264,7 +264,7 @@ export default function ServicesSection() {
                   </p>
                   <button
                     onClick={() => { if (servicePage) openPage(servicePage) }}
-                    className="self-center font-syne font-bold text-[11px] tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-250 hover:-translate-y-0.5 mt-auto"
+                    className="self-center font-syne font-bold text-[11px] tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 mt-auto"
                     style={{
                       background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
                       color: '#fff',
@@ -339,7 +339,7 @@ export default function ServicesSection() {
                       const page = getServicePage(t.title)
                       if (page) openPage(page)
                     }}
-                    className="font-syne font-bold text-[11px] tracking-widest uppercase px-4 py-2 rounded-full transition-all duration-250"
+                    className="font-syne font-bold text-[11px] tracking-widest uppercase px-4 py-2 rounded-full transition-all duration-200"
                     style={{
                       border: '1px solid var(--accent)',
                       color: 'var(--accent)',

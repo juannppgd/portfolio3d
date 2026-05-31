@@ -300,7 +300,7 @@ export default function ContactSection() {
                     disabled={isSubmitting}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full font-syne font-bold text-xs tracking-widest uppercase px-8 py-4 rounded-full transition-all duration-250 disabled:opacity-50 disabled:pointer-events-none"
+                    className="w-full font-syne font-bold text-xs tracking-widest uppercase px-8 py-4 rounded-full transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none"
                     style={{
                       background: 'linear-gradient(135deg,#4F7FFF,#00E5C3)',
                       color: '#FFFFFF',
