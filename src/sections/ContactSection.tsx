@@ -4,8 +4,8 @@ import { FaLinkedin, FaInstagram } from 'react-icons/fa'
 import FadeIn from '../components/FadeIn'
 
 const SOCIAL_LINKS = [
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/juanpablogutierrez', color: '#0A66C2', icon: 'in' },
-  { label: 'Instagram', href: 'https://instagram.com/juanpablogutierrez', color: '#E4405F', icon: 'ig' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/juannppgd', color: '#0A66C2', icon: 'in' },
+  { label: 'Instagram', href: 'https://www.instagram.com/juannppgd', color: '#E4405F', icon: 'ig' },
 ]
 
 const validateEmail = (email: string) => {

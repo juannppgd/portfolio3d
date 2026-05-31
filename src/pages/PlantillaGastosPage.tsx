@@ -10,7 +10,7 @@ export default function PlantillaGastosPage() {
   return (
     <main className="min-h-screen" style={{ background: 'var(--bg)' }}>
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center px-6 md:px-12 pt-32 pb-20">
+      <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-center px-6 md:px-12 pt-24 md:pt-32 pb-16 md:pb-20 overflow-hidden">
         <div
           className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full"
           style={{ background: 'radial-gradient(ellipse,rgba(79,127,255,0.1) 0%,transparent 70%)' }}
@@ -19,8 +19,8 @@ export default function PlantillaGastosPage() {
         <div className="max-w-5xl mx-auto text-center relative z-10 w-full">
           <FadeIn>
             <h1
-              className="font-syne font-black uppercase leading-tight tracking-tight break-words gradient-heading mb-6"
-              style={{ fontSize: 'clamp(32px,5vw,72px)' }}
+              className="font-syne font-black uppercase leading-tight tracking-tight break-words gradient-heading mb-4 md:mb-6"
+              style={{ fontSize: 'clamp(28px,5vw,72px)' }}
             >
               {PLANTILLA_GASTOS.hero.title}
             </h1>
@@ -28,7 +28,7 @@ export default function PlantillaGastosPage() {
 
           <FadeIn delay={0.1}>
             <p
-              className="font-mono text-sm md:text-base leading-relaxed mb-10 max-w-3xl mx-auto"
+              className="font-mono text-sm md:text-base leading-relaxed mb-8 md:mb-10 max-w-3xl mx-auto px-2"
               style={{ color: 'var(--muted)' }}
             >
               {PLANTILLA_GASTOS.hero.subtitle}
@@ -38,13 +38,13 @@ export default function PlantillaGastosPage() {
           {/* Pricing Card */}
           <FadeIn delay={0.2}>
             <div
-              className="inline-block p-8 md:p-10 rounded-3xl mb-8"
+              className="inline-block p-6 sm:p-8 md:p-10 rounded-3xl mb-8 w-full sm:w-auto"
               style={{
                 background: 'linear-gradient(135deg, rgba(79,127,255,0.1) 0%, rgba(0,229,195,0.1) 100%)',
                 border: '2px solid var(--accent)',
               }}
             >
-              <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-6">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 mb-6">
                 <div>
                   <p
                     className="font-mono text-xs tracking-widest uppercase mb-2"
@@ -53,7 +53,7 @@ export default function PlantillaGastosPage() {
                     Colombia
                   </p>
                   <p
-                    className="font-syne font-black text-3xl md:text-4xl"
+                    className="font-syne font-black text-2xl sm:text-3xl md:text-4xl"
                     style={{ color: 'var(--white)' }}
                   >
                     {PLANTILLA_GASTOS.pricing.colombia}
@@ -71,7 +71,7 @@ export default function PlantillaGastosPage() {
                     Internacional
                   </p>
                   <p
-                    className="font-syne font-black text-3xl md:text-4xl"
+                    className="font-syne font-black text-2xl sm:text-3xl md:text-4xl"
                     style={{ color: 'var(--white)' }}
                   >
                     {PLANTILLA_GASTOS.pricing.international}

@@ -12,8 +12,8 @@ export const personSchema = {
   url: SITE_URL + BASE,
   image: SITE_URL + '/apple-touch-icon.png',
   sameAs: [
-    'https://www.linkedin.com/in/juanpablogutierrez',
-    'https://www.instagram.com/juanpablogutierrez',
+    'https://www.linkedin.com/in/juannppgd',
+    'https://www.instagram.com/juannppgd',
     'https://www.facebook.com/juannppgd',
     'https://x.com/juannppgd',
   ],

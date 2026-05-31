@@ -7,18 +7,18 @@ export default function ApoyoAcademicoPage() {
   return (
     <main className="min-h-screen" style={{ background: 'var(--bg)' }}>
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center px-6 md:px-12 pt-32 pb-20">
+      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center px-6 md:px-12 pt-24 md:pt-32 pb-16 md:pb-20 overflow-hidden">
         {/* Gradient background */}
         <div
           className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full"
           style={{ background: 'radial-gradient(ellipse,rgba(79,127,255,0.08) 0%,transparent 70%)' }}
         />
 
-        <div className="max-w-5xl mx-auto text-center relative z-10">
+        <div className="w-full max-w-5xl mx-auto text-center relative z-10">
           <FadeIn>
             <h1
-              className="font-syne font-black uppercase leading-tight tracking-tight break-words gradient-heading mb-6"
-              style={{ fontSize: 'clamp(32px,5vw,72px)' }}
+              className="font-syne font-black uppercase leading-tight tracking-tight break-words gradient-heading mb-4 md:mb-6"
+              style={{ fontSize: 'clamp(28px,5vw,72px)' }}
             >
               {APOYO_ACADEMICO.hero.title}
             </h1>
@@ -26,7 +26,7 @@ export default function ApoyoAcademicoPage() {
 
           <FadeIn delay={0.1}>
             <p
-              className="font-mono text-sm md:text-base leading-relaxed mb-10 max-w-3xl mx-auto"
+              className="font-mono text-sm md:text-base leading-relaxed mb-8 md:mb-10 max-w-3xl mx-auto px-2"
               style={{ color: 'var(--muted)' }}
             >
               {APOYO_ACADEMICO.hero.subtitle}
@@ -35,19 +35,19 @@ export default function ApoyoAcademicoPage() {
 
           {/* Quick Stats */}
           <FadeIn delay={0.2}>
-            <div className="grid grid-cols-3 gap-4 md:gap-6 mb-12 max-w-2xl mx-auto">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 mb-8 md:mb-12 max-w-2xl mx-auto">
               {APOYO_ACADEMICO.quickStats.map((stat, i) => (
                 <div
                   key={i}
-                  className="p-4 md:p-6 rounded-2xl"
+                  className="p-3 sm:p-4 md:p-6 rounded-2xl"
                   style={{
                     background: 'var(--surface)',
                     border: '1px solid var(--border)',
                   }}
                 >
-                  <div className="text-2xl md:text-3xl mb-2">{stat.icon}</div>
+                  <div className="text-xl sm:text-2xl md:text-3xl mb-1 md:mb-2">{stat.icon}</div>
                   <p
-                    className="font-syne font-bold text-xs md:text-sm tracking-tight uppercase"
+                    className="font-syne font-bold text-[10px] sm:text-xs md:text-sm tracking-tight uppercase leading-tight"
                     style={{ color: 'var(--white)' }}
                   >
                     {stat.label}

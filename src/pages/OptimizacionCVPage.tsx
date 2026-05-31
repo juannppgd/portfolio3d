@@ -7,18 +7,18 @@ export default function OptimizacionCVPage() {
   return (
     <main className="min-h-screen" style={{ background: 'var(--bg)' }}>
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center px-6 md:px-12 pt-32 pb-20">
+      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center px-6 md:px-12 pt-24 md:pt-32 pb-16 md:pb-20 overflow-hidden">
         {/* Gradient background */}
         <div
           className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full"
           style={{ background: 'radial-gradient(ellipse,rgba(79,127,255,0.08) 0%,transparent 70%)' }}
         />
 
-        <div className="max-w-5xl mx-auto text-center relative z-10">
+        <div className="w-full max-w-5xl mx-auto text-center relative z-10">
           <FadeIn>
             <h1
-              className="font-syne font-black uppercase leading-tight tracking-tight break-words gradient-heading mb-6"
-              style={{ fontSize: 'clamp(32px,5vw,72px)' }}
+              className="font-syne font-black uppercase leading-tight tracking-tight break-words gradient-heading mb-4 md:mb-6"
+              style={{ fontSize: 'clamp(28px,5vw,72px)' }}
             >
               {OPTIMIZACION_CV.hero.title}
             </h1>
@@ -26,7 +26,7 @@ export default function OptimizacionCVPage() {
 
           <FadeIn delay={0.1}>
             <p
-              className="font-mono text-sm md:text-base leading-relaxed mb-10 max-w-3xl mx-auto"
+              className="font-mono text-sm md:text-base leading-relaxed mb-8 md:mb-10 max-w-3xl mx-auto px-2"
               style={{ color: 'var(--muted)' }}
             >
               {OPTIMIZACION_CV.hero.subtitle}

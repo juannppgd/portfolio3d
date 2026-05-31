@@ -147,7 +147,7 @@ export default function ServicesSection({ onNavigateToService }: ServicesSection
 
               <button
                 onClick={() => { if (onNavigateToService) { onNavigateToService('home'); document.querySelector('#contacto')?.scrollIntoView({ behavior: 'smooth' }) } }}
-                className="self-start font-syne font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-250 hover:-translate-y-0.5"
+                className="self-center font-syne font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-250 hover:-translate-y-0.5"
                 style={{
                   background: 'linear-gradient(135deg,#4F7FFF,#00E5C3)',
                   color: '#FFFFFF',
