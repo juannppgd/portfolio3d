@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import {
   FaGraduationCap, FaLaptopCode, FaStore, FaFileAlt,
   FaClock, FaLaptop, FaChartLine, FaServer, FaComments,
-  FaWallet, FaCalendarCheck, FaBrain,
+  FaWallet, FaCalendarCheck, FaBrain, FaCheck, FaCircle,
 } from 'react-icons/fa'
 import FadeIn from '../components/FadeIn'
 import { MAIN_SERVICES, SERVICE_BENEFITS, ADDITIONAL_SERVICES, TEMPLATES, LOCAL_AI } from '../data'
@@ -127,7 +127,7 @@ export default function ServicesSection() {
               <ul className="space-y-1.5 mb-4 flex-1">
                 {svc.targets.map((t) => (
                   <li key={t} className="flex items-start gap-2 font-mono text-sm" style={{ color: 'var(--text)' }}>
-                    <span style={{ color: 'var(--accent)' }}>•</span>
+                    <FaCircle size={5} style={{ color: 'var(--accent)', marginTop: 7 }} />
                     {t}
                   </li>
                 ))}
@@ -195,14 +195,14 @@ export default function ServicesSection() {
                     </span>
                   </div>
                 </div>
-                <ul className="space-y-2 flex-1">
-                  {b.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 font-mono text-sm" style={{ color: 'var(--text)' }}>
-                      <span style={{ color: 'var(--accent2)' }}>✓</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="space-y-2 flex-1">
+                    {b.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 font-mono text-sm" style={{ color: 'var(--text)' }}>
+                        <FaCheck size={12} style={{ color: 'var(--accent2)', marginTop: 3 }} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
               </div>
             </FadeIn>
           ))}

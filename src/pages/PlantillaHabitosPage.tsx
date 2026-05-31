@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { FaCheck, FaChevronDown } from 'react-icons/fa6'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
+import DataIcon from '../components/DataIcon'
 import { PLANTILLA_HABITOS } from './serviceData'
 import { wa } from '../lib/whatsapp'
 
@@ -91,7 +93,7 @@ export default function PlantillaHabitosPage() {
                     border: '1px solid var(--border)',
                   }}
                 >
-                  <div className="text-2xl sm:text-3xl md:text-4xl mb-2 md:mb-4">{feature.icon}</div>
+                  <div className="flex justify-center mb-2 md:mb-4" style={{ color: 'var(--accent)' }}><DataIcon icon={feature.icon} size={48} /></div>
                   <h3
                     className="font-syne font-bold tracking-tight uppercase text-[11px] sm:text-sm md:text-base leading-tight"
                     style={{ color: 'var(--accent)' }}
@@ -124,7 +126,7 @@ export default function PlantillaHabitosPage() {
                 className="font-syne font-bold uppercase mb-6 tracking-tight"
                 style={{ fontSize: 'clamp(18px,2vw,24px)', color: 'var(--accent)' }}
               >
-                📅 Visión Mensual con Checkboxes
+                <DataIcon icon="calendar" size={20} style={{ marginRight: 8 }} /> Visión Mensual con Checkboxes
               </h3>
               <div className="space-y-4">
                 {PLANTILLA_HABITOS.mockData.habits.map((habit, i) => (
@@ -140,7 +142,7 @@ export default function PlantillaHabitosPage() {
                       className="font-syne font-bold text-lg mb-3"
                       style={{ color: 'var(--white)' }}
                     >
-                      {habit.emoji} {habit.name}
+                      <DataIcon icon={habit.emoji} size={20} style={{ marginRight: 8 }} /> {habit.name}
                     </p>
                     <div className="flex gap-2">
                       {habit.progress.map((completed, dayIdx) => (
@@ -153,7 +155,7 @@ export default function PlantillaHabitosPage() {
                             color: completed ? 'white' : 'var(--muted)',
                           }}
                         >
-                          {completed ? '✓' : dayIdx + 1}
+                          {completed ? <FaCheck size={12} className="text-white" /> : dayIdx + 1}
                         </div>
                       ))}
                     </div>
@@ -170,7 +172,7 @@ export default function PlantillaHabitosPage() {
                 className="font-syne font-bold uppercase mb-4 md:mb-6 tracking-tight"
                 style={{ fontSize: 'clamp(16px,2vw,24px)', color: 'var(--accent)' }}
               >
-                📊 Tablero Anual
+                <DataIcon icon="chart" size={20} style={{ marginRight: 8 }} /> Tablero Anual
               </h3>
               <div className="grid grid-cols-3 gap-2 sm:gap-4">
                 <div
@@ -416,15 +418,14 @@ export default function PlantillaHabitosPage() {
                     >
                       {faq.q}
                     </h3>
-                    <span
-                      className="text-xl transition-transform duration-300"
+                    <FaChevronDown
+                      className="transition-transform duration-300"
+                      size={18}
                       style={{
                         transform: expandedFaq === i ? 'rotate(180deg)' : 'rotate(0deg)',
                         color: 'var(--accent)',
                       }}
-                    >
-                      ▼
-                    </span>
+                    />
                   </div>
 
                   {expandedFaq === i && (

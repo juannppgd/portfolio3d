@@ -1,7 +1,25 @@
+import { SiPython, SiJavascript, SiReact, SiMysql, SiHtml5, SiCss, SiNodedotjs, SiGit, SiGithub, SiVite, SiTailwindcss } from 'react-icons/si'
+import { FaFileExcel, FaGears } from 'react-icons/fa6'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
+import DataIcon from '../components/DataIcon'
 import { CLASES_PROGRAMACION } from './serviceData'
 import { wa } from '../lib/whatsapp'
+
+const TECH_CARDS = [
+  { name: 'HTML5 & CSS', icon: SiHtml5, color: '#E34F26' },
+  { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
+  { name: 'React JS', icon: SiReact, color: '#61DAFB' },
+  { name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
+  { name: 'SQL', icon: SiMysql, color: '#4479A1' },
+  { name: 'Git & GitHub', icon: SiGit, color: '#F05032' },
+  { name: 'React Native', icon: SiReact, color: '#61DAFB' },
+  { name: 'Python', icon: SiPython, color: '#3776AB' },
+  { name: 'Vite + Tailwind', icon: SiVite, color: '#646CFF' },
+  { name: 'Excel VBA', icon: FaFileExcel, color: '#217346' },
+  { name: 'Power Query', icon: FaGears, color: '#9747FF' },
+  { name: 'CSS3', icon: SiCss, color: '#1572B6' },
+]
 
 export default function ClasesProgramacionPage() {
   return (
@@ -160,15 +178,15 @@ export default function ClasesProgramacionPage() {
                     border: '1px solid var(--border)',
                   }}
                 >
-                  <div className="text-4xl mb-4">{benefit.icon}</div>
+                  <div className="flex justify-center mb-4" style={{ color: 'var(--accent)' }}><DataIcon icon={benefit.icon} size={48} /></div>
                   <h3
-                    className="font-syne font-bold mb-2 tracking-tight uppercase text-sm md:text-base"
+                    className="font-syne font-bold mb-2 tracking-tight uppercase text-sm md:text-base text-center"
                     style={{ color: 'var(--white)' }}
                   >
                     {benefit.title}
                   </h3>
                   <p
-                    className="font-mono text-xs md:text-sm leading-relaxed"
+                    className="font-mono text-xs md:text-sm leading-relaxed text-center"
                     style={{ color: 'var(--muted)' }}
                   >
                     {benefit.desc}
@@ -191,27 +209,63 @@ export default function ClasesProgramacionPage() {
       >
         <div className="max-w-6xl mx-auto text-center">
           <FadeIn>
+            <span
+              className="font-mono text-xs tracking-widest uppercase inline-block mb-3 px-4 py-2 rounded-full"
+              style={{ background: 'var(--bg)', color: 'var(--accent2)' }}
+            >
+              Stack tecnológico
+            </span>
             <h2
-              className="font-syne font-black uppercase mb-12 tracking-tight break-words gradient-heading"
+              className="font-syne font-black uppercase mb-4 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
               Lenguajes y tecnologías
             </h2>
+            <p
+              className="font-mono text-sm mb-12 max-w-2xl mx-auto"
+              style={{ color: 'var(--muted)' }}
+            >
+              Tecnologías que enseño en mis clases personalizadas
+            </p>
           </FadeIn>
 
-          <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-            {CLASES_PROGRAMACION.languages.map((lang, i) => (
-              <FadeIn key={i} delay={0.1 * i}>
-                <span
-                  className="px-5 py-2.5 rounded-full font-syne font-bold text-sm uppercase tracking-tight"
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+            {TECH_CARDS.map((tech, i) => (
+              <FadeIn key={tech.name} delay={0.08 * i}>
+                <div
+                  className="group relative p-5 sm:p-6 rounded-2xl flex flex-col items-center gap-3 transition-all duration-300 hover:translate-y-[-6px]"
                   style={{
                     background: 'var(--bg)',
-                    color: 'var(--accent)',
                     border: '1px solid var(--border)',
                   }}
                 >
-                  {lang}
-                </span>
+                  {/* Gradient glow on hover */}
+                  <div
+                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                    style={{
+                      background: `radial-gradient(ellipse at 50% 0%, ${tech.color}22 0%, transparent 70%)`,
+                    }}
+                  />
+
+                  {/* Icon container */}
+                  <div
+                    className="relative z-10 w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center text-lg sm:text-xl transition-transform duration-300 group-hover:scale-110"
+                    style={{
+                      background: `${tech.color}18`,
+                      color: tech.color,
+                    }}
+                  >
+                    <tech.icon />
+                  </div>
+
+                  {/* Name */}
+                  <span
+                    className="relative z-10 font-syne font-bold text-[11px] sm:text-xs leading-tight"
+                    style={{ color: 'var(--white)' }}
+                  >
+                    {tech.name}
+                  </span>
+                </div>
               </FadeIn>
             ))}
           </div>

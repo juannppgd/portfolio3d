@@ -1,5 +1,7 @@
+import { FaCheck, FaFaceSmile } from 'react-icons/fa6'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
+import DataIcon from '../components/DataIcon'
 import { OPTIMIZACION_CV } from './serviceData'
 import { wa } from '../lib/whatsapp'
 
@@ -131,7 +133,7 @@ export default function OptimizacionCVPage() {
                     className="font-mono text-xs md:text-sm"
                     style={{ color: 'var(--accent2)' }}
                   >
-                    ✓ Optimización estratégica que supera filtros de IA y atrae reclutadores reales.
+                    <FaCheck size={14} style={{ color: 'var(--accent2)', marginRight: 6 }} /> Optimización estratégica que supera filtros de IA y atrae reclutadores reales.
                   </p>
                 </div>
               </div>
@@ -162,9 +164,9 @@ export default function OptimizacionCVPage() {
                     border: '1px solid var(--border)',
                   }}
                 >
-                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <div className="flex justify-center mb-4" style={{ color: 'var(--accent)' }}><DataIcon icon={item.icon} size={48} /></div>
                   <h3
-                    className="font-syne font-bold tracking-tight uppercase text-sm md:text-base"
+                    className="font-syne font-bold tracking-tight uppercase text-sm md:text-base text-center"
                     style={{ color: 'var(--accent)' }}
                   >
                     {item.title}
@@ -202,48 +204,48 @@ export default function OptimizacionCVPage() {
                 }}
               />
 
-              <div className="relative z-10 text-center">
+              <div className="relative z-10 text-center px-2">
                 {/* Badge */}
                 <span
-                  className="inline-block px-4 py-2 rounded-full font-mono text-xs tracking-widest uppercase mb-6"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full font-mono text-xs tracking-widest uppercase mb-6"
                   style={{ background: '#FF6B6B20', color: '#FF6B6B' }}
                 >
-                  🎉 Oferta especial
+                  <FaFaceSmile size={14} /> Oferta especial
                 </span>
 
                 {/* Pricing */}
                 <h2
-                  className="font-syne font-black mb-4 tracking-tight"
-                  style={{ fontSize: 'clamp(28px,4vw,48px)', color: 'var(--white)' }}
+                  className="font-syne font-black mb-3 tracking-tight"
+                  style={{ fontSize: 'clamp(24px,5vw,48px)', color: 'var(--white)' }}
                 >
                   Optimización Completa
                 </h2>
 
-                <div className="mb-8">
-                  <div className="flex items-center justify-center gap-4 mb-4">
+                <div className="mb-6">
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-2">
                     <span
-                      className="font-syne font-bold text-xl line-through"
+                      className="font-syne font-bold text-lg sm:text-xl line-through"
                       style={{ color: 'var(--muted)' }}
                     >
                       {OPTIMIZACION_CV.pricing.original}
                     </span>
                     <span
-                      className="font-syne font-black text-4xl md:text-5xl"
+                      className="font-syne font-black text-4xl sm:text-5xl md:text-6xl"
                       style={{ color: 'var(--accent2)' }}
                     >
                       {OPTIMIZACION_CV.pricing.current}
                     </span>
                   </div>
-                  <p
-                    className="font-mono text-sm"
-                    style={{ color: '#FF6B6B' }}
+                  <span
+                    className="inline-block font-mono text-xs sm:text-sm px-3 py-1 rounded-full"
+                    style={{ background: '#FF6B6B20', color: '#FF6B6B' }}
                   >
                     {OPTIMIZACION_CV.pricing.savings}
-                  </p>
+                  </span>
                 </div>
 
                 <p
-                  className="font-mono text-sm leading-relaxed mb-8 max-w-md mx-auto"
+                  className="font-mono text-xs sm:text-sm leading-relaxed mb-8 max-w-md mx-auto"
                   style={{ color: 'var(--text)' }}
                 >
                   Incluye diseño profesional, contenido optimizado, análisis ATS y recomendaciones de presentación
@@ -265,19 +267,19 @@ export default function OptimizacionCVPage() {
               </p>
               <div className="flex justify-center gap-6 flex-wrap">
                 <div className="flex items-center gap-2">
-                  <span style={{ color: 'var(--accent)' }}>✓</span>
+                  <FaCheck size={12} style={{ color: 'var(--accent)' }} />
                   <span className="font-mono text-xs" style={{ color: 'var(--muted)' }}>
                     100% Confidencial
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span style={{ color: 'var(--accent)' }}>✓</span>
+                  <FaCheck size={12} style={{ color: 'var(--accent)' }} />
                   <span className="font-mono text-xs" style={{ color: 'var(--muted)' }}>
                     Revisiones ilimitadas
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span style={{ color: 'var(--accent)' }}>✓</span>
+                  <FaCheck size={12} style={{ color: 'var(--accent)' }} />
                   <span className="font-mono text-xs" style={{ color: 'var(--muted)' }}>
                     Soporte continuo
                   </span>

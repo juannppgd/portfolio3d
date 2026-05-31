@@ -6,15 +6,15 @@ export const APOYO_ACADEMICO = {
     subtitle: 'Calidad, cumplimiento y acompañamiento experto',
   },
   quickStats: [
-    { label: '100% Confidencial', icon: '🔒' },
-    { label: 'Calidad Garantizada', icon: '✓' },
-    { label: 'Entregas a Tiempo', icon: '⏱' },
+    { label: '100% Confidencial', icon: 'lock' },
+    { label: 'Calidad Garantizada', icon: 'check' },
+    { label: 'Entregas a Tiempo', icon: 'stopwatch' },
   ],
   helpWith: [
-    { title: 'Trabajos académicos', desc: 'Ensayos, investigaciones y documentos', icon: '📝' },
-    { title: 'Evaluaciones y talleres', desc: 'Preparación y desarrollo completo', icon: '📊' },
-    { title: 'Proyectos universitarios', desc: 'De cualquier disciplina académica', icon: '🎓' },
-    { title: 'Entregables virtuales', desc: 'Plataformas y formatos online', icon: '💻' },
+    { title: 'Trabajos académicos', desc: 'Ensayos, investigaciones y documentos', icon: 'file' },
+    { title: 'Evaluaciones y talleres', desc: 'Preparación y desarrollo completo', icon: 'chart' },
+    { title: 'Proyectos universitarios', desc: 'De cualquier disciplina académica', icon: 'graduation' },
+    { title: 'Entregables virtuales', desc: 'Plataformas y formatos online', icon: 'laptop' },
   ],
   valueProposition: [
     { title: 'Calidad académica', desc: 'Trabajos investigados, bien estructurados y con fuentes verificadas' },
@@ -41,7 +41,7 @@ export const APOYO_ACADEMICO = {
 
 export const CLASES_PROGRAMACION = {
   hero: {
-    title: 'Domina la programación con clases 1 a 1 Personalizadas',
+    title: 'Domina la programación con clases 1 a 1',
     subtitle: 'Aprende haciendo: clases prácticas, proyectos reales y acompañamiento continuo. Material y certificado incluidos',
   },
   stats: [
@@ -61,10 +61,10 @@ export const CLASES_PROGRAMACION = {
     bonuses: 'Material práctico + Plantillas descargables + Certificado',
   },
   benefits: [
-    { title: 'Clases 1 a 1', desc: 'Atención dedicada solo para ti', icon: '👤' },
-    { title: 'Personalizado', desc: 'Adaptado a tu nivel y ritmo', icon: '🎯' },
-    { title: 'Acompañamiento', desc: 'Apoyo continuo entre clases', icon: '🤝' },
-    { title: 'Proyectos reales', desc: 'Aprende aplicando tus conocimientos', icon: '💼' },
+    { title: 'Clases 1 a 1', desc: 'Atención dedicada solo para ti', icon: 'user' },
+    { title: 'Personalizado', desc: 'Adaptado a tu nivel y ritmo', icon: 'bullseye' },
+    { title: 'Acompañamiento', desc: 'Apoyo continuo entre clases', icon: 'handshake' },
+    { title: 'Proyectos reales', desc: 'Aprende aplicando tus conocimientos', icon: 'briefcase' },
   ],
   audience: [
     { persona: 'Principiantes', desc: 'Sin experiencia previa en programación' },
@@ -133,10 +133,10 @@ export const OPTIMIZACION_CV = {
     desc: 'Optimización completa, palabras clave estratégicas y diseño persuasivo para humanos',
   },
   includes: [
-    { title: 'Diseño y estructura profesional', icon: '🎨' },
-    { title: 'Contenido persuasivo', icon: '✍️' },
-    { title: 'Optimización ATS', icon: '🤖' },
-    { title: 'Recomendaciones de presentación', icon: '💡' },
+    { title: 'Diseño y estructura profesional', icon: 'palette' },
+    { title: 'Contenido persuasivo', icon: 'pen' },
+    { title: 'Optimización ATS', icon: 'robot' },
+    { title: 'Recomendaciones de presentación', icon: 'lightbulb' },
   ],
   pricing: {
     original: '$84 USD',
@@ -162,19 +162,19 @@ export const TESTIMONIALS = [
     name: 'Carlos Rodríguez',
     role: 'Ingeniero',
     rating: 5,
-    text: 'Las clases fueron perfectas para aprender',
+    text: 'Gracias a Juan mis ventas se dispararon en MercadoLibre',
   },
   {
     name: 'Miguel Ángel',
     role: 'Vendedor',
     rating: 5,
-    text: 'Aumenté mis ventas significativamente',
+    text: 'Mi negocio se potenció y ahora tengo más clientes',
   },
   {
     name: 'Ana López',
     role: 'Profesional',
     rating: 5,
-    text: 'Mi CV mejoró y conseguí la entrevista',
+    text: 'Ahora soy el vendedor número 1 en mi categoría',
   },
   {
     name: 'Roberto Silva',
@@ -195,19 +195,19 @@ export const PLANTILLA_GASTOS = {
     urgency: '37 personas viendo esto ahora',
   },
   features: [
-    { title: 'Control Diario/Semanal/Mensual', icon: '📅' },
-    { title: 'Colores Inteligentes', icon: '🎨' },
-    { title: 'Tablas Dinámicas', icon: '📊' },
-    { title: 'Regla 50/30/20', icon: '⚖️' },
-    { title: 'Compatible con móvil', icon: '📱' },
-    { title: 'Acceso en la nube', icon: '☁️' },
+    { title: 'Control Diario/Semanal/Mensual', icon: 'calendar' },
+    { title: 'Colores Inteligentes', icon: 'palette' },
+    { title: 'Tablas Dinámicas', icon: 'chart' },
+    { title: 'Regla 50/30/20', icon: 'scale' },
+    { title: 'Compatible con móvil', icon: 'mobile' },
+    { title: 'Acceso en la nube', icon: 'cloud' },
   ],
   mockData: {
     categories: [
-      { name: 'Comida', emoji: '🍕', amount: 45000, status: '✅' },
-      { name: 'Supermercado', emoji: '🛒', amount: 120000, status: '❌' },
-      { name: 'Transporte', emoji: '🚗', amount: 35000, status: '✅' },
-      { name: 'Entretenimiento', emoji: '🎮', amount: 25000, status: '✅' },
+      { name: 'Comida', emoji: 'pizzaSlice', amount: 45000, status: 'circleCheck' },
+      { name: 'Supermercado', emoji: 'cart', amount: 120000, status: 'circleXmark' },
+      { name: 'Transporte', emoji: 'car', amount: 35000, status: 'circleCheck' },
+      { name: 'Entretenimiento', emoji: 'gamepad', amount: 25000, status: 'circleCheck' },
     ],
     weekly: [
       { day: 'Lunes', percent: 85 },
@@ -277,19 +277,19 @@ export const PLANTILLA_HABITOS = {
     { label: 'Usuarios Activos', value: '+850' },
   ],
   features: [
-    { title: 'Progreso en %', icon: '📈' },
-    { title: 'Checkboxes Visuales', icon: '✅' },
-    { title: 'Gráficos Dinámicos', icon: '📊' },
-    { title: 'Heatmap Anual', icon: '🔥' },
-    { title: 'Metas y Rachas', icon: '🎯' },
-    { title: 'Copiable Mes a Mes', icon: '📋' },
+    { title: 'Progreso en %', icon: 'chartLine' },
+    { title: 'Checkboxes Visuales', icon: 'circleCheck' },
+    { title: 'Gráficos Dinámicos', icon: 'chart' },
+    { title: 'Heatmap Anual', icon: 'fire' },
+    { title: 'Metas y Rachas', icon: 'bullseye' },
+    { title: 'Copiable Mes a Mes', icon: 'clipboard' },
   ],
   mockData: {
     habits: [
-      { name: 'Gym', emoji: '🏋️', progress: [true, true, false, true, true, false, true] },
-      { name: 'Leer', emoji: '📖', progress: [true, true, true, false, true, true, false] },
-      { name: 'Meditación', emoji: '🧘', progress: [false, true, true, true, true, true, true] },
-      { name: 'Escribir', emoji: '✍️', progress: [true, false, true, true, false, true, true] },
+      { name: 'Gym', emoji: 'dumbbell', progress: [true, true, false, true, true, false, true] },
+      { name: 'Leer', emoji: 'book', progress: [true, true, true, false, true, true, false] },
+      { name: 'Meditación', emoji: 'spa', progress: [false, true, true, true, true, true, true] },
+      { name: 'Escribir', emoji: 'pen', progress: [true, false, true, true, false, true, true] },
     ],
     yearlyMetrics: {
       currentStreak: 12,
@@ -307,7 +307,7 @@ export const PLANTILLA_HABITOS = {
   ],
   science: [
     { title: 'Basado en Hábitos Atómicos', desc: 'James Clear - Cambios pequeños = Resultados enormes' },
-    { title: 'Refuerzo por Dopamina', desc: 'Ver checkboxes✅ activa recompensa cerebral' },
+    { title: 'Refuerzo por Dopamina', desc: 'Ver checkboxes activa recompensa cerebral' },
     { title: 'Rachas y Momentum', desc: '"Never break the chain" - Mantén el streak' },
     { title: 'Visualización Diaria', desc: 'Lo que ves, lo haces' },
   ],
@@ -341,12 +341,12 @@ export const IA_LOCAL = {
     subtitle: 'Modelos de lenguaje que corren nativamente en tu GPU o RAM. Sin límites de preguntas, sin suscripciones y con 100% de privacidad',
   },
   strengths: [
-    { icon: '🛡️', title: '100% Privado', desc: 'Tus datos NO salen de tu máquina' },
-    { icon: '♾️', title: 'Ilimitado', desc: 'Sin costo por API' },
-    { icon: '💸', title: 'Sin Suscripciones', desc: 'El modelo es tuyo' },
-    { icon: '🌐', title: 'Offline Nativo', desc: 'Funciona sin conexión' },
-    { icon: '⚡', title: 'Velocidad Local', desc: 'Uso de GPU' },
-    { icon: '🎯', title: 'Modular', desc: 'Elige según tu hardware' },
+    { icon: 'shield', title: '100% Privado', desc: 'Tus datos NO salen de tu máquina' },
+    { icon: 'infinity', title: 'Ilimitado', desc: 'Sin costo por API' },
+    { icon: 'money', title: 'Sin Suscripciones', desc: 'El modelo es tuyo' },
+    { icon: 'globe', title: 'Offline Nativo', desc: 'Funciona sin conexión' },
+    { icon: 'bolt', title: 'Velocidad Local', desc: 'Uso de GPU' },
+    { icon: 'bullseye', title: 'Modular', desc: 'Elige según tu hardware' },
   ],
   models: [
     { name: 'Llama 3.1 8B', ram: '6-8 GB', use: 'Razonamiento general y documentación' },

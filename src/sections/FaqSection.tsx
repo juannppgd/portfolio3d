@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { FaStar } from 'react-icons/fa'
 import FadeIn from '../components/FadeIn'
 import { FAQ, REVIEWS } from '../data'
 
@@ -140,7 +141,7 @@ export default function FaqSection() {
                 </p>
                 <div className="flex gap-1 mt-3">
                   {[1, 2, 3, 4, 5].map((s) => (
-                    <span key={s} className="text-[11px]" style={{ color: 'var(--accent)' }}>★</span>
+                    <FaStar key={s} size={11} style={{ color: 'var(--accent)' }} />
                   ))}
                 </div>
               </div>

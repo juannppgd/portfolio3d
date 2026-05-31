@@ -253,15 +253,6 @@ function CloseIcon() {
   )
 }
 
-function ResetIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21.5 2v6h-6" />
-      <path d="M21.5 8a9 9 0 1 0-2.3 5.8" />
-    </svg>
-  )
-}
-
 const initialMessage: Message = {
   role: 'assistant',
   content: '¡Hola! Soy el asistente programado de Juan Pablo. ¿En qué puedo ayudarte hoy?',
@@ -294,6 +285,7 @@ export default function Chatbot({
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = ''
+      setMessages([initialMessage])
     }
     return () => {
       document.body.style.overflow = ''
@@ -534,11 +526,11 @@ export default function Chatbot({
                 <motion.button
                   whileTap={{ scale: 0.9 }}
                   onClick={() => handleOptionClick('Reiniciar Chat')}
-                  className="p-2 rounded-lg"
-                  style={{ color: 'var(--muted)' }}
+                  className="px-3 py-1.5 rounded-lg text-xs font-medium"
+                  style={{ color: 'var(--muted)', border: '1px solid var(--border)' }}
                   aria-label="Reiniciar chat"
                 >
-                  <ResetIcon />
+                  Reiniciar
                 </motion.button>
               </div>
             </motion.div>

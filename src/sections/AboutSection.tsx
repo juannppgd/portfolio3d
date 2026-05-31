@@ -56,8 +56,8 @@ export default function AboutSection() {
           {/* Animated character-by-character text */}
           <p
             ref={paraRef}
-            className="leading-relaxed mb-8 relative break-words"
-            style={{ fontSize: 'clamp(0.95rem,1.8vw,1.15rem)', color: 'transparent', maxWidth: '100%' }}
+            className="leading-relaxed mb-8 relative break-words overflow-hidden"
+            style={{ fontSize: 'clamp(0.85rem,2.5vw,1.15rem)', color: 'transparent', maxWidth: '100%' }}
             aria-label={TEXT}
           >
             {chars.map((char, i) => {
@@ -77,7 +77,7 @@ export default function AboutSection() {
           </p>
 
           {/* Stats */}
-          <div className="flex gap-10 mb-2">
+          <div className="flex gap-4 md:gap-10 mb-2 flex-wrap">
             {[
               { num: '5+', label: 'Años de exp.' },
               { num: '30+', label: 'Proyectos' },
@@ -86,7 +86,7 @@ export default function AboutSection() {
               <div key={s.label}>
                 <div
                   className="font-syne font-black leading-none"
-                  style={{ fontSize: 36, color: 'var(--white)' }}
+                  style={{ fontSize: 'clamp(28px,6vw,36px)', color: 'var(--white)' }}
                 >
                   {s.num}
                 </div>

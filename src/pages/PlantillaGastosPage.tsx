@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { FaCheck, FaChevronDown, FaFire } from 'react-icons/fa6'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
+import DataIcon from '../components/DataIcon'
 import { PLANTILLA_GASTOS } from './serviceData'
 import { wa } from '../lib/whatsapp'
 
@@ -44,8 +46,8 @@ export default function PlantillaGastosPage() {
                 border: '2px solid var(--accent)',
               }}
             >
-              <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-10 mb-6">
-                <div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-8 mb-6 w-full">
+                <div className="p-4 md:p-6 rounded-2xl" style={{ background: 'rgba(79,127,255,0.08)', border: '1px solid rgba(79,127,255,0.2)' }}>
                   <p
                     className="font-mono text-xs tracking-widest uppercase mb-2"
                     style={{ color: 'var(--accent2)' }}
@@ -53,17 +55,13 @@ export default function PlantillaGastosPage() {
                     Colombia
                   </p>
                   <p
-                    className="font-syne font-black text-2xl sm:text-3xl md:text-4xl"
+                    className="font-syne font-black text-3xl md:text-4xl"
                     style={{ color: 'var(--white)' }}
                   >
                     {PLANTILLA_GASTOS.pricing.colombia}
                   </p>
                 </div>
-                <div
-                  className="hidden md:block w-px h-20"
-                  style={{ background: 'var(--border)' }}
-                />
-                <div>
+                <div className="p-4 md:p-6 rounded-2xl" style={{ background: 'rgba(0,229,195,0.08)', border: '1px solid rgba(0,229,195,0.2)' }}>
                   <p
                     className="font-mono text-xs tracking-widest uppercase mb-2"
                     style={{ color: 'var(--accent2)' }}
@@ -71,7 +69,7 @@ export default function PlantillaGastosPage() {
                     Internacional
                   </p>
                   <p
-                    className="font-syne font-black text-2xl sm:text-3xl md:text-4xl"
+                    className="font-syne font-black text-3xl md:text-4xl"
                     style={{ color: 'var(--white)' }}
                   >
                     {PLANTILLA_GASTOS.pricing.international}
@@ -79,12 +77,12 @@ export default function PlantillaGastosPage() {
                 </div>
               </div>
 
-              <p
-                className="font-mono text-sm mb-6"
-                style={{ color: '#FF6B6B' }}
-              >
-                🔥 {PLANTILLA_GASTOS.pricing.urgency}
-              </p>
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <FaFire size={18} style={{ color: '#FF6B6B' }} />
+                <span className="font-mono text-sm" style={{ color: '#FF6B6B' }}>
+                  {PLANTILLA_GASTOS.pricing.urgency}
+                </span>
+              </div>
 
               <ContactButton label="Comprar Ahora por WhatsApp" href={wa('Hola, quiero la plantilla de control de gastos')} />
             </div>
@@ -114,7 +112,7 @@ export default function PlantillaGastosPage() {
                     border: '1px solid var(--border)',
                   }}
                 >
-                  <div className="text-4xl mb-4">{feature.icon}</div>
+                  <div className="flex justify-center mb-4" style={{ color: 'var(--accent)' }}><DataIcon icon={feature.icon} size={48} /></div>
                   <h3
                     className="font-syne font-bold tracking-tight uppercase text-sm md:text-base"
                     style={{ color: 'var(--white)' }}
@@ -153,7 +151,7 @@ export default function PlantillaGastosPage() {
                 className="font-syne font-bold uppercase mb-6 tracking-tight"
                 style={{ fontSize: 'clamp(18px,2vw,24px)', color: 'var(--accent)' }}
               >
-                📅 Vista Mensual
+                <DataIcon icon="calendar" size={20} style={{ marginRight: 8 }} /> Vista Mensual
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {PLANTILLA_GASTOS.mockData.categories.map((cat, i) => (
@@ -168,10 +166,11 @@ export default function PlantillaGastosPage() {
                     <div className="flex items-center justify-between">
                       <div>
                         <p
-                          className="font-syne font-bold text-lg"
+                          className="font-syne font-bold text-lg flex items-center gap-2"
                           style={{ color: 'var(--white)' }}
                         >
-                          {cat.emoji} {cat.name}
+                          <DataIcon icon={cat.emoji} size={20} />
+                          {cat.name}
                         </p>
                         <p
                           className="font-mono text-sm"
@@ -180,7 +179,7 @@ export default function PlantillaGastosPage() {
                           ${cat.amount.toLocaleString()}
                         </p>
                       </div>
-                      <span className="text-2xl">{cat.status}</span>
+                      <DataIcon icon={cat.status} size={24} style={{ color: cat.status === 'circleCheck' ? 'var(--accent2)' : '#FF6B6B' }} />
                     </div>
                   </div>
                 ))}
@@ -195,7 +194,7 @@ export default function PlantillaGastosPage() {
                 className="font-syne font-bold uppercase mb-6 tracking-tight"
                 style={{ fontSize: 'clamp(18px,2vw,24px)', color: 'var(--accent)' }}
               >
-                📊 Progreso Semanal
+                <DataIcon icon="chart" size={20} style={{ marginRight: 8 }} /> Progreso Semanal
               </h3>
               <div className="space-y-3">
                 {PLANTILLA_GASTOS.mockData.weekly.map((day, i) => (
@@ -236,7 +235,7 @@ export default function PlantillaGastosPage() {
                 className="font-syne font-bold uppercase mb-6 tracking-tight"
                 style={{ fontSize: 'clamp(18px,2vw,24px)', color: 'var(--accent)' }}
               >
-                ⚖️ Regla 50/30/20
+                <DataIcon icon="scale" size={20} style={{ marginRight: 8 }} /> Regla 50/30/20
               </h3>
               <div className="space-y-3">
                 {PLANTILLA_GASTOS.mockData.distribution.map((dist, i) => (
@@ -455,7 +454,7 @@ export default function PlantillaGastosPage() {
                 className="font-syne font-black text-lg md:text-2xl mb-2"
                 style={{ color: 'var(--accent2)' }}
               >
-                ✓ {PLANTILLA_GASTOS.warranty}
+                <FaCheck size={20} style={{ marginRight: 10, verticalAlign: 'middle' }} /> {PLANTILLA_GASTOS.warranty}
               </p>
               <p
                 className="font-mono text-sm"
@@ -498,15 +497,14 @@ export default function PlantillaGastosPage() {
                     >
                       {faq.q}
                     </h3>
-                    <span
-                      className="text-xl transition-transform duration-300"
+                    <FaChevronDown
+                      className="transition-transform duration-300"
+                      size={18}
                       style={{
                         transform: expandedFaq === i ? 'rotate(180deg)' : 'rotate(0deg)',
                         color: 'var(--accent)',
                       }}
-                    >
-                      ▼
-                    </span>
+                    />
                   </div>
 
                   {expandedFaq === i && (

@@ -1,3 +1,4 @@
+import { FaStar, FaBox } from 'react-icons/fa6'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
 import { VENTAS_ONLINE, TESTIMONIALS } from './serviceData'
@@ -7,18 +8,18 @@ export default function VentasOnlinePage() {
   return (
     <main className="min-h-screen" style={{ background: 'var(--bg)' }}>
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center px-6 md:px-12 pt-32 pb-20">
+      <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-center px-6 md:px-12 pt-24 md:pt-32 pb-16 md:pb-20 overflow-hidden">
         {/* Gradient background */}
         <div
           className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full"
-          style={{ background: 'radial-gradient(ellipse,rgba(79,127,255,0.08) 0%,transparent 70%)' }}
+          style={{ background: 'radial-gradient(ellipse,rgba(79,127,255,0.12) 0%,transparent 70%)' }}
         />
 
-        <div className="max-w-5xl mx-auto text-center relative z-10">
+        <div className="max-w-4xl mx-auto text-center relative z-10 w-full">
           <FadeIn>
             <h1
-              className="font-syne font-black uppercase leading-tight tracking-tight break-words gradient-heading mb-6"
-              style={{ fontSize: 'clamp(32px,5vw,72px)' }}
+              className="font-syne font-black uppercase leading-tight tracking-tight break-words gradient-heading mb-4 md:mb-6"
+              style={{ fontSize: 'clamp(28px,5.5vw,72px)' }}
             >
               {VENTAS_ONLINE.hero.title}
             </h1>
@@ -26,7 +27,7 @@ export default function VentasOnlinePage() {
 
           <FadeIn delay={0.1}>
             <p
-              className="font-mono text-sm md:text-base leading-relaxed mb-10 max-w-3xl mx-auto"
+              className="font-mono text-xs sm:text-sm md:text-base leading-relaxed mb-10 md:mb-12 max-w-2xl mx-auto px-2"
               style={{ color: 'var(--muted)' }}
             >
               {VENTAS_ONLINE.hero.subtitle}
@@ -95,13 +96,13 @@ export default function VentasOnlinePage() {
                       className="font-mono text-sm flex items-center gap-2"
                       style={{ color: 'var(--accent2)' }}
                     >
-                      ⭐ {store.reputation}
+                      <FaStar size={16} style={{ color: 'var(--accent)' }} /> {store.reputation}
                     </p>
                     <p
                       className="font-mono text-sm flex items-center gap-2"
                       style={{ color: 'var(--muted)' }}
                     >
-                      📦 {store.sales}
+                      <FaBox size={16} style={{ color: 'var(--muted)', marginRight: 8 }} /> {store.sales}
                     </p>
                   </div>
 
@@ -197,9 +198,7 @@ export default function VentasOnlinePage() {
                 >
                   <div className="flex items-center gap-2 mb-4">
                     {[...Array(testimonial.rating)].map((_, j) => (
-                      <span key={j} style={{ color: 'var(--accent2)' }}>
-                        ⭐
-                      </span>
+                      <FaStar key={j} size={20} style={{ color: 'var(--accent2)' }} />
                     ))}
                   </div>
 

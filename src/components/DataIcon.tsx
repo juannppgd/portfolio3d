@@ -1,0 +1,60 @@
+import type { IconType } from 'react-icons/lib'
+import {
+  FaLock, FaCheck, FaStopwatch, FaFileLines, FaChartBar,
+  FaGraduationCap, FaLaptop, FaUser, FaBullseye, FaHandshake,
+  FaBriefcase, FaPalette, FaPen, FaRobot, FaLightbulb,
+  FaCalendar, FaScaleBalanced, FaMobile, FaCloud,
+  FaPizzaSlice, FaCartShopping, FaCar, FaGamepad,
+  FaCircleCheck, FaCircleXmark, FaChartLine, FaFire,
+  FaClipboard, FaDumbbell, FaBook, FaSpa, FaShield,
+  FaInfinity, FaMoneyBillWave, FaGlobe, FaBolt, FaStar,
+  FaFaceSmile, FaBox,
+} from 'react-icons/fa6'
+
+const ICON_MAP: Record<string, IconType> = {
+  lock: FaLock,
+  check: FaCheck,
+  stopwatch: FaStopwatch,
+  file: FaFileLines,
+  chart: FaChartBar,
+  graduation: FaGraduationCap,
+  laptop: FaLaptop,
+  user: FaUser,
+  bullseye: FaBullseye,
+  handshake: FaHandshake,
+  briefcase: FaBriefcase,
+  palette: FaPalette,
+  pen: FaPen,
+  robot: FaRobot,
+  lightbulb: FaLightbulb,
+  calendar: FaCalendar,
+  scale: FaScaleBalanced,
+  mobile: FaMobile,
+  cloud: FaCloud,
+  pizzaSlice: FaPizzaSlice,
+  cart: FaCartShopping,
+  car: FaCar,
+  gamepad: FaGamepad,
+  circleCheck: FaCircleCheck,
+  circleXmark: FaCircleXmark,
+  chartLine: FaChartLine,
+  fire: FaFire,
+  clipboard: FaClipboard,
+  dumbbell: FaDumbbell,
+  book: FaBook,
+  spa: FaSpa,
+  shield: FaShield,
+  infinity: FaInfinity,
+  money: FaMoneyBillWave,
+  globe: FaGlobe,
+  bolt: FaBolt,
+  star: FaStar,
+  faceSmile: FaFaceSmile,
+  box: FaBox,
+}
+
+export default function DataIcon({ icon, size = 20, className, style }: { icon: string; size?: number; className?: string; style?: React.CSSProperties }) {
+  const Icon = ICON_MAP[icon]
+  if (!Icon) return <span className={className} style={{ fontSize: size, ...style }}>{icon}</span>
+  return <Icon size={size} className={className} style={style} />
+}

@@ -1,5 +1,6 @@
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
+import DataIcon from '../components/DataIcon'
 import { APOYO_ACADEMICO } from './serviceData'
 import { wa } from '../lib/whatsapp'
 
@@ -45,7 +46,7 @@ export default function ApoyoAcademicoPage() {
                     border: '1px solid var(--border)',
                   }}
                 >
-                  <div className="text-xl sm:text-2xl md:text-3xl mb-1 md:mb-2">{stat.icon}</div>
+                  <div className="text-xl sm:text-2xl md:text-3xl mb-1 md:mb-2 flex justify-center" style={{ color: 'var(--accent)' }}><DataIcon icon={stat.icon} /></div>
                   <p
                     className="font-syne font-bold text-[10px] sm:text-xs md:text-sm tracking-tight uppercase leading-tight"
                     style={{ color: 'var(--white)' }}
@@ -94,15 +95,15 @@ export default function ApoyoAcademicoPage() {
                     border: '1px solid var(--border)',
                   }}
                 >
-                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <div className="flex justify-center mb-4" style={{ color: 'var(--accent)' }}><DataIcon icon={item.icon} size={48} /></div>
                   <h3
-                    className="font-syne font-bold mb-2 tracking-tight uppercase text-sm md:text-base"
+                    className="font-syne font-bold mb-2 tracking-tight uppercase text-sm md:text-base text-center"
                     style={{ color: 'var(--white)' }}
                   >
                     {item.title}
                   </h3>
                   <p
-                    className="font-mono text-xs md:text-sm leading-relaxed"
+                    className="font-mono text-xs md:text-sm leading-relaxed text-center"
                     style={{ color: 'var(--muted)' }}
                   >
                     {item.desc}

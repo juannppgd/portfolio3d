@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { FaCheck, FaChevronDown } from 'react-icons/fa6'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
+import DataIcon from '../components/DataIcon'
 import { IA_LOCAL } from './serviceData'
 import { wa } from '../lib/whatsapp'
 
@@ -69,15 +71,15 @@ export default function IaLocalPage() {
                     border: '1px solid var(--border)',
                   }}
                 >
-                  <div className="text-4xl mb-4">{strength.icon}</div>
+                  <div className="flex justify-center mb-4" style={{ color: 'var(--accent)' }}><DataIcon icon={strength.icon} size={48} /></div>
                   <h3
-                    className="font-syne font-bold mb-2 tracking-tight uppercase text-sm md:text-base"
+                    className="font-syne font-bold mb-2 tracking-tight uppercase text-sm md:text-base text-center"
                     style={{ color: 'var(--accent)' }}
                   >
                     {strength.title}
                   </h3>
                   <p
-                    className="font-mono text-xs md:text-sm leading-relaxed"
+                    className="font-mono text-xs md:text-sm leading-relaxed text-center"
                     style={{ color: 'var(--muted)' }}
                   >
                     {strength.desc}
@@ -262,7 +264,7 @@ export default function IaLocalPage() {
                         className="flex items-start gap-3 font-mono text-sm"
                         style={{ color: 'var(--text)' }}
                       >
-                        <span style={{ color: 'var(--accent2)' }}>✓</span>
+                        <FaCheck size={12} style={{ color: 'var(--accent2)', marginTop: 3 }} />
                         {feature}
                       </li>
                     ))}
@@ -399,15 +401,14 @@ export default function IaLocalPage() {
                     >
                       {faq.q}
                     </h3>
-                    <span
-                      className="text-xl transition-transform duration-300"
+                    <FaChevronDown
+                      className="transition-transform duration-300"
+                      size={18}
                       style={{
                         transform: expandedFaq === i ? 'rotate(180deg)' : 'rotate(0deg)',
                         color: 'var(--accent)',
                       }}
-                    >
-                      ▼
-                    </span>
+                    />
                   </div>
 
                   {expandedFaq === i && (

@@ -228,14 +228,14 @@ export const SOFTWARE_TOOLS = [
 ]
 
 export const DEV_STACK = [
-  { name: 'HTML5, CSS y JavaScript', desc: 'Arquitectura digital para sitios web modernos', icon: 'FaHtml5' },
-  { name: 'Frontend con ReactJS', desc: 'Interfaces dinámicas y adaptables', icon: 'FaReact' },
-  { name: 'Backend con NodeJS', desc: 'Servicios backend eficientes y confiables', icon: 'FaNodeJs' },
-  { name: 'Bases de datos SQL', desc: 'Gestión inteligente de información y datos', icon: 'FaDatabase' },
-  { name: 'Git & GitHub', desc: 'Control de versiones y trabajo en equipo', icon: 'FaGitAlt' },
-  { name: 'React Native', desc: 'Apps móviles nativas para Android y iOS', icon: 'FaMobileAlt' },
-  { name: 'Python', desc: 'Automatización e inteligencia artificial', icon: 'FaPython' },
-  { name: 'Vite + Tailwind CSS', desc: 'Desarrollo rápido y diseño elegante', icon: 'SiVite' },
+  { name: 'HTML5, CSS y JavaScript', desc: 'Arquitectura digital para sitios web modernos', icon: 'FaHtml5', color: '#E34F26' },
+  { name: 'Frontend con ReactJS', desc: 'Interfaces dinámicas y adaptables', icon: 'FaReact', color: '#61DAFB' },
+  { name: 'Backend con NodeJS', desc: 'Servicios backend eficientes y confiables', icon: 'FaNodeJs', color: '#339933' },
+  { name: 'Bases de datos SQL', desc: 'Gestión inteligente de información y datos', icon: 'FaDatabase', color: '#4479A1' },
+  { name: 'Git & GitHub', desc: 'Control de versiones y trabajo en equipo', icon: 'FaGitAlt', color: '#F05032' },
+  { name: 'React Native', desc: 'Apps móviles nativas para Android y iOS', icon: 'FaMobileAlt', color: '#61DAFB' },
+  { name: 'Python', desc: 'Automatización e inteligencia artificial', icon: 'FaPython', color: '#3776AB' },
+  { name: 'Vite + Tailwind CSS', desc: 'Desarrollo rápido y diseño elegante', icon: 'SiVite', color: '#646CFF' },
 ]
 
 export const FAQ = [

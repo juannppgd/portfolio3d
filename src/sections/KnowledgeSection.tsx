@@ -145,43 +145,51 @@ export default function KnowledgeSection() {
               // Mi Stack De Desarrollo
             </span>
           </FadeIn>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-            {DEV_STACK.map((item, i) => (
-              <FadeIn key={item.name} delay={i * 0.06} y={15}>
-                <div
-                  className="p-5 rounded-xl transition-all duration-300 hover:-translate-y-0.5"
-                  style={{
-                    border: '1px solid var(--border)',
-                    background: 'var(--surface)',
-                  }}
-                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(79,127,255,0.3)' }}
-                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
-                >
-                  <div className="flex items-center gap-2 mb-2">
-                    {(() => {
-                      const Icon = ICONS[item.icon]
-                      return Icon ? (
-                        <span className="shrink-0" style={{ color: 'var(--accent)' }}>
-                          <Icon size={16} />
-                        </span>
-                      ) : null
-                    })()}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+            {DEV_STACK.map((item, i) => {
+              const Icon = item.icon ? ICONS[item.icon] : null
+              return (
+                <FadeIn key={item.name} delay={i * 0.06} y={15}>
+                  <div
+                    className="group relative p-4 sm:p-5 rounded-2xl flex flex-col items-center gap-2 sm:gap-3 transition-all duration-300 hover:translate-y-[-6px]"
+                    style={{
+                      background: 'var(--surface)',
+                      border: '1px solid var(--border)',
+                    }}
+                  >
                     <div
-                      className="font-syne font-bold text-xs uppercase tracking-tight"
+                      className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                      style={{
+                        background: `radial-gradient(ellipse at 50% 0%, ${item.color}22 0%, transparent 70%)`,
+                      }}
+                    />
+                    {Icon && (
+                      <div
+                        className="relative z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center text-base sm:text-xl transition-transform duration-300 group-hover:scale-110"
+                        style={{
+                          background: `${item.color}18`,
+                          color: item.color,
+                        }}
+                      >
+                        <Icon size={20} />
+                      </div>
+                    )}
+                    <span
+                      className="relative z-10 font-syne font-bold text-[10px] sm:text-xs leading-tight text-center"
                       style={{ color: 'var(--white)' }}
                     >
                       {item.name}
-                    </div>
+                    </span>
+                    <p
+                      className="relative z-10 font-mono text-[9px] sm:text-[10px] leading-relaxed text-center"
+                      style={{ color: 'var(--muted)' }}
+                    >
+                      {item.desc}
+                    </p>
                   </div>
-                  <p
-                    className="font-mono text-xs font-light leading-relaxed"
-                    style={{ color: 'var(--muted)' }}
-                  >
-                    {item.desc}
-                  </p>
-                </div>
-              </FadeIn>
-            ))}
+                </FadeIn>
+              )
+            })}
           </div>
         </div>
       </div>
