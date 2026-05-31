@@ -65,7 +65,7 @@ export default function PlantillaHabitosPage() {
 
       {/* Features Section */}
       <section
-        className="px-6 md:px-12 py-20 md:py-24"
+        className="px-6 md:px-12 py-14 md:py-24"
         style={{
           background: 'var(--surface)',
           borderTop: '1px solid var(--border)',
@@ -74,26 +74,26 @@ export default function PlantillaHabitosPage() {
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <h2
-              className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
-              style={{ fontSize: 'clamp(28px,4vw,56px)' }}
+              className="font-syne font-black uppercase text-center mb-10 md:mb-16 tracking-tight break-words gradient-heading"
+              style={{ fontSize: 'clamp(24px,4vw,56px)' }}
             >
               Características clave
             </h2>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 sm:gap-6">
             {PLANTILLA_HABITOS.features.map((feature, i) => (
               <FadeIn key={i} delay={0.1 * i}>
                 <div
-                  className="p-6 md:p-8 rounded-2xl text-center h-full"
+                  className="p-4 sm:p-6 md:p-8 rounded-2xl text-center h-full"
                   style={{
                     background: 'var(--bg)',
                     border: '1px solid var(--border)',
                   }}
                 >
-                  <div className="text-4xl mb-4">{feature.icon}</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl mb-2 md:mb-4">{feature.icon}</div>
                   <h3
-                    className="font-syne font-bold tracking-tight uppercase text-sm md:text-base"
+                    className="font-syne font-bold tracking-tight uppercase text-[11px] sm:text-sm md:text-base leading-tight"
                     style={{ color: 'var(--accent)' }}
                   >
                     {feature.title}
@@ -167,67 +167,67 @@ export default function PlantillaHabitosPage() {
           <FadeIn delay={0.2}>
             <div>
               <h3
-                className="font-syne font-bold uppercase mb-6 tracking-tight"
-                style={{ fontSize: 'clamp(18px,2vw,24px)', color: 'var(--accent)' }}
+                className="font-syne font-bold uppercase mb-4 md:mb-6 tracking-tight"
+                style={{ fontSize: 'clamp(16px,2vw,24px)', color: 'var(--accent)' }}
               >
                 📊 Tablero Anual
               </h3>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4">
                 <div
-                  className="p-6 rounded-xl text-center"
+                  className="p-3 sm:p-4 md:p-6 rounded-xl text-center"
                   style={{
                     background: 'var(--surface)',
                     border: '1px solid var(--border)',
                   }}
                 >
                   <p
-                    className="font-syne font-black text-3xl mb-2"
+                    className="font-syne font-black text-xl sm:text-2xl md:text-3xl mb-1 md:mb-2"
                     style={{ color: 'var(--accent2)' }}
                   >
                     {PLANTILLA_HABITOS.mockData.yearlyMetrics.currentStreak}
                   </p>
                   <p
-                    className="font-mono text-xs uppercase tracking-tight"
+                    className="font-mono text-[10px] sm:text-xs uppercase tracking-tight leading-tight"
                     style={{ color: 'var(--muted)' }}
                   >
                     Racha actual
                   </p>
                 </div>
                 <div
-                  className="p-6 rounded-xl text-center"
+                  className="p-3 sm:p-4 md:p-6 rounded-xl text-center"
                   style={{
                     background: 'var(--surface)',
                     border: '1px solid var(--border)',
                   }}
                 >
                   <p
-                    className="font-syne font-black text-3xl mb-2"
+                    className="font-syne font-black text-xl sm:text-2xl md:text-3xl mb-1 md:mb-2"
                     style={{ color: 'var(--accent)' }}
                   >
                     {PLANTILLA_HABITOS.mockData.yearlyMetrics.bestMonth}%
                   </p>
                   <p
-                    className="font-mono text-xs uppercase tracking-tight"
+                    className="font-mono text-[10px] sm:text-xs uppercase tracking-tight leading-tight"
                     style={{ color: 'var(--muted)' }}
                   >
                     Mejor mes
                   </p>
                 </div>
                 <div
-                  className="p-6 rounded-xl text-center"
+                  className="p-3 sm:p-4 md:p-6 rounded-xl text-center"
                   style={{
                     background: 'var(--surface)',
                     border: '1px solid var(--border)',
                   }}
                 >
                   <p
-                    className="font-syne font-black text-3xl mb-2"
+                    className="font-syne font-black text-xl sm:text-2xl md:text-3xl mb-1 md:mb-2"
                     style={{ color: 'var(--accent)' }}
                   >
                     {PLANTILLA_HABITOS.mockData.yearlyMetrics.totalHabits}
                   </p>
                   <p
-                    className="font-mono text-xs uppercase tracking-tight"
+                    className="font-mono text-[10px] sm:text-xs uppercase tracking-tight leading-tight"
                     style={{ color: 'var(--muted)' }}
                   >
                     Total completados
