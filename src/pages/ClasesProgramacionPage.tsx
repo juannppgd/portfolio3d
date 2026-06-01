@@ -172,13 +172,13 @@ export default function ClasesProgramacionPage() {
             {CLASES_PROGRAMACION.benefits.map((benefit, i) => (
               <FadeIn key={i} delay={0.15 * i}>
                 <div
-                  className="p-6 md:p-8 rounded-2xl h-full transition-all duration-300 hover:translate-y-[-4px]"
+                  className="group p-6 md:p-8 rounded-2xl h-full transition-all duration-300 hover:translate-y-[-4px]"
                   style={{
                     background: 'var(--surface)',
                     border: '1px solid var(--border)',
                   }}
                 >
-                  <div className="flex justify-center mb-4" style={{ color: 'var(--accent)' }}><DataIcon icon={benefit.icon} size={48} /></div>
+                  <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl mx-auto mb-4 transition-transform duration-300 group-hover:scale-110" style={{ background: 'rgba(245,158,11,0.12)', color: '#F59E0B' }}><DataIcon icon={benefit.icon} size={24} /></div>
                   <h3
                     className="font-syne font-bold mb-2 tracking-tight uppercase text-sm md:text-base text-center"
                     style={{ color: 'var(--white)' }}

@@ -204,27 +204,27 @@ export const PROJECTS = [
 ]
 
 export const SKILLS = [
-  { name: 'Pensamiento Crítico y Analítico', pct: 95, icon: 'FaBrain' },
-  { name: 'Producción audiovisual', pct: 90, icon: 'FaVideo' },
+  { name: 'Resolución de Problemas Complejos', pct: 95, icon: 'FaBrain' },
+  { name: 'Estrategia de Contenido Digital', pct: 90, icon: 'FaVideo' },
   { name: 'Análisis y Gestión de Datos', pct: 85, icon: 'FaChartBar' },
-  { name: 'Pruebas A/B y Optimización', pct: 95, icon: 'FaFlask' },
-  { name: 'CRM HubSpot & Masivian', pct: 85, icon: 'FaHandshake' },
-  { name: 'Maquetado web con HTML/CSS', pct: 97, icon: 'FaCode' },
-  { name: 'Desarrollo con React, Vite y Tailwind CSS', pct: 89, icon: 'FaReact' },
-  { name: 'Programación en JavaScript & Python (AI)', pct: 85, icon: 'FaJsSquare' },
+  { name: 'Growth Hacking y Experimentación', pct: 95, icon: 'FaFlask' },
+  { name: 'Automatización de Ventas CRM', pct: 85, icon: 'FaHandshake' },
+  { name: 'Desarrollo Frontend Profesional', pct: 97, icon: 'FaCode' },
+  { name: 'React, Vite y Tailwind CSS', pct: 89, icon: 'FaReact' },
+  { name: 'JavaScript & Python con IA', pct: 85, icon: 'FaJsSquare' },
 ]
 
 export const SOFTWARE_TOOLS = [
-  { name: 'HubSpot & Masivian', cat: 'CRM', icon: 'FaHandshake' },
-  { name: 'EmailJS Automation', cat: 'Email Marketing', icon: 'FaEnvelope' },
-  { name: 'Google Ads', cat: 'Advertising', icon: 'FaAd' },
-  { name: 'Meta Business Suite', cat: 'Social Media', icon: 'FaFacebook' },
-  { name: 'Google Analytics', cat: 'Analytics', icon: 'FaChartLine' },
-  { name: 'Visual Studio Code', cat: 'Development', icon: 'FaCode' },
-  { name: 'MySQL', cat: 'Database', icon: 'FaDatabase' },
-  { name: 'Canva', cat: 'Design', icon: 'SiCanva' },
-  { name: 'CapCut', cat: 'Edit', icon: 'FaCut' },
-  { name: 'Figma', cat: 'Design Tools', icon: 'SiFigma' },
+  { name: 'HubSpot & Masivian', cat: 'CRM', icon: 'FaHandshake', color: '#FF7A59' },
+  { name: 'EmailJS Automation', cat: 'Email Marketing', icon: 'FaEnvelope', color: '#F6B915' },
+  { name: 'Google Ads', cat: 'Advertising', icon: 'FaAd', color: '#4285F4' },
+  { name: 'Meta Business Suite', cat: 'Social Media', icon: 'FaFacebook', color: '#1877F2' },
+  { name: 'Google Analytics', cat: 'Analytics', icon: 'FaChartLine', color: '#E37400' },
+  { name: 'Visual Studio Code', cat: 'Development', icon: 'FaCode', color: '#007ACC' },
+  { name: 'MySQL', cat: 'Database', icon: 'FaDatabase', color: '#4479A1' },
+  { name: 'Shopify', cat: 'E-Commerce', icon: 'SiShopify', color: '#96BF48' },
+  { name: 'WordPress', cat: 'CMS', icon: 'SiWordpress', color: '#21759B' },
+  { name: 'Canva', cat: 'Design', icon: 'SiCanva', color: '#00C4CC' },
 ]
 
 export const DEV_STACK = [
@@ -311,7 +311,7 @@ export const REVIEWS = [
 ]
 
 export const SOCIAL_LINKS_FULL = [
-  { name: 'Facebook', url: 'https://www.facebook.com/juannppgd', cat: 'Social & Updates', icon: 'FaFacebook' },
+  { name: 'Facebook', url: 'https://www.facebook.com/juannppgd', cat: 'Social', icon: 'FaFacebook' },
   { name: 'Instagram', url: 'https://www.instagram.com/juannppgd', cat: 'Visual Content', icon: 'FaInstagram' },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/juannppgd', cat: 'Professional', icon: 'FaLinkedin' },
   { name: 'X', url: 'https://x.com/juannppgd', cat: 'Social Network', icon: 'SiX' },

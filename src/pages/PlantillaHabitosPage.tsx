@@ -87,13 +87,13 @@ export default function PlantillaHabitosPage() {
             {PLANTILLA_HABITOS.features.map((feature, i) => (
               <FadeIn key={i} delay={0.1 * i}>
                 <div
-                  className="p-4 sm:p-6 md:p-8 rounded-2xl text-center h-full"
+                  className="group p-4 sm:p-6 md:p-8 rounded-2xl text-center h-full"
                   style={{
                     background: 'var(--bg)',
                     border: '1px solid var(--border)',
                   }}
                 >
-                  <div className="flex justify-center mb-2 md:mb-4" style={{ color: 'var(--accent)' }}><DataIcon icon={feature.icon} size={48} /></div>
+                  <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl mx-auto mb-2 md:mb-4 transition-transform duration-300 group-hover:scale-110" style={{ background: 'rgba(0,229,195,0.12)', color: '#00E5C3' }}><DataIcon icon={feature.icon} size={24} /></div>
                   <h3
                     className="font-syne font-bold tracking-tight uppercase text-[11px] sm:text-sm md:text-base leading-tight"
                     style={{ color: 'var(--accent)' }}

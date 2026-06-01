@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useEffect } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { ThemeProvider } from './context/ThemeContext'
@@ -42,6 +42,7 @@ const PlantillaGastosPage = lazy(() => import('./pages/PlantillaGastosPage'))
 const PlantillaHabitosPage = lazy(() => import('./pages/PlantillaHabitosPage'))
 const IaLocalPage = lazy(() => import('./pages/IaLocalPage'))
 const Chatbot = lazy(() => import('./components/Chatbot'))
+const ShareModal = lazy(() => import('./components/ShareModal'))
 
 type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local'
 
@@ -114,6 +115,8 @@ function HomePage() {
     }
   }, [location.state])
 
+  const [showShareModal, setShowShareModal] = useState(false)
+
   return (
     <>
       <HeroSection />
@@ -123,21 +126,17 @@ function HomePage() {
       <Suspense fallback={<SectionFallback />}><KnowledgeSection /></Suspense>
       <Suspense fallback={<SectionFallback />}><FaqSection /></Suspense>
       <Suspense fallback={<SectionFallback />}><ContactSection /></Suspense>
-      <Suspense fallback={<SectionFallback />}><Footer /></Suspense>
+      <Suspense fallback={<SectionFallback />}><Footer onShareClick={() => setShowShareModal(true)} /></Suspense>
       <Suspense fallback={null}>
         <Chatbot
-          onShare={() => {
-            const url = window.location.href
-            if (navigator.share) {
-              navigator.share({ title: 'Juan Pablo Portfolio', url })
-            } else {
-              navigator.clipboard?.writeText(url)
-            }
-          }}
+          onShare={() => setShowShareModal(true)}
           onScrollToContact={() => scrollToSection('contacto')}
           onScrollToFooter={() => scrollToSection('footer')}
           onNavigateToPage={(page) => navigate(`/${page}`)}
         />
+      </Suspense>
+      <Suspense fallback={null}>
+        <ShareModal isOpen={showShareModal} onClose={() => setShowShareModal(false)} />
       </Suspense>
     </>
   )

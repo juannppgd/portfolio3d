@@ -40,13 +40,13 @@ export default function ApoyoAcademicoPage() {
               {APOYO_ACADEMICO.quickStats.map((stat, i) => (
                 <div
                   key={i}
-                  className="p-3 sm:p-4 md:p-6 rounded-2xl"
+                  className="group p-3 sm:p-4 md:p-6 rounded-2xl"
                   style={{
                     background: 'var(--surface)',
                     border: '1px solid var(--border)',
                   }}
                 >
-                  <div className="text-xl sm:text-2xl md:text-3xl mb-1 md:mb-2 flex justify-center" style={{ color: 'var(--accent)' }}><DataIcon icon={stat.icon} /></div>
+                  <div className="flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-lg sm:rounded-xl mx-auto mb-1 md:mb-2 transition-transform duration-300 group-hover:scale-110" style={{ background: 'rgba(168,85,247,0.12)', color: '#A855F7' }}><DataIcon icon={stat.icon} size={18} /></div>
                   <p
                     className="font-syne font-bold text-[10px] sm:text-xs md:text-sm tracking-tight uppercase leading-tight"
                     style={{ color: 'var(--white)' }}
@@ -89,13 +89,13 @@ export default function ApoyoAcademicoPage() {
             {APOYO_ACADEMICO.helpWith.map((item, i) => (
               <FadeIn key={i} delay={0.15 * i}>
                 <div
-                  className="p-6 md:p-8 rounded-2xl h-full transition-all duration-300 hover:translate-y-[-4px]"
+                  className="group p-6 md:p-8 rounded-2xl h-full transition-all duration-300 hover:translate-y-[-4px]"
                   style={{
                     background: 'var(--surface)',
                     border: '1px solid var(--border)',
                   }}
                 >
-                  <div className="flex justify-center mb-4" style={{ color: 'var(--accent)' }}><DataIcon icon={item.icon} size={48} /></div>
+                  <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl mx-auto mb-4 transition-transform duration-300 group-hover:scale-110" style={{ background: 'rgba(168,85,247,0.12)', color: '#A855F7' }}><DataIcon icon={item.icon} size={24} /></div>
                   <h3
                     className="font-syne font-bold mb-2 tracking-tight uppercase text-sm md:text-base text-center"
                     style={{ color: 'var(--white)' }}

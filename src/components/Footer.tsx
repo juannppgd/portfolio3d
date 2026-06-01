@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import {
   FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaYoutube,
   FaTelegram, FaPinterest, FaSnapchat, FaDiscord, FaWhatsapp,
+  FaShareAlt,
 } from 'react-icons/fa'
 import { SiX, SiKick, SiThreads } from 'react-icons/si'
 import FadeIn from './FadeIn'
@@ -47,7 +48,11 @@ const SOCIAL_BG: Record<string, string> = {
   WhatsApp: 'rgba(37,211,102,0.1)',
 }
 
-export default function Footer() {
+interface FooterProps {
+  onShareClick?: () => void
+}
+
+export default function Footer({ onShareClick }: FooterProps) {
   return (
     <footer id="footer"
       className="px-6 md:px-12 pt-12 md:pt-10 lg:pt-12 pb-8 relative z-30"
@@ -128,6 +133,47 @@ export default function Footer() {
                 </motion.a>
               )
             })}
+
+            {/* Compartir */}
+            <motion.button
+              onClick={onShareClick}
+              className="group relative flex flex-col items-center gap-1.5 p-3.5 rounded-2xl transition-all duration-300 hover:-translate-y-1"
+              style={{
+                border: '1px solid var(--border)',
+                background: 'transparent',
+                overflow: 'hidden',
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35, delay: SOCIAL_LINKS_FULL.length * 0.04, ease: [0.25, 0.1, 0.25, 1] }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'var(--accent)'
+                e.currentTarget.style.background = 'rgba(79,127,255,0.1)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'var(--border)'
+                e.currentTarget.style.background = 'transparent'
+              }}
+            >
+              <div
+                className="flex items-center justify-center w-8 h-8 rounded-full transition-transform duration-300 group-hover:scale-110"
+                style={{ background: 'rgba(79,127,255,0.1)', color: 'var(--accent)' }}
+              >
+                <FaShareAlt size={18} />
+              </div>
+              <span
+                className="font-syne font-bold text-xs uppercase tracking-tight transition-colors duration-300"
+                style={{ color: 'var(--white)' }}
+              >
+                Compartir
+              </span>
+              <span
+                className="font-mono text-[9px] tracking-widest uppercase transition-colors duration-300"
+                style={{ color: 'var(--muted)' }}
+              >
+                Esta página
+              </span>
+            </motion.button>
           </div>
         </div>
 
@@ -145,33 +191,35 @@ export default function Footer() {
             </p>
           </FadeIn>
 
-          {/* Right: compartir + pagos */}
+          {/* Right: métodos de pago */}
           <div>
             <FadeIn y={15}>
-              <button
-                onClick={() => { navigator.clipboard?.writeText(window.location.href) }}
-                className="font-mono text-xs tracking-widest uppercase px-5 py-3 rounded-full transition-all duration-200 hover:text-accent"
-                style={{ border: '1px solid var(--border)', color: 'var(--muted)' }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent)' }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
-              >
-                Comparte este sitio web
-              </button>
-              <div className="mt-4">
-                <span className="font-mono text-[10px] tracking-widest uppercase block mb-2" style={{ color: 'var(--muted)' }}>
-                  Métodos de pago aceptados
-                </span>
-                <div className="flex flex-wrap gap-x-3 gap-y-1">
-                  {['PayPal', 'Transferencias', 'Llaves', 'PSE', 'Efecty', 'Tarjetas'].map((m) => (
-                    <span
-                      key={m}
-                      className="font-mono text-[10px] tracking-widest px-2 py-0.5 rounded-full"
-                      style={{ background: 'var(--surface)', color: 'var(--accent)', border: '1px solid var(--border)' }}
-                    >
-                      {m}
-                    </span>
-                  ))}
-                </div>
+              <span className="font-mono text-[10px] tracking-widest uppercase block mb-2" style={{ color: 'var(--muted)' }}>
+                Métodos de pago aceptados
+              </span>
+              <div className="flex flex-wrap gap-x-3 gap-y-1">
+                {['PayPal', 'Transferencias', 'Llaves', 'PSE', 'Efecty', 'Tarjetas'].map((m) => (
+                  <span
+                    key={m}
+                    className="font-mono text-[10px] tracking-widest px-2 py-0.5 rounded-full"
+                    style={{ background: 'var(--surface)', color: 'var(--accent)', border: '1px solid var(--border)' }}
+                  >
+                    {m}
+                  </span>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-x-3 mt-3">
+                {['Sobre mí', 'Servicios', 'Conocimientos', 'Contacto'].map((l, i) => (
+                  <a
+                    key={l}
+                    href={`#${l === 'Sobre mí' ? 'about' : l === 'Conocimientos' ? 'conocimientos' : l.toLowerCase()}`}
+                    className="font-mono text-[10px] tracking-widest uppercase transition-colors duration-200 hover:text-accent"
+                    style={{ color: 'var(--muted)' }}
+                  >
+                    {i > 0 && <span className="mr-3" style={{ color: 'var(--border)' }}>/</span>}
+                    {l}
+                  </a>
+                ))}
               </div>
             </FadeIn>
           </div>

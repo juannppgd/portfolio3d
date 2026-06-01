@@ -5,7 +5,7 @@ import {
   FaBrain, FaVideo, FaChartBar, FaFlask, FaHandshake, FaCode, FaJsSquare,
   FaEnvelope, FaAd, FaFacebook, FaChartLine, FaCut,
 } from 'react-icons/fa'
-import { SiVite, SiCanva, SiFigma } from 'react-icons/si'
+import { SiVite, SiCanva, SiShopify, SiWordpress } from 'react-icons/si'
 import FadeIn from '../components/FadeIn'
 import { SKILLS, SOFTWARE_TOOLS, DEV_STACK } from '../data'
 
@@ -15,7 +15,7 @@ const ICONS: Record<string, IconComponent> = {
   FaHtml5, FaReact, FaNodeJs, FaDatabase, FaGitAlt, FaMobileAlt, FaPython,
   FaBrain, FaVideo, FaChartBar, FaFlask, FaHandshake, FaCode, FaJsSquare,
   FaEnvelope, FaAd, FaFacebook, FaChartLine, FaCut,
-  SiVite, SiCanva, SiFigma,
+  SiVite, SiCanva, SiShopify, SiWordpress,
 }
 
 function SkillBar({ name, pct, index, icon }: { name: string; pct: number; index: number; icon?: string }) {
@@ -104,10 +104,12 @@ export default function KnowledgeSection() {
               </span>
             </FadeIn>
             <div className="grid grid-cols-2 gap-3">
-              {SOFTWARE_TOOLS.map((t, i) => (
+              {SOFTWARE_TOOLS.map((t, i) => {
+                const Ic = t.icon ? ICONS[t.icon] : null
+                return (
                 <FadeIn key={t.name} delay={i * 0.04} y={10}>
                   <div
-                    className="flex flex-col p-3.5 rounded-xl min-h-0 transition-all duration-300 hover:-translate-y-0.5"
+                    className="group relative p-4 rounded-xl min-h-0 transition-all duration-300 hover:-translate-y-0.5"
                     style={{
                       border: '1px solid var(--border)',
                       background: 'var(--surface)',
@@ -115,25 +117,28 @@ export default function KnowledgeSection() {
                     onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent)' }}
                     onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
                   >
-                    <span className="flex items-center gap-1.5 font-syne font-bold text-[11px] uppercase tracking-tight mb-1.5" style={{ color: 'var(--white)' }}>
-                      {(() => {
-                        const Ic = t.icon ? ICONS[t.icon] : null
-                        return Ic ? <Ic size={12} /> : null
-                      })()}
+                    <div
+                      className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                      style={{
+                        background: `radial-gradient(ellipse at 50% 0%, ${t.color}22 0%, transparent 70%)`,
+                      }}
+                    />
+                    <span className="relative z-10 flex items-center gap-1.5 font-syne font-bold text-[11px] uppercase tracking-tight mb-1.5" style={{ color: 'var(--white)' }}>
+                      {Ic && (
+                        <div
+                          className="w-7 h-7 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                          style={{ background: `${t.color}18`, color: t.color }}
+                        >
+                          <Ic size={14} />
+                        </div>
+                      )}
                       {t.name}
                     </span>
-                    <span
-                      className="self-start font-mono text-[9px] tracking-widest uppercase px-2 py-0.5 rounded-full"
-                      style={{
-                        border: '1px solid var(--border)',
-                        color: 'var(--muted)',
-                      }}
-                    >
-                      {t.cat}
-                    </span>
+
                   </div>
                 </FadeIn>
-              ))}
+                )
+              })}
             </div>
           </div>
         </div>

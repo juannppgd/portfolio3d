@@ -80,7 +80,7 @@ export default function ServicesSection() {
         {MAIN_SERVICES.map((svc, i) => (
           <FadeIn key={svc.id} delay={i * 0.1} y={30}>
             <div
-              className="relative p-6 md:p-8 h-full flex flex-col transition-all duration-300 hover:-translate-y-1"
+              className="group relative p-6 md:p-8 h-full flex flex-col transition-all duration-300 hover:-translate-y-1"
               style={{
                 border: '1px solid var(--border)',
                 borderRadius: 32,
@@ -91,12 +91,13 @@ export default function ServicesSection() {
             >
               <div className="flex items-center gap-4 mb-4">
                 <div
-                  className="flex items-center justify-center w-14 h-14 rounded-2xl shrink-0"
+                  className="flex items-center justify-center w-14 h-14 rounded-2xl shrink-0 transition-transform duration-300 group-hover:scale-110"
                   style={{
-                    background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
+                    background: svc.id === 'web' ? 'rgba(79,127,255,0.12)' : 'rgba(0,229,195,0.12)',
+                    color: svc.id === 'web' ? '#4F7FFF' : '#00E5C3',
                   }}
                 >
-                  {svc.id === 'web' ? <FaLaptop size={26} className="text-white" /> : <FaChartLine size={26} className="text-white" />}
+                  {svc.id === 'web' ? <FaLaptop size={26} /> : <FaChartLine size={26} />}
                 </div>
                 <span
                   className="inline-flex items-center gap-2 font-mono text-[11px] tracking-widest uppercase px-4 py-1.5 rounded-full"
@@ -169,7 +170,7 @@ export default function ServicesSection() {
           {SERVICE_BENEFITS.map((b, i) => (
             <FadeIn key={b.title} delay={i * 0.1} y={20}>
               <div
-                className="p-6 md:p-8 h-full flex flex-col transition-all duration-300 hover:-translate-y-0.5"
+                className="group p-6 md:p-8 h-full flex flex-col transition-all duration-300 hover:-translate-y-0.5"
                 style={{
                   border: '1px solid var(--border)',
                   borderRadius: 24,
@@ -179,12 +180,13 @@ export default function ServicesSection() {
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div
-                    className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0"
+                    className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0 transition-transform duration-300 group-hover:scale-110"
                     style={{
-                      background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
+                      background: b.title.includes('Hosting') ? 'rgba(79,127,255,0.12)' : 'rgba(0,229,195,0.12)',
+                      color: b.title.includes('Hosting') ? '#4F7FFF' : '#00E5C3',
                     }}
                   >
-                    {b.title.includes('Hosting') ? <FaServer size={22} className="text-white" /> : <FaComments size={22} className="text-white" />}
+                    {b.title.includes('Hosting') ? <FaServer size={22} /> : <FaComments size={22} />}
                   </div>
                   <div>
                     <h4 className="font-syne font-bold uppercase text-sm tracking-tight" style={{ color: 'var(--white)' }}>
@@ -225,7 +227,7 @@ export default function ServicesSection() {
             return (
               <FadeIn key={svc.title} delay={i * 0.08} y={20}>
                 <div
-                  className="p-5 md:p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1"
+                  className="group p-5 md:p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1"
                   style={{
                     border: '1px solid var(--border)',
                     borderRadius: 20,
@@ -241,19 +243,20 @@ export default function ServicesSection() {
                     {svc.title}
                   </h4>
                   <div
-                    className="flex items-center justify-center w-14 h-14 rounded-2xl mx-auto my-3"
+                    className="flex items-center justify-center w-14 h-14 rounded-2xl mx-auto my-3 transition-transform duration-300 group-hover:scale-110"
                     style={{
-                      background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
+                      background: svc.title.includes('Desarrollo') ? 'rgba(168,85,247,0.12)' : svc.title.includes('Clases') ? 'rgba(245,158,11,0.12)' : svc.title.includes('Venta') ? 'rgba(16,185,129,0.12)' : 'rgba(236,72,153,0.12)',
+                      color: svc.title.includes('Desarrollo') ? '#A855F7' : svc.title.includes('Clases') ? '#F59E0B' : svc.title.includes('Venta') ? '#10B981' : '#EC4899',
                     }}
                   >
                     {svc.title.includes('Desarrollo') ? (
-                      <FaGraduationCap size={24} className="text-white" />
+                      <FaGraduationCap size={24} />
                     ) : svc.title.includes('Clases') ? (
-                      <FaLaptopCode size={24} className="text-white" />
+                      <FaLaptopCode size={24} />
                     ) : svc.title.includes('Venta') ? (
-                      <FaStore size={24} className="text-white" />
+                      <FaStore size={24} />
                     ) : (
-                      <FaFileAlt size={24} className="text-white" />
+                      <FaFileAlt size={24} />
                     )}
                   </div>
                   <p
@@ -298,24 +301,24 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {TEMPLATES.map((t, i) => (
             <FadeIn key={t.title} delay={i * 0.1} y={20}>
-              <div
-                className="p-5 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1"
-                style={{
-                  border: '1px solid var(--border)',
-                  borderRadius: 24,
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(79,127,255,0.3)' }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
-              >
                 <div
-                  className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0"
+                  className="group p-5 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1"
                   style={{
-                    background: 'linear-gradient(135deg, rgba(79,127,255,0.15), rgba(0,229,195,0.1))',
-                    color: 'var(--accent2)',
+                    border: '1px solid var(--border)',
+                    borderRadius: 24,
                   }}
+                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(79,127,255,0.3)' }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
                 >
-                  {t.title.includes('Gastos') ? <FaWallet size={22} /> : <FaCalendarCheck size={22} />}
-                </div>
+                  <div
+                    className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0 transition-transform duration-300 group-hover:scale-110"
+                    style={{
+                      background: t.title.includes('Gastos') ? 'rgba(79,127,255,0.12)' : 'rgba(0,229,195,0.12)',
+                      color: t.title.includes('Gastos') ? '#4F7FFF' : '#00E5C3',
+                    }}
+                  >
+                    {t.title.includes('Gastos') ? <FaWallet size={22} /> : <FaCalendarCheck size={22} />}
+                  </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1 flex-wrap">
                     <h4 className="font-syne font-bold uppercase tracking-tight" style={{ color: 'var(--white)' }}>
@@ -360,28 +363,28 @@ export default function ServicesSection() {
       {/* === LOCAL AI === */}
       <div className="max-w-5xl mx-auto">
         <FadeIn y={30}>
-          <div
-            className="p-6 md:p-8"
-            style={{
-              border: '1px solid var(--border)',
-              borderRadius: 24,
-              background: 'var(--bg)',
-            }}
-          >
-            <h3
-              className="font-syne font-bold uppercase tracking-tight mb-3 flex items-center justify-between gap-3"
-              style={{ fontSize: 'clamp(16px,1.5vw,20px)', color: 'var(--white)' }}
+            <div
+              className="group p-6 md:p-8"
+              style={{
+                border: '1px solid var(--border)',
+                borderRadius: 24,
+                background: 'var(--bg)',
+              }}
             >
-              <div className="flex items-center gap-3">
-                <div
-                  className="flex items-center justify-center w-10 h-10 rounded-xl"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(79,127,255,0.15), rgba(0,229,195,0.1))',
-                    color: 'var(--accent2)',
-                  }}
-                >
-                  <FaBrain size={20} />
-                </div>
+              <h3
+                className="font-syne font-bold uppercase tracking-tight mb-3 flex items-center justify-between gap-3"
+                style={{ fontSize: 'clamp(16px,1.5vw,20px)', color: 'var(--white)' }}
+              >
+                <div className="flex items-center gap-3">
+                  <div
+                    className="flex items-center justify-center w-10 h-10 rounded-xl transition-transform duration-300 group-hover:scale-110"
+                    style={{
+                      background: 'rgba(168,85,247,0.12)',
+                      color: '#A855F7',
+                    }}
+                  >
+                    <FaBrain size={20} />
+                  </div>
                 IA Local
               </div>
               <button

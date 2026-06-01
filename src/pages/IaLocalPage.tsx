@@ -65,13 +65,13 @@ export default function IaLocalPage() {
             {IA_LOCAL.strengths.map((strength, i) => (
               <FadeIn key={i} delay={0.1 * i}>
                 <div
-                  className="p-6 md:p-8 rounded-2xl h-full"
+                  className="group p-6 md:p-8 rounded-2xl h-full"
                   style={{
                     background: 'var(--bg)',
                     border: '1px solid var(--border)',
                   }}
                 >
-                  <div className="flex justify-center mb-4" style={{ color: 'var(--accent)' }}><DataIcon icon={strength.icon} size={48} /></div>
+                  <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl mx-auto mb-4 transition-transform duration-300 group-hover:scale-110" style={{ background: 'rgba(168,85,247,0.12)', color: '#A855F7' }}><DataIcon icon={strength.icon} size={24} /></div>
                   <h3
                     className="font-syne font-bold mb-2 tracking-tight uppercase text-sm md:text-base text-center"
                     style={{ color: 'var(--accent)' }}
