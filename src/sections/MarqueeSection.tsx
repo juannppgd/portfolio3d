@@ -53,7 +53,6 @@ export default function MarqueeSection() {
     const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
     dragging.current = row
     startX.current = clientX
-    e.preventDefault()
   }, [])
 
   const onPointerMove = useCallback((e: MouseEvent | TouchEvent) => {
