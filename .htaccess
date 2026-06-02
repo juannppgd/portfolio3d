@@ -13,3 +13,8 @@ RewriteRule ^ index.html [L]
 
 # Custom 404 fallback for static hosting
 ErrorDocument 404 /404.html
+
+# Permissions-Policy: allow beforeunload/unload events
+<IfModule mod_headers.c>
+    Header always set Permissions-Policy "unload=*"
+</IfModule>

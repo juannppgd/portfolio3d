@@ -202,7 +202,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
                          px-4 sm:px-5 py-2.5 rounded-full
                          transition-all duration-200
                          focus-visible:outline-none
-                         max-[350px]:hidden"
+                         max-[389px]:hidden"
               style={{
                 border:  '1px solid var(--accent)',
                 color:   'var(--accent)',

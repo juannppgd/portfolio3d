@@ -129,7 +129,7 @@ export default function Chatbot({
   }, [messages, scrollToBottom])
 
   useEffect(() => {
-    if (!initialized.current) {
+    if (isOpen && !initialized.current) {
       initialized.current = true
       setMessages([{
         role: 'assistant',
@@ -137,7 +137,7 @@ export default function Chatbot({
         optionKeys: initialOptionKeys,
       }])
     }
-  }, [t])
+  }, [isOpen, t])
 
   useEffect(() => {
     if (isOpen) {

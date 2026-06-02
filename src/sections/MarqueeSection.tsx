@@ -123,7 +123,7 @@ export default function MarqueeSection() {
               key={i}
               src={src}
               alt={t('projects.alt')}
-              loading="lazy"
+              loading="eager"
               decoding="async"
               draggable={false}
               className="flex-shrink-0 rounded-2xl object-cover pointer-events-none"
@@ -152,7 +152,7 @@ export default function MarqueeSection() {
               key={i}
               src={src}
               alt={t('projects.alt')}
-              loading="lazy"
+              loading="eager"
               decoding="async"
               draggable={false}
               className="flex-shrink-0 rounded-2xl object-cover pointer-events-none"

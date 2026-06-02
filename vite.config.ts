@@ -5,6 +5,11 @@ import { copyFileSync } from 'fs'
 
 export default defineConfig({
   base: '/',
+  server: {
+    headers: {
+      'Permissions-Policy': 'unload=*',
+    },
+  },
   plugins: [
     react(),
     ViteMinifyPlugin({}),
