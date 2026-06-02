@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   FaGraduationCap, FaLaptopCode, FaStore, FaFileAlt,
   FaClock, FaLaptop, FaChartLine, FaServer, FaComments,
   FaWallet, FaCalendarCheck, FaBrain, FaCheck, FaCircle,
 } from 'react-icons/fa'
 import FadeIn from '../components/FadeIn'
-import { MAIN_SERVICES, SERVICE_BENEFITS, ADDITIONAL_SERVICES, TEMPLATES, LOCAL_AI } from '../data'
 
 type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local'
 
@@ -28,15 +28,20 @@ function CountdownTimer() {
   return <span className="tabular-nums inline-flex items-center gap-1"><FaClock size={12} /> {time}</span>
 }
 
-const getServicePage = (title: string): Page | null => {
-  if (title.includes('Desarrollo de trabajos') || title.includes('académicos')) return 'apoyo-academico'
-  if (title.includes('Clases de programación')) return 'clases-programacion'
-  if (title.includes('Venta de garaje') || title.includes('Marketplace')) return 'ventas-online'
-  if (title.includes('CV') || title.includes('Hoja de Vida')) return 'optimizacion-cv'
-  if (title.includes('Control de Gastos') || title.includes('Gastos')) return 'plantilla-gastos'
-  if (title.includes('Rastreo de Hábitos') || title.includes('Hábitos')) return 'plantilla-habitos'
-  if (title.includes('IA Local') || title.includes('IA local')) return 'ia-local'
-  return null
+const servicePageMap: (Page | null)[] = [
+  'apoyo-academico',
+  'clases-programacion',
+  'ventas-online',
+  'optimizacion-cv',
+]
+
+const templatePageMap: (Page | null)[] = [
+  'plantilla-gastos',
+  'plantilla-habitos',
+]
+
+const getServicePage = (index: number): Page | null => {
+  return servicePageMap[index] ?? null
 }
 
 const openPage = (page: Page) => {
@@ -44,6 +49,14 @@ const openPage = (page: Page) => {
 }
 
 export default function ServicesSection() {
+  const { t } = useTranslation()
+
+  const mainServices = t('data.mainServices', { returnObjects: true }) as any[]
+  const serviceBenefits = t('data.serviceBenefits', { returnObjects: true }) as any[]
+  const additionalServices = t('data.additionalServices', { returnObjects: true }) as any[]
+  const templates = t('data.templates', { returnObjects: true }) as any[]
+  const localAi = t('data.localAi', { returnObjects: true }) as any
+
   return (
     <section
       id="servicios"
@@ -62,7 +75,7 @@ export default function ServicesSection() {
             className="font-syne font-black uppercase leading-none tracking-tight break-words gradient-heading"
             style={{ fontSize: 'clamp(28px,4.5vw,60px)' }}
           >
-            Servicios.
+            {t('services.heading')}
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
@@ -70,14 +83,14 @@ export default function ServicesSection() {
             className="font-mono text-sm leading-relaxed mt-3"
             style={{ color: 'var(--muted)' }}
           >
-            Lo que hago para que tu negocio crezca en digital.
+            {t('services.subtitle')}
           </p>
         </FadeIn>
       </div>
 
       {/* === MAIN SERVICES === */}
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-4 md:gap-4 lg:gap-6 mb-10 md:mb-8 lg:mb-12">
-        {MAIN_SERVICES.map((svc, i) => (
+        {mainServices.map((svc: any, i: number) => (
           <FadeIn key={svc.id} delay={i * 0.1} y={30}>
             <div
               className="group relative p-6 md:p-8 h-full flex flex-col transition-all duration-300 hover:-translate-y-1"
@@ -107,7 +120,7 @@ export default function ServicesSection() {
                     border: '1px solid rgba(0,229,195,0.2)',
                   }}
                 >
-                  <span style={{ color: 'var(--accent)' }}>¡{svc.discount}!</span> <CountdownTimer />
+                  <span style={{ color: 'var(--accent)' }}>{t('services.discountFormat', { discount: svc.discount })}</span> <CountdownTimer />
                 </span>
               </div>
 
@@ -126,10 +139,10 @@ export default function ServicesSection() {
               </p>
 
               <ul className="space-y-1.5 mb-4 flex-1">
-                {svc.targets.map((t) => (
-                  <li key={t} className="flex items-start gap-2 font-mono text-sm" style={{ color: 'var(--text)' }}>
+                {svc.targets.map((target: string) => (
+                  <li key={target} className="flex items-start gap-2 font-mono text-sm" style={{ color: 'var(--text)' }}>
                     <FaCircle size={5} style={{ color: 'var(--accent)', marginTop: 7 }} />
-                    {t}
+                    {target}
                   </li>
                 ))}
               </ul>
@@ -163,11 +176,11 @@ export default function ServicesSection() {
             className="font-syne font-bold uppercase tracking-tight text-center mb-6 md:mb-4 lg:mb-6"
             style={{ fontSize: 'clamp(20px,2.2vw,28px)', color: 'var(--white)' }}
           >
-            Conoce estos beneficios exclusivos para ti
+            {t('services.benefitsTitle')}
           </h3>
         </FadeIn>
         <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
-          {SERVICE_BENEFITS.map((b, i) => (
+          {serviceBenefits.map((b: any, i: number) => (
             <FadeIn key={b.title} delay={i * 0.1} y={20}>
               <div
                 className="group p-6 md:p-8 h-full flex flex-col transition-all duration-300 hover:-translate-y-0.5"
@@ -182,11 +195,11 @@ export default function ServicesSection() {
                   <div
                     className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0 transition-transform duration-300 group-hover:scale-110"
                     style={{
-                      background: b.title.includes('Hosting') ? 'rgba(79,127,255,0.12)' : 'rgba(0,229,195,0.12)',
-                      color: b.title.includes('Hosting') ? '#4F7FFF' : '#00E5C3',
+                      background: i === 0 ? 'rgba(79,127,255,0.12)' : 'rgba(0,229,195,0.12)',
+                      color: i === 0 ? '#4F7FFF' : '#00E5C3',
                     }}
                   >
-                    {b.title.includes('Hosting') ? <FaServer size={22} /> : <FaComments size={22} />}
+                    {i === 0 ? <FaServer size={22} /> : <FaComments size={22} />}
                   </div>
                   <div>
                     <h4 className="font-syne font-bold uppercase text-sm tracking-tight" style={{ color: 'var(--white)' }}>
@@ -198,7 +211,7 @@ export default function ServicesSection() {
                   </div>
                 </div>
                   <ul className="space-y-2 flex-1">
-                    {b.items.map((item) => (
+                    {b.items.map((item: string) => (
                       <li key={item} className="flex items-start gap-2 font-mono text-sm" style={{ color: 'var(--text)' }}>
                         <FaCheck size={12} style={{ color: 'var(--accent2)', marginTop: 3 }} />
                         {item}
@@ -218,12 +231,12 @@ export default function ServicesSection() {
             className="font-syne font-black uppercase tracking-tight mb-6 md:mb-4 lg:mb-6"
             style={{ fontSize: 'clamp(24px,3vw,40px)', color: 'var(--white)' }}
           >
-            <span className="gradient-heading">Servicios</span> adicionales
+            <span className="gradient-heading">{t('services.additionalTitle')}</span> {t('services.additionalTitleSuffix')}
           </h3>
         </FadeIn>
         <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
-          {ADDITIONAL_SERVICES.map((svc, i) => {
-            const servicePage = getServicePage(svc.title)
+          {additionalServices.map((svc: any, i: number) => {
+            const servicePage = getServicePage(i)
             return (
               <FadeIn key={svc.title} delay={i * 0.08} y={20}>
                 <div
@@ -245,15 +258,15 @@ export default function ServicesSection() {
                   <div
                     className="flex items-center justify-center w-14 h-14 rounded-2xl mx-auto my-3 transition-transform duration-300 group-hover:scale-110"
                     style={{
-                      background: svc.title.includes('Desarrollo') ? 'rgba(168,85,247,0.12)' : svc.title.includes('Clases') ? 'rgba(245,158,11,0.12)' : svc.title.includes('Venta') ? 'rgba(16,185,129,0.12)' : 'rgba(236,72,153,0.12)',
-                      color: svc.title.includes('Desarrollo') ? '#A855F7' : svc.title.includes('Clases') ? '#F59E0B' : svc.title.includes('Venta') ? '#10B981' : '#EC4899',
+                      background: i === 0 ? 'rgba(168,85,247,0.12)' : i === 1 ? 'rgba(245,158,11,0.12)' : i === 2 ? 'rgba(16,185,129,0.12)' : 'rgba(236,72,153,0.12)',
+                      color: i === 0 ? '#A855F7' : i === 1 ? '#F59E0B' : i === 2 ? '#10B981' : '#EC4899',
                     }}
                   >
-                    {svc.title.includes('Desarrollo') ? (
+                    {i === 0 ? (
                       <FaGraduationCap size={24} />
-                    ) : svc.title.includes('Clases') ? (
+                    ) : i === 1 ? (
                       <FaLaptopCode size={24} />
-                    ) : svc.title.includes('Venta') ? (
+                    ) : i === 2 ? (
                       <FaStore size={24} />
                     ) : (
                       <FaFileAlt size={24} />
@@ -289,18 +302,20 @@ export default function ServicesSection() {
             className="font-syne font-bold uppercase tracking-tight text-center mb-3"
             style={{ fontSize: 'clamp(20px,2.2vw,28px)', color: 'var(--white)' }}
           >
-            Plantillas para ti
+            {t('services.templatesTitle')}
           </h3>
           <p
             className="font-mono text-sm text-center mb-8"
             style={{ color: 'var(--muted)' }}
           >
-            Herramientas Excel profesionales para mejorar tu productividad y finanzas personales. Acceso inmediato por solo $7 USD cada una.
+            {t('services.templatesDesc')}
           </p>
         </FadeIn>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {TEMPLATES.map((t, i) => (
-            <FadeIn key={t.title} delay={i * 0.1} y={20}>
+          {templates.map((tpl: any, i: number) => {
+            const templatePage = templatePageMap[i] ?? null
+            return (
+            <FadeIn key={tpl.title} delay={i * 0.1} y={20}>
                 <div
                   className="group p-5 flex items-center gap-4 transition-all duration-300 hover:-translate-y-1"
                   style={{
@@ -313,34 +328,33 @@ export default function ServicesSection() {
                   <div
                     className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0 transition-transform duration-300 group-hover:scale-110"
                     style={{
-                      background: t.title.includes('Gastos') ? 'rgba(79,127,255,0.12)' : 'rgba(0,229,195,0.12)',
-                      color: t.title.includes('Gastos') ? '#4F7FFF' : '#00E5C3',
+                      background: i === 0 ? 'rgba(79,127,255,0.12)' : 'rgba(0,229,195,0.12)',
+                      color: i === 0 ? '#4F7FFF' : '#00E5C3',
                     }}
                   >
-                    {t.title.includes('Gastos') ? <FaWallet size={22} /> : <FaCalendarCheck size={22} />}
+                    {i === 0 ? <FaWallet size={22} /> : <FaCalendarCheck size={22} />}
                   </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1 flex-wrap">
                     <h4 className="font-syne font-bold uppercase tracking-tight" style={{ color: 'var(--white)' }}>
-                      {t.title}
+                      {tpl.title}
                     </h4>
                     <span
                       className="font-mono text-[10px] tracking-widest px-2 py-0.5 rounded-full shrink-0"
                       style={{ background: 'rgba(79,127,255,0.1)', color: 'var(--accent)' }}
                     >
-                      {t.price}
+                      {tpl.price}
                     </span>
                   </div>
                   <p
                     className="font-mono font-light leading-relaxed mb-3 text-sm"
                     style={{ color: 'var(--muted)' }}
                   >
-                    {t.desc}
+                    {tpl.desc}
                   </p>
                   <button
                     onClick={() => {
-                      const page = getServicePage(t.title)
-                      if (page) openPage(page)
+                      if (templatePage) openPage(templatePage)
                     }}
                     className="font-syne font-bold text-[11px] tracking-widest uppercase px-4 py-2 rounded-full transition-all duration-200"
                     style={{
@@ -351,12 +365,13 @@ export default function ServicesSection() {
                     onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.color = 'var(--bg)' }}
                     onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--accent)' }}
                   >
-                    {t.cta}
+                    {tpl.cta}
                   </button>
                 </div>
               </div>
             </FadeIn>
-          ))}
+            )
+          })}
         </div>
       </div>
 
@@ -385,7 +400,7 @@ export default function ServicesSection() {
                   >
                     <FaBrain size={20} />
                   </div>
-                IA Local
+                {t('services.localAiTitle')}
               </div>
               <button
                 type="button"
@@ -393,7 +408,7 @@ export default function ServicesSection() {
                 className="font-mono text-xs tracking-widest uppercase flex items-center gap-1.5 transition-colors duration-200 hover:text-accent shrink-0"
                 style={{ color: 'var(--accent)' }}
               >
-                Conocer más
+                {t('services.localAiCta')}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
@@ -403,7 +418,7 @@ export default function ServicesSection() {
               className="font-mono font-light leading-relaxed mb-5 text-sm"
               style={{ color: 'var(--muted)' }}
             >
-              Modelos de lenguaje que corren nativamente en tu GPU o RAM. Sin suscripciones. Tus datos nunca salen de tu máquina.
+              {t('services.localAiDesc')}
             </p>
             <div
               className="rounded-xl overflow-hidden"
@@ -413,11 +428,11 @@ export default function ServicesSection() {
                 className="grid grid-cols-3 gap-3 px-4 py-3 font-mono text-[10px] tracking-widest uppercase"
                 style={{ background: 'var(--surface)', color: 'var(--muted)' }}
               >
-                <span>Modelo</span>
-                <span>RAM</span>
-                <span>Uso</span>
+                <span>{t('services.tableModel')}</span>
+                <span>{t('services.tableRam')}</span>
+                <span>{t('services.tableUse')}</span>
               </div>
-              {LOCAL_AI.models.map((m, i) => (
+              {localAi.models.map((m: any, i: number) => (
                 <div
                   key={m.name}
                   className="grid grid-cols-3 gap-3 px-4 py-3 font-mono text-xs"

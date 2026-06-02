@@ -3,10 +3,12 @@ import { FaCheck, FaChevronDown } from 'react-icons/fa6'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
 import DataIcon from '../components/DataIcon'
-import { IA_LOCAL } from './serviceData'
+import { useTranslation } from 'react-i18next'
 import { wa } from '../lib/whatsapp'
 
 export default function IaLocalPage() {
+  const { t } = useTranslation()
+  const data = t('servicePages.iaLocal', { returnObjects: true }) as any
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
   return (
@@ -24,7 +26,7 @@ export default function IaLocalPage() {
               className="font-syne font-black uppercase leading-tight tracking-tight break-words gradient-heading mb-4 md:mb-6"
               style={{ fontSize: 'clamp(28px,5vw,72px)' }}
             >
-              {IA_LOCAL.hero.title}
+              {data.hero.title}
             </h1>
           </FadeIn>
 
@@ -33,12 +35,12 @@ export default function IaLocalPage() {
               className="font-mono text-sm md:text-base leading-relaxed mb-8 md:mb-10 max-w-3xl mx-auto px-2"
               style={{ color: 'var(--muted)' }}
             >
-              {IA_LOCAL.hero.subtitle}
+              {data.hero.subtitle}
             </p>
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <ContactButton label="Probar IA Local en Mi PC" href={wa('Hola, vine por el servicio de IA local')} />
+            <ContactButton label={data.sectionTitles.heroButton} href={wa('Hola, vine por el servicio de IA local')} />
           </FadeIn>
         </div>
       </section>
@@ -57,12 +59,12 @@ export default function IaLocalPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Puntos fuertes
+              {data.sectionTitles.strengths}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {IA_LOCAL.strengths.map((strength, i) => (
+            {data.strengths.map((strength: { icon: string; title: string; desc: string }, i: number) => (
               <FadeIn key={i} delay={0.1 * i}>
                 <div
                   className="group p-6 md:p-8 rounded-2xl h-full"
@@ -99,7 +101,7 @@ export default function IaLocalPage() {
               className="font-syne font-black uppercase text-center mb-4 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Modelos disponibles
+              {data.sectionTitles.modelsTitle}
             </h2>
           </FadeIn>
 
@@ -108,12 +110,12 @@ export default function IaLocalPage() {
               className="text-center font-mono text-sm mb-12"
               style={{ color: 'var(--muted)', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}
             >
-              Elige el modelo según tus necesidades y hardware disponible
+              {data.sectionTitles.modelsDesc}
             </p>
           </FadeIn>
 
           <div className="space-y-4 max-w-4xl mx-auto">
-            {IA_LOCAL.models.map((model, i) => (
+            {data.models.map((model: { name: string; ram: string; use: string }, i: number) => (
               <FadeIn key={i} delay={0.1 * i}>
                 <div
                   className="p-6 md:p-8 rounded-2xl"
@@ -128,7 +130,7 @@ export default function IaLocalPage() {
                         className="font-mono text-xs tracking-widest uppercase mb-1"
                         style={{ color: 'var(--accent2)' }}
                       >
-                        Modelo
+                        {data.sectionTitles.modelHeader}
                       </p>
                       <p
                         className="font-syne font-bold text-lg"
@@ -142,7 +144,7 @@ export default function IaLocalPage() {
                         className="font-mono text-xs tracking-widest uppercase mb-1"
                         style={{ color: 'var(--accent2)' }}
                       >
-                        RAM Requerida
+                        {data.sectionTitles.ramHeader}
                       </p>
                       <p
                         className="font-syne font-bold text-lg"
@@ -156,7 +158,7 @@ export default function IaLocalPage() {
                         className="font-mono text-xs tracking-widest uppercase mb-1"
                         style={{ color: 'var(--accent2)' }}
                       >
-                        Caso de uso
+                        {data.sectionTitles.useHeader}
                       </p>
                       <p
                         className="font-mono text-sm"
@@ -187,12 +189,12 @@ export default function IaLocalPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Casos de uso
+              {data.sectionTitles.useCases}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {IA_LOCAL.useCases.map((useCase, i) => (
+            {data.useCases.map((useCase: { title: string; desc: string }, i: number) => (
               <FadeIn key={i} delay={0.1 * i}>
                 <div
                   className="p-6 md:p-8 rounded-2xl"
@@ -228,7 +230,7 @@ export default function IaLocalPage() {
               className="font-syne font-black uppercase text-center mb-4 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              {IA_LOCAL.b2b.title}
+              {data.b2b.title}
             </h2>
           </FadeIn>
 
@@ -237,7 +239,7 @@ export default function IaLocalPage() {
               className="text-center font-mono text-sm mb-12 max-w-2xl mx-auto"
               style={{ color: 'var(--muted)' }}
             >
-              {IA_LOCAL.b2b.note}
+              {data.b2b.note}
             </p>
           </FadeIn>
 
@@ -255,10 +257,10 @@ export default function IaLocalPage() {
                     className="font-syne font-bold mb-6 tracking-tight uppercase"
                     style={{ fontSize: 'clamp(16px,1.5vw,20px)', color: 'var(--accent)' }}
                   >
-                    Soluciones personalizadas
+                    {data.sectionTitles.b2bSolutions}
                   </h3>
                   <ul className="space-y-3">
-                    {IA_LOCAL.b2b.features.map((feature, i) => (
+                    {data.b2b.features.map((feature: string, i: number) => (
                       <li
                         key={i}
                         className="flex items-start gap-3 font-mono text-sm"
@@ -282,7 +284,7 @@ export default function IaLocalPage() {
                       boxShadow: '0 0 40px rgba(79,127,255,0.25)',
                     }}
                   >
-                    Contactar Consultor de IA
+                    {data.sectionTitles.b2bButton}
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <path d="M7 17L17 7M17 7H7M17 7v10" />
                     </svg>
@@ -308,7 +310,7 @@ export default function IaLocalPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Cómo funciona
+              {data.sectionTitles.howItWorks}
             </h2>
           </FadeIn>
 
@@ -316,23 +318,23 @@ export default function IaLocalPage() {
             {[
               {
                 step: '1',
-                title: 'Descargar',
-                desc: 'Baja el modelo elegido según tu hardware',
+                title: data.sectionTitles.howStep1,
+                desc: data.sectionTitles.howStep1Desc,
               },
               {
                 step: '2',
-                title: 'Instalar',
-                desc: 'Configuración simple en tu PC (Windows/Mac/Linux)',
+                title: data.sectionTitles.howStep2,
+                desc: data.sectionTitles.howStep2Desc,
               },
               {
                 step: '3',
-                title: 'Usar',
-                desc: 'Ejecuta consultas sin conectarte a internet',
+                title: data.sectionTitles.howStep3,
+                desc: data.sectionTitles.howStep3Desc,
               },
               {
                 step: '4',
-                title: 'Optimizar',
-                desc: 'Personalización para tu caso de negocio',
+                title: data.sectionTitles.howStep4,
+                desc: data.sectionTitles.howStep4Desc,
               },
             ].map((proc, i) => (
               <FadeIn key={i} delay={0.1 * i}>
@@ -379,21 +381,27 @@ export default function IaLocalPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words"
               style={{ fontSize: 'clamp(28px,4vw,56px)', color: 'var(--white)' }}
             >
-              Preguntas frecuentes
+              {data.sectionTitles.faq}
             </h2>
           </FadeIn>
 
           <div className="space-y-4">
-            {IA_LOCAL.faqs.map((faq, i) => (
+            {data.faqs.map((faq: { q: string; a: string }, i: number) => (
               <FadeIn key={i} delay={0.05 * i}>
                 <div
-                  className="p-6 rounded-2xl cursor-pointer transition-all duration-300"
+                  className="p-6 rounded-2xl transition-all duration-300"
                   style={{
                     background: expandedFaq === i ? 'var(--surface)' : 'var(--bg)',
                     border: expandedFaq === i ? '1px solid var(--accent)' : '1px solid var(--border)',
                   }}
-                  onClick={() => setExpandedFaq(expandedFaq === i ? null : i)}
                 >
+                  <button
+                    onClick={() => setExpandedFaq(expandedFaq === i ? null : i)}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setExpandedFaq(expandedFaq === i ? null : i); } }}
+                    aria-expanded={expandedFaq === i}
+                    className="w-full text-left cursor-pointer bg-transparent border-none p-0"
+                    style={{ color: 'inherit' }}
+                  >
                   <div className="flex items-center justify-between">
                     <h3
                       className="font-syne font-bold text-sm md:text-base tracking-tight"
@@ -419,6 +427,7 @@ export default function IaLocalPage() {
                       {faq.a}
                     </p>
                   )}
+                  </button>
                 </div>
               </FadeIn>
             ))}
@@ -439,7 +448,7 @@ export default function IaLocalPage() {
             className="font-syne font-black uppercase mb-6 tracking-tight break-words"
             style={{ fontSize: 'clamp(24px,3.5vw,48px)', color: 'var(--white)' }}
           >
-            Revoluciona tu flujo de trabajo
+            {data.sectionTitles.ctaTitle}
           </h2>
         </FadeIn>
 
@@ -448,12 +457,12 @@ export default function IaLocalPage() {
             className="font-mono text-sm mb-8 max-w-2xl mx-auto"
             style={{ color: 'var(--muted)' }}
           >
-            IA privada, sin límites y sin suscripciones. Ejecutada completamente en tu máquina.
+            {data.sectionTitles.ctaDesc}
           </p>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <ContactButton label="Comenzar Ahora" href={wa('Hola, vine por el servicio de IA local')} />
+          <ContactButton label={data.sectionTitles.ctaButton} href={wa('Hola, vine por el servicio de IA local')} />
         </FadeIn>
       </section>
     </main>

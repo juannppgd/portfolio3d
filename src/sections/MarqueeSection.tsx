@@ -1,4 +1,5 @@
 import { useEffect, useRef, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 import { MARQUEE_ROW1, MARQUEE_ROW2 } from '../data'
 
 const COPIES = 4
@@ -13,6 +14,7 @@ function wrapOffset(offset: number, singleW: number) {
 }
 
 export default function MarqueeSection() {
+  const { t } = useTranslation()
   const sectionRef = useRef<HTMLDivElement>(null)
   const row1Ref = useRef<HTMLDivElement>(null)
   const row2Ref = useRef<HTMLDivElement>(null)
@@ -97,13 +99,13 @@ export default function MarqueeSection() {
           className="font-syne font-black uppercase leading-none tracking-tight gradient-heading break-words"
           style={{ fontSize: 'clamp(32px,5vw,80px)' }}
         >
-          Proyectos
+          {t('projects.heading')}
         </h2>
         <p
           className="font-syne font-bold uppercase tracking-tight mt-2 break-words"
           style={{ fontSize: 'clamp(14px,2.4vw,28px)', color: 'var(--text)' }}
         >
-          &amp; referencias visuales
+          {t('projects.subheading')}
         </p>
       </div>
 
@@ -120,8 +122,9 @@ export default function MarqueeSection() {
             <img
               key={i}
               src={src}
-              alt="Proyecto de referencia"
+              alt={t('projects.alt')}
               loading="lazy"
+              decoding="async"
               draggable={false}
               className="flex-shrink-0 rounded-2xl object-cover pointer-events-none"
               style={{
@@ -148,8 +151,9 @@ export default function MarqueeSection() {
             <img
               key={i}
               src={src}
-              alt="Proyecto de referencia"
+              alt={t('projects.alt')}
               loading="lazy"
+              decoding="async"
               draggable={false}
               className="flex-shrink-0 rounded-2xl object-cover pointer-events-none"
               style={{
@@ -172,7 +176,7 @@ export default function MarqueeSection() {
            <path d="M19 12H5" />
            <path d="M12 19l-7-7 7-7" />
           </svg>
-          Desliza para ver más proyectos
+          {t('projects.swipeHint')}
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M5 12h14" />
             <path d="M12 5l7 7-7 7" />

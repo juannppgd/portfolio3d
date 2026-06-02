@@ -1,0 +1,2807 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "services": "Servicios",
+    "skills": "Conocimientos",
+    "faq": "FAQ",
+    "contact": "Contacto",
+    "back": "← Volver",
+    "backHome": "← Volver al inicio",
+    "ctaHome": "Hablemos",
+    "ctaPage": "Inicio",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "ariaLabel": "Navegación principal",
+    "ariaSections": "Secciones",
+    "ariaMobile": "Menú móvil"
+  },
+  "languageToggle": {
+    "ariaLabel": "Cambiar idioma",
+    "title": "English"
+  },
+  "hero": {
+    "available": "Disponible para proyectos",
+    "firstName": "Juan",
+    "middleName": "Pablo",
+    "lastName": "Gutiérrez",
+    "secondLastName": "Díaz",
+    "devWeb": "Desarrollo web",
+    "automation": "Automatización",
+    "marketingDigital": "Marketing digital",
+    "tagline": "Para profesionales, Emprendedores y Pymes que quieren crecer en Internet.",
+    "scroll": "Scroll",
+    "alt": "Juan Pablo Gutiérrez Díaz — Desarrollador Web y Marketing Digital en Tunja, Colombia"
+  },
+  "about": {
+    "heading": "Sobre<br />mí.",
+    "tag": "// Quién soy",
+    "text": "Con más de cinco años creando soluciones digitales, me especializo en desarrollo web, marketing digital y automatización. Trabajo con empresarios y emprendedores que quieren destacar en línea y ver resultados reales.",
+    "statYears": "Años de exp.",
+    "statProjects": "Proyectos",
+    "statCommitment": "Compromiso",
+    "educationTitle": "// Formación Académica",
+    "certsTitle": "// Certificaciones & Cursos",
+    "showLess": "▲ Mostrar menos",
+    "showMore": "▼ Ver más",
+    "enCurso": "En curso"
+  },
+  "services": {
+    "heading": "Servicios.",
+    "subtitle": "Lo que hago para que tu negocio crezca en digital.",
+    "benefitsTitle": "Conoce estos beneficios exclusivos para ti",
+    "additionalTitle": "Servicios",
+    "additionalTitleSuffix": "adicionales",
+    "templatesTitle": "Plantillas para ti",
+    "templatesDesc": "Herramientas Excel profesionales para mejorar tu productividad y finanzas personales. Acceso inmediato por solo $7 USD cada una.",
+    "localAiTitle": "IA Local",
+    "localAiDesc": "Modelos de lenguaje que corren nativamente en tu GPU o RAM. Sin suscripciones. Tus datos nunca salen de tu máquina.",
+    "localAiCta": "Conocer más",
+    "tableModel": "Modelo",
+    "tableRam": "RAM",
+    "tableUse": "Uso",
+    "subtitleHosting": "Aplica TyC",
+    "subtitleConsulting": "Aplica TyC",
+    "discountFormat": "¡{{discount}}!"
+  },
+  "data": {
+    "mainServices": [
+      {
+        "id": "web",
+        "title": "Páginas Web para Profesionales, Emprendedores y Pymes",
+        "discount": "25% OFF",
+        "description": "¿Necesitas destacar en la web? Desarrollo páginas web profesionales y atractivas para que tu negocio tenga presencia en línea. Perfectas para:",
+        "targets": [
+          "Emprendedores que quieren destacar su negocio",
+          "Pymes que necesitan presencia digital",
+          "Profesionales independientes que quieren atraer más clientes"
+        ],
+        "includes": "Mis páginas web incluyen diseño responsivo, optimización de SEO, son completamente personalizadas según las necesidades de tu negocio, creadas para destacar y mucho más.",
+        "cta": "Solicita tu página web"
+      },
+      {
+        "id": "marketing",
+        "title": "Marketing Digital para Impulsar tu Negocio en Internet",
+        "discount": "35% OFF",
+        "description": "¿Quieres aumentar tus ventas y presencia online? Ofrezco servicios de marketing digital completos para impulsar tu negocio y destacar en el mercado. Ideales para:",
+        "targets": [
+          "Pymes que buscan crecimiento digital",
+          "Negocios que quieren expandirse en la Web",
+          "Profesionales que necesitan más leads"
+        ],
+        "includes": "Mis servicios incluyen Producción audiovisual, análisis de datos, estrategias personalizadas, campañas de Email/SMS marketing, gestión de redes sociales, CRM y mucho más.",
+        "cta": "Solicita tu consulta de marketing"
+      }
+    ],
+    "serviceBenefits": [
+      {
+        "title": "Hosting y Dominio Gratis",
+        "items": [
+          "Desarrollo de Software Personalizado",
+          "Optimización de velocidad y experiencia UX",
+          "Integración con redes sociales y CRM",
+          "Configuración técnica de DNS",
+          "Dominios y correos corporativos",
+          "Integración con EmailJS y Google Analytics",
+          "Interfaces responsivas con React y Tailwind CSS"
+        ],
+        "cta": "Contáctame haciendo clic aquí"
+      },
+      {
+        "title": "Consultoría Gratis",
+        "items": [
+          "Edición profesional de foto y video",
+          "Análisis de datos y segmentación",
+          "Campañas A/B testing orientadas a resultados",
+          "Estrategia Digital personalizada",
+          "Gestión de redes sociales",
+          "Email y SMS Marketing",
+          "Optimización SEO y campañas SEM efectivas"
+        ],
+        "cta": "Contáctame haciendo clic aquí"
+      }
+    ],
+    "additionalServices": [
+      {
+        "title": "Desarrollo de trabajos y evaluaciones",
+        "desc": "Apoyo profesional en el desarrollo de trabajos académicos, evaluaciones, proyectos y entregables con enfoque en calidad, cumplimiento y resultados.",
+        "cta": "Solicitar apoyo académico"
+      },
+      {
+        "title": "Clases de programación 1 a 1",
+        "desc": "Clases personalizadas enfocadas en tu nivel, ritmo y objetivos. Aprende programación de forma práctica y aplicada. Recibes Materiales y Certificado",
+        "cta": "Solicitar clases programación"
+      },
+      {
+        "title": "Venta de garaje en línea por Marketplace y MercadoLibre",
+        "desc": "Conoce mi modalidad de Publicación, gestión y optimización de productos en plataformas de venta online para que adquieras los tuyos completamente garantizados.",
+        "cta": "Solicitar venta en línea"
+      },
+      {
+        "title": "Asesoría en creación de tu CV para que entres al trabajo de tus sueños",
+        "desc": "Diseño un currículum profesional para un CV estratégico, atractivo y optimizado para procesos de selección laboral, filtros avanzados ATS.",
+        "cta": "Solicitar asesoría CV"
+      }
+    ],
+    "templates": [
+      {
+        "title": "Control de Gastos",
+        "desc": "Domina tus finanzas en 5 min/día con colores inteligentes, gráficos automáticos y la regla 50/30/20.",
+        "price": "$7 USD",
+        "cta": "Ver Plantilla de Gastos"
+      },
+      {
+        "title": "Rastreo de Hábitos",
+        "desc": "Rastrea tus hábitos diarios con gráficos dinámicos, rachas y análisis inteligente para 2026.",
+        "price": "$7 USD",
+        "cta": "Ver Plantilla de Hábitos"
+      }
+    ],
+    "localAi": {
+      "features": [
+        "100% Privado: Tus datos NO salen de tu computador",
+        "Ilimitado: Pregunta todo lo que quieras, sin costo por API",
+        "Sin suscripciones: El modelo es tuyo para siempre",
+        "Offline nativo: Funciona sin conexión a internet",
+        "Velocidad local: Aprovecha tu GPU (NVIDIA, AMD, Apple)",
+        "Modular: Elige el modelo según tu hardware y necesidad"
+      ],
+      "models": [
+        {
+          "name": "Llama 3.1 8B",
+          "ram": "6-8 GB",
+          "use": "Razonamiento general y documentación"
+        },
+        {
+          "name": "Qwen 2.5 Coder 7B",
+          "ram": "5-6 GB",
+          "use": "Experto en programación y código"
+        },
+        {
+          "name": "Phi-3.5-mini",
+          "ram": "3-4 GB",
+          "use": "PCs con poca RAM, lógica y matemáticas"
+        },
+        {
+          "name": "Ministral 3 14B",
+          "ram": "10-12 GB",
+          "use": "Velocidad y función calling avanzada"
+        }
+      ],
+      "enterprise": {
+        "features": [
+          "Automatizar respuestas con el tono de tu marca",
+          "Clasificar documentos internos (facturas, correos, informes)",
+          "Asistente de código especializado en TU stack tecnológico",
+          "Extraer datos de reportes recurrentes"
+        ],
+        "note": "Mediante fine-tuning o RAG, adaptamos cualquier modelo a tus necesidades específicas."
+      }
+    }
+  },
+  "knowledge": {
+    "heading": "Mis ",
+    "headingHighlight": "conocimientos.",
+    "subtitle": "Habilidades, herramientas y tecnologías que domino para crear soluciones digitales completas.",
+    "skillsTag": "// Habilidades",
+    "toolsTag": "// Software y Herramientas",
+    "stackTag": "// Mi Stack De Desarrollo"
+  },
+  "education": {
+    "items": [
+      {
+        "title": "Ingeniería de Sistemas",
+        "statusKey": "enCurso",
+        "icon": "FaServer"
+      },
+      {
+        "title": "Tecnólogo en Análisis y Desarrollo de Software",
+        "statusKey": "enCurso",
+        "icon": "FaCode"
+      },
+      {
+        "title": "Tecnólogo en Desarrollo Publicitario",
+        "statusKey": "cert2025",
+        "icon": "FaBullhorn"
+      },
+      {
+        "title": "Técnico en Programación Web y Desarrollo de Apps Móviles",
+        "statusKey": "cert2024",
+        "icon": "FaMobileAlt"
+      },
+      {
+        "title": "Comunicación Social y Periodismo",
+        "statusKey": "partial",
+        "icon": "FaNewspaper"
+      }
+    ],
+    "statuses": {
+      "enCurso": "En curso",
+      "cert2025": "Certificado 2025",
+      "cert2024": "Certificado 2024",
+      "partial": "Estudios parciales 30%"
+    }
+  },
+  "certifications": {
+    "categories": [
+      {
+        "category": "Tecnología",
+        "icon": "FaLaptop",
+        "items": [
+          "Bootcamp En Inteligencia Artificial",
+          "Bootcamp En Programación",
+          "Fundamentos de UX",
+          "Big Data"
+        ]
+      },
+      {
+        "category": "Marketing",
+        "icon": "FaChartLine",
+        "items": [
+          "Marketing Digital (2025)",
+          "Marketing Digital (2022)",
+          "Analítica Web",
+          "Growth Hacking",
+          "Networking y Marketing Personal",
+          "Creación de Contenidos Digitales"
+        ]
+      },
+      {
+        "category": "Productividad",
+        "icon": "FaRocket",
+        "items": [
+          "Excel Avanzado",
+          "Power BI",
+          "Administración de Servicios 365 y Herramientas de Productividad 4.0"
+        ]
+      },
+      {
+        "category": "Publicidad",
+        "icon": "FaAd",
+        "items": [
+          "Google Ads"
+        ]
+      },
+      {
+        "category": "Análisis",
+        "icon": "FaChartBar",
+        "items": [
+          "Gestión de Procesos de Análisis de Negocio"
+        ]
+      },
+      {
+        "category": "Idiomas",
+        "icon": "FaGlobe",
+        "items": [
+          "Inglés"
+        ]
+      },
+      {
+        "category": "Seguridad",
+        "icon": "FaShieldAlt",
+        "items": [
+          "Apropiación de Conceptos en Ciberseguridad",
+          "Sistema de Gestión de la Seguridad y Salud en el Trabajo SG-SST"
+        ]
+      },
+      {
+        "category": "Salud",
+        "icon": "FaHeartbeat",
+        "items": [
+          "Nutrición y Alimentación en el Desarrollo Humano"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "items": [
+      {
+        "name": "Resolución de Problemas Complejos",
+        "pct": 95,
+        "icon": "FaBrain"
+      },
+      {
+        "name": "Estrategia de Contenido Digital",
+        "pct": 90,
+        "icon": "FaVideo"
+      },
+      {
+        "name": "Análisis y Gestión de Datos",
+        "pct": 85,
+        "icon": "FaChartBar"
+      },
+      {
+        "name": "Growth Hacking y Experimentación",
+        "pct": 95,
+        "icon": "FaFlask"
+      },
+      {
+        "name": "Automatización de Ventas CRM",
+        "pct": 85,
+        "icon": "FaHandshake"
+      },
+      {
+        "name": "Desarrollo Frontend Profesional",
+        "pct": 97,
+        "icon": "FaCode"
+      },
+      {
+        "name": "React, Vite y Tailwind CSS",
+        "pct": 89,
+        "icon": "FaReact"
+      },
+      {
+        "name": "JavaScript & Python con IA",
+        "pct": 85,
+        "icon": "FaJsSquare"
+      }
+    ]
+  },
+  "softwareTools": {
+    "items": [
+      {
+        "name": "HubSpot & Masivian",
+        "cat": "CRM",
+        "icon": "FaHandshake",
+        "color": "#FF7A59"
+      },
+      {
+        "name": "EmailJS Automation",
+        "cat": "Email Marketing",
+        "icon": "FaEnvelope",
+        "color": "#F6B915"
+      },
+      {
+        "name": "Google Ads",
+        "cat": "Advertising",
+        "icon": "FaAd",
+        "color": "#4285F4"
+      },
+      {
+        "name": "Meta Business Suite",
+        "cat": "Social Media",
+        "icon": "FaFacebook",
+        "color": "#1877F2"
+      },
+      {
+        "name": "Google Analytics",
+        "cat": "Analytics",
+        "icon": "FaChartLine",
+        "color": "#E37400"
+      },
+      {
+        "name": "Visual Studio Code",
+        "cat": "Development",
+        "icon": "FaCode",
+        "color": "#007ACC"
+      },
+      {
+        "name": "MySQL",
+        "cat": "Database",
+        "icon": "FaDatabase",
+        "color": "#4479A1"
+      },
+      {
+        "name": "Shopify",
+        "cat": "E-Commerce",
+        "icon": "SiShopify",
+        "color": "#96BF48"
+      },
+      {
+        "name": "WordPress",
+        "cat": "CMS",
+        "icon": "SiWordpress",
+        "color": "#21759B"
+      },
+      {
+        "name": "Canva",
+        "cat": "Design",
+        "icon": "SiCanva",
+        "color": "#00C4CC"
+      }
+    ]
+  },
+  "devStack": {
+    "items": [
+      {
+        "name": "HTML5, CSS y JavaScript",
+        "desc": "Arquitectura digital para sitios web modernos",
+        "icon": "FaHtml5",
+        "color": "#E34F26"
+      },
+      {
+        "name": "Frontend con ReactJS",
+        "desc": "Interfaces dinámicas y adaptables",
+        "icon": "FaReact",
+        "color": "#61DAFB"
+      },
+      {
+        "name": "Backend con NodeJS",
+        "desc": "Servicios backend eficientes y confiables",
+        "icon": "FaNodeJs",
+        "color": "#339933"
+      },
+      {
+        "name": "Bases de datos SQL",
+        "desc": "Gestión inteligente de información y datos",
+        "icon": "FaDatabase",
+        "color": "#4479A1"
+      },
+      {
+        "name": "Git & GitHub",
+        "desc": "Control de versiones y trabajo en equipo",
+        "icon": "FaGitAlt",
+        "color": "#F05032"
+      },
+      {
+        "name": "React Native",
+        "desc": "Apps móviles nativas para Android y iOS",
+        "icon": "FaMobileAlt",
+        "color": "#61DAFB"
+      },
+      {
+        "name": "Python",
+        "desc": "Automatización e inteligencia artificial",
+        "icon": "FaPython",
+        "color": "#3776AB"
+      },
+      {
+        "name": "Vite + Tailwind CSS",
+        "desc": "Desarrollo rápido y diseño elegante",
+        "icon": "SiVite",
+        "color": "#646CFF"
+      }
+    ]
+  },
+  "projects": {
+    "heading": "Proyectos",
+    "subheading": "& referencias visuales",
+    "alt": "Proyecto de referencia",
+    "swipeHint": "Desliza para ver más proyectos",
+    "viewProject": "Ver proyecto ↗",
+    "viewAll": "Ver todos →"
+  },
+  "faq": {
+    "heading": "FAQ.",
+    "subtitle": "Respuestas rápidas a las dudas más frecuentes.",
+    "reviewsHeading": "Reseñas de ",
+    "reviewsHighlight": "Clientes.",
+    "reviewsSubtitle": "Lo que dicen las personas con las que he trabajado.",
+    "items": [
+      {
+        "q": "¿Con qué tecnologías se desarrollan las páginas web y cuánto tiempo toma?",
+        "a": "Desarrollo 100% personalizado directamente desde el código, sin plantillas. El tiempo de entrega varía según el alcance del proyecto. Desde 72 horas hasta 4 semanas."
+      },
+      {
+        "q": "¿Tu sitio necesita ajustes, optimización, soporte o garantía?",
+        "a": "Sí. Incluyo mantenimiento continuo y soporte técnico. Además, los primeros 3 meses incluyen asistencia gratuita, de texto sin costo y descuentos en mejoras."
+      },
+      {
+        "q": "¿Trabajas con clientes internacionales?",
+        "a": "¡Absolutamente! Colaboro con clientes de todo el mundo por medio de reuniones virtuales y métodos de pago como PayPal, transferencias bancarias y MercadoPago."
+      },
+      {
+        "q": "¿Qué incluye el marketing digital?",
+        "a": "Edición profesional de foto y video, análisis de datos y estrategias personalizadas, Email/SMS, gestión de redes sociales, SEO, SEM y optimización de conversiones."
+      }
+    ]
+  },
+  "reviews": {
+    "items": [
+      {
+        "name": "María González",
+        "role": "Emprendedora Digital — Tienda Online",
+        "text": "Juan Pablo hizo realidad mi sueño de tener una tienda en línea. Su trabajo es increíble, todo se ve perfecto y fácil de usar. Mis ventas subieron mucho gracias a él."
+      },
+      {
+        "name": "Sofia Ramírez",
+        "role": "Estudiante Universitaria — Proyecto Académico",
+        "text": "Juan Pablo me ayudó con mi tesis de grado. Su apoyo en el desarrollo académico fue excepcional, entregó todo a tiempo y con la calidad que necesitaba. ¡Altamente recomendado!"
+      },
+      {
+        "name": "Carlos Rodríguez",
+        "role": "Gerente de Marketing — Tech",
+        "text": "Trabajar con Juan fue una gran experiencia. Sus ideas para promocionar nuestro negocio nos dieron mucho más alcance y conexión con la gente."
+      },
+      {
+        "name": "Miguel Ángel",
+        "role": "Desarrollador Junior — Clases de Programación",
+        "text": "Las clases personalizadas de Juan Pablo fueron increíbles. Aprendí programación de manera práctica y aplicada. Los materiales y el certificado que incluye son un plus excelente."
+      },
+      {
+        "name": "Ana López",
+        "role": "Freelancer — Diseñadora Gráfica",
+        "text": "Mi nuevo portafolio luce fantástico. Juan Pa lo hizo todo tan bonito y profesional que ahora recibo más trabajos. ¡Estoy encantada!"
+      },
+      {
+        "name": "Roberto Silva",
+        "role": "Emprendedor — Venta Online",
+        "text": "Juan Pablo optimizó mi tienda en MercadoLibre y otros marketplaces. Sus estrategias de publicación y gestión hicieron que mis ventas se multiplicaran. ¡Un experto en ventas digitales!"
+      },
+      {
+        "name": "Pedro Martínez",
+        "role": "Propietario — Restaurante Local",
+        "text": "Desde que tengo mi sitio web, más personas vienen a mi restaurante. Todo está cuidado al detalle y es muy fácil de navegar tanto en móvil como en computadora."
+      },
+      {
+        "name": "Isabella Morales",
+        "role": "Profesional — Asesoría de CV",
+        "text": "Juan Pablo creó mi CV profesional y optimizado para ATS. Su asesoría fue clave para conseguir el trabajo de mis sueños. ¡Totalmente transformó mi presentación laboral!"
+      },
+      {
+        "name": "Laura Sánchez",
+        "role": "Directora de Marketing — Startup Innovadora",
+        "text": "Juan Pablo logra que cada foto y video se vean impecables. Su edición realza la calidad y aporta un toque creativo que hace destacar nuestro contenido."
+      },
+      {
+        "name": "Diego Torres",
+        "role": "Consultor Independiente — Consultoría Digital",
+        "text": "La mezcla de creatividad y resultados es perfecta. Mi sitio web es rápido, atractivo y realmente trae más clientes."
+      }
+    ],
+    "ariaLabel": "Ver reseña {{n}}",
+    "prevAria": "Reseña anterior",
+    "nextAria": "Siguiente reseña"
+  },
+  "contact": {
+    "buttonLabel": "Contáctame",
+    "heading": "CONTACTAME\n",
+    "headingHighlight": "¡ASESORIA GRATIS!",
+    "emailLabel": "EMAIL",
+    "emailDesc": "¿Prefieres contactarme directamente por tu correo? Haz click aquí te responderé en breve:",
+    "socialLabel": "REDES SOCIALES",
+    "socialDesc": "Elige tu red social favorita y escríbeme para una consulta gratuita, o simplemente llena el formulario. ¡Estoy aquí para ayudarte a crecer!",
+    "socialSubtext": "CONOCE MIS REDES SOCIALES",
+    "locationLabel": "UBICACIÓN",
+    "locationText": "Desde Colombia, trabajando con clientes globales.",
+    "formTitle": "AGENDA TU ASESORÍA",
+    "formName": "NOMBRE",
+    "formNamePlaceholder": "Ingresa tu nombre",
+    "formEmail": "CORREO ELECTRÓNICO",
+    "formEmailPlaceholder": "tuemail@ejemplo.com",
+    "formMessage": "MENSAJE",
+    "formMessagePlaceholder": "Cuéntame tu idea o servicio que necesitas. Déjame tu WhatsApp ... Páginas web, marketing, IA local, clases de programación, apoyo académico, asesoría en CV, ventas online y plantillas en Excel.",
+    "formSubmit": "ENVIAR MENSAJE",
+    "formSubmitting": "Enviando...",
+    "modalTitle": "¡Mensaje Enviado!",
+    "modalDesc": "Gracias por contactarme. Te responderé lo antes posible.",
+    "modalClose": "Cerrar",
+    "errorName": "El nombre es obligatorio",
+    "errorEmail": "El correo es obligatorio",
+    "errorEmailInvalid": "Formato de correo inválido",
+    "errorMessage": "El mensaje es obligatorio"
+  },
+  "footer": {
+    "heading": "¡Conectemos y ",
+    "headingHighlight": "Crezcamos Juntos!",
+    "subtitle": "Sígueme en mis redes sociales para contenido sobre desarrollo web, marketing digital y mucho más.",
+    "credit": "Diseñado y desarrollado por ",
+    "creditName": "Juan Pablo Gutiérrez Díaz",
+    "creditDesc": ", especialista en desarrollo web y marketing digital, creando experiencias digitales ágiles y orientadas a resultados.",
+    "paymentLabel": "Métodos de pago aceptados",
+    "shareLabel": "Compartir",
+    "shareSublabel": "Esta página",
+    "copyright": "© 2026 Juan Pablo Gutiérrez Díaz. Todos los derechos reservados.",
+    "paymentMethods": [
+      "PayPal",
+      "Transferencias",
+      "Llaves",
+      "PSE",
+      "Efecty",
+      "Tarjetas"
+    ]
+  },
+  "shareModal": {
+    "heading": "Comparte este ",
+    "headingHighlight": "sitio",
+    "subtitle": "Elige cómo quieres compartir esta página",
+    "copyLabel": "Copiar enlace",
+    "copiedLabel": "¡Copiado!",
+    "close": "Cerrar",
+    "ariaClose": "Cerrar"
+  },
+  "themeToggle": {
+    "darkMode": "Modo oscuro",
+    "lightMode": "Modo claro"
+  },
+  "chatbot": {
+    "title": "Asistente Juan Pablo",
+    "status": "En línea",
+    "footerPrefix": "Asistente programado por ",
+    "footerName": "Juan Pablo",
+    "ariaOpen": "Abrir chatbot",
+    "ariaClose": "Cerrar chatbot",
+    "ariaReset": "Reiniciar chat",
+    "restart": "Reiniciar",
+    "typing": "Escribiendo",
+    "initial": "¡Hola! Soy el asistente programado de Juan Pablo. ¿En qué puedo ayudarte hoy?",
+    "responses": {
+      "services": {
+        "text": "Juan Pablo ofrece servicios principales y adicionales. ¿Sobre cuál te gustaría saber más?",
+        "options": [
+          "ia_local",
+          "additional_services",
+          "web_dev",
+          "digital_marketing",
+          "contact",
+          "about_me"
+        ]
+      },
+      "web_dev": {
+        "text": "Desarrollo páginas web modernas con React, Vite y Tailwind CSS. Sitios 100% personalizados, responsivos y optimizados para convertir visitantes en clientes. Ideales para emprendedores, pymes y profesionales. ¿Qué te gustaría saber?",
+        "options": [
+          "view_tech",
+          "dev_timeline",
+          "hosting_info",
+          "contact"
+        ]
+      },
+      "digital_marketing": {
+        "text": "Servicios completos de marketing digital: Edición profesional de fotografía y video, campañas de email/SMS, gestión de redes sociales, SEO, SEM y análisis de datos. Estrategias personalizadas para impulsar tu negocio online. ¿Qué aspecto te interesa?",
+        "options": [
+          "email_marketing",
+          "social_media",
+          "data_analytics",
+          "contact",
+          "youtube_channel"
+        ]
+      },
+      "ia_local": {
+        "text": "IA Local: modelos de lenguaje que corren directamente en tu PC usando GPU o RAM, sin suscripción, sin límites de preguntas y sin que tus datos salgan de tu máquina. Ideal para empresas que valoran privacidad, independencia tecnológica y velocidad local.",
+        "options": [
+          "try_ia_local",
+          "contact",
+          "services"
+        ]
+      },
+      "try_ia_local": {
+        "text": "Perfecto, te llevo al formulario de contacto para que puedas solicitar tu IA local. Así puedes empezar rápido y sin salir de tu flujo de trabajo.",
+        "options": [
+          "back_home"
+        ],
+        "action": "contact",
+        "autoClose": true
+      },
+      "contact": {
+        "text": "¡Perfecto! Juan Pablo estará encantado de ayudarte. ¿Cómo prefieres contactarlo?",
+        "options": [
+          "share_web",
+          "send_email",
+          "send_message",
+          "more_info",
+          "view_social"
+        ]
+      },
+      "view_social": {
+        "text": "¡Excelente! Te llevo a la sección de redes sociales para que conozcas más sobre Juan Pablo y sus proyectos. ¡Síguenos para estar al día!",
+        "options": [
+          "back_home"
+        ],
+        "action": "footer",
+        "autoClose": true
+      },
+      "view_tech": {
+        "text": "Stack tecnológico:\n\n• Frontend: React + Vite + Tailwind CSS\n• Backend: Node.js\n• Bases de datos: MySQL\n• Automatización: Python (IA)\n• Control de versiones: Git & GitHub\n• Apps móviles: React Native\n\nTodo para crear soluciones modernas y escalables.",
+        "options": [
+          "web_dev",
+          "view_examples",
+          "contact"
+        ]
+      },
+      "dev_timeline": {
+        "text": "Los tiempos varían según complejidad:\n\n• Landing page básica: 3-5 días\n• Sitio corporativo: 1-2 semanas\n• E-commerce completo: 3-4 semanas\n\nIncluye consultoría gratuita inicial para definir tu proyecto.",
+        "options": [
+          "hosting_info",
+          "view_tech",
+          "contact"
+        ]
+      },
+      "hosting_info": {
+        "text": "¡Sí! El primer año incluye:\n\n✓ Hosting y dominio gratis*\n✓ Correo corporativo\n✓ Configuración DNS\n✓ Certificado SSL\n✓ 3 meses de soporte gratis\n\n*Aplican términos y condiciones",
+        "options": [
+          "web_dev",
+          "contact"
+        ]
+      },
+      "email_marketing": {
+        "text": "Campañas de email y SMS marketing con:\n\n• Segmentación de audiencias\n• Pruebas A/B para optimización\n• Automatización con EmailJS\n• Análisis de resultados\n• CRM integrado (HubSpot/Masivian)\n\nAumento de engagement garantizado.",
+        "options": [
+          "digital_marketing",
+          "data_analytics",
+          "contact"
+        ]
+      },
+      "social_media": {
+        "text": "Gestión profesional de redes sociales:\n\n• Creación de contenido atractivo\n• Programación estratégica\n• Análisis de métricas\n• Community management\n• Campañas en Meta Business Suite\n\nConecta mejor con tu audiencia.",
+        "options": [
+          "view_social",
+          "digital_marketing",
+          "email_marketing",
+          "contact"
+        ]
+      },
+      "data_analytics": {
+        "text": "Toma decisiones basadas en datos:\n\n• Google Analytics integrado\n• Reportes personalizados\n• Segmentación avanzada\n• Optimización continua\n• KPIs y métricas clave\n\nTransforma datos en resultados.",
+        "options": [
+          "digital_marketing",
+          "email_marketing",
+          "contact"
+        ]
+      },
+      "additional_services": {
+        "text": "Además de desarrollo web y marketing, Juan Pablo ofrece servicios adicionales especializados:\n\n• Desarrollo de trabajos y evaluaciones académicas\n• Clases de programación personalizadas\n• Venta de garaje en línea (Marketplace y MercadoLibre)\n• Asesoría para crear CV profesionales\n• Plantillas Excel profesionales\n\n¿Cuál te interesa?",
+        "options": [
+          "academic_dev",
+          "cv_advice",
+          "programming_classes",
+          "online_sales",
+          "excel_templates",
+          "back_services"
+        ]
+      },
+      "academic_dev": {
+        "text": "Desarrollo de trabajos y evaluaciones\nApoyo profesional en el desarrollo de trabajos académicos, evaluaciones, proyectos y entregables con enfoque en calidad, cumplimiento y resultados.\n\nSolicitar apoyo académico",
+        "options": [
+          "view_academic_page",
+          "contact",
+          "additional_services"
+        ]
+      },
+      "programming_classes": {
+        "text": "Clases de programación personalizadas 1 a 1\nClases personalizadas enfocadas en tu nivel, ritmo y objetivos. Aprende programación de forma práctica y aplicada. Recibes Materiales y Certificado\n\nContáctame haciendo clic aquí",
+        "options": [
+          "view_classes_page",
+          "contact",
+          "additional_services"
+        ]
+      },
+      "online_sales": {
+        "text": "Venta de garaje en línea por Marketplace y MercadoLibre\nConoce mi modalidad de Publicación, gestión y optimización de productos en plataformas de venta online para que adquieras los tuyos completamente garantizados.\n\nExplorar tiendas y aprender a vender",
+        "options": [
+          "view_sales_page",
+          "contact",
+          "additional_services"
+        ]
+      },
+      "cv_advice": {
+        "text": "Asesoría en creación de tu CV para que entres al trabajo de tus sueños\nCreo tu CV para que entres al trabajo de tus sueños\nDiseño un currículum profesional para un CV estratégico, atractivo y optimizado para procesos de selección laboral, filtros avanzados ATS.\n\nContáctame haciendo clic aquí",
+        "options": [
+          "view_cv_page",
+          "contact",
+          "additional_services"
+        ]
+      },
+      "excel_templates": {
+        "text": "Plantillas para ti\nHerramientas Excel profesionales para mejorar tu productividad y finanzas personales. Acceso inmediato por solo $5 USD cada una.",
+        "options": [
+          "expense_tracker",
+          "habit_tracker",
+          "additional_services"
+        ]
+      },
+      "expense_tracker": {
+        "text": "Control de Gastos\nDomina tus finanzas en 5 min/día con colores inteligentes, gráficos automáticos y la regla 50/30/20.\n\n$7 USD\nVer Plantilla de Gastos",
+        "options": [
+          "view_expense_page",
+          "buy_template",
+          "excel_templates",
+          "contact"
+        ]
+      },
+      "habit_tracker": {
+        "text": "Rastreo de Hábitos\nRastrea tus hábitos diarios con gráficos dinámicos, rachas y análisis inteligente para 2026.\n\n$7 USD\nVer Plantilla de Hábitos",
+        "options": [
+          "view_habit_page",
+          "buy_template",
+          "excel_templates",
+          "contact"
+        ]
+      },
+      "buy_template": {
+        "text": "¡Excelente! Para adquirir la plantilla, contáctame directamente. Te enviaré el enlace de pago seguro y acceso inmediato.\n\nMétodos de pago: PayPal, Transferencia, etc.",
+        "options": [
+          "contact",
+          "excel_templates"
+        ]
+      },
+      "view_expense_page": {
+        "text": "¡Excelente! Te llevo directamente a la página de la plantilla de Control de Gastos. ¡Descubre cómo dominar tus finanzas!",
+        "options": [
+          "back_home"
+        ],
+        "action": "plantilla-gastos",
+        "autoClose": true
+      },
+      "view_habit_page": {
+        "text": "¡Excelente! Te llevo directamente a la página de la plantilla de Rastreo de Hábitos. ¡Mejora tus hábitos diarios!",
+        "options": [
+          "back_home"
+        ],
+        "action": "plantilla-habitos",
+        "autoClose": true
+      },
+      "view_academic_page": {
+        "text": "¡Perfecto! Te llevo a la página dedicada al servicio académico. ¡Descubre cómo puedo ayudarte con tus trabajos!",
+        "options": [
+          "back_home"
+        ],
+        "action": "apoyo-academico",
+        "autoClose": true
+      },
+      "view_classes_page": {
+        "text": "¡Genial! Te llevo a la página de clases de programación personalizadas. ¡Aprende a programar de manera efectiva!",
+        "options": [
+          "back_home"
+        ],
+        "action": "clases-programacion",
+        "autoClose": true
+      },
+      "view_sales_page": {
+        "text": "¡Excelente! Te llevo a la página de venta de garaje en línea. ¡Descubre cómo vender tus productos online!",
+        "options": [
+          "back_home"
+        ],
+        "action": "ventas-online",
+        "autoClose": true
+      },
+      "view_cv_page": {
+        "text": "¡Perfecto! Te llevo a la página de asesoría para crear tu CV. ¡Destaca en el mercado laboral!",
+        "options": [
+          "back_home"
+        ],
+        "action": "optimizacion-cv",
+        "autoClose": true
+      },
+      "back_services": {
+        "text": "¡Perfecto! ¿Te gustaría conocer más sobre nuestros servicios principales o adicionales?",
+        "options": [
+          "web_dev",
+          "digital_marketing",
+          "additional_services",
+          "contact"
+        ]
+      },
+      "youtube_channel": {
+        "text": "¡Excelente! Te llevo al canal de YouTube de Juan Pablo para que conozcas más sobre sus servicios y proyectos.",
+        "options": [
+          "back_home"
+        ],
+        "action": "youtube"
+      },
+      "send_email": {
+        "text": "Te abro el email para que puedas escribir directamente. Juan Pablo responde en menos de 24 horas.",
+        "options": [
+          "back_home"
+        ],
+        "action": "email",
+        "autoClose": true
+      },
+      "more_info": {
+        "text": "¿Qué más te gustaría saber? Puedo contarte sobre:\n\n• Proyectos realizados\n• Experiencia profesional\n• Certificaciones\n• Métodos de pago\n• Trabajo internacional",
+        "options": [
+          "services",
+          "about_me",
+          "contact"
+        ]
+      },
+      "view_examples": {
+        "text": "Juan Pablo tiene diversos proyectos visuales:\n\n• Desarrollo web (landing pages, e-commerce, corporativos)\n• Marketing digital (campañas, redes, contenido)\n• Automatización con IA\n\nPuedes ver ejemplos visuales en sus redes sociales y canal de YouTube.",
+        "options": [
+          "view_social",
+          "youtube_channel",
+          "web_dev",
+          "digital_marketing",
+          "contact"
+        ]
+      },
+      "about_me": {
+        "text": "Juan Pablo es desarrollador web full-stack y experto en performance marketing. Experiencia en React, Python (IA), y marketing digital. Trabaja con clientes en toda LATAM desde Colombia. Certificado en múltiples tecnologías y metodologías.",
+        "options": [
+          "view_tech",
+          "services",
+          "contact"
+        ]
+      },
+      "back_home": {
+        "text": "¡Perfecto! ¿Hay algo más en lo que pueda ayudarte?",
+        "options": [
+          "services",
+          "web_dev",
+          "digital_marketing",
+          "contact",
+          "faq",
+          "send_message"
+        ]
+      },
+      "faq": {
+        "text": "Aquí van algunas preguntas frecuentes:\n\n• ¿Trabajas con clientes internacionales? Sí, en toda LATAM.\n• ¿Ofreces mantenimiento? Sí, planes disponibles.\n• ¿Qué métodos de pago aceptas? Transferencia, PayPal, cripto.\n\n¿Cuál te gustaría profundizar?",
+        "options": [
+          "maintenance",
+          "payments",
+          "contact"
+        ]
+      },
+      "maintenance": {
+        "text": "Planes de mantenimiento:\n\n• Básico: Actualizaciones menores\n• Premium: Soporte completo, backups\n• Anual: Descuento disponible\n\nGarantiza que tu sitio esté siempre actualizado.",
+        "options": [
+          "faq",
+          "contact"
+        ]
+      },
+      "payments": {
+        "text": "Aceptamos:\n\n• Transferencias bancarias\n• PayPal\n• Mercado Pago\n• Criptomonedas (USDT, BTC)\n\n50% anticipo, 50% al finalizar.",
+        "options": [
+          "faq",
+          "contact"
+        ]
+      },
+      "share_web": {
+        "text": "¡Perfecto! Abre el modal de compartir para que puedas compartir este portafolio con un amigo. ¡Gracias por ayudar a difundir mi trabajo!",
+        "options": [
+          "back_home"
+        ],
+        "action": "share",
+        "autoClose": true
+      },
+      "send_message": {
+        "text": "Te llevo al formulario de contacto para que puedas enviar tu mensaje directamente.",
+        "options": [
+          "back_home"
+        ],
+        "action": "contact",
+        "autoClose": true
+      }
+    },
+    "optionLabels": {
+      "services": "Servicios",
+      "web_dev": "Desarrollo Web",
+      "digital_marketing": "Marketing Digital",
+      "ia_local": "IA Local",
+      "try_ia_local": "Probar IA Local en mi PC",
+      "contact": "Contacto",
+      "view_social": "Ver Redes Sociales",
+      "view_tech": "Ver Tecnologías",
+      "dev_timeline": "Tiempos de Desarrollo",
+      "hosting_info": "¿Incluye Hosting?",
+      "email_marketing": "Email Marketing",
+      "social_media": "Redes Sociales",
+      "data_analytics": "Análisis de Datos",
+      "additional_services": "Servicios Adicionales",
+      "academic_dev": "Desarrollo Académico",
+      "programming_classes": "Clases Programación",
+      "online_sales": "Venta Online",
+      "cv_advice": "Asesoría CV",
+      "excel_templates": "Plantillas Excel",
+      "expense_tracker": "Control de Gastos",
+      "habit_tracker": "Rastreo de Hábitos",
+      "buy_template": "Comprar Plantilla",
+      "view_expense_page": "Ver Plantilla de Gastos",
+      "view_habit_page": "Ver Plantilla de Hábitos",
+      "view_academic_page": "Ver Página Académica",
+      "view_classes_page": "Ver Página Clases",
+      "view_sales_page": "Ver Página Venta",
+      "view_cv_page": "Ver Página CV",
+      "back_services": "Volver a Servicios",
+      "youtube_channel": "Ver Canal de YouTube",
+      "send_email": "Enviar Email",
+      "more_info": "Más Información",
+      "view_examples": "Ver Ejemplos",
+      "about_me": "Háblame de Juan Pablo",
+      "back_home": "Volver al Inicio",
+      "faq": "Preguntas Frecuentes",
+      "maintenance": "Mantenimiento",
+      "payments": "Pagos",
+      "share_web": "Compartir esta Web",
+      "send_message": "Enviar mensaje",
+      "whatsapp": "Enviar WhatsApp"
+    }
+  },
+  "page404": {
+    "title": "Página no encontrada",
+    "description": "La página que buscas no existe o ha sido movida.",
+    "cta": "Volver al inicio"
+  },
+  "seo": {
+    "plantillaGastosTitle": "Plantilla Excel Control de Gastos — Regla 50/30/20",
+    "plantillaGastosDesc": "Plantilla Excel profesional para control de gastos personales con la regla 50/30/20. Gráficos automáticos y colores inteligentes.",
+    "plantillaHabitosTitle": "Plantilla Excel Rastreo de Hábitos — Productividad 2026",
+    "plantillaHabitosDesc": "Plantilla Excel para rastrear hábitos diarios con gráficos dinámicos, rachas y análisis inteligente.",
+    "meta": {
+      "home": {
+        "title": "Juan Pablo Gutiérrez — Dev & Marketing Digital",
+        "description": "Desarrollo web, Automatización & Marketing digital en Tunja, Boyacá. Páginas web profesionales, SEO, marketing digital para emprendedores y Pymes en Colombia.",
+        "keywords": "desarrollo web Tunja, marketing digital Boyacá, páginas web profesionales Colombia, Juan Pablo Gutiérrez, desarrollo web Colombia, automatización, emprendedores"
+      },
+      "apoyo-academico": {
+        "title": "Apoyo Académico Universitario — Trabajos y Proyectos",
+        "description": "Apoyo profesional y confidencial en trabajos académicos, evaluaciones y proyectos universitarios. Calidad garantizada, entregas a tiempo. Servicio en Colombia y Latinoamérica.",
+        "keywords": "apoyo académico Colombia, trabajos universitarios, proyectos académicos, ayuda tesis, evaluaciones universitarias, apoyo tareas Colombia"
+      },
+      "clases-programacion": {
+        "title": "Clases de Programación 1 a 1 — Mentorías Personalizadas",
+        "description": "Clases personalizadas de programación con mentorías 1 a 1. Aprende JavaScript, Python, React, SQL. Taller de Excel Avanzado y Microsoft 365. Material y certificado incluidos.",
+        "keywords": "clases programación online, mentorías programación, aprender a programar, cursos programación Colombia, Excel avanzado, React, Python"
+      },
+      "ventas-online": {
+        "title": "Venta Online — Marketplace y MercadoLibre",
+        "description": "Consultoría y gestión de ventas en Facebook Marketplace y MercadoLibre. Publicación, optimización y estrategias para vender más. Compra y venta segura en Colombia.",
+        "keywords": "vender en MercadoLibre Colombia, Facebook Marketplace, ventas online, marketplace Colombia, venta de garaje online, comercio electrónico"
+      },
+      "optimizacion-cv": {
+        "title": "Optimización de CV — Hoja de Vida para Filtros ATS",
+        "description": "Diseño profesional de hojas de vida optimizadas para filtros ATS. Currículum estratégico para conseguir el trabajo de tus sueños. Servicio rápido y personalizado.",
+        "keywords": "optimización CV, hoja de vida profesional, currículum ATS, diseño CV Colombia, hoja de vida ejecutiva, búsqueda de empleo"
+      },
+      "plantilla-gastos": {
+        "title": "Plantilla Excel Control de Gastos — Regla 50/30/20",
+        "description": "Plantilla Excel profesional para control de gastos personales con la regla 50/30/20. Gráficos automáticos, colores inteligentes. Sólo $7 USD / 19.000 COP. Acceso inmediato.",
+        "keywords": "plantilla control gastos, Excel finanzas personales, regla 50/30/20, plantilla ahorro, presupuesto personal Excel, finanzas Colombia"
+      },
+      "plantilla-habitos": {
+        "title": "Plantilla Excel Rastreo de Hábitos — Productividad 2026",
+        "description": "Plantilla Excel para rastrear hábitos diarios con gráficos dinámicos, rachas y análisis inteligente. Incrementa tu productividad. Sólo $7 USD / 19.000 COP. Acceso inmediato.",
+        "keywords": "plantilla hábitos Excel, rastreador hábitos, productividad personal, gestión hábitos diarios, Excel productividad, plantilla 2026"
+      },
+      "ia-local": {
+        "title": "IA Local — Modelos de Lenguaje en tu PC sin Internet",
+        "description": "Consultoría de IA local con modelos Llama, Qwen y Phi. Corre en tu GPU sin conexión a internet. 100% privado, sin suscripciones, sin límites. Ideal para empresas en Colombia.",
+        "keywords": "IA local, modelos lenguaje offline, Llama, Qwen, inteligencia artificial privada, GPU Colombia, IA sin internet, consultoría IA empresas"
+      }
+    }
+  },
+  "pages": {
+    "apoyoAcademico": {
+      "hero": {
+        "title": "Apoyo profesional para tus trabajos académicos",
+        "subtitle": "Calidad, cumplimiento y acompañamiento experto"
+      },
+      "quickStats": [
+        {
+          "label": "100% Confidencial",
+          "icon": "lock"
+        },
+        {
+          "label": "Calidad Garantizada",
+          "icon": "check"
+        },
+        {
+          "label": "Entregas a Tiempo",
+          "icon": "stopwatch"
+        }
+      ],
+      "helpWith": [
+        {
+          "title": "Trabajos académicos",
+          "desc": "Ensayos, investigaciones y documentos",
+          "icon": "file"
+        },
+        {
+          "title": "Evaluaciones y talleres",
+          "desc": "Preparación y desarrollo completo",
+          "icon": "chart"
+        },
+        {
+          "title": "Proyectos universitarios",
+          "desc": "De cualquier disciplina académica",
+          "icon": "graduation"
+        },
+        {
+          "title": "Entregables virtuales",
+          "desc": "Plataformas y formatos online",
+          "icon": "laptop"
+        }
+      ],
+      "valueProposition": [
+        {
+          "title": "Calidad académica",
+          "desc": "Trabajos investigados, bien estructurados y con fuentes verificadas"
+        },
+        {
+          "title": "Entrega a tiempo",
+          "desc": "Cumplimiento garantizado en fechas acordadas"
+        },
+        {
+          "title": "Confidencialidad",
+          "desc": "Tu información y trabajos protegidos bajo máxima privacidad"
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Recepción",
+          "desc": "Recibimos tu solicitud y detalles del trabajo"
+        },
+        {
+          "step": 2,
+          "title": "Análisis",
+          "desc": "Evaluamos requerimientos y definimos estrategia"
+        },
+        {
+          "step": 3,
+          "title": "Desarrollo",
+          "desc": "Creamos tu trabajo con calidad y rigor académico"
+        },
+        {
+          "step": 4,
+          "title": "Entrega",
+          "desc": "Entregamos el trabajo listo y revisado"
+        }
+      ],
+      "audience": [
+        {
+          "persona": "Estudiantes universitarios",
+          "desc": "Con trabajos complejos y plazos ajustados"
+        },
+        {
+          "persona": "Estudiantes virtuales",
+          "desc": "Que requieren apoyo flexible y oportuno"
+        },
+        {
+          "persona": "Personas con carga laboral",
+          "desc": "Sin tiempo disponible para estudios a tiempo completo"
+        }
+      ],
+      "guarantees": [
+        {
+          "title": "Confidencialidad",
+          "desc": "Tu privacidad es absoluta"
+        },
+        {
+          "title": "Entregas a tiempo",
+          "desc": "Cumplimiento garantizado"
+        },
+        {
+          "title": "Comunicación constante",
+          "desc": "Estoy aquí para resolver tus dudas"
+        }
+      ]
+    },
+    "clasesProgramacion": {
+      "hero": {
+        "title": "Domina la programación con clases 1 a 1",
+        "subtitle": "Aprende haciendo: clases prácticas, proyectos reales y acompañamiento continuo. Material y certificado incluidos"
+      },
+      "stats": [
+        {
+          "label": "100% Personalizado",
+          "value": "100%"
+        },
+        {
+          "label": "Calificación",
+          "value": "5.0"
+        },
+        {
+          "label": "Estudiantes",
+          "value": "+50"
+        }
+      ],
+      "featured": {
+        "title": "Microsoft 365 - Excel Avanzado",
+        "subtitle": "Especialidad destacada",
+        "highlights": [
+          "Automatización de tareas repetitivas",
+          "Dashboards profesionales",
+          "Power Query avanzado",
+          "Macros y VBA aplicado"
+        ],
+        "bonuses": "Material práctico + Plantillas descargables + Certificado"
+      },
+      "benefits": [
+        {
+          "title": "Clases 1 a 1",
+          "desc": "Atención dedicada solo para ti",
+          "icon": "user"
+        },
+        {
+          "title": "Personalizado",
+          "desc": "Adaptado a tu nivel y ritmo",
+          "icon": "bullseye"
+        },
+        {
+          "title": "Acompañamiento",
+          "desc": "Apoyo continuo entre clases",
+          "icon": "handshake"
+        },
+        {
+          "title": "Proyectos reales",
+          "desc": "Aprende aplicando tus conocimientos",
+          "icon": "briefcase"
+        }
+      ],
+      "audience": [
+        {
+          "persona": "Principiantes",
+          "desc": "Sin experiencia previa en programación"
+        },
+        {
+          "persona": "Estudiantes de Ingeniería",
+          "desc": "Que necesitan reforzar conceptos"
+        },
+        {
+          "persona": "Cambio de carrera",
+          "desc": "Personas en transición profesional"
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Diagnóstico",
+          "desc": "Evaluamos tu nivel y objetivos"
+        },
+        {
+          "step": 2,
+          "title": "Plan Personalizado",
+          "desc": "Diseño de ruta de aprendizaje"
+        },
+        {
+          "step": 3,
+          "title": "Clases Prácticas",
+          "desc": "Aprendizaje basado en proyectos"
+        },
+        {
+          "step": 4,
+          "title": "Seguimiento",
+          "desc": "Evaluación y ajuste continuo"
+        }
+      ],
+      "languages": [
+        "Python",
+        "JavaScript",
+        "React",
+        "SQL",
+        "Excel VBA",
+        "Power Query"
+      ]
+    },
+    "ventasOnline": {
+      "hero": {
+        "title": "Convierte tus productos en ventas reales",
+        "subtitle": "Compra segura y ventas profesionales en Marketplace y MercadoLibre"
+      },
+      "stores": [
+        {
+          "name": "MercadoLibre",
+          "reputation": "4.9/5 estrellas",
+          "sales": "+500 ventas",
+          "desc": "Reputación consolidada",
+          "cta": "Visitar Tienda",
+          "url": "https://listado.mercadolibre.com.co/_CustId_458406036?item_id=MCO1405179747&category_id=MCO180874&seller_id=458406036&client=recoview-selleritems&recos_listing=true",
+          "color": "#FFB100"
+        },
+        {
+          "name": "Facebook Marketplace",
+          "reputation": "4.8/5 estrellas",
+          "sales": "Envío gratis",
+          "desc": "Trato directo local",
+          "cta": "Ver Tienda",
+          "url": "https://www.facebook.com/marketplace/profile/100028152081570/",
+          "color": "#1877F2"
+        }
+      ],
+      "whyUs": [
+        {
+          "title": "Productos verificados",
+          "desc": "Calidad garantizada en cada venta"
+        },
+        {
+          "title": "Pagos seguros",
+          "desc": "Plataformas de pago confiables"
+        },
+        {
+          "title": "Envíos confiables",
+          "desc": "Logística y empaque profesional"
+        },
+        {
+          "title": "Atención 24/7",
+          "desc": "Soporte directo con clientes"
+        }
+      ],
+      "ctas": [
+        {
+          "label": "Compra en Línea",
+          "action": "buyOnline"
+        },
+        {
+          "label": "Compra en Marketplace",
+          "action": "marketplace"
+        },
+        {
+          "label": "Aprende a vender e-commerce",
+          "action": "learn"
+        }
+      ]
+    },
+    "optimizacionCV": {
+      "hero": {
+        "title": "Consigue más entrevistas con una Hoja de Vida optimizada para ATS",
+        "subtitle": "Ajusto tu perfil para superar filtros de IA y llegar a reclutadores reales"
+      },
+      "problem": {
+        "title": "El Problema",
+        "stat": "75%",
+        "desc": "El 75% de aplicaciones son descartadas por sistemas ATS debido a formatos incompatibles"
+      },
+      "solution": {
+        "title": "La Solución",
+        "desc": "Optimización completa, palabras clave estratégicas y diseño persuasivo para humanos"
+      },
+      "includes": [
+        {
+          "title": "Diseño y estructura profesional",
+          "icon": "palette"
+        },
+        {
+          "title": "Contenido persuasivo",
+          "icon": "pen"
+        },
+        {
+          "title": "Optimización ATS",
+          "icon": "robot"
+        },
+        {
+          "title": "Recomendaciones de presentación",
+          "icon": "lightbulb"
+        }
+      ],
+      "pricing": {
+        "original": "$84 USD",
+        "current": "$19 USD",
+        "savings": "Oferta limitada"
+      }
+    },
+    "plantillaGastos": {
+      "hero": {
+        "title": "Domina tus finanzas en 5 min/día",
+        "subtitle": "Plantilla Excel profesional para control de gastos personales. Más de 330 personas ya la usan"
+      },
+      "pricing": {
+        "colombia": "19.000 COP",
+        "international": "$7 USD",
+        "urgency": "37 personas viendo esto ahora"
+      },
+      "features": [
+        {
+          "title": "Control Diario/Semanal/Mensual",
+          "icon": "calendar"
+        },
+        {
+          "title": "Colores Inteligentes",
+          "icon": "palette"
+        },
+        {
+          "title": "Tablas Dinámicas",
+          "icon": "chart"
+        },
+        {
+          "title": "Regla 50/30/20",
+          "icon": "scale"
+        },
+        {
+          "title": "Compatible con móvil",
+          "icon": "mobile"
+        },
+        {
+          "title": "Acceso en la nube",
+          "icon": "cloud"
+        }
+      ],
+      "mockData": {
+        "categories": [
+          {
+            "name": "Comida",
+            "emoji": "pizzaSlice",
+            "amount": 45000,
+            "status": "circleCheck"
+          },
+          {
+            "name": "Supermercado",
+            "emoji": "cart",
+            "amount": 120000,
+            "status": "circleXmark"
+          },
+          {
+            "name": "Transporte",
+            "emoji": "car",
+            "amount": 35000,
+            "status": "circleCheck"
+          },
+          {
+            "name": "Entretenimiento",
+            "emoji": "gamepad",
+            "amount": 25000,
+            "status": "circleCheck"
+          }
+        ],
+        "weekly": [
+          {
+            "day": "Lunes",
+            "percent": 85
+          },
+          {
+            "day": "Martes",
+            "percent": 92
+          },
+          {
+            "day": "Miércoles",
+            "percent": 78
+          },
+          {
+            "day": "Jueves",
+            "percent": 88
+          },
+          {
+            "day": "Viernes",
+            "percent": 95
+          },
+          {
+            "day": "Sábado",
+            "percent": 65
+          },
+          {
+            "day": "Domingo",
+            "percent": 72
+          }
+        ],
+        "distribution": [
+          {
+            "category": "Necesidades (50%)",
+            "percent": 50,
+            "color": "#4F7FFF"
+          },
+          {
+            "category": "Deseos (30%)",
+            "percent": 30,
+            "color": "#00E5C3"
+          },
+          {
+            "category": "Ahorros (20%)",
+            "percent": 20,
+            "color": "#FF6B6B"
+          }
+        ]
+      },
+      "transformations": [
+        {
+          "metric": "$1.200 USA",
+          "desc": "Ahorro promedio de nuestros usuarios"
+        },
+        {
+          "metric": "100%",
+          "desc": "Control total de tus gastos"
+        },
+        {
+          "metric": "7 días",
+          "desc": "Tiempo promedio para notar cambio"
+        },
+        {
+          "metric": "95%",
+          "desc": "De usuarios recomendarían esta plantilla"
+        }
+      ],
+      "testimonialsGastos": [
+        {
+          "name": "Ana G.",
+          "badge": "+$200 ahorrado",
+          "text": "Finalmente veo dónde va mi dinero"
+        },
+        {
+          "name": "Carlos M.",
+          "badge": "Sin sorpresas",
+          "text": "He mejorado mis finanzas drasticamente"
+        },
+        {
+          "name": "Laura S.",
+          "badge": "+$150/mes",
+          "text": "Herramienta fundamental"
+        },
+        {
+          "name": "Juan P.",
+          "badge": "Control total",
+          "text": "Cambió mi vida financiera"
+        },
+        {
+          "name": "Diego R.",
+          "badge": "+$180/mes",
+          "text": "Súper recomendado"
+        },
+        {
+          "name": "Sofía L.",
+          "badge": "100% Útil",
+          "text": "La mejor compra que hice"
+        }
+      ],
+      "science": [
+        {
+          "title": "Finanzas Conductuales",
+          "desc": "Decisiones de dinero basadas en psicología"
+        },
+        {
+          "title": "Refuerzo Positivo (Dopamina)",
+          "desc": "Ver progreso motiva a ahorrar más"
+        },
+        {
+          "title": "Visualización del Progreso",
+          "desc": "Gráficos claros = mejor control"
+        },
+        {
+          "title": "Consistencia",
+          "desc": "Hábitos diarios crean cambios permanentes"
+        }
+      ],
+      "paymentMethods": [
+        "PSE",
+        "Nequi",
+        "PayPal",
+        "Efecty",
+        "Transferencia"
+      ],
+      "warranty": "7 días de garantía - Si no te gusta, te devolvemos el 100%",
+      "faqs": [
+        {
+          "q": "¿Cuándo me llega la plantilla después de pagar?",
+          "a": "Inmediatamente después de confirmar el pago recibirás un email con la descarga de la plantilla en Excel."
+        },
+        {
+          "q": "¿Funciona en Google Sheets?",
+          "a": "Sí, puedes convertirla a Google Sheets fácilmente o usarla directamente en Excel/LibreOffice."
+        },
+        {
+          "q": "¿Viene con tutoriales?",
+          "a": "Sí, incluye videos tutoriales paso a paso y guía de uso completa."
+        },
+        {
+          "q": "¿Puedo usarla en móvil?",
+          "a": "Sí, es 100% responsive y funciona en Excel Mobile o Google Sheets en tu teléfono."
+        }
+      ]
+    },
+    "plantillaHabitos": {
+      "hero": {
+        "title": "Rastreo de Hábitos - Sigue tu Progreso Diario",
+        "subtitle": "Plantilla interactiva para monitorear tus hábitos con gráficos visuales y rachas. Construye consistencia en 66 días"
+      },
+      "stats": [
+        {
+          "label": "Calificación",
+          "value": "4.9/5"
+        },
+        {
+          "label": "Hábitos Rastreados",
+          "value": "+1.2k"
+        },
+        {
+          "label": "Usuarios Activos",
+          "value": "+850"
+        }
+      ],
+      "features": [
+        {
+          "title": "Progreso en %",
+          "icon": "chartLine"
+        },
+        {
+          "title": "Checkboxes Visuales",
+          "icon": "circleCheck"
+        },
+        {
+          "title": "Gráficos Dinámicos",
+          "icon": "chart"
+        },
+        {
+          "title": "Heatmap Anual",
+          "icon": "fire"
+        },
+        {
+          "title": "Metas y Rachas",
+          "icon": "bullseye"
+        },
+        {
+          "title": "Copiable Mes a Mes",
+          "icon": "clipboard"
+        }
+      ],
+      "yearlyMetrics": {
+        "currentStreak": 12,
+        "bestMonth": 95,
+        "totalHabits": 1200
+      },
+      "testimonialsHabitos": [
+        {
+          "name": "María G.",
+          "metric": "127 días",
+          "text": "Mi racha más larga jamás alcanzada"
+        },
+        {
+          "name": "Carlos R.",
+          "metric": "+3x Productividad",
+          "text": "Cambió mi rutina completamente"
+        },
+        {
+          "name": "Sofia L.",
+          "metric": "98% Consistencia",
+          "text": "Lo mejor para mantener disciplina"
+        },
+        {
+          "name": "Andrés M.",
+          "metric": "+5 Hábitos",
+          "text": "Ahora tengo rutina sólida"
+        },
+        {
+          "name": "Pablo D.",
+          "metric": "180 días",
+          "text": "Nunca creí que lo lograría"
+        },
+        {
+          "name": "Laura P.",
+          "metric": "100% Enero",
+          "text": "Enero fue mi mejor mes"
+        }
+      ],
+      "science": [
+        {
+          "title": "Basado en Hábitos Atómicos",
+          "desc": "James Clear - Cambios pequeños = Resultados enormes"
+        },
+        {
+          "title": "Refuerzo por Dopamina",
+          "desc": "Ver checkboxes activa recompensa cerebral"
+        },
+        {
+          "title": "Rachas y Momentum",
+          "desc": "\"Never break the chain\" - Mantén el streak"
+        },
+        {
+          "title": "Visualización Diaria",
+          "desc": "Lo que ves, lo haces"
+        }
+      ],
+      "price": {
+        "original": "$7 USD",
+        "current": "$5 USD"
+      },
+      "faqs": [
+        {
+          "q": "¿Cuántos hábitos puedo rastrear?",
+          "a": "Ilimitados. Puedes agregar tantos hábitos como necesites y el sistema se adapta automáticamente."
+        },
+        {
+          "q": "¿Cómo se calcula la racha?",
+          "a": "La racha aumenta cada día que completes un hábito. Si faltas un día, se reinicia, pero el historial se mantiene."
+        },
+        {
+          "q": "¿Puedo modificar los hábitos?",
+          "a": "Sí, es totalmente personalizable. Cambia los hábitos, agrega nuevos o elimina los que no uses."
+        },
+        {
+          "q": "¿Cómo se usan los gráficos del heatmap?",
+          "a": "Los colores indican intensidad. Verde = días completados, rojo = días faltados. Perfecto para visualizar patrones."
+        }
+      ]
+    },
+    "iaLocal": {
+      "hero": {
+        "title": "IA Local: En tu Computador, Sin Internet",
+        "subtitle": "Modelos de lenguaje que corren nativamente en tu GPU o RAM. Sin límites de preguntas, sin suscripciones y con 100% de privacidad"
+      },
+      "strengths": [
+        {
+          "icon": "shield",
+          "title": "100% Privado",
+          "desc": "Tus datos NO salen de tu máquina"
+        },
+        {
+          "icon": "infinity",
+          "title": "Ilimitado",
+          "desc": "Sin costo por API"
+        },
+        {
+          "icon": "money",
+          "title": "Sin Suscripciones",
+          "desc": "El modelo es tuyo"
+        },
+        {
+          "icon": "globe",
+          "title": "Offline Nativo",
+          "desc": "Funciona sin conexión"
+        },
+        {
+          "icon": "bolt",
+          "title": "Velocidad Local",
+          "desc": "Uso de GPU"
+        },
+        {
+          "icon": "bullseye",
+          "title": "Modular",
+          "desc": "Elige según tu hardware"
+        }
+      ],
+      "models": [
+        {
+          "name": "Llama 3.1 8B",
+          "ram": "6-8 GB",
+          "use": "Razonamiento general y documentación"
+        },
+        {
+          "name": "Qwen 2.5 Coder 7B",
+          "ram": "5-6 GB",
+          "use": "Experto en programación y código"
+        },
+        {
+          "name": "Phi-3.5-mini",
+          "ram": "3-4 GB",
+          "use": "PCs con poca RAM, lógica y matemáticas"
+        },
+        {
+          "name": "Ministral 3 14B",
+          "ram": "10-12 GB",
+          "use": "Velocidad y función calling avanzada"
+        }
+      ],
+      "b2b": {
+        "title": "B2B / Empresas y Negocios",
+        "features": [
+          "Automatizar respuestas con tono de marca",
+          "Clasificación de documentos internos",
+          "Asistente de código especializado",
+          "Extracción de datos de reportes"
+        ],
+        "note": "Mediante fine-tuning o RAG, adaptamos cualquier modelo a tus necesidades."
+      },
+      "useCases": [
+        {
+          "title": "Desarrollador Independiente",
+          "desc": "Asistente de código privado sin límites"
+        },
+        {
+          "title": "Investigador/Académico",
+          "desc": "Procesa papers sin compartir datos"
+        },
+        {
+          "title": "Empresa de Servicios",
+          "desc": "Chatbot interno con datos confidenciales"
+        },
+        {
+          "title": "Analista de Datos",
+          "desc": "Procesa información sensible localmente"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "¿Necesito una GPU?",
+          "a": "No es obligatorio, pero recomendamos GPU para mejor velocidad. Con CPU funciona, pero más lentamente."
+        },
+        {
+          "q": "¿Qué requisitos mínimos de RAM necesito?",
+          "a": "3 GB RAM mínimo para modelos pequeños. 8+ GB para modelos más poderosos."
+        },
+        {
+          "q": "¿Es realmente privado?",
+          "a": "Sí, 100%. Todo se ejecuta localmente. Ningún dato sale de tu máquina."
+        },
+        {
+          "q": "¿Puedo usar esto para negocios?",
+          "a": "Totalmente. Empresas usan IA local para chatbots, análisis y clasificación sin exponer datos."
+        }
+      ]
+    },
+    "testimonials": [
+      {
+        "name": "María González",
+        "role": "Estudiante",
+        "rating": 5,
+        "text": "Excelente servicio, muy profesional"
+      },
+      {
+        "name": "Sofia Ramírez",
+        "role": "Emprendedora",
+        "rating": 5,
+        "text": "Me ayudó a crecer mi negocio en línea"
+      },
+      {
+        "name": "Carlos Rodríguez",
+        "role": "Ingeniero",
+        "rating": 5,
+        "text": "Gracias a Juan mis ventas se dispararon en MercadoLibre"
+      },
+      {
+        "name": "Miguel Ángel",
+        "role": "Vendedor",
+        "rating": 5,
+        "text": "Mi negocio se potenció y ahora tengo más clientes"
+      },
+      {
+        "name": "Ana López",
+        "role": "Profesional",
+        "rating": 5,
+        "text": "Ahora soy el vendedor número 1 en mi categoría"
+      },
+      {
+        "name": "Roberto Silva",
+        "role": "Estudiante Virtual",
+        "rating": 5,
+        "text": "Servicio confiable y de calidad"
+      }
+    ]
+  },
+  "servicePages": {
+    "apoyoAcademico": {
+      "hero": {
+        "title": "Apoyo profesional para tus trabajos académicos",
+        "subtitle": "Calidad, cumplimiento y acompañamiento experto"
+      },
+      "quickStats": [
+        {
+          "label": "100% Confidencial",
+          "icon": "lock"
+        },
+        {
+          "label": "Calidad Garantizada",
+          "icon": "check"
+        },
+        {
+          "label": "Entregas a Tiempo",
+          "icon": "stopwatch"
+        }
+      ],
+      "helpWith": [
+        {
+          "title": "Trabajos académicos",
+          "desc": "Ensayos, investigaciones y documentos",
+          "icon": "file"
+        },
+        {
+          "title": "Evaluaciones y talleres",
+          "desc": "Preparación y desarrollo completo",
+          "icon": "chart"
+        },
+        {
+          "title": "Proyectos universitarios",
+          "desc": "De cualquier disciplina académica",
+          "icon": "graduation"
+        },
+        {
+          "title": "Entregables virtuales",
+          "desc": "Plataformas y formatos online",
+          "icon": "laptop"
+        }
+      ],
+      "valueProposition": [
+        {
+          "title": "Calidad académica",
+          "desc": "Trabajos investigados, bien estructurados y con fuentes verificadas"
+        },
+        {
+          "title": "Entrega a tiempo",
+          "desc": "Cumplimiento garantizado en fechas acordadas"
+        },
+        {
+          "title": "Confidencialidad",
+          "desc": "Tu información y trabajos protegidos bajo máxima privacidad"
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Recepción",
+          "desc": "Recibimos tu solicitud y detalles del trabajo"
+        },
+        {
+          "step": 2,
+          "title": "Análisis",
+          "desc": "Evaluamos requerimientos y definimos estrategia"
+        },
+        {
+          "step": 3,
+          "title": "Desarrollo",
+          "desc": "Creamos tu trabajo con calidad y rigor académico"
+        },
+        {
+          "step": 4,
+          "title": "Entrega",
+          "desc": "Entregamos el trabajo listo y revisado"
+        }
+      ],
+      "audience": [
+        {
+          "persona": "Estudiantes universitarios",
+          "desc": "Con trabajos complejos y plazos ajustados"
+        },
+        {
+          "persona": "Estudiantes virtuales",
+          "desc": "Que requieren apoyo flexible y oportuno"
+        },
+        {
+          "persona": "Personas con carga laboral",
+          "desc": "Sin tiempo disponible para estudios a tiempo completo"
+        }
+      ],
+      "guarantees": [
+        {
+          "title": "Confidencialidad",
+          "desc": "Tu privacidad es absoluta"
+        },
+        {
+          "title": "Entregas a tiempo",
+          "desc": "Cumplimiento garantizado"
+        },
+        {
+          "title": "Comunicación constante",
+          "desc": "Estoy aquí para resolver tus dudas"
+        }
+      ],
+      "sectionTitles": {
+        "helpWith": "En qué te puedo ayudar",
+        "helpWithDesc": "Ofrezco apoyo completo en diferentes áreas académicas",
+        "valueProposition": "Mi propuesta de valor",
+        "process": "Proceso de trabajo",
+        "audience": "¿Para quién es?",
+        "guarantees": "Garantías",
+        "ctaTitle": "¿Listo para mejorar tu desempeño académico?",
+        "ctaDesc": "Contacta conmigo hoy y descubre cómo puedo ayudarte a alcanzar tus objetivos académicos",
+        "ctaButton": "Agendar Consulta Gratuita",
+        "heroButton": "Solicitar apoyo académico"
+      }
+    },
+    "clasesProgramacion": {
+      "hero": {
+        "title": "Domina la programación con clases 1 a 1",
+        "subtitle": "Aprende haciendo: clases prácticas, proyectos reales y acompañamiento continuo. Material y certificado incluidos"
+      },
+      "stats": [
+        {
+          "label": "100% Personalizado",
+          "value": "100%"
+        },
+        {
+          "label": "Calificación",
+          "value": "5.0"
+        },
+        {
+          "label": "Estudiantes",
+          "value": "+50"
+        }
+      ],
+      "featured": {
+        "title": "Microsoft 365 - Excel Avanzado",
+        "subtitle": "Especialidad destacada",
+        "highlights": [
+          "Automatización de tareas repetitivas",
+          "Dashboards profesionales",
+          "Power Query avanzado",
+          "Macros y VBA aplicado"
+        ],
+        "bonuses": "Material práctico + Plantillas descargables + Certificado"
+      },
+      "benefits": [
+        {
+          "title": "Clases 1 a 1",
+          "desc": "Atención dedicada solo para ti",
+          "icon": "user"
+        },
+        {
+          "title": "Personalizado",
+          "desc": "Adaptado a tu nivel y ritmo",
+          "icon": "bullseye"
+        },
+        {
+          "title": "Acompañamiento",
+          "desc": "Apoyo continuo entre clases",
+          "icon": "handshake"
+        },
+        {
+          "title": "Proyectos reales",
+          "desc": "Aprende aplicando tus conocimientos",
+          "icon": "briefcase"
+        }
+      ],
+      "audience": [
+        {
+          "persona": "Principiantes",
+          "desc": "Sin experiencia previa en programación"
+        },
+        {
+          "persona": "Estudiantes de Ingeniería",
+          "desc": "Que necesitan reforzar conceptos"
+        },
+        {
+          "persona": "Cambio de carrera",
+          "desc": "Personas en transición profesional"
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Diagnóstico",
+          "desc": "Evaluamos tu nivel y objetivos"
+        },
+        {
+          "step": 2,
+          "title": "Plan Personalizado",
+          "desc": "Diseño de ruta de aprendizaje"
+        },
+        {
+          "step": 3,
+          "title": "Clases Prácticas",
+          "desc": "Aprendizaje basado en proyectos"
+        },
+        {
+          "step": 4,
+          "title": "Seguimiento",
+          "desc": "Evaluación y ajuste continuo"
+        }
+      ],
+      "languages": [
+        "Python",
+        "JavaScript",
+        "React",
+        "SQL",
+        "Excel VBA",
+        "Power Query"
+      ],
+      "sectionTitles": {
+        "heroButton": "Agendar Primera Clase",
+        "featuredLearnTitle": "Lo que aprenderás",
+        "featuredBonusesTitle": "Bonificaciones",
+        "featuredButton": "Conocer Más sobre Excel",
+        "benefits": "Beneficios clave",
+        "techBadge": "Stack tecnológico",
+        "techTitle": "Lenguajes y tecnologías",
+        "techDesc": "Tecnologías que enseño en mis clases personalizadas",
+        "audience": "¿Para quién es?",
+        "methodology": "Mi metodología",
+        "ctaTitle": "¿Listo para aprender a programar?",
+        "ctaDesc": "Agendar tu primera clase gratuita de diagnóstico y descubre tu ruta de aprendizaje personalizada",
+        "ctaButton": "Agendar Mi Primera Clase",
+        "featuredLearn": "Lo que aprenderás",
+        "featuredBonuses": "Bonificaciones",
+        "techStack": "Stack tecnológico",
+        "techLanguages": "Lenguajes y tecnologías"
+      }
+    },
+    "ventasOnline": {
+      "hero": {
+        "title": "Convierte tus productos en ventas reales",
+        "subtitle": "Compra segura y ventas profesionales en Marketplace y MercadoLibre"
+      },
+      "stores": [
+        {
+          "name": "MercadoLibre",
+          "reputation": "4.9/5 estrellas",
+          "sales": "+500 ventas",
+          "desc": "Reputación consolidada",
+          "cta": "Visitar Tienda",
+          "url": "https://listado.mercadolibre.com.co/_CustId_458406036?item_id=MCO1405179747&category_id=MCO180874&seller_id=458406036&client=recoview-selleritems&recos_listing=true",
+          "color": "#FFB100"
+        },
+        {
+          "name": "Facebook Marketplace",
+          "reputation": "4.8/5 estrellas",
+          "sales": "Envío gratis",
+          "desc": "Trato directo local",
+          "cta": "Ver Tienda",
+          "url": "https://www.facebook.com/marketplace/profile/100028152081570/",
+          "color": "#1877F2"
+        }
+      ],
+      "whyUs": [
+        {
+          "title": "Productos verificados",
+          "desc": "Calidad garantizada en cada venta"
+        },
+        {
+          "title": "Pagos seguros",
+          "desc": "Plataformas de pago confiables"
+        },
+        {
+          "title": "Envíos confiables",
+          "desc": "Logística y empaque profesional"
+        },
+        {
+          "title": "Atención 24/7",
+          "desc": "Soporte directo con clientes"
+        }
+      ],
+      "ctas": [
+        {
+          "label": "Compra en Línea",
+          "action": "buyOnline"
+        },
+        {
+          "label": "Compra en Marketplace",
+          "action": "marketplace"
+        },
+        {
+          "label": "Aprende a vender e-commerce",
+          "action": "learn"
+        }
+      ],
+      "testimonials": [
+        {
+          "name": "María González",
+          "role": "Estudiante",
+          "rating": 5,
+          "text": "Excelente servicio, muy profesional"
+        },
+        {
+          "name": "Sofia Ramírez",
+          "role": "Emprendedora",
+          "rating": 5,
+          "text": "Me ayudó a crecer mi negocio en línea"
+        },
+        {
+          "name": "Carlos Rodríguez",
+          "role": "Ingeniero",
+          "rating": 5,
+          "text": "Gracias a Juan mis ventas se dispararon en MercadoLibre"
+        },
+        {
+          "name": "Miguel Ángel",
+          "role": "Vendedor",
+          "rating": 5,
+          "text": "Mi negocio se potenció y ahora tengo más clientes"
+        },
+        {
+          "name": "Ana López",
+          "role": "Profesional",
+          "rating": 5,
+          "text": "Ahora soy el vendedor número 1 en mi categoría"
+        },
+        {
+          "name": "Roberto Silva",
+          "role": "Estudiante Virtual",
+          "rating": 5,
+          "text": "Servicio confiable y de calidad"
+        }
+      ],
+      "sectionTitles": {
+        "heroButton": "Conectar con mis Tiendas",
+        "storesTitle": "Tiendas Verificadas",
+        "storesDesc": "Compra con confianza en plataformas consolidadas con alta reputación",
+        "whyUs": "Por qué elegirnos",
+        "testimonials": "Lo que dicen nuestros clientes",
+        "nextStepTitle": "Tu próximo paso",
+        "nextStepDesc": "Elige cómo quieres comenzar tu experiencia de compra",
+        "ctaTitle": "¿Necesitas asesoría personalizada?",
+        "ctaDesc": "Contacta conmigo y te guiaré para maximizar tus ventas en marketplace",
+        "ctaButton": "Consulta Gratuita",
+        "stores": "Tiendas Verificadas",
+        "nextStep": "Tu próximo paso"
+      }
+    },
+    "optimizacionCV": {
+      "hero": {
+        "title": "Consigue más entrevistas con una Hoja de Vida optimizada para ATS",
+        "subtitle": "Ajusto tu perfil para superar filtros de IA y llegar a reclutadores reales"
+      },
+      "problem": {
+        "title": "El Problema",
+        "stat": "75%",
+        "desc": "El 75% de aplicaciones son descartadas por sistemas ATS debido a formatos incompatibles"
+      },
+      "solution": {
+        "title": "La Solución",
+        "desc": "Optimización completa, palabras clave estratégicas y diseño persuasivo para humanos"
+      },
+      "includes": [
+        {
+          "title": "Diseño y estructura profesional",
+          "icon": "palette"
+        },
+        {
+          "title": "Contenido persuasivo",
+          "icon": "pen"
+        },
+        {
+          "title": "Optimización ATS",
+          "icon": "robot"
+        },
+        {
+          "title": "Recomendaciones de presentación",
+          "icon": "lightbulb"
+        }
+      ],
+      "pricing": {
+        "original": "$84 USD",
+        "current": "$19 USD",
+        "savings": "Oferta limitada"
+      },
+      "sectionTitles": {
+        "heroButton": "Optimizar mi CV Ahora",
+        "problemFootnote": "Los sistemas ATS (Applicant Tracking Systems) filtan automáticamente CVs antes de que un humano los vea.",
+        "solutionFootnote": "Optimización estratégica que supera filtros de IA y atrae reclutadores reales.",
+        "includes": "¿Qué incluye el servicio?",
+        "pricingBadge": "Oferta especial",
+        "pricingTitle": "Optimización Completa",
+        "pricingDesc": "Incluye diseño profesional, contenido optimizado, análisis ATS y recomendaciones de presentación",
+        "pricingButton": "Reservar Ahora",
+        "trustTitle": "Garantía de satisfacción",
+        "trustConfidencial": "100% Confidencial",
+        "trustRevisiones": "Revisiones ilimitadas",
+        "trustSoporte": "Soporte continuo",
+        "processTitle": "Cómo funciona",
+        "processStep1": "Análisis Inicial",
+        "processStep1Desc": "Revisamos tu CV actual y definimos objetivos",
+        "processStep2": "Optimización Estratégica",
+        "processStep2Desc": "Aplicamos palabras clave y formato ATS optimizado",
+        "processStep3": "Entrega y Soporte",
+        "processStep3Desc": "Recibes tu CV optimizado con recomendaciones de presentación",
+        "ctaTitle": "¿Listo para conseguir esa entrevista?",
+        "ctaDesc": "Invierte en tu futuro profesional. Oferta especial disponible por tiempo limitado.",
+        "ctaButton": "Solicitar Optimización"
+      }
+    },
+    "plantillaGastos": {
+      "hero": {
+        "title": "Domina tus finanzas en 5 min/día",
+        "subtitle": "Plantilla Excel profesional para control de gastos personales. Más de 330 personas ya la usan"
+      },
+      "pricing": {
+        "colombia": "19.000 COP",
+        "international": "$7 USD",
+        "urgency": "37 personas viendo esto ahora"
+      },
+      "features": [
+        {
+          "title": "Control Diario/Semanal/Mensual",
+          "icon": "calendar"
+        },
+        {
+          "title": "Colores Inteligentes",
+          "icon": "palette"
+        },
+        {
+          "title": "Tablas Dinámicas",
+          "icon": "chart"
+        },
+        {
+          "title": "Regla 50/30/20",
+          "icon": "scale"
+        },
+        {
+          "title": "Compatible con móvil",
+          "icon": "mobile"
+        },
+        {
+          "title": "Acceso en la nube",
+          "icon": "cloud"
+        }
+      ],
+      "mockData": {
+        "categories": [
+          {
+            "name": "Comida",
+            "emoji": "pizzaSlice",
+            "amount": 45000,
+            "status": "circleCheck"
+          },
+          {
+            "name": "Supermercado",
+            "emoji": "cart",
+            "amount": 120000,
+            "status": "circleXmark"
+          },
+          {
+            "name": "Transporte",
+            "emoji": "car",
+            "amount": 35000,
+            "status": "circleCheck"
+          },
+          {
+            "name": "Entretenimiento",
+            "emoji": "gamepad",
+            "amount": 25000,
+            "status": "circleCheck"
+          }
+        ],
+        "weekly": [
+          {
+            "day": "Lunes",
+            "percent": 85
+          },
+          {
+            "day": "Martes",
+            "percent": 92
+          },
+          {
+            "day": "Miércoles",
+            "percent": 78
+          },
+          {
+            "day": "Jueves",
+            "percent": 88
+          },
+          {
+            "day": "Viernes",
+            "percent": 95
+          },
+          {
+            "day": "Sábado",
+            "percent": 65
+          },
+          {
+            "day": "Domingo",
+            "percent": 72
+          }
+        ],
+        "distribution": [
+          {
+            "category": "Necesidades (50%)",
+            "percent": 50,
+            "color": "#4F7FFF"
+          },
+          {
+            "category": "Deseos (30%)",
+            "percent": 30,
+            "color": "#00E5C3"
+          },
+          {
+            "category": "Ahorros (20%)",
+            "percent": 20,
+            "color": "#FF6B6B"
+          }
+        ]
+      },
+      "transformations": [
+        {
+          "metric": "$1.200 USA",
+          "desc": "Ahorro promedio de nuestros usuarios"
+        },
+        {
+          "metric": "100%",
+          "desc": "Control total de tus gastos"
+        },
+        {
+          "metric": "7 días",
+          "desc": "Tiempo promedio para notar cambio"
+        },
+        {
+          "metric": "95%",
+          "desc": "De usuarios recomendarían esta plantilla"
+        }
+      ],
+      "testimonialsGastos": [
+        {
+          "name": "Ana G.",
+          "badge": "+$200 ahorrado",
+          "text": "Finalmente veo dónde va mi dinero"
+        },
+        {
+          "name": "Carlos M.",
+          "badge": "Sin sorpresas",
+          "text": "He mejorado mis finanzas drasticamente"
+        },
+        {
+          "name": "Laura S.",
+          "badge": "+$150/mes",
+          "text": "Herramienta fundamental"
+        },
+        {
+          "name": "Juan P.",
+          "badge": "Control total",
+          "text": "Cambió mi vida financiera"
+        },
+        {
+          "name": "Diego R.",
+          "badge": "+$180/mes",
+          "text": "Súper recomendado"
+        },
+        {
+          "name": "Sofía L.",
+          "badge": "100% Útil",
+          "text": "La mejor compra que hice"
+        }
+      ],
+      "science": [
+        {
+          "title": "Finanzas Conductuales",
+          "desc": "Decisiones de dinero basadas en psicología"
+        },
+        {
+          "title": "Refuerzo Positivo (Dopamina)",
+          "desc": "Ver progreso motiva a ahorrar más"
+        },
+        {
+          "title": "Visualización del Progreso",
+          "desc": "Gráficos claros = mejor control"
+        },
+        {
+          "title": "Consistencia",
+          "desc": "Hábitos diarios crean cambios permanentes"
+        }
+      ],
+      "paymentMethods": [
+        "PSE",
+        "Nequi",
+        "PayPal",
+        "Efecty",
+        "Transferencia"
+      ],
+      "warranty": "7 días de garantía - Si no te gusta, te devolvemos el 100%",
+      "faqs": [
+        {
+          "q": "¿Cuándo me llega la plantilla después de pagar?",
+          "a": "Inmediatamente después de confirmar el pago recibirás un email con la descarga de la plantilla en Excel."
+        },
+        {
+          "q": "¿Funciona en Google Sheets?",
+          "a": "Sí, puedes convertirla a Google Sheets fácilmente o usarla directamente en Excel/LibreOffice."
+        },
+        {
+          "q": "¿Viene con tutoriales?",
+          "a": "Sí, incluye videos tutoriales paso a paso y guía de uso completa."
+        },
+        {
+          "q": "¿Puedo usarla en móvil?",
+          "a": "Sí, es 100% responsive y funciona en Excel Mobile o Google Sheets en tu teléfono."
+        }
+      ],
+      "sectionTitles": {
+        "heroButton": "Comprar Ahora por WhatsApp",
+        "pricingColombia": "Colombia",
+        "pricingInternational": "Internacional",
+        "features": "Características clave",
+        "previewTitle": "Vista previa de la plantilla",
+        "previewMonthly": "Vista Mensual",
+        "previewWeekly": "Progreso Semanal",
+        "previewDistribution": "Regla 50/30/20",
+        "transformations": "Transformaciones reales",
+        "testimonials": "Lo que dicen nuestros usuarios",
+        "science": "¿Por qué funciona?",
+        "paymentMethods": "Métodos de pago",
+        "warrantyDesc": "Compra con total confianza. Si no te convence, reembolso inmediato.",
+        "faq": "Preguntas frecuentes",
+        "ctaTitle": "Domina tus finanzas hoy",
+        "ctaDesc": "Únete a más de 330 personas que ya controlan sus gastos y ahorran más cada mes",
+        "ctaButton": "Comprar Plantilla de Gastos"
+      }
+    },
+    "plantillaHabitos": {
+      "hero": {
+        "title": "Rastreo de Hábitos - Sigue tu Progreso Diario",
+        "subtitle": "Plantilla interactiva para monitorear tus hábitos con gráficos visuales y rachas. Construye consistencia en 66 días"
+      },
+      "stats": [
+        {
+          "label": "Calificación",
+          "value": "4.9/5"
+        },
+        {
+          "label": "Hábitos Rastreados",
+          "value": "+1.2k"
+        },
+        {
+          "label": "Usuarios Activos",
+          "value": "+850"
+        }
+      ],
+      "features": [
+        {
+          "title": "Progreso en %",
+          "icon": "chartLine"
+        },
+        {
+          "title": "Checkboxes Visuales",
+          "icon": "circleCheck"
+        },
+        {
+          "title": "Gráficos Dinámicos",
+          "icon": "chart"
+        },
+        {
+          "title": "Heatmap Anual",
+          "icon": "fire"
+        },
+        {
+          "title": "Metas y Rachas",
+          "icon": "bullseye"
+        },
+        {
+          "title": "Copiable Mes a Mes",
+          "icon": "clipboard"
+        }
+      ],
+      "mockData": {
+        "habits": [
+          {
+            "name": "Gym",
+            "emoji": "dumbbell",
+            "progress": [
+              true,
+              true,
+              false,
+              true,
+              true,
+              false,
+              true
+            ]
+          },
+          {
+            "name": "Leer",
+            "emoji": "book",
+            "progress": [
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              false
+            ]
+          },
+          {
+            "name": "Meditación",
+            "emoji": "spa",
+            "progress": [
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "name": "Escribir",
+            "emoji": "pen",
+            "progress": [
+              true,
+              false,
+              true,
+              true,
+              false,
+              true,
+              true
+            ]
+          }
+        ],
+        "yearlyMetrics": {
+          "currentStreak": 12,
+          "bestMonth": 95,
+          "totalHabits": 1200
+        }
+      },
+      "testimonialsHabitos": [
+        {
+          "name": "María G.",
+          "metric": "127 días",
+          "text": "Mi racha más larga jamás alcanzada"
+        },
+        {
+          "name": "Carlos R.",
+          "metric": "+3x Productividad",
+          "text": "Cambió mi rutina completamente"
+        },
+        {
+          "name": "Sofia L.",
+          "metric": "98% Consistencia",
+          "text": "Lo mejor para mantener disciplina"
+        },
+        {
+          "name": "Andrés M.",
+          "metric": "+5 Hábitos",
+          "text": "Ahora tengo rutina sólida"
+        },
+        {
+          "name": "Pablo D.",
+          "metric": "180 días",
+          "text": "Nunca creí que lo lograría"
+        },
+        {
+          "name": "Laura P.",
+          "metric": "100% Enero",
+          "text": "Enero fue mi mejor mes"
+        }
+      ],
+      "science": [
+        {
+          "title": "Basado en Hábitos Atómicos",
+          "desc": "James Clear - Cambios pequeños = Resultados enormes"
+        },
+        {
+          "title": "Refuerzo por Dopamina",
+          "desc": "Ver checkboxes activa recompensa cerebral"
+        },
+        {
+          "title": "Rachas y Momentum",
+          "desc": "\"Never break the chain\" - Mantén el streak"
+        },
+        {
+          "title": "Visualización Diaria",
+          "desc": "Lo que ves, lo haces"
+        }
+      ],
+      "price": {
+        "original": "$7 USD",
+        "current": "$5 USD"
+      },
+      "faqs": [
+        {
+          "q": "¿Cuántos hábitos puedo rastrear?",
+          "a": "Ilimitados. Puedes agregar tantos hábitos como necesites y el sistema se adapta automáticamente."
+        },
+        {
+          "q": "¿Cómo se calcula la racha?",
+          "a": "La racha aumenta cada día que completes un hábito. Si faltas un día, se reinicia, pero el historial se mantiene."
+        },
+        {
+          "q": "¿Puedo modificar los hábitos?",
+          "a": "Sí, es totalmente personalizable. Cambia los hábitos, agrega nuevos o elimina los que no uses."
+        },
+        {
+          "q": "¿Cómo se usan los gráficos del heatmap?",
+          "a": "Los colores indican intensidad. Verde = días completados, rojo = días faltados. Perfecto para visualizar patrones."
+        }
+      ],
+      "sectionTitles": {
+        "heroButton": "Conseguir Plantilla Ahora",
+        "features": "Características clave",
+        "previewTitle": "Vista previa interactiva",
+        "previewMonthly": "Visión Mensual con Checkboxes",
+        "previewYearlyTitle": "Tablero Anual",
+        "metricStreak": "Racha actual",
+        "metricBestMonth": "Mejor mes",
+        "metricTotal": "Total completados",
+        "testimonials": "Historias de éxito",
+        "science": "Basado en ciencia",
+        "pricingTitle": "Precio especial",
+        "pricingDesc": "Acceso inmediato. Sin suscripción. Tuyo para siempre.",
+        "pricingButton": "Comprar Plantilla de Hábitos",
+        "faq": "Preguntas frecuentes",
+        "ctaTitle": "Empieza tu racha hoy",
+        "ctaDesc": "Únete a cientos de personas construyendo hábitos duraderos. La racha más larga comienza con un solo checkmark.",
+        "ctaButton": "Obtener Plantilla Ahora"
+      }
+    },
+    "iaLocal": {
+      "hero": {
+        "title": "IA Local: En tu Computador, Sin Internet",
+        "subtitle": "Modelos de lenguaje que corren nativamente en tu GPU o RAM. Sin límites de preguntas, sin suscripciones y con 100% de privacidad"
+      },
+      "strengths": [
+        {
+          "icon": "shield",
+          "title": "100% Privado",
+          "desc": "Tus datos NO salen de tu máquina"
+        },
+        {
+          "icon": "infinity",
+          "title": "Ilimitado",
+          "desc": "Sin costo por API"
+        },
+        {
+          "icon": "money",
+          "title": "Sin Suscripciones",
+          "desc": "El modelo es tuyo"
+        },
+        {
+          "icon": "globe",
+          "title": "Offline Nativo",
+          "desc": "Funciona sin conexión"
+        },
+        {
+          "icon": "bolt",
+          "title": "Velocidad Local",
+          "desc": "Uso de GPU"
+        },
+        {
+          "icon": "bullseye",
+          "title": "Modular",
+          "desc": "Elige según tu hardware"
+        }
+      ],
+      "models": [
+        {
+          "name": "Llama 3.1 8B",
+          "ram": "6-8 GB",
+          "use": "Razonamiento general y documentación"
+        },
+        {
+          "name": "Qwen 2.5 Coder 7B",
+          "ram": "5-6 GB",
+          "use": "Experto en programación y código"
+        },
+        {
+          "name": "Phi-3.5-mini",
+          "ram": "3-4 GB",
+          "use": "PCs con poca RAM, lógica y matemáticas"
+        },
+        {
+          "name": "Ministral 3 14B",
+          "ram": "10-12 GB",
+          "use": "Velocidad y función calling avanzada"
+        }
+      ],
+      "b2b": {
+        "title": "B2B / Empresas y Negocios",
+        "features": [
+          "Automatizar respuestas con tono de marca",
+          "Clasificación de documentos internos",
+          "Asistente de código especializado",
+          "Extracción de datos de reportes"
+        ],
+        "note": "Mediante fine-tuning o RAG, adaptamos cualquier modelo a tus necesidades."
+      },
+      "useCases": [
+        {
+          "title": "Desarrollador Independiente",
+          "desc": "Asistente de código privado sin límites"
+        },
+        {
+          "title": "Investigador/Académico",
+          "desc": "Procesa papers sin compartir datos"
+        },
+        {
+          "title": "Empresa de Servicios",
+          "desc": "Chatbot interno con datos confidenciales"
+        },
+        {
+          "title": "Analista de Datos",
+          "desc": "Procesa información sensible localmente"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "¿Necesito una GPU?",
+          "a": "No es obligatorio, pero recomendamos GPU para mejor velocidad. Con CPU funciona, pero más lentamente."
+        },
+        {
+          "q": "¿Qué requisitos mínimos de RAM necesito?",
+          "a": "3 GB RAM mínimo para modelos pequeños. 8+ GB para modelos más poderosos."
+        },
+        {
+          "q": "¿Es realmente privado?",
+          "a": "Sí, 100%. Todo se ejecuta localmente. Ningún dato sale de tu máquina."
+        },
+        {
+          "q": "¿Puedo usar esto para negocios?",
+          "a": "Totalmente. Empresas usan IA local para chatbots, análisis y clasificación sin exponer datos."
+        }
+      ],
+      "sectionTitles": {
+        "heroButton": "Probar IA Local en Mi PC",
+        "strengths": "Puntos fuertes",
+        "modelsTitle": "Modelos disponibles",
+        "modelsDesc": "Elige el modelo según tus necesidades y hardware disponible",
+        "modelHeader": "Modelo",
+        "ramHeader": "RAM Requerida",
+        "useHeader": "Caso de uso",
+        "useCases": "Casos de uso",
+        "b2bSolutions": "Soluciones personalizadas",
+        "b2bButton": "Contactar Consultor de IA",
+        "howItWorks": "Cómo funciona",
+        "howStep1": "Descargar",
+        "howStep1Desc": "Baja el modelo elegido según tu hardware",
+        "howStep2": "Instalar",
+        "howStep2Desc": "Configuración simple en tu PC (Windows/Mac/Linux)",
+        "howStep3": "Usar",
+        "howStep3Desc": "Ejecuta consultas sin conectarte a internet",
+        "howStep4": "Optimizar",
+        "howStep4Desc": "Personalización para tu caso de negocio",
+        "faq": "Preguntas frecuentes",
+        "ctaTitle": "Revoluciona tu flujo de trabajo",
+        "ctaDesc": "IA privada, sin límites y sin suscripciones. Ejecutada completamente en tu máquina.",
+        "ctaButton": "Comenzar Ahora"
+      }
+    }
+  }
+}

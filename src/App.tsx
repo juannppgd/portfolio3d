@@ -1,4 +1,5 @@
 import { lazy, Suspense, useCallback, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { ThemeProvider } from './context/ThemeContext'
@@ -14,7 +15,6 @@ import {
   productSchema,
   faqPageSchema,
 } from './data/schema'
-import { FAQ } from './data'
 
 function useGtagPageview() {
   const location = useLocation()
@@ -55,43 +55,47 @@ function LoadingScreen() {
 }
 
 function PageSEO({ page }: { page: Page }) {
+  const { t } = useTranslation()
   const meta = PAGE_META[page]
   if (!meta) return null
+
+  const seoMeta = t('seo.meta.' + page, { returnObjects: true }) as { title: string; description: string; keywords?: string } | undefined
 
   const schemas: Record<string, unknown>[] = [personSchema, websiteSchema]
   const basePath = meta.path
 
   if (page === 'plantilla-gastos') {
     schemas.push(productSchema(
-      'Plantilla Excel Control de Gastos — Regla 50/30/20',
-      'Plantilla Excel profesional para control de gastos personales con la regla 50/30/20. Gráficos automáticos y colores inteligentes.',
+      t('seo.plantillaGastosTitle'),
+      t('seo.plantillaGastosDesc'),
       '7', 'USD', meta.path,
     ))
   }
 
   if (page === 'plantilla-habitos') {
     schemas.push(productSchema(
-      'Plantilla Excel Rastreo de Hábitos — Productividad 2026',
-      'Plantilla Excel para rastrear hábitos diarios con gráficos dinámicos, rachas y análisis inteligente.',
+      t('seo.plantillaHabitosTitle'),
+      t('seo.plantillaHabitosDesc'),
       '7', 'USD', meta.path,
     ))
   }
 
   if (page !== 'home') {
-    schemas.push(professionalServiceSchema(meta.title, meta.description, basePath))
+    schemas.push(professionalServiceSchema(seoMeta?.title ?? meta.title, seoMeta?.description ?? meta.description, basePath))
   }
 
   if (page === 'home') {
-    schemas.push(faqPageSchema(FAQ))
+    const faqItems = t('faq.items', { returnObjects: true }) as { q: string; a: string }[]
+    schemas.push(faqPageSchema(faqItems))
   }
 
   return (
     <>
       <SEOHead
-        title={meta.title}
-        description={meta.description}
+        title={seoMeta?.title ?? meta.title}
+        description={seoMeta?.description ?? meta.description}
         path={meta.path}
-        keywords={meta.keywords}
+        keywords={seoMeta?.keywords ?? meta.keywords}
         ogType={meta.ogType}
       />
       {schemas.map((schema, i) => <JsonLd key={i} data={schema} />)}
@@ -150,9 +154,12 @@ function AppShell() {
 
   return (
     <div style={{ overflowX: 'clip' }}>
+      <a href="#main-content" className="skip-link">
+        {page === 'home' ? 'Skip to main content' : 'Skip to main content'}
+      </a>
       <PageSEO page={page} />
       <Navbar currentPage={page} />
-      <main>
+      <main id="main-content">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/apoyo-academico" element={<Suspense fallback={<LoadingScreen />}><ApoyoAcademicoPage /></Suspense>} />

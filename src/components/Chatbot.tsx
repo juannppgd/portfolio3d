@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 
 type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local'
@@ -14,203 +15,62 @@ interface ChatbotProps {
 interface Message {
   role: 'user' | 'assistant'
   content: string
-  options?: string[]
+  optionKeys?: string[]
 }
 
 interface ResponseEntry {
-  text: string
-  options: string[]
+  textKey: string
+  optionKeys: string[]
   action?: 'contact' | 'footer' | 'share' | 'email' | 'whatsapp' | 'youtube'
     | 'plantilla-gastos' | 'plantilla-habitos' | 'apoyo-academico'
     | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv'
   autoClose?: boolean
 }
 
-const responses: Record<string, ResponseEntry> = {
-  'Servicios': {
-    text: 'Juan Pablo ofrece servicios principales y adicionales. ¿Sobre cuál te gustaría saber más?',
-    options: ['IA Local', 'Servicios Adicionales', 'Desarrollo Web', 'Marketing Digital', 'Contacto', 'Háblame de Juan Pablo'],
-  },
-  'Desarrollo Web': {
-    text: 'Desarrollo páginas web modernas con React, Vite y Tailwind CSS. Sitios 100% personalizados, responsivos y optimizados para convertir visitantes en clientes. Ideales para emprendedores, pymes y profesionales. ¿Qué te gustaría saber?',
-    options: ['Ver Tecnologías', 'Tiempos de Desarrollo', '¿Incluye Hosting?', 'Contacto'],
-  },
-  'Marketing Digital': {
-    text: 'Servicios completos de marketing digital: Edición profesional de fotografía y video, campañas de email/SMS, gestión de redes sociales, SEO, SEM y análisis de datos. Estrategias personalizadas para impulsar tu negocio online. ¿Qué aspecto te interesa?',
-    options: ['Email Marketing', 'Redes Sociales', 'Análisis de Datos', 'Contacto', 'Ver Canal de YouTube'],
-  },
-  'IA Local': {
-    text: 'IA Local: modelos de lenguaje que corren directamente en tu PC usando GPU o RAM, sin suscripción, sin límites de preguntas y sin que tus datos salgan de tu máquina. Ideal para empresas que valoran privacidad, independencia tecnológica y velocidad local.',
-    options: ['Probar IA Local en mi PC', 'Contacto', 'Servicios'],
-  },
-  'Probar IA Local en mi PC': {
-    text: 'Perfecto, te llevo al formulario de contacto para que puedas solicitar tu IA local. Así puedes empezar rápido y sin salir de tu flujo de trabajo.',
-    options: ['Volver al Inicio'],
-    action: 'contact',
-    autoClose: true,
-  },
-  'Contacto': {
-    text: '¡Perfecto! Juan Pablo estará encantado de ayudarte. ¿Cómo prefieres contactarlo?',
-    options: ['Compartir esta Web', 'Enviar Email', 'Enviar mensaje', 'Más Información', 'Ver Redes Sociales'],
-  },
-  'Ver Redes Sociales': {
-    text: '¡Excelente! Te llevo a la sección de redes sociales para que conozcas más sobre Juan Pablo y sus proyectos. ¡Síguenos para estar al día!',
-    options: ['Volver al Inicio'],
-    action: 'footer',
-    autoClose: true,
-  },
-  'Ver Tecnologías': {
-    text: 'Stack tecnológico:\n\n• Frontend: React + Vite + Tailwind CSS\n• Backend: Node.js\n• Bases de datos: MySQL\n• Automatización: Python (IA)\n• Control de versiones: Git & GitHub\n• Apps móviles: React Native\n\nTodo para crear soluciones modernas y escalables.',
-    options: ['Desarrollo Web', 'Ver Ejemplos', 'Contacto'],
-  },
-  'Tiempos de Desarrollo': {
-    text: 'Los tiempos varían según complejidad:\n\n• Landing page básica: 3-5 días\n• Sitio corporativo: 1-2 semanas\n• E-commerce completo: 3-4 semanas\n\nIncluye consultoría gratuita inicial para definir tu proyecto.',
-    options: ['¿Incluye Hosting?', 'Ver Tecnologías', 'Contacto'],
-  },
-  '¿Incluye Hosting?': {
-    text: '¡Sí! El primer año incluye:\n\n✓ Hosting y dominio gratis*\n✓ Correo corporativo\n✓ Configuración DNS\n✓ Certificado SSL\n✓ 3 meses de soporte gratis\n\n*Aplican términos y condiciones',
-    options: ['Desarrollo Web', 'Contacto'],
-  },
-  'Email Marketing': {
-    text: 'Campañas de email y SMS marketing con:\n\n• Segmentación de audiencias\n• Pruebas A/B para optimización\n• Automatización con EmailJS\n• Análisis de resultados\n• CRM integrado (HubSpot/Masivian)\n\nAumento de engagement garantizado.',
-    options: ['Marketing Digital', 'Análisis de Datos', 'Contacto'],
-  },
-  'Redes Sociales': {
-    text: 'Gestión profesional de redes sociales:\n\n• Creación de contenido atractivo\n• Programación estratégica\n• Análisis de métricas\n• Community management\n• Campañas en Meta Business Suite\n\nConecta mejor con tu audiencia.',
-    options: ['Ver Redes Sociales', 'Marketing Digital', 'Email Marketing', 'Contacto'],
-  },
-  'Análisis de Datos': {
-    text: 'Toma decisiones basadas en datos:\n\n• Google Analytics integrado\n• Reportes personalizados\n• Segmentación avanzada\n• Optimización continua\n• KPIs y métricas clave\n\nTransforma datos en resultados.',
-    options: ['Marketing Digital', 'Email Marketing', 'Contacto'],
-  },
-  'Servicios Adicionales': {
-    text: 'Además de desarrollo web y marketing, Juan Pablo ofrece servicios adicionales especializados:\n\n• Desarrollo de trabajos y evaluaciones académicas\n• Clases de programación personalizadas\n• Venta de garaje en línea (Marketplace y MercadoLibre)\n• Asesoría para crear CV profesionales\n• Plantillas Excel profesionales\n\n¿Cuál te interesa?',
-    options: ['Desarrollo Académico', 'Asesoría CV', 'Clases Programación', 'Venta Online', 'Plantillas Excel', 'Volver a Servicios'],
-  },
-  'Desarrollo Académico': {
-    text: 'Desarrollo de trabajos y evaluaciones\nApoyo profesional en el desarrollo de trabajos académicos, evaluaciones, proyectos y entregables con enfoque en calidad, cumplimiento y resultados.\n\nSolicitar apoyo académico',
-    options: ['Ver Página Académica', 'Contacto', 'Servicios Adicionales'],
-  },
-  'Clases Programación': {
-    text: 'Clases de programación personalizadas 1 a 1\nClases personalizadas enfocadas en tu nivel, ritmo y objetivos. Aprende programación de forma práctica y aplicada. Recibes Materiales y Certificado\n\nContáctame haciendo clic aquí',
-    options: ['Ver Página Clases', 'Contacto', 'Servicios Adicionales'],
-  },
-  'Venta Online': {
-    text: 'Venta de garaje en línea por Marketplace y MercadoLibre\nConoce mi modalidad de Publicación, gestión y optimización de productos en plataformas de venta online para que adquieras los tuyos completamente garantizados.\n\nExplorar tiendas y aprender a vender',
-    options: ['Ver Página Venta', 'Contacto', 'Servicios Adicionales'],
-  },
-  'Asesoría CV': {
-    text: 'Asesoría en creación de tu CV para que entres al trabajo de tus sueños\nCreo tu CV para que entres al trabajo de tus sueños\nDiseño un currículum profesional para un CV estratégico, atractivo y optimizado para procesos de selección laboral, filtros avanzados ATS.\n\nContáctame haciendo clic aquí',
-    options: ['Ver Página CV', 'Contacto', 'Servicios Adicionales'],
-  },
-  'Plantillas Excel': {
-    text: 'Plantillas para ti\nHerramientas Excel profesionales para mejorar tu productividad y finanzas personales. Acceso inmediato por solo $5 USD cada una.',
-    options: ['Control de Gastos', 'Rastreo de Hábitos', 'Servicios Adicionales'],
-  },
-  'Control de Gastos': {
-    text: 'Control de Gastos\nDomina tus finanzas en 5 min/día con colores inteligentes, gráficos automáticos y la regla 50/30/20.\n\n$7 USD\nVer Plantilla de Gastos',
-    options: ['Ver Plantilla de Gastos', 'Comprar Plantilla', 'Plantillas Excel', 'Contacto'],
-  },
-  'Rastreo de Hábitos': {
-    text: 'Rastreo de Hábitos\nRastrea tus hábitos diarios con gráficos dinámicos, rachas y análisis inteligente para 2026.\n\n$7 USD\nVer Plantilla de Hábitos',
-    options: ['Ver Plantilla de Hábitos', 'Comprar Plantilla', 'Plantillas Excel', 'Contacto'],
-  },
-  'Comprar Plantilla': {
-    text: '¡Excelente! Para adquirir la plantilla, contáctame directamente. Te enviaré el enlace de pago seguro y acceso inmediato.\n\nMétodos de pago: PayPal, Transferencia, etc.',
-    options: ['Contacto', 'Plantillas Excel'],
-  },
-  'Ver Plantilla de Gastos': {
-    text: '¡Excelente! Te llevo directamente a la página de la plantilla de Control de Gastos. ¡Descubre cómo dominar tus finanzas!',
-    options: ['Volver al Inicio'],
-    action: 'plantilla-gastos',
-    autoClose: true,
-  },
-  'Ver Plantilla de Hábitos': {
-    text: '¡Excelente! Te llevo directamente a la página de la plantilla de Rastreo de Hábitos. ¡Mejora tus hábitos diarios!',
-    options: ['Volver al Inicio'],
-    action: 'plantilla-habitos',
-    autoClose: true,
-  },
-  'Ver Página Académica': {
-    text: '¡Perfecto! Te llevo a la página dedicada al servicio académico. ¡Descubre cómo puedo ayudarte con tus trabajos!',
-    options: ['Volver al Inicio'],
-    action: 'apoyo-academico',
-    autoClose: true,
-  },
-  'Ver Página Clases': {
-    text: '¡Genial! Te llevo a la página de clases de programación personalizadas. ¡Aprende a programar de manera efectiva!',
-    options: ['Volver al Inicio'],
-    action: 'clases-programacion',
-    autoClose: true,
-  },
-  'Ver Página Venta': {
-    text: '¡Excelente! Te llevo a la página de venta de garaje en línea. ¡Descubre cómo vender tus productos online!',
-    options: ['Volver al Inicio'],
-    action: 'ventas-online',
-    autoClose: true,
-  },
-  'Ver Página CV': {
-    text: '¡Perfecto! Te llevo a la página de asesoría para crear tu CV. ¡Destaca en el mercado laboral!',
-    options: ['Volver al Inicio'],
-    action: 'optimizacion-cv',
-    autoClose: true,
-  },
-  'Volver a Servicios': {
-    text: '¡Perfecto! ¿Te gustaría conocer más sobre nuestros servicios principales o adicionales?',
-    options: ['Desarrollo Web', 'Marketing Digital', 'Servicios Adicionales', 'Contacto'],
-  },
-  'Ver Canal de YouTube': {
-    text: '¡Excelente! Te llevo al canal de YouTube de Juan Pablo para que conozcas más sobre sus servicios y proyectos.',
-    options: ['Volver al Inicio'],
-    action: 'youtube',
-  },
-  'Enviar Email': {
-    text: 'Te abro el email para que puedas escribir directamente. Juan Pablo responde en menos de 24 horas.',
-    options: ['Volver al Inicio'],
-    action: 'email',
-    autoClose: true,
-  },
-  'Más Información': {
-    text: '¿Qué más te gustaría saber? Puedo contarte sobre:\n\n• Proyectos realizados\n• Experiencia profesional\n• Certificaciones\n• Métodos de pago\n• Trabajo internacional',
-    options: ['Servicios', 'Háblame de Juan Pablo', 'Contacto'],
-  },
-  'Ver Ejemplos': {
-    text: 'Juan Pablo tiene diversos proyectos visuales:\n\n• Desarrollo web (landing pages, e-commerce, corporativos)\n• Marketing digital (campañas, redes, contenido)\n• Automatización con IA\n\nPuedes ver ejemplos visuales en sus redes sociales y canal de YouTube.',
-    options: ['Ver Redes Sociales', 'Ver Canal de YouTube', 'Desarrollo Web', 'Marketing Digital', 'Contacto'],
-  },
-  'Háblame de Juan Pablo': {
-    text: 'Juan Pablo es desarrollador web full-stack y experto en performance marketing. Experiencia en React, Python (IA), y marketing digital. Trabaja con clientes en toda LATAM desde Colombia. Certificado en múltiples tecnologías y metodologías.',
-    options: ['Ver Tecnologías', 'Servicios', 'Contacto'],
-  },
-  'Volver al Inicio': {
-    text: '¡Perfecto! ¿Hay algo más en lo que pueda ayudarte?',
-    options: ['Servicios', 'Desarrollo Web', 'Marketing Digital', 'Contacto', 'Preguntas Frecuentes', 'Enviar mensaje'],
-  },
-  'Preguntas Frecuentes': {
-    text: 'Aquí van algunas preguntas frecuentes:\n\n• ¿Trabajas con clientes internacionales? Sí, en toda LATAM.\n• ¿Ofreces mantenimiento? Sí, planes disponibles.\n• ¿Qué métodos de pago aceptas? Transferencia, PayPal, cripto.\n\n¿Cuál te gustaría profundizar?',
-    options: ['Mantenimiento', 'Pagos', 'Contacto'],
-  },
-  'Mantenimiento': {
-    text: 'Planes de mantenimiento:\n\n• Básico: Actualizaciones menores\n• Premium: Soporte completo, backups\n• Anual: Descuento disponible\n\nGarantiza que tu sitio esté siempre actualizado.',
-    options: ['Preguntas Frecuentes', 'Contacto'],
-  },
-  'Pagos': {
-    text: 'Aceptamos:\n\n• Transferencias bancarias\n• PayPal\n• Mercado Pago\n• Criptomonedas (USDT, BTC)\n\n50% anticipo, 50% al finalizar.',
-    options: ['Preguntas Frecuentes', 'Contacto'],
-  },
-  'Compartir esta Web': {
-    text: '¡Perfecto! Abre el modal de compartir para que puedas compartir este portafolio con un amigo. ¡Gracias por ayudar a difundir mi trabajo!',
-    options: ['Volver al Inicio'],
-    action: 'share',
-    autoClose: true,
-  },
-  'Enviar mensaje': {
-    text: 'Te llevo al formulario de contacto para que puedas enviar tu mensaje directamente.',
-    options: ['Volver al Inicio'],
-    action: 'contact',
-    autoClose: true,
-  },
+const responseMap: Record<string, ResponseEntry> = {
+  services: { textKey: 'chatbot.responses.services.text', optionKeys: ['ia_local', 'additional_services', 'web_dev', 'digital_marketing', 'contact', 'about_me'] },
+  web_dev: { textKey: 'chatbot.responses.web_dev.text', optionKeys: ['view_tech', 'dev_timeline', 'hosting_info', 'contact'] },
+  digital_marketing: { textKey: 'chatbot.responses.digital_marketing.text', optionKeys: ['email_marketing', 'social_media', 'data_analytics', 'contact', 'youtube_channel'] },
+  ia_local: { textKey: 'chatbot.responses.ia_local.text', optionKeys: ['try_ia_local', 'contact', 'services'] },
+  try_ia_local: { textKey: 'chatbot.responses.try_ia_local.text', optionKeys: ['back_home'], action: 'contact', autoClose: true },
+  contact: { textKey: 'chatbot.responses.contact.text', optionKeys: ['share_web', 'send_email', 'send_message', 'more_info', 'view_social'] },
+  view_social: { textKey: 'chatbot.responses.view_social.text', optionKeys: ['back_home'], action: 'footer', autoClose: true },
+  view_tech: { textKey: 'chatbot.responses.view_tech.text', optionKeys: ['web_dev', 'view_examples', 'contact'] },
+  dev_timeline: { textKey: 'chatbot.responses.dev_timeline.text', optionKeys: ['hosting_info', 'view_tech', 'contact'] },
+  hosting_info: { textKey: 'chatbot.responses.hosting_info.text', optionKeys: ['web_dev', 'contact'] },
+  email_marketing: { textKey: 'chatbot.responses.email_marketing.text', optionKeys: ['digital_marketing', 'data_analytics', 'contact'] },
+  social_media: { textKey: 'chatbot.responses.social_media.text', optionKeys: ['view_social', 'digital_marketing', 'email_marketing', 'contact'] },
+  data_analytics: { textKey: 'chatbot.responses.data_analytics.text', optionKeys: ['digital_marketing', 'email_marketing', 'contact'] },
+  additional_services: { textKey: 'chatbot.responses.additional_services.text', optionKeys: ['academic_dev', 'cv_advice', 'programming_classes', 'online_sales', 'excel_templates', 'back_services'] },
+  academic_dev: { textKey: 'chatbot.responses.academic_dev.text', optionKeys: ['view_academic_page', 'contact', 'additional_services'] },
+  programming_classes: { textKey: 'chatbot.responses.programming_classes.text', optionKeys: ['view_classes_page', 'contact', 'additional_services'] },
+  online_sales: { textKey: 'chatbot.responses.online_sales.text', optionKeys: ['view_sales_page', 'contact', 'additional_services'] },
+  cv_advice: { textKey: 'chatbot.responses.cv_advice.text', optionKeys: ['view_cv_page', 'contact', 'additional_services'] },
+  excel_templates: { textKey: 'chatbot.responses.excel_templates.text', optionKeys: ['expense_tracker', 'habit_tracker', 'additional_services'] },
+  expense_tracker: { textKey: 'chatbot.responses.expense_tracker.text', optionKeys: ['view_expense_page', 'buy_template', 'excel_templates', 'contact'] },
+  habit_tracker: { textKey: 'chatbot.responses.habit_tracker.text', optionKeys: ['view_habit_page', 'buy_template', 'excel_templates', 'contact'] },
+  buy_template: { textKey: 'chatbot.responses.buy_template.text', optionKeys: ['contact', 'excel_templates'] },
+  view_expense_page: { textKey: 'chatbot.responses.view_expense_page.text', optionKeys: ['back_home'], action: 'plantilla-gastos', autoClose: true },
+  view_habit_page: { textKey: 'chatbot.responses.view_habit_page.text', optionKeys: ['back_home'], action: 'plantilla-habitos', autoClose: true },
+  view_academic_page: { textKey: 'chatbot.responses.view_academic_page.text', optionKeys: ['back_home'], action: 'apoyo-academico', autoClose: true },
+  view_classes_page: { textKey: 'chatbot.responses.view_classes_page.text', optionKeys: ['back_home'], action: 'clases-programacion', autoClose: true },
+  view_sales_page: { textKey: 'chatbot.responses.view_sales_page.text', optionKeys: ['back_home'], action: 'ventas-online', autoClose: true },
+  view_cv_page: { textKey: 'chatbot.responses.view_cv_page.text', optionKeys: ['back_home'], action: 'optimizacion-cv', autoClose: true },
+  back_services: { textKey: 'chatbot.responses.back_services.text', optionKeys: ['web_dev', 'digital_marketing', 'additional_services', 'contact'] },
+  youtube_channel: { textKey: 'chatbot.responses.youtube_channel.text', optionKeys: ['back_home'], action: 'youtube' },
+  send_email: { textKey: 'chatbot.responses.send_email.text', optionKeys: ['back_home'], action: 'email', autoClose: true },
+  more_info: { textKey: 'chatbot.responses.more_info.text', optionKeys: ['services', 'about_me', 'contact'] },
+  view_examples: { textKey: 'chatbot.responses.view_examples.text', optionKeys: ['view_social', 'youtube_channel', 'web_dev', 'digital_marketing', 'contact'] },
+  about_me: { textKey: 'chatbot.responses.about_me.text', optionKeys: ['view_tech', 'services', 'contact'] },
+  back_home: { textKey: 'chatbot.responses.back_home.text', optionKeys: ['services', 'web_dev', 'digital_marketing', 'contact', 'faq', 'send_message'] },
+  faq: { textKey: 'chatbot.responses.faq.text', optionKeys: ['maintenance', 'payments', 'contact'] },
+  maintenance: { textKey: 'chatbot.responses.maintenance.text', optionKeys: ['faq', 'contact'] },
+  payments: { textKey: 'chatbot.responses.payments.text', optionKeys: ['faq', 'contact'] },
+  share_web: { textKey: 'chatbot.responses.share_web.text', optionKeys: ['back_home'], action: 'share', autoClose: true },
+  send_message: { textKey: 'chatbot.responses.send_message.text', optionKeys: ['back_home'], action: 'contact', autoClose: true },
 }
+
+const initialOptionKeys = ['services', 'web_dev', 'digital_marketing', 'ia_local', 'contact', 'additional_services', 'faq']
 
 const floatingVariants = {
   initial: { opacity: 0, scale: 0.8, y: 20 },
@@ -236,14 +96,6 @@ function BotIcon() {
   )
 }
 
-function SparkleIcon() {
-  return (
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="#FBBF24" stroke="none">
-      <path d="M12 3l1.5 6.5L20 11l-6.5 1.5L12 19l-1.5-6.5L4 11l6.5-1.5z" />
-    </svg>
-  )
-}
-
 function CloseIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -253,12 +105,6 @@ function CloseIcon() {
   )
 }
 
-const initialMessage: Message = {
-  role: 'assistant',
-  content: '¡Hola! Soy el asistente programado de Juan Pablo. ¿En qué puedo ayudarte hoy?',
-  options: ['Servicios', 'Desarrollo Web', 'Marketing Digital', 'IA Local', 'Contacto', 'Servicios Adicionales', 'Preguntas Frecuentes'],
-}
-
 export default function Chatbot({
   onShare,
   onScrollToContact,
@@ -266,11 +112,13 @@ export default function Chatbot({
   onNavigateToPage,
   forceOpen = false,
 }: ChatbotProps) {
+  const { t } = useTranslation()
   const [isOpen, setIsOpen] = useState(forceOpen)
-  const [messages, setMessages] = useState<Message[]>([initialMessage])
+  const [messages, setMessages] = useState<Message[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const initialized = useRef(false)
 
   const scrollToBottom = useCallback(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -281,11 +129,23 @@ export default function Chatbot({
   }, [messages, scrollToBottom])
 
   useEffect(() => {
+    if (!initialized.current) {
+      initialized.current = true
+      setMessages([{
+        role: 'assistant',
+        content: t('chatbot.initial'),
+        optionKeys: initialOptionKeys,
+      }])
+    }
+  }, [t])
+
+  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = ''
-      setMessages([initialMessage])
+      initialized.current = false
+      setMessages([])
     }
     return () => {
       document.body.style.overflow = ''
@@ -295,7 +155,7 @@ export default function Chatbot({
     }
   }, [isOpen])
 
-  const handleOptionClick = useCallback(async (option: string) => {
+  const handleOptionClick = useCallback(async (key: string) => {
     if (isLoading) return
 
     if (closeTimeoutRef.current) {
@@ -303,23 +163,30 @@ export default function Chatbot({
       closeTimeoutRef.current = null
     }
 
-    if (option === 'Reiniciar Chat') {
-      setMessages([initialMessage])
+    if (key === 'restart') {
+      setMessages([{
+        role: 'assistant',
+        content: t('chatbot.initial'),
+        optionKeys: initialOptionKeys,
+      }])
       return
     }
 
-    const userMessage: Message = { role: 'user', content: option }
+    const userMessage: Message = {
+      role: 'user',
+      content: t(`chatbot.optionLabels.${key}`),
+    }
     setMessages(prev => [...prev, userMessage])
     setIsLoading(true)
 
     await new Promise(resolve => setTimeout(resolve, 600))
 
-    const response = responses[option]
+    const response = responseMap[key]
     if (response) {
       const assistantMessage: Message = {
         role: 'assistant',
-        content: response.text,
-        options: response.options,
+        content: t(response.textKey),
+        optionKeys: response.optionKeys,
       }
       setMessages(prev => [...prev, assistantMessage])
 
@@ -360,7 +227,7 @@ export default function Chatbot({
     }
 
     setIsLoading(false)
-  }, [isLoading, onShare, onScrollToContact, onScrollToFooter, onNavigateToPage])
+  }, [isLoading, t, onShare, onScrollToContact, onScrollToFooter, onNavigateToPage])
 
   return (
     <>
@@ -375,7 +242,7 @@ export default function Chatbot({
           style={{
             background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
           }}
-          aria-label="Abrir chatbot"
+          aria-label={t('chatbot.ariaOpen')}
         >
           <BotIcon />
           <span
@@ -421,11 +288,11 @@ export default function Chatbot({
                   </div>
                   <div className="min-w-0">
                     <span className="font-syne font-bold text-sm md:text-base truncate" style={{ color: 'var(--text)' }}>
-                      Asistente Juan Pablo
+                      {t('chatbot.title')}
                     </span>
                     <div className="flex items-center gap-1">
                       <span className="w-2 h-2 rounded-full" style={{ background: '#10B981' }} />
-                      <span className="text-xs" style={{ color: 'var(--accent2)' }}>En línea</span>
+                      <span className="text-xs" style={{ color: 'var(--accent2)' }}>{t('chatbot.status')}</span>
                     </div>
                   </div>
                 </div>
@@ -434,7 +301,7 @@ export default function Chatbot({
                   onClick={() => setIsOpen(false)}
                   className="p-2 rounded-lg flex-shrink-0"
                   style={{ color: 'var(--muted)' }}
-                  aria-label="Cerrar chatbot"
+                  aria-label={t('chatbot.ariaClose')}
                 >
                   <CloseIcon />
                 </motion.button>
@@ -463,17 +330,17 @@ export default function Chatbot({
                       <p className="font-mono font-light text-sm leading-relaxed whitespace-pre-line">
                         {msg.content}
                       </p>
-                      {msg.options && (
+                      {msg.optionKeys && (
                         <div
                           className="flex flex-wrap gap-2 mt-3 pt-3"
                           style={{ borderTop: '1px solid var(--border)' }}
                         >
-                          {msg.options.map((option, optIndex) => (
+                          {msg.optionKeys.map((key) => (
                             <motion.button
-                              key={optIndex}
+                              key={key}
                               whileHover={{ scale: 1.04 }}
                               whileTap={{ scale: 0.96 }}
-                              onClick={() => handleOptionClick(option)}
+                              onClick={() => handleOptionClick(key)}
                               disabled={isLoading}
                               className="px-3 md:px-3.5 py-2 md:py-2.5 rounded-lg text-xs font-medium transition-all duration-200 disabled:opacity-40 disabled:pointer-events-none"
                               style={{
@@ -482,7 +349,7 @@ export default function Chatbot({
                                 border: '1px solid var(--accent)',
                               }}
                             >
-                              {option}
+                              {t(`chatbot.optionLabels.${key}`)}
                             </motion.button>
                           ))}
                         </div>
@@ -503,7 +370,7 @@ export default function Chatbot({
                     >
                       <BotIcon />
                       <div className="flex items-center gap-1.5">
-                        <span className="text-xs" style={{ color: 'var(--muted)' }}>Escribiendo</span>
+                        <span className="text-xs" style={{ color: 'var(--muted)' }}>{t('chatbot.typing')}</span>
                         <span className="w-1.5 h-1.5 rounded-full animate-bounce" style={{ background: 'var(--accent2)', animationDelay: '0ms' }} />
                         <span className="w-1.5 h-1.5 rounded-full animate-bounce" style={{ background: 'var(--accent2)', animationDelay: '150ms' }} />
                         <span className="w-1.5 h-1.5 rounded-full animate-bounce" style={{ background: 'var(--accent2)', animationDelay: '300ms' }} />
@@ -520,17 +387,17 @@ export default function Chatbot({
                 style={{ borderTop: '1px solid var(--border)', background: 'var(--surface)' }}
               >
                 <span className="text-xs" style={{ color: 'var(--muted)' }}>
-                  Asistente programado por{' '}
-                  <span style={{ color: 'var(--accent)' }} className="font-semibold">Juan Pablo</span>
+                  {t('chatbot.footerPrefix')}
+                  <span style={{ color: 'var(--accent)' }} className="font-semibold">{t('chatbot.footerName')}</span>
                 </span>
                 <motion.button
                   whileTap={{ scale: 0.9 }}
-                  onClick={() => handleOptionClick('Reiniciar Chat')}
+                  onClick={() => handleOptionClick('restart')}
                   className="px-3 py-1.5 rounded-lg text-xs font-medium"
                   style={{ color: 'var(--muted)', border: '1px solid var(--border)' }}
-                  aria-label="Reiniciar chat"
+                  aria-label={t('chatbot.ariaReset')}
                 >
-                  Reiniciar
+                  {t('chatbot.restart')}
                 </motion.button>
               </div>
             </motion.div>

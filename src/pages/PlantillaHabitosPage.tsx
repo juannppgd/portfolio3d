@@ -3,10 +3,12 @@ import { FaCheck, FaChevronDown } from 'react-icons/fa6'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
 import DataIcon from '../components/DataIcon'
-import { PLANTILLA_HABITOS } from './serviceData'
+import { useTranslation } from 'react-i18next'
 import { wa } from '../lib/whatsapp'
 
 export default function PlantillaHabitosPage() {
+  const { t } = useTranslation()
+  const data = t('servicePages.plantillaHabitos', { returnObjects: true }) as any
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
   return (
@@ -24,7 +26,7 @@ export default function PlantillaHabitosPage() {
               className="font-syne font-black uppercase leading-tight tracking-tight break-words gradient-heading mb-4 md:mb-6"
               style={{ fontSize: 'clamp(28px,5vw,72px)' }}
             >
-              {PLANTILLA_HABITOS.hero.title}
+              {data.hero.title}
             </h1>
           </FadeIn>
 
@@ -33,14 +35,14 @@ export default function PlantillaHabitosPage() {
               className="font-mono text-sm md:text-base leading-relaxed mb-8 md:mb-10 max-w-3xl mx-auto px-2"
               style={{ color: 'var(--muted)' }}
             >
-              {PLANTILLA_HABITOS.hero.subtitle}
+              {data.hero.subtitle}
             </p>
           </FadeIn>
 
           {/* Stats */}
           <FadeIn delay={0.2}>
             <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 mb-8 md:mb-12 max-w-2xl mx-auto">
-              {PLANTILLA_HABITOS.stats.map((stat, i) => (
+              {data.stats.map((stat: { value: string; label: string }, i: number) => (
                 <div key={i} className="text-center">
                   <div
                     className="font-syne font-black mb-1 md:mb-2"
@@ -60,7 +62,7 @@ export default function PlantillaHabitosPage() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <ContactButton label="Conseguir Plantilla Ahora" href={wa('Hola, quiero la plantilla de rastreo de hábitos')} />
+            <ContactButton label={data.sectionTitles.heroButton} href={wa('Hola, quiero la plantilla de rastreo de hábitos')} />
           </FadeIn>
         </div>
       </section>
@@ -79,12 +81,12 @@ export default function PlantillaHabitosPage() {
               className="font-syne font-black uppercase text-center mb-10 md:mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(24px,4vw,56px)' }}
             >
-              Características clave
+              {data.sectionTitles.features}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 sm:gap-6">
-            {PLANTILLA_HABITOS.features.map((feature, i) => (
+            {data.features.map((feature: { title: string; icon: string }, i: number) => (
               <FadeIn key={i} delay={0.1 * i}>
                 <div
                   className="group p-4 sm:p-6 md:p-8 rounded-2xl text-center h-full"
@@ -115,7 +117,7 @@ export default function PlantillaHabitosPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Vista previa interactiva
+              {data.sectionTitles.previewTitle}
             </h2>
           </FadeIn>
 
@@ -126,10 +128,10 @@ export default function PlantillaHabitosPage() {
                 className="font-syne font-bold uppercase mb-6 tracking-tight"
                 style={{ fontSize: 'clamp(18px,2vw,24px)', color: 'var(--accent)' }}
               >
-                <DataIcon icon="calendar" size={20} style={{ marginRight: 8 }} /> Visión Mensual con Checkboxes
+                <DataIcon icon="calendar" size={20} style={{ marginRight: 8 }} /> {data.sectionTitles.previewMonthly}
               </h3>
               <div className="space-y-4">
-                {PLANTILLA_HABITOS.mockData.habits.map((habit, i) => (
+                {data.mockData.habits.map((habit: { name: string; emoji: string; progress: boolean[] }, i: number) => (
                   <div
                     key={i}
                     className="p-6 rounded-xl"
@@ -145,7 +147,7 @@ export default function PlantillaHabitosPage() {
                       <DataIcon icon={habit.emoji} size={20} style={{ marginRight: 8 }} /> {habit.name}
                     </p>
                     <div className="flex gap-2">
-                      {habit.progress.map((completed, dayIdx) => (
+                      {habit.progress.map((completed: boolean, dayIdx: number) => (
                         <div
                           key={dayIdx}
                           className="w-10 h-10 rounded-lg flex items-center justify-center font-bold transition-all duration-300"
@@ -172,7 +174,7 @@ export default function PlantillaHabitosPage() {
                 className="font-syne font-bold uppercase mb-4 md:mb-6 tracking-tight"
                 style={{ fontSize: 'clamp(16px,2vw,24px)', color: 'var(--accent)' }}
               >
-                <DataIcon icon="chart" size={20} style={{ marginRight: 8 }} /> Tablero Anual
+                <DataIcon icon="chart" size={20} style={{ marginRight: 8 }} /> {data.sectionTitles.previewYearlyTitle}
               </h3>
               <div className="grid grid-cols-3 gap-2 sm:gap-4">
                 <div
@@ -186,13 +188,13 @@ export default function PlantillaHabitosPage() {
                     className="font-syne font-black text-xl sm:text-2xl md:text-3xl mb-1 md:mb-2"
                     style={{ color: 'var(--accent2)' }}
                   >
-                    {PLANTILLA_HABITOS.mockData.yearlyMetrics.currentStreak}
+                    {data.mockData.yearlyMetrics.currentStreak}
                   </p>
                   <p
                     className="font-mono text-[10px] sm:text-xs uppercase tracking-tight leading-tight"
                     style={{ color: 'var(--muted)' }}
                   >
-                    Racha actual
+                    {data.sectionTitles.metricStreak}
                   </p>
                 </div>
                 <div
@@ -206,13 +208,13 @@ export default function PlantillaHabitosPage() {
                     className="font-syne font-black text-xl sm:text-2xl md:text-3xl mb-1 md:mb-2"
                     style={{ color: 'var(--accent)' }}
                   >
-                    {PLANTILLA_HABITOS.mockData.yearlyMetrics.bestMonth}%
+                    {data.mockData.yearlyMetrics.bestMonth}%
                   </p>
                   <p
                     className="font-mono text-[10px] sm:text-xs uppercase tracking-tight leading-tight"
                     style={{ color: 'var(--muted)' }}
                   >
-                    Mejor mes
+                    {data.sectionTitles.metricBestMonth}
                   </p>
                 </div>
                 <div
@@ -226,13 +228,13 @@ export default function PlantillaHabitosPage() {
                     className="font-syne font-black text-xl sm:text-2xl md:text-3xl mb-1 md:mb-2"
                     style={{ color: 'var(--accent)' }}
                   >
-                    {PLANTILLA_HABITOS.mockData.yearlyMetrics.totalHabits}
+                    {data.mockData.yearlyMetrics.totalHabits}
                   </p>
                   <p
                     className="font-mono text-[10px] sm:text-xs uppercase tracking-tight leading-tight"
                     style={{ color: 'var(--muted)' }}
                   >
-                    Total completados
+                    {data.sectionTitles.metricTotal}
                   </p>
                 </div>
               </div>
@@ -256,12 +258,12 @@ export default function PlantillaHabitosPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Historias de éxito
+              {data.sectionTitles.testimonials}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PLANTILLA_HABITOS.testimonialsHabitos.map((testimonial, i) => (
+            {data.testimonialsHabitos.map((testimonial: { name: string; metric: string; text: string }, i: number) => (
               <FadeIn key={i} delay={0.1 * i}>
                 <div
                   className="p-6 md:p-8 rounded-2xl"
@@ -305,12 +307,12 @@ export default function PlantillaHabitosPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Basado en ciencia
+              {data.sectionTitles.science}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {PLANTILLA_HABITOS.science.map((item, i) => (
+            {data.science.map((item: { title: string; desc: string }, i: number) => (
               <FadeIn key={i} delay={0.1 * i}>
                 <div
                   className="p-6 md:p-8 rounded-2xl"
@@ -352,7 +354,7 @@ export default function PlantillaHabitosPage() {
               className="font-syne font-black uppercase mb-12 tracking-tight break-words"
               style={{ fontSize: 'clamp(28px,4vw,48px)', color: 'var(--white)' }}
             >
-              Precio especial
+              {data.sectionTitles.pricingTitle}
             </h2>
           </FadeIn>
 
@@ -362,13 +364,13 @@ export default function PlantillaHabitosPage() {
                 className="font-syne font-bold text-2xl line-through"
                 style={{ color: 'var(--muted)' }}
               >
-                {PLANTILLA_HABITOS.price.original}
+                {data.price.original}
               </span>
               <span
                 className="font-syne font-black text-4xl md:text-5xl"
                 style={{ color: 'var(--accent2)' }}
               >
-                {PLANTILLA_HABITOS.price.current}
+                {data.price.current}
               </span>
             </div>
           </FadeIn>
@@ -378,12 +380,12 @@ export default function PlantillaHabitosPage() {
               className="font-mono text-sm mb-8"
               style={{ color: 'var(--muted)' }}
             >
-              Acceso inmediato. Sin suscripción. Tuyo para siempre.
+              {data.sectionTitles.pricingDesc}
             </p>
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <ContactButton label="Comprar Plantilla de Hábitos" href={wa('Hola, quiero la plantilla de rastreo de hábitos')} />
+            <ContactButton label={data.sectionTitles.pricingButton} href={wa('Hola, quiero la plantilla de rastreo de hábitos')} />
           </FadeIn>
         </div>
       </section>
@@ -396,21 +398,27 @@ export default function PlantillaHabitosPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words"
               style={{ fontSize: 'clamp(28px,4vw,56px)', color: 'var(--white)' }}
             >
-              Preguntas frecuentes
+              {data.sectionTitles.faq}
             </h2>
           </FadeIn>
 
           <div className="space-y-4">
-            {PLANTILLA_HABITOS.faqs.map((faq, i) => (
+            {data.faqs.map((faq: { q: string; a: string }, i: number) => (
               <FadeIn key={i} delay={0.05 * i}>
                 <div
-                  className="p-6 rounded-2xl cursor-pointer transition-all duration-300"
+                  className="p-6 rounded-2xl transition-all duration-300"
                   style={{
                     background: expandedFaq === i ? 'var(--surface)' : 'var(--bg)',
                     border: expandedFaq === i ? '1px solid var(--accent)' : '1px solid var(--border)',
                   }}
-                  onClick={() => setExpandedFaq(expandedFaq === i ? null : i)}
                 >
+                  <button
+                    onClick={() => setExpandedFaq(expandedFaq === i ? null : i)}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setExpandedFaq(expandedFaq === i ? null : i); } }}
+                    aria-expanded={expandedFaq === i}
+                    className="w-full text-left cursor-pointer bg-transparent border-none p-0"
+                    style={{ color: 'inherit' }}
+                  >
                   <div className="flex items-center justify-between">
                     <h3
                       className="font-syne font-bold text-sm md:text-base tracking-tight"
@@ -436,6 +444,7 @@ export default function PlantillaHabitosPage() {
                       {faq.a}
                     </p>
                   )}
+                  </button>
                 </div>
               </FadeIn>
             ))}
@@ -456,7 +465,7 @@ export default function PlantillaHabitosPage() {
             className="font-syne font-black uppercase mb-6 tracking-tight break-words"
             style={{ fontSize: 'clamp(24px,3.5vw,48px)', color: 'var(--white)' }}
           >
-            Empieza tu racha hoy
+            {data.sectionTitles.ctaTitle}
           </h2>
         </FadeIn>
 
@@ -465,12 +474,12 @@ export default function PlantillaHabitosPage() {
             className="font-mono text-sm mb-8 max-w-2xl mx-auto"
             style={{ color: 'var(--muted)' }}
           >
-            Únete a cientos de personas construyendo hábitos duraderos. La racha más larga comienza con un solo checkmark.
+            {data.sectionTitles.ctaDesc}
           </p>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <ContactButton label="Obtener Plantilla Ahora" href={wa('Hola, quiero la plantilla de rastreo de hábitos')} />
+          <ContactButton label={data.sectionTitles.ctaButton} href={wa('Hola, quiero la plantilla de rastreo de hábitos')} />
         </FadeIn>
       </section>
     </main>

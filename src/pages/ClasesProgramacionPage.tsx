@@ -3,7 +3,7 @@ import { FaFileExcel, FaGears } from 'react-icons/fa6'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
 import DataIcon from '../components/DataIcon'
-import { CLASES_PROGRAMACION } from './serviceData'
+import { useTranslation } from 'react-i18next'
 import { wa } from '../lib/whatsapp'
 
 const TECH_CARDS = [
@@ -22,6 +22,23 @@ const TECH_CARDS = [
 ]
 
 export default function ClasesProgramacionPage() {
+  const { t } = useTranslation()
+  const data = {
+    hero: { title: t('servicePages.clasesProgramacion.hero.title'), subtitle: t('servicePages.clasesProgramacion.hero.subtitle') },
+    stats: t('servicePages.clasesProgramacion.stats', { returnObjects: true }) as { label: string; value: string }[],
+    featured: {
+      title: t('servicePages.clasesProgramacion.featured.title'),
+      subtitle: t('servicePages.clasesProgramacion.featured.subtitle'),
+      highlights: t('servicePages.clasesProgramacion.featured.highlights', { returnObjects: true }) as string[],
+      bonuses: t('servicePages.clasesProgramacion.featured.bonuses'),
+    },
+    benefits: t('servicePages.clasesProgramacion.benefits', { returnObjects: true }) as { title: string; desc: string; icon: string }[],
+    audience: t('servicePages.clasesProgramacion.audience', { returnObjects: true }) as { persona: string; desc: string }[],
+    process: t('servicePages.clasesProgramacion.process', { returnObjects: true }) as { step: number; title: string; desc: string }[],
+    languages: t('servicePages.clasesProgramacion.languages', { returnObjects: true }) as string[],
+    sectionTitles: t('servicePages.clasesProgramacion.sectionTitles', { returnObjects: true }) as Record<string, string>,
+  }
+
   return (
     <main className="min-h-screen" style={{ background: 'var(--bg)' }}>
       {/* Hero Section */}
@@ -38,7 +55,7 @@ export default function ClasesProgramacionPage() {
               className="font-syne font-black uppercase leading-tight tracking-tight break-words gradient-heading mb-4 md:mb-6"
               style={{ fontSize: 'clamp(28px,5vw,72px)' }}
             >
-              {CLASES_PROGRAMACION.hero.title}
+              {data.hero.title}
             </h1>
           </FadeIn>
 
@@ -47,14 +64,14 @@ export default function ClasesProgramacionPage() {
               className="font-mono text-sm md:text-base leading-relaxed mb-8 md:mb-10 max-w-3xl mx-auto px-2"
               style={{ color: 'var(--muted)' }}
             >
-              {CLASES_PROGRAMACION.hero.subtitle}
+              {data.hero.subtitle}
             </p>
           </FadeIn>
 
           {/* Stats */}
           <FadeIn delay={0.2}>
             <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 mb-8 md:mb-12 max-w-2xl mx-auto">
-              {CLASES_PROGRAMACION.stats.map((stat, i) => (
+              {data.stats.map((stat, i) => (
                 <div key={i} className="text-center">
                   <div
                     className="font-syne font-black mb-1 md:mb-2"
@@ -74,7 +91,7 @@ export default function ClasesProgramacionPage() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <ContactButton label="Agendar Primera Clase" href={wa('Hola, vine por el servicio de clases de programación')} />
+            <ContactButton label={data.sectionTitles.heroButton} href={wa('Hola, vine por el servicio de clases de programación')} />
           </FadeIn>
         </div>
       </section>
@@ -94,13 +111,13 @@ export default function ClasesProgramacionPage() {
                 className="font-mono text-xs tracking-widest uppercase inline-block mb-3 px-4 py-2 rounded-full"
                 style={{ background: 'var(--bg)', color: 'var(--accent2)' }}
               >
-                {CLASES_PROGRAMACION.featured.subtitle}
+                {data.featured.subtitle}
               </span>
               <h2
                 className="font-syne font-black uppercase tracking-tight break-words gradient-heading"
                 style={{ fontSize: 'clamp(28px,4vw,56px)' }}
               >
-                {CLASES_PROGRAMACION.featured.title}
+                {data.featured.title}
               </h2>
             </div>
           </FadeIn>
@@ -119,10 +136,10 @@ export default function ClasesProgramacionPage() {
                     className="font-syne font-bold mb-6 tracking-tight uppercase"
                     style={{ fontSize: 'clamp(16px,1.5vw,20px)', color: 'var(--accent)' }}
                   >
-                    Lo que aprenderás
+                    {data.sectionTitles.featuredLearn}
                   </h3>
                   <ul className="space-y-3">
-                    {CLASES_PROGRAMACION.featured.highlights.map((highlight, i) => (
+                    {data.featured.highlights.map((highlight, i) => (
                       <li
                         key={i}
                         className="flex items-start gap-3 font-mono text-sm"
@@ -140,15 +157,15 @@ export default function ClasesProgramacionPage() {
                     className="font-syne font-bold mb-6 tracking-tight uppercase"
                     style={{ fontSize: 'clamp(16px,1.5vw,20px)', color: 'var(--accent)' }}
                   >
-                    Bonificaciones
+                    {data.sectionTitles.featuredBonuses}
                   </h3>
                   <p
                     className="font-mono text-sm leading-relaxed mb-8"
                     style={{ color: 'var(--text)' }}
                   >
-                    {CLASES_PROGRAMACION.featured.bonuses}
+                    {data.featured.bonuses}
                   </p>
-                  <ContactButton label="Conocer Más sobre Excel" href={wa('Hola, vine por el servicio de clases de programación')} />
+                  <ContactButton label={data.sectionTitles.featuredButton} href={wa('Hola, vine por el servicio de clases de programación')} />
                 </div>
               </div>
             </div>
@@ -164,12 +181,12 @@ export default function ClasesProgramacionPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Beneficios clave
+              {data.sectionTitles.benefits}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {CLASES_PROGRAMACION.benefits.map((benefit, i) => (
+            {data.benefits.map((benefit, i) => (
               <FadeIn key={i} delay={0.15 * i}>
                 <div
                   className="group p-6 md:p-8 rounded-2xl h-full transition-all duration-300 hover:translate-y-[-4px]"
@@ -213,19 +230,19 @@ export default function ClasesProgramacionPage() {
               className="font-mono text-xs tracking-widest uppercase inline-block mb-3 px-4 py-2 rounded-full"
               style={{ background: 'var(--bg)', color: 'var(--accent2)' }}
             >
-              Stack tecnológico
+              {data.sectionTitles.techStack}
             </span>
             <h2
               className="font-syne font-black uppercase mb-4 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Lenguajes y tecnologías
+              {data.sectionTitles.techLanguages}
             </h2>
             <p
               className="font-mono text-sm mb-12 max-w-2xl mx-auto"
               style={{ color: 'var(--muted)' }}
             >
-              Tecnologías que enseño en mis clases personalizadas
+              {data.sectionTitles.techDesc}
             </p>
           </FadeIn>
 
@@ -280,12 +297,12 @@ export default function ClasesProgramacionPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              ¿Para quién es?
+              {data.sectionTitles.audience}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {CLASES_PROGRAMACION.audience.map((aud, i) => (
+            {data.audience.map((aud, i) => (
               <FadeIn key={i} delay={0.15 * i}>
                 <div
                   className="p-8 rounded-2xl"
@@ -327,12 +344,12 @@ export default function ClasesProgramacionPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Mi metodología
+              {data.sectionTitles.methodology}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {CLASES_PROGRAMACION.process.map((proc, i) => (
+            {data.process.map((proc, i) => (
               <FadeIn key={i} delay={0.15 * i}>
                 <div className="relative">
                   <div
@@ -370,7 +387,7 @@ export default function ClasesProgramacionPage() {
             className="font-syne font-black uppercase mb-6 tracking-tight break-words"
             style={{ fontSize: 'clamp(24px,3.5vw,48px)', color: 'var(--white)' }}
           >
-            ¿Listo para aprender a programar?
+            {data.sectionTitles.ctaTitle}
           </h2>
         </FadeIn>
 
@@ -379,12 +396,12 @@ export default function ClasesProgramacionPage() {
             className="font-mono text-sm mb-8 max-w-2xl mx-auto"
             style={{ color: 'var(--muted)' }}
           >
-            Agendar tu primera clase gratuita de diagnóstico y descubre tu ruta de aprendizaje personalizada
+            {data.sectionTitles.ctaDesc}
           </p>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <ContactButton label="Agendar Mi Primera Clase" href={wa('Hola, vine por el servicio de clases de programación')} />
+          <ContactButton label={data.sectionTitles.ctaButton} href={wa('Hola, vine por el servicio de clases de programación')} />
         </FadeIn>
       </section>
     </main>

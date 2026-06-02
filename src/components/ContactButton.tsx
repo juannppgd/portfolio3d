@@ -1,13 +1,17 @@
+import { useTranslation } from 'react-i18next'
+
 interface Props {
   label?: string
   onClick?: () => void
   href?: string
 }
 
-export default function ContactButton({ label = 'Contáctame', onClick, href }: Props) {
+export default function ContactButton({ label, onClick, href }: Props) {
+  const { t } = useTranslation()
+  const resolvedLabel = label ?? t('contact.buttonLabel')
   const content = (
     <>
-      {label}
+      {resolvedLabel}
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M7 17L17 7M17 7H7M17 7v10" />
       </svg>

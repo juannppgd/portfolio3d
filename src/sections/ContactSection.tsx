@@ -1,4 +1,5 @@
-import { useState, useCallback } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaLinkedin, FaInstagram } from 'react-icons/fa'
 import FadeIn from '../components/FadeIn'
@@ -14,10 +15,22 @@ const validateEmail = (email: string) => {
 }
 
 export default function ContactSection() {
+  const { t } = useTranslation()
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showModal, setShowModal] = useState(false)
+  const modalRefC = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!showModal) return
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setShowModal(false)
+    }
+    document.addEventListener('keydown', handleKey)
+    modalRefC.current?.focus()
+    return () => document.removeEventListener('keydown', handleKey)
+  }, [showModal])
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -32,10 +45,10 @@ export default function ContactSection() {
     if (honeypot) return
 
     const newErrors: Record<string, string> = {}
-    if (!formData.name.trim()) newErrors.name = 'Por favor, ingresa tu nombre para continuar.'
-    if (!formData.email.trim()) newErrors.email = 'El correo electrónico es obligatorio para contactarte.'
-    else if (!validateEmail(formData.email)) newErrors.email = 'Ingresa un correo válido (ej: usuario@dominio.com).'
-    if (!formData.message.trim()) newErrors.message = 'Cuéntame más sobre tu proyecto o consulta.'
+    if (!formData.name.trim()) newErrors.name = t('contact.errorName')
+    if (!formData.email.trim()) newErrors.email = t('contact.errorEmail')
+    else if (!validateEmail(formData.email)) newErrors.email = t('contact.errorEmailInvalid')
+    if (!formData.message.trim()) newErrors.message = t('contact.errorMessage')
     setErrors(newErrors)
 
     if (Object.keys(newErrors).length > 0) return
@@ -90,8 +103,8 @@ export default function ContactSection() {
                 className="font-syne font-black uppercase leading-none tracking-tight mb-4 break-words"
                 style={{ fontSize: 'clamp(24px,4.2vw,60px)', color: 'var(--white)', maxWidth: '90vw' }}
               >
-                Contáctame{' '}
-                <span className="gradient-heading">¡Asesoría Gratis!</span>
+                {t('contact.heading')}
+                <span className="gradient-heading">{t('contact.headingHighlight')}</span>
               </h2>
             </FadeIn>
           </div>
@@ -101,10 +114,10 @@ export default function ContactSection() {
             <div>
               <FadeIn y={15}>
                 <span className="font-mono text-xs tracking-widest uppercase block mb-2" style={{ color: 'var(--accent2)' }}>
-                  Email
+                  {t('contact.emailLabel')}
                 </span>
                 <p className="font-mono text-sm leading-relaxed mb-3" style={{ color: 'var(--muted)' }}>
-                  ¿Prefieres contactarme directamente por tu correo? Haz click aquí te responderé en breve:
+                  {t('contact.emailDesc')}
                 </p>
                 <a
                   href="mailto:contact.juannppgd@gmail.com"
@@ -121,13 +134,13 @@ export default function ContactSection() {
 
               <FadeIn y={15}>
                 <span className="font-mono text-xs tracking-widest uppercase block mb-2" style={{ color: 'var(--accent2)' }}>
-                  Redes Sociales
+                  {t('contact.socialLabel')}
                 </span>
                 <p className="font-mono text-sm leading-relaxed mb-4" style={{ color: 'var(--muted)' }}>
-                  Elige tu red social favorita y escríbeme para una consulta gratuita, o simplemente llena el formulario. ¡Estoy aquí para ayudarte a crecer!
+                  {t('contact.socialDesc')}
                 </p>
                 <span className="font-mono text-[11px] tracking-widest uppercase block mb-3" style={{ color: 'var(--text)' }}>
-                  Conoce mis redes sociales
+                  {t('contact.socialSubtext')}
                 </span>
                 <div className="flex flex-wrap gap-3 mb-10">
                   {SOCIAL_LINKS.map((l) => (
@@ -183,10 +196,10 @@ export default function ContactSection() {
 
               <FadeIn y={15}>
                 <span className="font-mono text-xs tracking-widest uppercase block mb-2" style={{ color: 'var(--accent2)' }}>
-                  Ubicación
+                  {t('contact.locationLabel')}
                 </span>
                 <p className="font-mono text-sm leading-relaxed" style={{ color: 'var(--muted)' }}>
-                  Desde Colombia, trabajando con clientes globales.
+                  {t('contact.locationText')}
                 </p>
               </FadeIn>
             </div>
@@ -194,7 +207,7 @@ export default function ContactSection() {
             <div>
               <FadeIn y={15}>
                 <span className="font-syne font-bold uppercase tracking-tight block mb-6" style={{ fontSize: 'clamp(18px,1.8vw,22px)', color: 'var(--white)' }}>
-                  Agenda tu asesoría
+                  {t('contact.formTitle')}
                 </span>
               </FadeIn>
 
@@ -204,14 +217,14 @@ export default function ContactSection() {
                 <FadeIn y={10}>
                   <div>
                     <label className="font-mono text-[11px] tracking-widest uppercase block mb-1.5" style={{ color: 'var(--muted)' }}>
-                      Nombre
+                      {t('contact.formName')}
                     </label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="Ingresa tu nombre"
+                      placeholder={t('contact.formNamePlaceholder')}
                       className="w-full px-4 py-3 rounded-xl font-mono text-sm outline-none transition-colors duration-200"
                       style={{
                         border: errors.name ? '1px solid #EF4444' : '1px solid var(--border)',
@@ -235,14 +248,14 @@ export default function ContactSection() {
                 <FadeIn y={10} delay={0.05}>
                   <div>
                     <label className="font-mono text-[11px] tracking-widest uppercase block mb-1.5" style={{ color: 'var(--muted)' }}>
-                      Correo Electrónico
+                      {t('contact.formEmail')}
                     </label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="tuemail@ejemplo.com"
+                      placeholder={t('contact.formEmailPlaceholder')}
                       className="w-full px-4 py-3 rounded-xl font-mono text-sm outline-none transition-colors duration-200"
                       style={{
                         border: errors.email ? '1px solid #EF4444' : '1px solid var(--border)',
@@ -266,14 +279,14 @@ export default function ContactSection() {
                 <FadeIn y={10} delay={0.1}>
                   <div>
                     <label className="font-mono text-[11px] tracking-widest uppercase block mb-1.5" style={{ color: 'var(--muted)' }}>
-                      Mensaje
+                      {t('contact.formMessage')}
                     </label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       rows={5}
-                      placeholder="Cuéntame tu idea o servicio que necesitas. Déjame tu WhatsApp... Páginas web, marketing, IA local, clases de programación, apoyo académico, asesoría en CV, ventas online y plantillas en Excel."
+                      placeholder={t('contact.formMessagePlaceholder')}
                       className="w-full px-4 py-3 rounded-xl font-mono text-sm outline-none resize-none transition-colors duration-200"
                       style={{
                         border: errors.message ? '1px solid #EF4444' : '1px solid var(--border)',
@@ -312,10 +325,10 @@ export default function ContactSection() {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
                         </svg>
-                        Enviando...
+                        {t('contact.formSubmitting')}
                       </span>
                     ) : (
-                      'Enviar Mensaje'
+                      t('contact.formSubmit')
                     )}
                   </motion.button>
                 </FadeIn>
@@ -331,16 +344,21 @@ export default function ContactSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            role="dialog"
+            aria-modal="true"
+            aria-label={t('contact.modalTitle')}
             className="fixed inset-0 flex items-center justify-center z-[60] px-4"
             style={{ background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)' }}
             onClick={() => setShowModal(false)}
           >
             <motion.div
+              ref={modalRefC}
+              tabIndex={-1}
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="max-w-md w-full p-8 rounded-3xl text-center"
+              className="max-w-md w-full p-8 rounded-3xl text-center outline-none"
               style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
               onClick={(e) => e.stopPropagation()}
             >
@@ -353,10 +371,10 @@ export default function ContactSection() {
                 </svg>
               </div>
               <h3 className="font-syne font-bold text-xl mb-2" style={{ color: 'var(--text)' }}>
-                ¡Mensaje Enviado!
+                {t('contact.modalTitle')}
               </h3>
               <p className="font-mono text-sm leading-relaxed mb-6" style={{ color: 'var(--muted)' }}>
-                Gracias por contactarme. Te responderé a la brevedad posible.
+                {t('contact.modalDesc')}
               </p>
               <motion.button
                 whileHover={{ scale: 1.04 }}
@@ -368,7 +386,7 @@ export default function ContactSection() {
                   color: '#fff',
                 }}
               >
-                Cerrar
+                {t('contact.modalClose')}
               </motion.button>
             </motion.div>
           </motion.div>

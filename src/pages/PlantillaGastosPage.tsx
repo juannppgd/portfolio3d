@@ -3,10 +3,12 @@ import { FaCheck, FaChevronDown, FaFire } from 'react-icons/fa6'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
 import DataIcon from '../components/DataIcon'
-import { PLANTILLA_GASTOS } from './serviceData'
+import { useTranslation } from 'react-i18next'
 import { wa } from '../lib/whatsapp'
 
 export default function PlantillaGastosPage() {
+  const { t } = useTranslation()
+  const data = t('servicePages.plantillaGastos', { returnObjects: true }) as any
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
   return (
@@ -24,7 +26,7 @@ export default function PlantillaGastosPage() {
               className="font-syne font-black uppercase leading-tight tracking-tight break-words gradient-heading mb-4 md:mb-6"
               style={{ fontSize: 'clamp(28px,5vw,72px)' }}
             >
-              {PLANTILLA_GASTOS.hero.title}
+              {data.hero.title}
             </h1>
           </FadeIn>
 
@@ -33,7 +35,7 @@ export default function PlantillaGastosPage() {
               className="font-mono text-sm md:text-base leading-relaxed mb-8 md:mb-10 max-w-3xl mx-auto px-2"
               style={{ color: 'var(--muted)' }}
             >
-              {PLANTILLA_GASTOS.hero.subtitle}
+              {data.hero.subtitle}
             </p>
           </FadeIn>
 
@@ -52,13 +54,13 @@ export default function PlantillaGastosPage() {
                     className="font-mono text-xs tracking-widest uppercase mb-2"
                     style={{ color: 'var(--accent2)' }}
                   >
-                    Colombia
+                    {data.sectionTitles.pricingColombia}
                   </p>
                   <p
                     className="font-syne font-black text-3xl md:text-4xl"
                     style={{ color: 'var(--white)' }}
                   >
-                    {PLANTILLA_GASTOS.pricing.colombia}
+                    {data.pricing.colombia}
                   </p>
                 </div>
                 <div className="p-4 md:p-6 rounded-2xl" style={{ background: 'rgba(0,229,195,0.08)', border: '1px solid rgba(0,229,195,0.2)' }}>
@@ -66,13 +68,13 @@ export default function PlantillaGastosPage() {
                     className="font-mono text-xs tracking-widest uppercase mb-2"
                     style={{ color: 'var(--accent2)' }}
                   >
-                    Internacional
+                    {data.sectionTitles.pricingInternational}
                   </p>
                   <p
                     className="font-syne font-black text-3xl md:text-4xl"
                     style={{ color: 'var(--white)' }}
                   >
-                    {PLANTILLA_GASTOS.pricing.international}
+                    {data.pricing.international}
                   </p>
                 </div>
               </div>
@@ -80,11 +82,11 @@ export default function PlantillaGastosPage() {
               <div className="flex items-center justify-center gap-2 mb-6">
                 <FaFire size={18} style={{ color: '#FF6B6B' }} />
                 <span className="font-mono text-sm" style={{ color: '#FF6B6B' }}>
-                  {PLANTILLA_GASTOS.pricing.urgency}
+                  {data.pricing.urgency}
                 </span>
               </div>
 
-              <ContactButton label="Comprar Ahora por WhatsApp" href={wa('Hola, quiero la plantilla de control de gastos')} />
+              <ContactButton label={data.sectionTitles.heroButton} href={wa('Hola, quiero la plantilla de control de gastos')} />
             </div>
           </FadeIn>
         </div>
@@ -98,12 +100,12 @@ export default function PlantillaGastosPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Características clave
+              {data.sectionTitles.features}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PLANTILLA_GASTOS.features.map((feature, i) => (
+            {data.features.map((feature: { title: string; icon: string }, i: number) => (
               <FadeIn key={i} delay={0.1 * i}>
                 <div
                   className="group p-6 md:p-8 rounded-2xl text-center"
@@ -140,7 +142,7 @@ export default function PlantillaGastosPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Vista previa de la plantilla
+              {data.sectionTitles.previewTitle}
             </h2>
           </FadeIn>
 
@@ -151,10 +153,10 @@ export default function PlantillaGastosPage() {
                 className="font-syne font-bold uppercase mb-6 tracking-tight"
                 style={{ fontSize: 'clamp(18px,2vw,24px)', color: 'var(--accent)' }}
               >
-                <DataIcon icon="calendar" size={20} style={{ marginRight: 8 }} /> Vista Mensual
+                <DataIcon icon="calendar" size={20} style={{ marginRight: 8 }} /> {data.sectionTitles.previewMonthly}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {PLANTILLA_GASTOS.mockData.categories.map((cat, i) => (
+                {data.mockData.categories.map((cat: { name: string; emoji: string; amount: number; status: string }, i: number) => (
                   <div
                     key={i}
                     className="p-6 rounded-xl"
@@ -194,10 +196,10 @@ export default function PlantillaGastosPage() {
                 className="font-syne font-bold uppercase mb-6 tracking-tight"
                 style={{ fontSize: 'clamp(18px,2vw,24px)', color: 'var(--accent)' }}
               >
-                <DataIcon icon="chart" size={20} style={{ marginRight: 8 }} /> Progreso Semanal
+                <DataIcon icon="chart" size={20} style={{ marginRight: 8 }} /> {data.sectionTitles.previewWeekly}
               </h3>
               <div className="space-y-3">
-                {PLANTILLA_GASTOS.mockData.weekly.map((day, i) => (
+                {data.mockData.weekly.map((day: { day: string; percent: number }, i: number) => (
                   <div key={i}>
                     <div className="flex items-center justify-between mb-1">
                       <p className="font-mono text-sm" style={{ color: 'var(--text)' }}>
@@ -235,10 +237,10 @@ export default function PlantillaGastosPage() {
                 className="font-syne font-bold uppercase mb-6 tracking-tight"
                 style={{ fontSize: 'clamp(18px,2vw,24px)', color: 'var(--accent)' }}
               >
-                <DataIcon icon="scale" size={20} style={{ marginRight: 8 }} /> Regla 50/30/20
+                <DataIcon icon="scale" size={20} style={{ marginRight: 8 }} /> {data.sectionTitles.previewDistribution}
               </h3>
               <div className="space-y-3">
-                {PLANTILLA_GASTOS.mockData.distribution.map((dist, i) => (
+                {data.mockData.distribution.map((dist: { category: string; percent: number; color: string }, i: number) => (
                   <div key={i}>
                     <div className="flex items-center justify-between mb-2">
                       <p className="font-mono text-sm" style={{ color: 'var(--text)' }}>
@@ -276,12 +278,12 @@ export default function PlantillaGastosPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Transformaciones reales
+              {data.sectionTitles.transformations}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {PLANTILLA_GASTOS.transformations.map((trans, i) => (
+            {data.transformations.map((trans: { metric: string; desc: string }, i: number) => (
               <FadeIn key={i} delay={0.1 * i}>
                 <div
                   className="p-6 md:p-8 rounded-2xl text-center"
@@ -324,12 +326,12 @@ export default function PlantillaGastosPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Lo que dicen nuestros usuarios
+              {data.sectionTitles.testimonials}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PLANTILLA_GASTOS.testimonialsGastos.map((testimonial, i) => (
+            {data.testimonialsGastos.map((testimonial: { name: string; badge: string; text: string }, i: number) => (
               <FadeIn key={i} delay={0.1 * i}>
                 <div
                   className="p-6 md:p-8 rounded-2xl"
@@ -373,12 +375,12 @@ export default function PlantillaGastosPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              ¿Por qué funciona?
+              {data.sectionTitles.science}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {PLANTILLA_GASTOS.science.map((item, i) => (
+            {data.science.map((item: { title: string; desc: string }, i: number) => (
               <FadeIn key={i} delay={0.1 * i}>
                 <div
                   className="p-6 md:p-8 rounded-2xl"
@@ -420,13 +422,13 @@ export default function PlantillaGastosPage() {
               className="font-syne font-black uppercase text-center mb-8 tracking-tight"
               style={{ fontSize: 'clamp(20px,3vw,32px)', color: 'var(--white)' }}
             >
-              Métodos de pago
+              {data.sectionTitles.paymentMethods}
             </h3>
           </FadeIn>
 
           <FadeIn delay={0.1}>
             <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {PLANTILLA_GASTOS.paymentMethods.map((method, i) => (
+              {data.paymentMethods.map((method: string, i: number) => (
                 <span
                   key={i}
                   className="px-4 py-2 rounded-full font-mono text-xs font-bold tracking-tight uppercase"
@@ -454,13 +456,13 @@ export default function PlantillaGastosPage() {
                 className="font-syne font-black text-lg md:text-2xl mb-2"
                 style={{ color: 'var(--accent2)' }}
               >
-                <FaCheck size={20} style={{ marginRight: 10, verticalAlign: 'middle' }} /> {PLANTILLA_GASTOS.warranty}
+                <FaCheck size={20} style={{ marginRight: 10, verticalAlign: 'middle' }} /> {data.warranty}
               </p>
               <p
                 className="font-mono text-sm"
                 style={{ color: 'var(--muted)' }}
               >
-                Compra con total confianza. Si no te convence, reembolso inmediato.
+                {data.sectionTitles.warrantyDesc}
               </p>
             </div>
           </FadeIn>
@@ -475,21 +477,27 @@ export default function PlantillaGastosPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words"
               style={{ fontSize: 'clamp(28px,4vw,56px)', color: 'var(--white)' }}
             >
-              Preguntas frecuentes
+              {data.sectionTitles.faq}
             </h2>
           </FadeIn>
 
           <div className="space-y-4">
-            {PLANTILLA_GASTOS.faqs.map((faq, i) => (
+            {data.faqs.map((faq: { q: string; a: string }, i: number) => (
               <FadeIn key={i} delay={0.05 * i}>
                 <div
-                  className="p-6 rounded-2xl cursor-pointer transition-all duration-300"
+                  className="p-6 rounded-2xl transition-all duration-300"
                   style={{
                     background: expandedFaq === i ? 'var(--surface)' : 'var(--bg)',
                     border: expandedFaq === i ? '1px solid var(--accent)' : '1px solid var(--border)',
                   }}
-                  onClick={() => setExpandedFaq(expandedFaq === i ? null : i)}
                 >
+                  <button
+                    onClick={() => setExpandedFaq(expandedFaq === i ? null : i)}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setExpandedFaq(expandedFaq === i ? null : i); } }}
+                    aria-expanded={expandedFaq === i}
+                    className="w-full text-left cursor-pointer bg-transparent border-none p-0"
+                    style={{ color: 'inherit' }}
+                  >
                   <div className="flex items-center justify-between">
                     <h3
                       className="font-syne font-bold text-sm md:text-base tracking-tight"
@@ -515,6 +523,7 @@ export default function PlantillaGastosPage() {
                       {faq.a}
                     </p>
                   )}
+                  </button>
                 </div>
               </FadeIn>
             ))}
@@ -535,7 +544,7 @@ export default function PlantillaGastosPage() {
             className="font-syne font-black uppercase mb-6 tracking-tight break-words"
             style={{ fontSize: 'clamp(24px,3.5vw,48px)', color: 'var(--white)' }}
           >
-            Domina tus finanzas hoy
+            {data.sectionTitles.ctaTitle}
           </h2>
         </FadeIn>
 
@@ -544,12 +553,12 @@ export default function PlantillaGastosPage() {
             className="font-mono text-sm mb-8 max-w-2xl mx-auto"
             style={{ color: 'var(--muted)' }}
           >
-            Únete a más de 330 personas que ya controlan sus gastos y ahorran más cada mes
+            {data.sectionTitles.ctaDesc}
           </p>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <ContactButton label="Comprar Plantilla de Gastos" href={wa('Hola, quiero la plantilla de control de gastos')} />
+          <ContactButton label={data.sectionTitles.ctaButton} href={wa('Hola, quiero la plantilla de control de gastos')} />
         </FadeIn>
       </section>
     </main>

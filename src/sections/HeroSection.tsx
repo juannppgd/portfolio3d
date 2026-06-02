@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import { motion, useReducedMotion } from 'framer-motion'
 import { useTheme } from '../context/ThemeContext'
 import profileWebp230 from '../assets/juanpablogutierrez-230w.webp'
@@ -15,6 +16,7 @@ const anim = (delay: number, y = 30) => ({
 const RADIUS = '22px'
 
 export default function HeroSection() {
+  const { t }         = useTranslation()
   const { theme }     = useTheme()
   const isLight       = theme === 'light'
   const reducedMotion = useReducedMotion()
@@ -144,8 +146,7 @@ export default function HeroSection() {
               />
               <img
                 src={profileFallback}
-                alt="Juan Pablo Gutiérrez Díaz — Desarrollador Web y Marketing Digital en Tunja, Colombia"
-                fetchPriority="high"
+                alt={t('hero.alt')}
                 decoding="async"
                 loading="eager"
                 width={440}
@@ -194,7 +195,7 @@ export default function HeroSection() {
             className="h-px shrink-0"
             style={{ width: 'clamp(24px, 3vw, 40px)', background: 'var(--accent2)' }}
           />
-          Disponible para proyectos
+          {t('hero.available')}
         </motion.div>
 
         {/* H1 */}
@@ -207,16 +208,16 @@ export default function HeroSection() {
             transition={{ duration: 0.9, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <span className="block" style={{ fontSize: 'clamp(44px, 12vw, 100px)', color: 'var(--white)' }}>
-              Juan
+              {t('hero.firstName')}
             </span>
             <span className="block gradient-heading" style={{ fontSize: 'clamp(47px, 13vw, 110px)' }}>
-              Pablo
+              {t('hero.middleName')}
             </span>
             <span className="block" style={{ fontSize: 'clamp(26px, 7vw, 64px)', color: 'var(--white)' }}>
-              Gutiérrez
+              {t('hero.lastName')}
             </span>
             <span className="block" style={{ fontSize: 'clamp(30px, 8vw, 72px)', color: 'var(--white)' }}>
-              Díaz
+              {t('hero.secondLastName')}
             </span>
           </motion.h1>
         </div>
@@ -232,13 +233,13 @@ export default function HeroSection() {
           }}
           {...anim(0.35, 20)}
         >
-          <strong style={{ color: 'var(--text)', fontWeight: 400 }}>Desarrollo web</strong>
+          <strong style={{ color: 'var(--text)', fontWeight: 400 }}>{t('hero.devWeb')}</strong>
           {', '}
-          <strong style={{ color: 'var(--text)', fontWeight: 400 }}>Automatización</strong>
+          <strong style={{ color: 'var(--text)', fontWeight: 400 }}>{t('hero.automation')}</strong>
           {' & '}
-          <strong style={{ color: 'var(--text)', fontWeight: 400 }}>Marketing digital</strong>
+          <strong style={{ color: 'var(--text)', fontWeight: 400 }}>{t('hero.marketingDigital')}</strong>
           <br />
-          Para profesionales, Emprendedores y Pymes que quieren crecer en Internet.
+          {t('hero.tagline')}
         </motion.p>
       </div>
 
@@ -267,7 +268,7 @@ export default function HeroSection() {
           className="font-mono uppercase"
           style={{ fontSize: '9px', letterSpacing: '0.18em' }}
         >
-          Scroll
+          {t('hero.scroll')}
         </span>
       </motion.div>
 

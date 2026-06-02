@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import FadeIn from '../components/FadeIn'
 import { PROJECTS } from '../data'
 
@@ -10,6 +11,7 @@ interface CardProps {
 }
 
 function ProjectCard({ project, index, total }: CardProps) {
+  const { t } = useTranslation()
   const cardRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -64,7 +66,7 @@ function ProjectCard({ project, index, total }: CardProps) {
             className="self-start sm:self-auto flex items-center gap-2 font-mono text-xs tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-200 hover:border-accent hover:text-accent"
             style={{ border: '1px solid var(--border)', color: 'var(--muted)', background: 'transparent' }}
           >
-            ↗ Ver proyecto
+            {t('projects.viewProject')}
           </button>
         </div>
 
@@ -80,6 +82,7 @@ function ProjectCard({ project, index, total }: CardProps) {
                 src={src}
                 alt={`${project.name} ${i + 1}`}
                 loading="lazy"
+                decoding="async"
                 width={640}
                 height={360}
                 className="flex-1 w-full object-cover min-h-0"
@@ -91,6 +94,7 @@ function ProjectCard({ project, index, total }: CardProps) {
             src={project.col2}
             alt={project.name}
             loading="lazy"
+            decoding="async"
             width={960}
             height={540}
             className="w-full h-full object-cover"
@@ -103,6 +107,7 @@ function ProjectCard({ project, index, total }: CardProps) {
 }
 
 export default function ProjectsSection() {
+  const { t } = useTranslation()
   return (
     <section
       id="proyectos"
@@ -121,7 +126,7 @@ export default function ProjectsSection() {
             className="font-syne font-black uppercase leading-none tracking-tight gradient-heading"
             style={{ fontSize: 'clamp(56px,7vw,120px)' }}
           >
-            Proyectos.
+            {t('projects.heading')}.
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
@@ -129,7 +134,7 @@ export default function ProjectsSection() {
             className="font-mono text-xs tracking-widest uppercase cursor-pointer pb-1 transition-colors duration-200 hover:text-accent"
             style={{ color: 'var(--muted)', borderBottom: '1px solid var(--border)' }}
           >
-            Ver todos →
+            {t('projects.viewAll')}
           </span>
         </FadeIn>
       </div>

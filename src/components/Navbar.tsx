@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import ThemeToggle from './ThemeToggle'
+import LanguageToggle from '../i18n/LanguageToggle'
 import { useTheme } from '../context/ThemeContext'
 import { useActiveSection } from '../hooks/useActiveSection'
 
@@ -19,12 +21,12 @@ interface NavbarProps {
   currentPage: Page
 }
 
-const links = [
-  { label: 'Sobre mí',      href: '#about'         },
-  { label: 'Servicios',     href: '#servicios'      },
-  { label: 'Conocimientos', href: '#conocimientos'  },
-  { label: 'FAQ',           href: '#faq'            },
-  { label: 'Contacto',      href: '#contacto'       },
+const linkKeys = [
+  { key: 'about',    href: '#about'         },
+  { key: 'services', href: '#servicios'      },
+  { key: 'skills',   href: '#conocimientos'  },
+  { key: 'faq',      href: '#faq'            },
+  { key: 'contact',  href: '#contacto'       },
 ]
 
 export default function Navbar({ currentPage }: NavbarProps) {
@@ -32,8 +34,13 @@ export default function Navbar({ currentPage }: NavbarProps) {
   const { theme }      = useTheme()
   const activeSection  = useActiveSection()
   const navigate       = useNavigate()
+  const { t, i18n }    = useTranslation()
   const isHome         = currentPage === 'home'
   const isDark         = theme === 'dark'
+
+  useEffect(() => {
+    document.documentElement.lang = i18n.language?.startsWith('en') ? 'en' : 'es'
+  }, [i18n.language])
 
   // ── Helpers ──────────────────────────────────────────────────────────────
   const scrollTo = (id: string) => {
@@ -65,7 +72,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
     <>
       <motion.nav
         role="navigation"
-        aria-label="Navegación principal"
+          aria-label={t('nav.ariaLabel')}
         className="fixed top-0 left-0 right-0 z-50"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y:   0 }}
@@ -96,10 +103,10 @@ export default function Navbar({ currentPage }: NavbarProps) {
           {/* Desktop: links de sección (solo en home) ─────────────────────── */}
           {isHome && (
             <nav
-              aria-label="Secciones"
+              aria-label={t('nav.ariaSections')}
               className="hidden min-[990px]:flex items-center gap-1"
             >
-              {links.map((l) => {
+              {linkKeys.map((l) => {
                 const sectionId = l.href.replace('#', '')
                 const isActive  = activeSection === sectionId
                 return (
@@ -119,7 +126,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
                     }}
                     aria-current={isActive ? 'page' : undefined}
                   >
-                    {l.label}
+                    {t('nav.' + l.key)}
                     {isActive && (
                       <motion.span
                         layoutId="nav-underline"
@@ -146,18 +153,18 @@ export default function Navbar({ currentPage }: NavbarProps) {
               onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--accent)' }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.color = 'var(--muted)' }}
             >
-              ← Volver
+               {t('nav.back')}
             </button>
           )}
 
-          {/* Derecha: hamburger + theme + CTA ────────────────────────────── */}
+          {/* Derecha: hamburger + theme + language + CTA ────────────────── */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Hamburger — solo mobile */}
             <button
               onClick={() => setMenuOpen((o) => !o)}
               className="min-[990px]:hidden flex flex-col justify-center items-center gap-[5px] p-2 -mr-1
                          focus-visible:outline-none rounded"
-              aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+              aria-label={menuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
               aria-expanded={menuOpen}
               aria-controls="mobile-menu"
             >
@@ -185,6 +192,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
               />
             </button>
 
+            <LanguageToggle />
             <ThemeToggle />
 
             {/* Botón CTA ────────────────────────────────────────────────── */}
@@ -211,7 +219,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
                 btn.style.color      = 'var(--accent)'
               }}
             >
-              {isHome ? 'Hablemos' : 'Inicio'}
+              {isHome ? t('nav.ctaHome') : t('nav.ctaPage')}
             </button>
           </div>
         </div>
@@ -222,7 +230,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
             <motion.div
               id="mobile-menu"
               role="menu"
-              aria-label="Menú móvil"
+              aria-label={t('nav.ariaMobile')}
               className="min-[990px]:hidden"
               style={{
                 background: isDark
@@ -239,7 +247,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
             >
               <ul className="flex flex-col px-5 py-5 gap-1">
                 {isHome ? (
-                  links.map((l, i) => {
+                  linkKeys.map((l, i) => {
                     const sectionId = l.href.replace('#', '')
                     const isActive  = activeSection === sectionId
                     return (
@@ -269,7 +277,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
                               transition={{ type: 'spring', stiffness: 320, damping: 32 }}
                             />
                           )}
-                          {l.label}
+                          {t('nav.' + l.key)}
                         </a>
                       </motion.li>
                     )
@@ -288,7 +296,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
                                  text-left w-full focus-visible:outline-none"
                       style={{ color: 'var(--accent)' }}
                     >
-                      ← Volver al inicio
+                      {t('nav.backHome')}
                     </button>
                   </motion.li>
                 )}

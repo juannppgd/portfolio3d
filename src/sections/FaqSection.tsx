@@ -1,8 +1,8 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaStar } from 'react-icons/fa'
 import FadeIn from '../components/FadeIn'
-import { FAQ, REVIEWS } from '../data'
 
 function AccordionItem({ q, a, isOpen, toggle }: { q: string; a: string; isOpen: boolean; toggle: () => void }) {
   return (
@@ -40,12 +40,16 @@ function AccordionItem({ q, a, isOpen, toggle }: { q: string; a: string; isOpen:
 }
 
 export default function FaqSection() {
+  const { t } = useTranslation()
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const [reviewIndex, setReviewIndex] = useState(0)
-  const current = REVIEWS[reviewIndex]
 
-  const next = () => setReviewIndex((i) => (i + 1) % REVIEWS.length)
-  const prev = () => setReviewIndex((i) => (i - 1 + REVIEWS.length) % REVIEWS.length)
+  const faqItems = t('faq.items', { returnObjects: true }) as { q: string; a: string }[]
+  const reviewItems = t('reviews.items', { returnObjects: true }) as { name: string; role: string; text: string }[]
+  const current = reviewItems[reviewIndex]
+
+              const next = () => setReviewIndex((i) => (i + 1) % reviewItems.length)
+  const prev = () => setReviewIndex((i) => (i - 1 + reviewItems.length) % reviewItems.length)
 
   return (
     <section
@@ -67,18 +71,18 @@ export default function FaqSection() {
                 className="font-syne font-black uppercase leading-none tracking-tight mb-3"
                 style={{ fontSize: 'clamp(34px,4vw,64px)', color: 'var(--white)' }}
               >
-                FAQ.
+                {t('faq.heading')}
               </h2>
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="font-mono text-sm leading-relaxed mb-6 md:mb-4 lg:mb-6" style={{ color: 'var(--muted)', maxWidth: 360 }}>
-                Respuestas rápidas a las dudas más frecuentes.
+                {t('faq.subtitle')}
               </p>
             </FadeIn>
 
             <FadeIn y={20}>
               <div>
-                {FAQ.map((item, i) => (
+                {faqItems.map((item, i) => (
                   <AccordionItem
                     key={i}
                     q={item.q}
@@ -98,13 +102,13 @@ export default function FaqSection() {
                 className="font-syne font-black uppercase leading-none tracking-tight mb-3"
                 style={{ fontSize: 'clamp(28px,3.5vw,40px)', color: 'var(--white)' }}
               >
-                Reseñas de{' '}
-                <span className="gradient-heading">Clientes.</span>
+                {t('faq.reviewsHeading')}
+                <span className="gradient-heading">{t('faq.reviewsHighlight')}</span>
               </h3>
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="font-mono text-sm leading-relaxed mb-6" style={{ color: 'var(--muted)', maxWidth: 300 }}>
-                Lo que dicen las personas con las que he trabajado.
+                {t('faq.reviewsSubtitle')}
               </p>
             </FadeIn>
 
@@ -150,7 +154,7 @@ export default function FaqSection() {
             {/* Navigation */}
             <div className="flex items-center justify-between mt-4">
               <div className="flex gap-2.5">
-                {REVIEWS.map((_, i) => (
+                {reviewItems.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setReviewIndex(i)}
@@ -160,7 +164,7 @@ export default function FaqSection() {
                       height: 10,
                       background: i === reviewIndex ? 'var(--accent)' : 'var(--border)',
                     }}
-                    aria-label={`Ver reseña ${i + 1}`}
+                    aria-label={t('reviews.ariaLabel', { n: i + 1 })}
                   />
                 ))}
               </div>
@@ -169,7 +173,7 @@ export default function FaqSection() {
                   onClick={prev}
                   className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:text-accent hover:border-accent"
                   style={{ border: '1px solid var(--border)', color: 'var(--muted)' }}
-                  aria-label="Reseña anterior"
+                  aria-label={t('reviews.prevAria')}
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M15 18l-6-6 6-6" />
@@ -179,7 +183,7 @@ export default function FaqSection() {
                   onClick={next}
                   className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:text-accent hover:border-accent"
                   style={{ border: '1px solid var(--border)', color: 'var(--muted)' }}
-                  aria-label="Siguiente reseña"
+                  aria-label={t('reviews.nextAria')}
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M9 18l6-6-6-6" />

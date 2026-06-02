@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async'
 
 const SITE_URL = 'https://juanpablogd.com'
 const BASE = ''
-const DEFAULT_OG_IMAGE = `${SITE_URL}/apple-touch-icon.png`
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.svg`
 
 interface SEOHeadProps {
   title: string
@@ -29,6 +29,8 @@ export default function SEOHead({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <meta name="robots" content="index, follow" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="mobile-web-app-capable" content="yes" />
       {keywords && <meta name="keywords" content={keywords} />}
       <link rel="canonical" href={fullUrl} />
 
@@ -37,8 +39,8 @@ export default function SEOHead({
       <meta property="og:url" content={fullUrl} />
       <meta property="og:type" content={ogType} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:image:width" content="180" />
-      <meta property="og:image:height" content="180" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />

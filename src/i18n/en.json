@@ -1,0 +1,2151 @@
+{
+  "nav": {
+    "about": "About me",
+    "services": "Services",
+    "skills": "Skills",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "back": "← Back",
+    "backHome": "← Back to home",
+    "ctaHome": "Let's talk",
+    "ctaPage": "Home",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "ariaLabel": "Main navigation",
+    "ariaSections": "Sections",
+    "ariaMobile": "Mobile menu"
+  },
+  "languageToggle": {
+    "ariaLabel": "Switch language",
+    "title": "Español"
+  },
+  "hero": {
+    "available": "Available for projects",
+    "firstName": "Juan",
+    "middleName": "Pablo",
+    "lastName": "Gutiérrez",
+    "secondLastName": "Díaz",
+    "devWeb": "Web development",
+    "automation": "Automation",
+    "marketingDigital": "Digital marketing",
+    "tagline": "For professionals, Entrepreneurs and SMBs that want to grow online.",
+    "scroll": "Scroll to learn more"
+  },
+  "about": {
+    "heading": "About ",
+    "headingHighlight": "Me",
+    "tag": "// Who I Am",
+    "text": "With over five years creating digital solutions, I specialize in web development, digital marketing, and automation. I work with entrepreneurs and business owners who want to stand out online and see real results.",
+    "statYears": "Years Exp.",
+    "statProjects": "Projects",
+    "statCommitment": "Commitment",
+    "educationTitle": "Education",
+    "certificationsTitle": "Certifications",
+    "certsTitle": "// Certifications & Courses",
+    "languagesTitle": "Languages",
+    "statsProjects": "Projects",
+    "statsClients": "Clients",
+    "statsExperience": "Experience",
+    "statsExperienceValue": "3+ Years",
+    "showMore": "Read more",
+    "showLess": "Read less",
+    "ariaJourney": "Professional journey",
+    "ariaEducation": "Education timeline",
+    "enCurso": "In progress",
+    "education": {
+      "items": [
+        {
+          "title": "Software Analysis and Development",
+          "institution": "SENA",
+          "status": "completed",
+          "description": "Higher education degree in software analysis and development.",
+          "year": "2026"
+        },
+        {
+          "title": "Occupational Health and Safety",
+          "institution": "SENA",
+          "description": "Intermediate course focused on workplace health and safety.",
+          "year": "2023",
+          "status": "completed"
+        },
+        {
+          "title": "Web Design and Development",
+          "institution": "OpenBootcamp",
+          "description": "Web design and application development program.",
+          "year": "2022",
+          "status": "completed"
+        },
+        {
+          "title": "Systems Engineering",
+          "institution": "Fundación Universitaria San Mateo",
+          "description": "Bachelor's degree in Systems Engineering (in progress).",
+          "year": "In progress",
+          "status": "in-progress"
+        }
+      ],
+      "statuses": {
+        "completed": "Completed",
+        "in-progress": "In progress"
+      }
+    },
+    "languages": [
+      {
+        "name": "Spanish",
+        "level": "Native"
+      },
+      {
+        "name": "English",
+        "level": "Intermediate"
+      }
+    ]
+  },
+  "certifications": {
+    "categories": [
+      {
+        "category": "Technology",
+        "icon": "FaLaptop",
+        "items": [
+          "Artificial Intelligence Bootcamp",
+          "Programming Bootcamp",
+          "UX Fundamentals",
+          "Big Data"
+        ]
+      },
+      {
+        "category": "Marketing",
+        "icon": "FaChartLine",
+        "items": [
+          "Digital Marketing (2025)",
+          "Digital Marketing (2022)",
+          "Web Analytics",
+          "Growth Hacking",
+          "Networking & Personal Marketing",
+          "Digital Content Creation"
+        ]
+      },
+      {
+        "category": "Productivity",
+        "icon": "FaRocket",
+        "items": [
+          "Advanced Excel",
+          "Power BI",
+          "Microsoft 365 Admin & Productivity 4.0 Tools"
+        ]
+      },
+      {
+        "category": "Advertising",
+        "icon": "FaAd",
+        "items": [
+          "Google Ads"
+        ]
+      },
+      {
+        "category": "Analytics",
+        "icon": "FaChartBar",
+        "items": [
+          "Business Analysis Process Management"
+        ]
+      },
+      {
+        "category": "Languages",
+        "icon": "FaGlobe",
+        "items": [
+          "English"
+        ]
+      },
+      {
+        "category": "Security",
+        "icon": "FaShieldAlt",
+        "items": [
+          "Cybersecurity Concepts",
+          "Occupational Health and Safety Management System SG-SST"
+        ]
+      },
+      {
+        "category": "Health",
+        "icon": "FaHeartbeat",
+        "items": [
+          "Human Development Nutrition & Diet"
+        ]
+      }
+    ]
+  },
+  "services": {
+    "heading": "Services",
+    "subtitle": "What I do to help your business grow digitally.",
+    "subtitleServices": "Main Services",
+    "subtitleAdditional": "Additional Services",
+    "subtitleTemplates": "Excel Templates",
+    "subtitleLocalAi": "Local AI",
+    "additionalTitle": "Additional",
+    "additionalTitleSuffix": "Services",
+    "templatesTitle": "Templates for you",
+    "templatesDesc": "Professional Excel tools to boost your productivity and personal finances. Immediate access for only $7 USD each.",
+    "localAiTitle": "Local AI",
+    "localAiDesc": "Language models that run natively on your GPU or RAM. No subscriptions. Your data never leaves your machine.",
+    "localAiCta": "Learn more",
+    "tableModel": "Model",
+    "tableRam": "RAM",
+    "tableUse": "Use",
+    "currentProject": "Current Project:",
+    "moreInfo": "More Info",
+    "benefitsTitle": "What's included:",
+    "tableFeature": "Feature",
+    "tablePlan": "Plan",
+    "tableDescription": "Description",
+    "ctaService": "Request Service",
+    "ctaTemplate": "Buy Template",
+    "ctaLocalAi": "Get Local AI",
+    "learnMoreAbout": "Learn more about ",
+    "visit": "Visit",
+    "pricing": "Pricing",
+    "subtitleHosting": "T&C Apply",
+    "subtitleConsulting": "T&C Apply",
+    "ctaHome": "Let's talk",
+    "ctaPage": "Home",
+    "discountFormat": "¡{{discount}}!"
+  },
+  "projects": {
+    "heading": "Projects",
+    "subheading": "& visual references",
+    "alt": "Reference project",
+    "swipeHint": "Swipe to see more projects",
+    "viewProject": "View project ↗",
+    "viewAll": "View all →"
+  },
+  "knowledge": {
+    "heading": "Knowledge & ",
+    "headingHighlight": "Skills.",
+    "subtitleSkills": "Skills",
+    "subtitleTools": "Software Tools",
+    "subtitleDev": "Development Stack",
+    "skillsTag": "// Skills",
+    "toolsTag": "// Software & Tools",
+    "stackTag": "// My Development Stack",
+    "other": "Other"
+  },
+  "skills": {
+    "items": [
+      {
+        "name": "Complex Problem Solving",
+        "pct": 95,
+        "icon": "FaBrain"
+      },
+      {
+        "name": "Digital Content Strategy",
+        "pct": 90,
+        "icon": "FaVideo"
+      },
+      {
+        "name": "Data Analysis & Management",
+        "pct": 85,
+        "icon": "FaChartBar"
+      },
+      {
+        "name": "Growth Hacking & Experimentation",
+        "pct": 95,
+        "icon": "FaFlask"
+      },
+      {
+        "name": "CRM Sales Automation",
+        "pct": 85,
+        "icon": "FaHandshake"
+      },
+      {
+        "name": "Professional Frontend Development",
+        "pct": 97,
+        "icon": "FaCode"
+      },
+      {
+        "name": "React, Vite & Tailwind CSS",
+        "pct": 89,
+        "icon": "FaReact"
+      },
+      {
+        "name": "JavaScript & Python with AI",
+        "pct": 85,
+        "icon": "FaJsSquare"
+      }
+    ]
+  },
+  "softwareTools": {
+    "items": [
+      {
+        "name": "HubSpot & Masivian",
+        "cat": "CRM",
+        "icon": "FaHandshake",
+        "color": "#FF7A59"
+      },
+      {
+        "name": "EmailJS Automation",
+        "cat": "Email Marketing",
+        "icon": "FaEnvelope",
+        "color": "#F6B915"
+      },
+      {
+        "name": "Google Ads",
+        "cat": "Advertising",
+        "icon": "FaAd",
+        "color": "#4285F4"
+      },
+      {
+        "name": "Meta Business Suite",
+        "cat": "Social Media",
+        "icon": "FaFacebook",
+        "color": "#1877F2"
+      },
+      {
+        "name": "Google Analytics",
+        "cat": "Analytics",
+        "icon": "FaChartLine",
+        "color": "#E37400"
+      },
+      {
+        "name": "Visual Studio Code",
+        "cat": "Development",
+        "icon": "FaCode",
+        "color": "#007ACC"
+      },
+      {
+        "name": "MySQL",
+        "cat": "Database",
+        "icon": "FaDatabase",
+        "color": "#4479A1"
+      },
+      {
+        "name": "Shopify",
+        "cat": "E-Commerce",
+        "icon": "SiShopify",
+        "color": "#96BF48"
+      },
+      {
+        "name": "WordPress",
+        "cat": "CMS",
+        "icon": "SiWordpress",
+        "color": "#21759B"
+      },
+      {
+        "name": "Canva",
+        "cat": "Design",
+        "icon": "SiCanva",
+        "color": "#00C4CC"
+      }
+    ]
+  },
+  "devStack": {
+    "items": [
+      {
+        "name": "HTML5, CSS & JavaScript",
+        "desc": "Modern web architecture",
+        "icon": "FaHtml5",
+        "color": "#E34F26"
+      },
+      {
+        "name": "Frontend with ReactJS",
+        "desc": "Dynamic and responsive interfaces",
+        "icon": "FaReact",
+        "color": "#61DAFB"
+      },
+      {
+        "name": "Backend with NodeJS",
+        "desc": "Efficient and reliable backend services",
+        "icon": "FaNodeJs",
+        "color": "#339933"
+      },
+      {
+        "name": "SQL Databases",
+        "desc": "Smart data and information management",
+        "icon": "FaDatabase",
+        "color": "#4479A1"
+      },
+      {
+        "name": "Git & GitHub",
+        "desc": "Version control and teamwork",
+        "icon": "FaGitAlt",
+        "color": "#F05032"
+      },
+      {
+        "name": "React Native",
+        "desc": "Native mobile apps for Android and iOS",
+        "icon": "FaMobileAlt",
+        "color": "#61DAFB"
+      },
+      {
+        "name": "Python",
+        "desc": "Automation and artificial intelligence",
+        "icon": "FaPython",
+        "color": "#3776AB"
+      },
+      {
+        "name": "Vite + Tailwind CSS",
+        "desc": "Fast development and elegant design",
+        "icon": "SiVite",
+        "color": "#646CFF"
+      }
+    ]
+  },
+  "education": {
+    "items": [
+      {
+        "title": "Systems Engineering",
+        "statusKey": "in-progress",
+        "icon": "FaServer"
+      },
+      {
+        "title": "Software Analysis and Development",
+        "statusKey": "completed",
+        "icon": "FaCode"
+      },
+      {
+        "title": "Advertising Development",
+        "statusKey": "completed",
+        "icon": "FaBullhorn"
+      },
+      {
+        "title": "Web Programming and Mobile App Development",
+        "statusKey": "completed",
+        "icon": "FaMobileAlt"
+      },
+      {
+        "title": "Social Communication and Journalism",
+        "statusKey": "partial",
+        "icon": "FaNewspaper"
+      }
+    ],
+    "statuses": {
+      "completed": "Completed",
+      "in-progress": "In progress",
+      "partial": "Partial studies"
+    }
+  },
+  "faq": {
+    "heading": "FAQ.",
+    "headingHighlight": "",
+    "subtitle": "Quick answers to the most common doubts.",
+    "q": "Q:",
+    "a": "A:",
+    "items": [
+      {
+        "q": "What technologies are used to develop websites and how long does it take?",
+        "a": "100% custom development directly from code, no templates. Delivery time varies by project scope. From 72 hours to 4 weeks."
+      },
+      {
+        "q": "Does your site need adjustments, optimization, support or warranty?",
+        "a": "Yes. I include continuous maintenance and technical support. Plus, the first 3 months include free text assistance and discounts on improvements."
+      },
+      {
+        "q": "Do you work with international clients?",
+        "a": "Absolutely! I collaborate with clients worldwide through virtual meetings and payment methods like PayPal, bank transfers and MercadoPago."
+      },
+      {
+        "q": "What does digital marketing include?",
+        "a": "Professional photo and video editing, data analysis and personalized strategies, Email/SMS, social media management, SEO, SEM and conversion optimization."
+      }
+    ],
+    "reviewsHeading": "Client ",
+    "reviewsHighlight": "Reviews.",
+    "reviewsSubtitle": "What people I've worked with say."
+  },
+  "reviews": {
+    "ariaLabel": "View review {{n}}",
+    "prevAria": "Previous review",
+    "nextAria": "Next review",
+    "items": [
+      {
+        "name": "María González",
+        "role": "Student",
+        "text": "Excellent service, very professional"
+      },
+      {
+        "name": "Sofia Ramírez",
+        "role": "Entrepreneur",
+        "text": "Helped me grow my online business"
+      },
+      {
+        "name": "Carlos Rodríguez",
+        "role": "Engineer",
+        "text": "Thanks to Juan my sales skyrocketed on MercadoLibre"
+      },
+      {
+        "name": "Miguel Ángel",
+        "role": "Seller",
+        "text": "My business got a boost and now I have more clients"
+      },
+      {
+        "name": "Ana López",
+        "role": "Professional",
+        "text": "Now I'm the number 1 seller in my category"
+      },
+      {
+        "name": "Roberto Silva",
+        "role": "Virtual Student",
+        "text": "Reliable and quality service"
+      }
+    ]
+  },
+  "contact": {
+    "buttonLabel": "Contact me",
+    "heading": "CONTACT ME\n",
+    "headingHighlight": "FREE CONSULTANCY!",
+    "emailLabel": "EMAIL",
+    "emailDesc": "Prefer to contact me directly via email? Click here and I'll get back to you shortly:",
+    "socialLabel": "SOCIAL MEDIA",
+    "socialDesc": "Choose your favorite social network and write to me for a free consultation, or simply fill out the form. I'm here to help you grow!",
+    "socialSubtext": "CHECK OUT MY SOCIALS",
+    "locationLabel": "LOCATION",
+    "locationText": "From Colombia, working with global clients.",
+    "formTitle": "BOOK YOUR CONSULTANCY",
+    "formName": "NAME",
+    "formNamePlaceholder": "Enter your name",
+    "formEmail": "EMAIL",
+    "formEmailPlaceholder": "your@email.com",
+    "formMessage": "MESSAGE",
+    "formMessagePlaceholder": "Tell me your idea or the service you need. Leave your WhatsApp... Websites, marketing, local AI, programming classes, academic support, CV consulting, online sales, and Excel templates.",
+    "formSubmit": "SEND MESSAGE",
+    "formSubmitting": "Sending...",
+    "modalTitle": "Message Sent!",
+    "modalDesc": "Thank you for reaching out. I'll get back to you as soon as possible.",
+    "modalClose": "Close",
+    "errorName": "Name is required",
+    "errorEmail": "Email is required",
+    "errorEmailInvalid": "Invalid email format",
+    "errorMessage": "Message is required"
+  },
+  "themeToggle": {
+    "lightMode": "Switch to light mode",
+    "darkMode": "Switch to dark mode"
+  },
+  "footer": {
+    "heading": "Let's Connect and ",
+    "headingHighlight": "Grow Together!",
+    "subtitle": "Follow me on my social networks for content on web development, digital marketing and much more.",
+    "shareLabel": "Share",
+    "shareSublabel": "This page",
+    "credit": "Designed and developed by ",
+    "creditName": "Juan Pablo Gutiérrez Díaz",
+    "creditDesc": ", specialist in web development and digital marketing, creating agile and results-oriented digital experiences.",
+    "paymentLabel": "Accepted payment methods",
+    "copyright": "© 2026 Juan Pablo Gutiérrez Díaz. All rights reserved.",
+    "paymentMethods": [
+      "PayPal",
+      "Bank Transfer",
+      "Digital Keys",
+      "PSE",
+      "Efecty",
+      "Cards"
+    ]
+  },
+  "shareModal": {
+    "heading": "Share this ",
+    "headingHighlight": "site",
+    "subtitle": "Choose how you want to share this page",
+    "ariaClose": "Close",
+    "copied": "Copied!",
+    "copyLink": "Copy link",
+    "close": "Close"
+  },
+  "data": {
+    "mainServices": [
+      {
+        "id": "web",
+        "title": "Websites for Professionals, Entrepreneurs and SMBs",
+        "discount": "25% OFF",
+        "description": "Need to stand out online? I develop professional and attractive websites so your business has an online presence. Perfect for:",
+        "targets": [
+          "Entrepreneurs who want to highlight their business",
+          "SMBs that need digital presence",
+          "Independent professionals looking to attract more clients"
+        ],
+        "includes": "My websites include responsive design, SEO optimization, are completely customized to your business needs, created to stand out and much more.",
+        "cta": "Request your website"
+      },
+      {
+        "id": "marketing",
+        "title": "Digital Marketing to Boost Your Business Online",
+        "discount": "35% OFF",
+        "description": "Want to increase your sales and online presence? I offer complete digital marketing services to boost your business and stand out in the market. Ideal for:",
+        "targets": [
+          "SMBs looking for digital growth",
+          "Businesses that want to expand on the Web",
+          "Professionals who need more leads"
+        ],
+        "includes": "My services include audiovisual production, data analysis, personalized strategies, email/SMS marketing campaigns, social media management, CRM and much more.",
+        "cta": "Request your marketing consultation"
+      }
+    ],
+    "serviceBenefits": [
+      {
+        "title": "Web Development",
+        "subtitle": "Everything you need for your online presence",
+        "items": [
+          "SEO optimized",
+          "Mobile responsive",
+          "Fast loading",
+          "SSL security",
+          "Conversion focused",
+          "Easy to maintain"
+        ]
+      },
+      {
+        "title": "Digital Marketing",
+        "subtitle": "Grow your brand and reach more customers",
+        "items": [
+          "Professional photo/video",
+          "Email/SMS campaigns",
+          "Social media management",
+          "SEO positioning",
+          "Data analytics",
+          "Meta Business Suite"
+        ]
+      }
+    ],
+    "additionalServices": [
+      {
+        "title": "Academic Support",
+        "desc": "Professional support in the development of academic work, evaluations, projects and deliverables with a focus on quality, compliance and results.",
+        "cta": "Request academic support"
+      },
+      {
+        "title": "Programming Classes",
+        "desc": "Personalized classes focused on your level, pace and goals. Learn programming in a practical and applied way. Receive materials and a certificate.",
+        "cta": "Request programming classes"
+      },
+      {
+        "title": "Online Sales",
+        "desc": "Learn about my method of publishing, managing and optimizing products on online sales platforms so you can acquire yours with full guarantees.",
+        "cta": "Request online sales"
+      },
+      {
+        "title": "CV Consulting",
+        "desc": "I design a professional resume for a strategic, attractive CV optimized for job selection processes and advanced ATS filters.",
+        "cta": "Request CV consulting"
+      }
+    ],
+    "templates": [
+      {
+        "title": "Expense Control",
+        "desc": "Master your finances in 5 min/day with smart colors, automatic charts and the 50/30/20 rule.",
+        "price": "$7 USD",
+        "cta": "View Expense Template"
+      },
+      {
+        "title": "Habit Tracker",
+        "desc": "Track your daily habits with dynamic charts, streaks and smart analysis for 2026.",
+        "price": "$7 USD",
+        "cta": "View Habit Template"
+      }
+    ],
+    "localAi": {
+      "title": "Local AI",
+      "summary": "Language models that run on your PC. No subscription, no limits, 100% private.",
+      "description": "Local AI: language models that run directly on your PC using GPU or RAM, no subscription, no question limits, and your data never leaves your machine. Ideal for companies that value privacy, technological independence, and local speed.",
+      "icon": "FaRobot",
+      "features": [
+        "100% local and private",
+        "No monthly subscription",
+        "Unlimited queries",
+        "No internet needed",
+        "CPU and GPU support",
+        "Easy installation"
+      ],
+      "models": [
+        {
+          "name": "Llama 3.1 8B",
+          "ram": "6-8 GB",
+          "use": "General reasoning and documentation"
+        },
+        {
+          "name": "Qwen 2.5 Coder 7B",
+          "ram": "5-6 GB",
+          "use": "Programming and coding expert"
+        },
+        {
+          "name": "Phi-3.5-mini",
+          "ram": "3-4 GB",
+          "use": "Low RAM PCs, logic and math"
+        },
+        {
+          "name": "Ministral 3 14B",
+          "ram": "10-12 GB",
+          "use": "Speed and advanced function calling"
+        }
+      ],
+      "useCases": [
+        {
+          "title": "Independent Developer",
+          "desc": "Private code assistant without limits"
+        },
+        {
+          "title": "Researcher/Academic",
+          "desc": "Process papers without sharing data"
+        },
+        {
+          "title": "Service Company",
+          "desc": "Internal chatbot with confidential data"
+        },
+        {
+          "title": "Data Analyst",
+          "desc": "Process sensitive information locally"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Do I need a GPU?",
+          "a": "Not required, but GPU recommended for better speed. Works with CPU but slower."
+        },
+        {
+          "q": "What minimum RAM do I need?",
+          "a": "3 GB RAM minimum for small models. 8+ GB for more powerful models."
+        },
+        {
+          "q": "Is it really private?",
+          "a": "Yes, 100%. Everything runs locally. No data leaves your machine."
+        },
+        {
+          "q": "Can I use this for business?",
+          "a": "Absolutely. Companies use local AI for chatbots, analysis and classification without exposing data."
+        }
+      ]
+    },
+    "testimonials": [
+      {
+        "name": "María González",
+        "role": "Student",
+        "rating": 5,
+        "text": "Excellent service, very professional"
+      },
+      {
+        "name": "Sofia Ramírez",
+        "role": "Entrepreneur",
+        "rating": 5,
+        "text": "Helped me grow my online business"
+      },
+      {
+        "name": "Carlos Rodríguez",
+        "role": "Engineer",
+        "rating": 5,
+        "text": "Thanks to Juan my sales skyrocketed on MercadoLibre"
+      },
+      {
+        "name": "Miguel Ángel",
+        "role": "Seller",
+        "rating": 5,
+        "text": "My business got a boost and now I have more clients"
+      },
+      {
+        "name": "Ana López",
+        "role": "Professional",
+        "rating": 5,
+        "text": "Now I'm the number 1 seller in my category"
+      },
+      {
+        "name": "Roberto Silva",
+        "role": "Virtual Student",
+        "rating": 5,
+        "text": "Reliable and quality service"
+      }
+    ]
+  },
+  "chatbot": {
+    "title": "Juan Pablo Assistant",
+    "status": "Online",
+    "footerPrefix": "Chatbot programmed by ",
+    "footerName": "Juan Pablo",
+    "ariaOpen": "Open chatbot",
+    "ariaClose": "Close chatbot",
+    "ariaReset": "Restart chat",
+    "restart": "Restart",
+    "typing": "Typing",
+    "initial": "Hello! I'm Juan Pablo's programmed assistant. How can I help you today?",
+    "responses": {
+      "services": {
+        "text": "Juan Pablo offers main and additional services. Which would you like to know more about?",
+        "options": [
+          "ia_local",
+          "additional_services",
+          "web_dev",
+          "digital_marketing",
+          "contact",
+          "about_me"
+        ]
+      },
+      "web_dev": {
+        "text": "I develop modern websites with React, Vite and Tailwind CSS. 100% customized, responsive and optimized to convert visitors into customers. Ideal for entrepreneurs, SMBs and professionals. What would you like to know?",
+        "options": [
+          "view_tech",
+          "dev_timeline",
+          "hosting_info",
+          "contact"
+        ]
+      },
+      "digital_marketing": {
+        "text": "Complete digital marketing services: Professional photo and video editing, email/SMS campaigns, social media management, SEO, SEM and data analysis. Personalized strategies to boost your online business. What interests you?",
+        "options": [
+          "email_marketing",
+          "social_media",
+          "data_analytics",
+          "contact",
+          "youtube_channel"
+        ]
+      },
+      "ia_local": {
+        "text": "Local AI: language models that run directly on your PC using GPU or RAM, no subscription, no question limits, and your data never leaves your machine. Ideal for companies that value privacy, technological independence and local speed.",
+        "options": [
+          "try_ia_local",
+          "contact",
+          "services"
+        ]
+      },
+      "try_ia_local": {
+        "text": "Perfect, I'll take you to the contact form so you can request your local AI. This way you can get started quickly without leaving your workflow.",
+        "options": [
+          "back_home"
+        ],
+        "action": "contact",
+        "autoClose": true
+      },
+      "contact": {
+        "text": "Perfect! Juan Pablo will be happy to help you. How would you like to contact him?",
+        "options": [
+          "share_web",
+          "send_email",
+          "send_message",
+          "more_info",
+          "view_social"
+        ]
+      },
+      "view_social": {
+        "text": "Excellent! I'll take you to the social media section so you can learn more about Juan Pablo and his projects. Follow us to stay up to date!",
+        "options": [
+          "back_home"
+        ],
+        "action": "footer",
+        "autoClose": true
+      },
+      "view_tech": {
+        "text": "Tech stack:\n\n• Frontend: React + Vite + Tailwind CSS\n• Backend: Node.js\n• Databases: MySQL\n• Automation: Python (AI)\n• Version control: Git & GitHub\n• Mobile apps: React Native\n\nAll to create modern and scalable solutions.",
+        "options": [
+          "web_dev",
+          "view_examples",
+          "contact"
+        ]
+      },
+      "dev_timeline": {
+        "text": "Timelines vary by complexity:\n\n• Basic landing page: 3-5 days\n• Corporate site: 1-2 weeks\n• Full e-commerce: 3-4 weeks\n\nIncludes free initial consultation to define your project.",
+        "options": [
+          "hosting_info",
+          "view_tech",
+          "contact"
+        ]
+      },
+      "hosting_info": {
+        "text": "Yes! The first year includes:\n\n✓ Free hosting and domain*\n✓ Corporate email\n✓ DNS configuration\n✓ SSL certificate\n✓ 3 months free support\n\n*Terms and conditions apply",
+        "options": [
+          "web_dev",
+          "contact"
+        ]
+      },
+      "email_marketing": {
+        "text": "Email and SMS marketing campaigns with:\n\n• Audience segmentation\n• A/B testing for optimization\n• Automation with EmailJS\n• Results analysis\n• Integrated CRM (HubSpot/Masivian)\n\nGuaranteed engagement increase.",
+        "options": [
+          "digital_marketing",
+          "data_analytics",
+          "contact"
+        ]
+      },
+      "social_media": {
+        "text": "Professional social media management:\n\n• Engaging content creation\n• Strategic scheduling\n• Metrics analysis\n• Community management\n• Meta Business Suite campaigns\n\nConnect better with your audience.",
+        "options": [
+          "view_social",
+          "digital_marketing",
+          "email_marketing",
+          "contact"
+        ]
+      },
+      "data_analytics": {
+        "text": "Make data-driven decisions:\n\n• Integrated Google Analytics\n• Custom reports\n• Advanced segmentation\n• Continuous optimization\n• KPIs and key metrics\n\nTransform data into results.",
+        "options": [
+          "digital_marketing",
+          "email_marketing",
+          "contact"
+        ]
+      },
+      "additional_services": {
+        "text": "In addition to web development and marketing, Juan Pablo offers specialized additional services:\n\n• Academic work and evaluations development\n• Personalized programming classes\n• Online garage sale (Marketplace and MercadoLibre)\n• Professional CV consulting\n• Professional Excel templates\n\nWhich one interests you?",
+        "options": [
+          "academic_dev",
+          "cv_advice",
+          "programming_classes",
+          "online_sales",
+          "excel_templates",
+          "back_services"
+        ]
+      },
+      "academic_dev": {
+        "text": "Academic work and evaluations development\nProfessional support in developing academic work, evaluations, projects and deliverables with a focus on quality, compliance and results.\n\nRequest academic support",
+        "options": [
+          "view_academic_page",
+          "contact",
+          "additional_services"
+        ]
+      },
+      "programming_classes": {
+        "text": "Personalized 1-on-1 programming classes\nPersonalized classes focused on your level, pace and goals. Learn programming in a practical and applied way. Receive materials and certificate.\n\nContact me by clicking here",
+        "options": [
+          "view_classes_page",
+          "contact",
+          "additional_services"
+        ]
+      },
+      "online_sales": {
+        "text": "Online garage sale through Marketplace and MercadoLibre\nLearn about my method for listing, managing and optimizing products on online sales platforms so you can acquire yours with full guarantees.\n\nExplore stores and learn to sell",
+        "options": [
+          "view_sales_page",
+          "contact",
+          "additional_services"
+        ]
+      },
+      "cv_advice": {
+        "text": "CV consulting to get the job of your dreams\nI create your CV to get the job of your dreams\nI design a professional resume for a strategic, attractive CV optimized for job selection processes and advanced ATS filters.\n\nContact me by clicking here",
+        "options": [
+          "view_cv_page",
+          "contact",
+          "additional_services"
+        ]
+      },
+      "excel_templates": {
+        "text": "Templates for you\nProfessional Excel tools to improve your productivity and personal finances. Immediate access for only $5 USD each.",
+        "options": [
+          "expense_tracker",
+          "habit_tracker",
+          "additional_services"
+        ]
+      },
+      "expense_tracker": {
+        "text": "Expense Control\nMaster your finances in 5 min/day with smart colors, automatic charts and the 50/30/20 rule.\n\n$7 USD\nView Expense Template",
+        "options": [
+          "view_expense_page",
+          "buy_template",
+          "excel_templates",
+          "contact"
+        ]
+      },
+      "habit_tracker": {
+        "text": "Habit Tracker\nTrack your daily habits with dynamic charts, streaks and smart analysis for 2026.\n\n$7 USD\nView Habit Template",
+        "options": [
+          "view_habit_page",
+          "buy_template",
+          "excel_templates",
+          "contact"
+        ]
+      },
+      "buy_template": {
+        "text": "Excellent! To get the template, contact me directly. I'll send you the secure payment link and immediate access.\n\nPayment methods: PayPal, Transfer, etc.",
+        "options": [
+          "contact",
+          "excel_templates"
+        ]
+      },
+      "view_expense_page": {
+        "text": "Excellent! I'll take you directly to the Expense Control template page. Discover how to master your finances!",
+        "options": [
+          "back_home"
+        ],
+        "action": "plantilla-gastos",
+        "autoClose": true
+      },
+      "view_habit_page": {
+        "text": "Excellent! I'll take you directly to the Habit Tracker template page. Improve your daily habits!",
+        "options": [
+          "back_home"
+        ],
+        "action": "plantilla-habitos",
+        "autoClose": true
+      },
+      "view_academic_page": {
+        "text": "Perfect! I'll take you to the academic service page. Discover how I can help you with your assignments!",
+        "options": [
+          "back_home"
+        ],
+        "action": "apoyo-academico",
+        "autoClose": true
+      },
+      "view_classes_page": {
+        "text": "Awesome! I'll take you to the personalized programming classes page. Learn to code effectively!",
+        "options": [
+          "back_home"
+        ],
+        "action": "clases-programacion",
+        "autoClose": true
+      },
+      "view_sales_page": {
+        "text": "Excellent! I'll take you to the online garage sale page. Discover how to sell your products online!",
+        "options": [
+          "back_home"
+        ],
+        "action": "ventas-online",
+        "autoClose": true
+      },
+      "view_cv_page": {
+        "text": "Perfect! I'll take you to the CV consulting page. Stand out in the job market!",
+        "options": [
+          "back_home"
+        ],
+        "action": "optimizacion-cv",
+        "autoClose": true
+      },
+      "back_services": {
+        "text": "Perfect! Would you like to know more about our main or additional services?",
+        "options": [
+          "web_dev",
+          "digital_marketing",
+          "additional_services",
+          "contact"
+        ]
+      },
+      "youtube_channel": {
+        "text": "Excellent! I'll take you to Juan Pablo's YouTube channel so you can learn more about his services and projects.",
+        "options": [
+          "back_home"
+        ],
+        "action": "youtube"
+      },
+      "send_email": {
+        "text": "I'll open the email so you can write directly. Juan Pablo responds within 24 hours.",
+        "options": [
+          "back_home"
+        ],
+        "action": "email",
+        "autoClose": true
+      },
+      "more_info": {
+        "text": "What else would you like to know? I can tell you about:\n\n• Completed projects\n• Professional experience\n• Certifications\n• Payment methods\n• International work",
+        "options": [
+          "services",
+          "about_me",
+          "contact"
+        ]
+      },
+      "view_examples": {
+        "text": "Juan Pablo has various visual projects:\n\n• Web development (landing pages, e-commerce, corporate)\n• Digital marketing (campaigns, social, content)\n• AI automation\n\nYou can see visual examples on his social networks and YouTube channel.",
+        "options": [
+          "view_social",
+          "youtube_channel",
+          "web_dev",
+          "digital_marketing",
+          "contact"
+        ]
+      },
+      "about_me": {
+        "text": "Juan Pablo is a full-stack web developer and performance marketing expert. Experience in React, Python (AI), and digital marketing. Works with clients across LATAM from Colombia. Certified in multiple technologies and methodologies.",
+        "options": [
+          "view_tech",
+          "services",
+          "contact"
+        ]
+      },
+      "back_home": {
+        "text": "Perfect! Is there anything else I can help you with?",
+        "options": [
+          "services",
+          "web_dev",
+          "digital_marketing",
+          "contact",
+          "faq",
+          "send_message"
+        ]
+      },
+      "faq": {
+        "text": "Here are some frequently asked questions:\n\n• Do you work with international clients? Yes, across all LATAM.\n• Do you offer maintenance? Yes, plans available.\n• What payment methods do you accept? Transfer, PayPal, crypto.\n\nWhich one would you like to explore?",
+        "options": [
+          "maintenance",
+          "payments",
+          "contact"
+        ]
+      },
+      "maintenance": {
+        "text": "Maintenance plans:\n\n• Basic: Minor updates\n• Premium: Full support, backups\n• Annual: Discount available\n\nEnsures your site is always up to date.",
+        "options": [
+          "faq",
+          "contact"
+        ]
+      },
+      "payments": {
+        "text": "We accept:\n\n• Bank transfers\n• PayPal\n• Mercado Pago\n• Cryptocurrencies (USDT, BTC)\n\n50% deposit, 50% upon completion.",
+        "options": [
+          "faq",
+          "contact"
+        ]
+      },
+      "share_web": {
+        "text": "Perfect! Opens the share modal so you can share this portfolio with a friend. Thanks for helping spread my work!",
+        "options": [
+          "back_home"
+        ],
+        "action": "share",
+        "autoClose": true
+      },
+      "send_message": {
+        "text": "I'll take you to the contact form so you can send your message directly.",
+        "options": [
+          "back_home"
+        ],
+        "action": "contact",
+        "autoClose": true
+      }
+    },
+    "optionLabels": {
+      "services": "Services",
+      "web_dev": "Web Development",
+      "digital_marketing": "Digital Marketing",
+      "ia_local": "Local AI",
+      "try_ia_local": "Try Local AI on my PC",
+      "contact": "Contact",
+      "view_social": "View Social Networks",
+      "view_tech": "View Technologies",
+      "dev_timeline": "Development Timeline",
+      "hosting_info": "Includes Hosting?",
+      "email_marketing": "Email Marketing",
+      "social_media": "Social Media",
+      "data_analytics": "Data Analytics",
+      "additional_services": "Additional Services",
+      "academic_dev": "Academic Development",
+      "programming_classes": "Programming Classes",
+      "online_sales": "Online Sales",
+      "cv_advice": "CV Consulting",
+      "excel_templates": "Excel Templates",
+      "expense_tracker": "Expense Control",
+      "habit_tracker": "Habit Tracker",
+      "buy_template": "Buy Template",
+      "view_expense_page": "View Expense Template",
+      "view_habit_page": "View Habit Template",
+      "view_academic_page": "View Academic Page",
+      "view_classes_page": "View Classes Page",
+      "view_sales_page": "View Sales Page",
+      "view_cv_page": "View CV Page",
+      "back_services": "Back to Services",
+      "youtube_channel": "View YouTube Channel",
+      "send_email": "Send Email",
+      "more_info": "More Info",
+      "view_examples": "View Examples",
+      "about_me": "Tell me about Juan Pablo",
+      "back_home": "Back to Home",
+      "faq": "Frequently Asked Questions",
+      "maintenance": "Maintenance",
+      "payments": "Payments",
+      "share_web": "Share this Website",
+      "send_message": "Send Message",
+      "whatsapp": "Send WhatsApp"
+    }
+  },
+  "seo": {
+    "plantillaGastosTitle": "Expense Control Excel Template — 50/30/20 Rule",
+    "plantillaGastosDesc": "Professional Excel template for personal expense control with the 50/30/20 rule. Automatic charts and smart colors.",
+    "plantillaHabitosTitle": "Habit Tracker Excel Template — Productivity 2026",
+    "plantillaHabitosDesc": "Excel template to track daily habits with dynamic charts, streaks and smart analysis.",
+    "meta": {
+      "home": {
+        "title": "Juan Pablo Gutiérrez — Dev & Digital Marketing",
+        "description": "Web development, Automation & Digital marketing in Tunja, Boyacá. Professional websites, SEO, digital marketing for entrepreneurs and SMBs in Colombia.",
+        "keywords": "web development Tunja, digital marketing Boyacá, professional websites Colombia, Juan Pablo Gutiérrez, web development Colombia, automation, entrepreneurs"
+      },
+      "apoyo-academico": {
+        "title": "Academic Support — University Work and Projects",
+        "description": "Professional and confidential support in academic work, evaluations and university projects. Guaranteed quality, on-time delivery. Service in Colombia and Latin America.",
+        "keywords": "academic support Colombia, university work, academic projects, thesis help, university evaluations, homework support Colombia"
+      },
+      "clases-programacion": {
+        "title": "1-on-1 Programming Classes — Personalized Mentoring",
+        "description": "Personalized programming classes with 1-on-1 mentoring. Learn JavaScript, Python, React, SQL. Advanced Excel and Microsoft 365 workshop. Materials and certificate included.",
+        "keywords": "online programming classes, programming mentoring, learn to code, programming courses Colombia, advanced Excel, React, Python"
+      },
+      "ventas-online": {
+        "title": "Online Sales — Marketplace and MercadoLibre",
+        "description": "Sales consulting and management on Facebook Marketplace and MercadoLibre. Publication, optimization and strategies to sell more. Secure buying and selling in Colombia.",
+        "keywords": "sell on MercadoLibre Colombia, Facebook Marketplace, online sales, marketplace Colombia, online garage sale, e-commerce"
+      },
+      "optimizacion-cv": {
+        "title": "CV Optimization — Resume for ATS Filters",
+        "description": "Professional resume design optimized for ATS filters. Strategic curriculum to get your dream job. Fast and personalized service.",
+        "keywords": "CV optimization, professional resume, ATS curriculum, CV design Colombia, executive resume, job search"
+      },
+      "plantilla-gastos": {
+        "title": "Expense Control Excel Template — 50/30/20 Rule",
+        "description": "Professional Excel template for personal expense control with the 50/30/20 rule. Automatic charts, smart colors. Only $7 USD / 19,000 COP. Immediate access.",
+        "keywords": "expense control template, personal finance Excel, 50/30/20 rule, savings template, personal budget Excel, Colombia finance"
+      },
+      "plantilla-habitos": {
+        "title": "Habit Tracker Excel Template — Productivity 2026",
+        "description": "Excel template to track daily habits with dynamic charts, streaks and smart analysis. Increase your productivity. Only $7 USD / 19,000 COP. Immediate access.",
+        "keywords": "habits Excel template, habit tracker, personal productivity, daily habit management, Excel productivity, 2026 template"
+      },
+      "ia-local": {
+        "title": "Local AI — Language Models on Your PC Without Internet",
+        "description": "Local AI consulting with Llama, Qwen and Phi models. Runs on your GPU without internet connection. 100% private, no subscriptions, no limits. Ideal for companies in Colombia.",
+        "keywords": "local AI, offline language models, Llama, Qwen, private artificial intelligence, GPU Colombia, AI without internet, AI consulting companies"
+      }
+    }
+  },
+  "servicePages": {
+    "apoyoAcademico": {
+      "hero": {
+        "title": "Academic Support",
+        "subtitle": "Personalized tutoring and academic support for school and university students."
+      },
+      "quickStats": [
+        {
+          "label": "100% Confidential",
+          "icon": "lock"
+        },
+        {
+          "label": "Calidad Garantizada",
+          "icon": "check"
+        },
+        {
+          "label": "Entregas a Tiempo",
+          "icon": "stopwatch"
+        }
+      ],
+      "helpWith": [
+        {
+          "title": "Academic Work",
+          "desc": "Ensayos, investigaciones y documentos",
+          "icon": "file"
+        },
+        {
+          "title": "Evaluaciones y talleres",
+          "desc": "Complete preparation and development",
+          "icon": "chart"
+        },
+        {
+          "title": "Proyectos universitarios",
+          "desc": "From any academic discipline",
+          "icon": "graduation"
+        },
+        {
+          "title": "Entregables virtuales",
+          "desc": "Plataformas y formatos online",
+          "icon": "laptop"
+        }
+      ],
+      "valueProposition": [
+        {
+          "title": "Academic Quality",
+          "desc": "Trabajos investigados, bien estructurados y con fuentes verificadas"
+        },
+        {
+          "title": "Entrega a tiempo",
+          "desc": "Cumplimiento garantizado en fechas acordadas"
+        },
+        {
+          "title": "Confidentialidad",
+          "desc": "Your information and work are protected with maximum privacy"
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Reception",
+          "desc": "Recibimos tu solicitud y detalles del trabajo"
+        },
+        {
+          "step": 2,
+          "title": "Analysis",
+          "desc": "Evaluamos requerimientos y definimos estrategia"
+        },
+        {
+          "step": 3,
+          "title": "Desarrollo",
+          "desc": "We create your work with quality and academic rigor"
+        },
+        {
+          "step": 4,
+          "title": "Entrega",
+          "desc": "Entregamos el trabajo listo y revisado"
+        }
+      ],
+      "audience": [
+        {
+          "persona": "Estudiantes universitarios",
+          "desc": "Con trabajos complejos y plazos ajustados"
+        },
+        {
+          "persona": "Estudiantes virtuales",
+          "desc": "Que requieren apoyo flexible y oportuno"
+        },
+        {
+          "persona": "Personas con carga laboral",
+          "desc": "Sin tiempo disponible para estudios a tiempo completo"
+        }
+      ],
+      "guarantees": [
+        {
+          "title": "Confidentialidad",
+          "desc": "Tu privacidad es absoluta"
+        },
+        {
+          "title": "Entregas a tiempo",
+          "desc": "Cumplimiento garantizado"
+        },
+        {
+          "title": "Constant Communication",
+          "desc": "I am here to answer your questions"
+        }
+      ],
+      "sectionTitles": {
+        "helpWith": "What can we help you with?",
+        "helpWithDesc": "We adapt to your specific needs, level, and schedule.",
+        "valueProposition": "Why choose us?",
+        "process": "How it works",
+        "audience": "Who is it for?",
+        "guarantees": "Our guarantees",
+        "ctaTitle": "Ready to get started?",
+        "ctaDesc": "Book your first session and start improving your grades.",
+        "ctaButton": "Book a Session",
+        "heroButton": "Get Support Now"
+      }
+    },
+    "clasesProgramacion": {
+      "hero": {
+        "title": "Programming Classes",
+        "subtitle": "Learn to code from scratch or improve your skills with modern languages and real projects."
+      },
+      "stats": [
+        {
+          "label": "100% Personalizado",
+          "value": "100%"
+        },
+        {
+          "label": "Rating",
+          "value": "5.0"
+        },
+        {
+          "label": "Estudiantes",
+          "value": "+50"
+        }
+      ],
+      "featured": {
+        "title": "Microsoft 365 - Excel Avanzado",
+        "subtitle": "From beginner to advanced, we have the perfect course for you.",
+        "highlights": [
+          "Repetitive task automation",
+          "Professional dashboards",
+          "Advanced Power Query",
+          "Applied Macros and VBA"
+        ],
+        "bonuses": "Practical materials + Downloadable templates + Certificate"
+      },
+      "benefits": [
+        {
+          "title": "Clases 1 a 1",
+          "desc": "Dedicated attention just for you",
+          "icon": "user"
+        },
+        {
+          "title": "Personalizado",
+          "desc": "Adaptado a tu nivel y ritmo",
+          "icon": "bullseye"
+        },
+        {
+          "title": "Support",
+          "desc": "Apoyo continuo entre clases",
+          "icon": "handshake"
+        },
+        {
+          "title": "Proyectos reales",
+          "desc": "Aprende aplicando tus conocimientos",
+          "icon": "briefcase"
+        }
+      ],
+      "audience": [
+        {
+          "persona": "Beginners",
+          "desc": "No prior programming experience"
+        },
+        {
+          "persona": "Engineering Students",
+          "desc": "Que necesitan reforzar conceptos"
+        },
+        {
+          "persona": "Cambio de carrera",
+          "desc": "People in career transition"
+        }
+      ],
+      "process": [
+        {
+          "step": 1,
+          "title": "Assessment",
+          "desc": "Evaluamos tu nivel y objetivos"
+        },
+        {
+          "step": 2,
+          "title": "Plan Personalizado",
+          "desc": "Learning path design"
+        },
+        {
+          "step": 3,
+          "title": "Hands-on Classes",
+          "desc": "Aprendizaje basado en proyectos"
+        },
+        {
+          "step": 4,
+          "title": "Seguimiento",
+          "desc": "Continuous evaluation and adjustment"
+        }
+      ],
+      "languages": [
+        "Python",
+        "JavaScript",
+        "React",
+        "SQL",
+        "Excel VBA",
+        "Power Query"
+      ],
+      "sectionTitles": {
+        "heroButton": "Start Today",
+        "featuredLearnTitle": "What you will learn",
+        "featuredBonusesTitle": "Bonificaciones",
+        "featuredButton": "See all courses",
+        "benefits": "Benefits",
+        "techBadge": "Tech Stack",
+        "techTitle": "Languages and Technologies",
+        "techDesc": "We work with the most in-demand technologies in the market.",
+        "audience": "Who is it for?",
+        "methodology": "Methodology",
+        "ctaTitle": "Ready to start programming?",
+        "ctaDesc": "Join our students and master programming with practical, personalized classes.",
+        "ctaButton": "Book a Free Class",
+        "featuredLearn": "What will you learn?",
+        "featuredBonuses": "Includes",
+        "techStack": "Technologies",
+        "techLanguages": "Languages"
+      }
+    },
+    "ventasOnline": {
+      "hero": {
+        "title": "Online Sales",
+        "subtitle": "Strategies and support to create or scale your digital business with real results."
+      },
+      "stores": [
+        {
+          "name": "MercadoLibre",
+          "reputation": "4.9/5 estrellas",
+          "sales": "+500 ventas",
+          "desc": "Established reputation",
+          "cta": "Visitar Tienda",
+          "url": "https://listado.mercadolibre.com.co/_CustId_458406036?item_id=MCO1405179747&category_id=MCO180874&seller_id=458406036&client=recoview-selleritems&recos_listing=true",
+          "color": "#FFB100"
+        },
+        {
+          "name": "Facebook Marketplace",
+          "reputation": "4.8/5 estrellas",
+          "sales": "Free shipping",
+          "desc": "Trato directo local",
+          "cta": "Ver Tienda",
+          "url": "https://www.facebook.com/marketplace/profile/100028152081570/",
+          "color": "#1877F2"
+        }
+      ],
+      "whyUs": [
+        {
+          "title": "Productos verificados",
+          "desc": "Calidad garantizada en cada venta"
+        },
+        {
+          "title": "Pagos seguros",
+          "desc": "Plataformas de pago confiables"
+        },
+        {
+          "title": "Reliable Shipping",
+          "desc": "Professional logistics and packaging"
+        },
+        {
+          "title": "24/7 Support",
+          "desc": "Support directo con clientes"
+        }
+      ],
+      "ctas": [
+        {
+          "label": "Buy Online",
+          "action": "buyOnline"
+        },
+        {
+          "label": "Buy on Marketplace",
+          "action": "marketplace"
+        },
+        {
+          "label": "Learn E-commerce Selling",
+          "action": "learn"
+        }
+      ],
+      "testimonials": [
+        {
+          "name": "María González",
+          "role": "Estudiante",
+          "rating": 5,
+          "text": "Excelente servicio, muy profesional"
+        },
+        {
+          "name": "Sofia Ramirez",
+          "role": "Emprendedora",
+          "rating": 5,
+          "text": "Helped me grow my online business"
+        },
+        {
+          "name": "Carlos Rodríguez",
+          "role": "Ingeniero",
+          "rating": 5,
+          "text": "Gracias a Juan mis ventas se dispararon en MercadoLibre"
+        },
+        {
+          "name": "Miguel Ángel",
+          "role": "Vendedor",
+          "rating": 5,
+          "text": "My business took off and now I have more clients"
+        },
+        {
+          "name": "Ana López",
+          "role": "Profesional",
+          "rating": 5,
+          "text": "Now I am the number 1 seller in my category"
+        },
+        {
+          "name": "Roberto Silva",
+          "role": "Estudiante Virtual",
+          "rating": 5,
+          "text": "Service confiable y de calidad"
+        }
+      ],
+      "sectionTitles": {
+        "heroButton": "Start Selling",
+        "storesTitle": "Tiendas Verificadas",
+        "storesDesc": "We help you set up on the most popular platforms.",
+        "whyUs": "Why us?",
+        "testimonials": "Testimonials",
+        "nextStepTitle": "Your Next Step",
+        "nextStepDesc": "Choose how you want to start.",
+        "ctaTitle": "Ready to scale?",
+        "ctaDesc": "Take your business to the next level with a professional online store.",
+        "ctaButton": "Schedule a Free Consultation",
+        "stores": "Where can you sell?",
+        "nextStep": "Next step"
+      }
+    },
+    "optimizacionCV": {
+      "hero": {
+        "title": "CV Optimization",
+        "subtitle": "Transform your resume into a powerful tool that stands out to recruiters."
+      },
+      "problem": {
+        "title": "The Problem",
+        "stat": "75% of CVs are rejected by ATS systems",
+        "desc": "Most companies now use automated systems to filter CVs before a human ever sees them."
+      },
+      "solution": {
+        "title": "Our Solution",
+        "desc": "We optimize your CV to pass ATS filters and impress recruiters."
+      },
+      "includes": [
+        {
+          "title": "Professional Design and Structure",
+          "icon": "palette"
+        },
+        {
+          "title": "Persuasive Content",
+          "icon": "pen"
+        },
+        {
+          "title": "ATS Optimization",
+          "icon": "robot"
+        },
+        {
+          "title": "Presentation Recommendations",
+          "icon": "lightbulb"
+        }
+      ],
+      "pricing": {
+        "original": "$97 USD",
+        "current": "$47 USD",
+        "savings": "Save 52%"
+      },
+      "sectionTitles": {
+        "heroButton": "Optimize My CV Now",
+        "problemFootnote": "*Based on over 100 successful reviews.",
+        "solutionFootnote": "*Results may vary by industry and experience.",
+        "includes": "Includes",
+        "pricingBadge": "Most Popular",
+        "pricingTitle": "Investment",
+        "pricingDesc": "Choose the plan that best fits your needs",
+        "pricingButton": "Start Today",
+        "trustTitle": "Why Trust Us?",
+        "trustConfidencial": "Your information is secure and will not be shared.",
+        "trustRevisiones": "We adjust your CV until you are 100% satisfied.",
+        "trustSoporte": "Get your questions answered instantly by our team.",
+        "processTitle": "Process",
+        "processStep1": "Step 1",
+        "processStep1Desc": "Send us your current CV",
+        "processStep2": "Step 2",
+        "processStep2Desc": "We analyze and redesign",
+        "processStep3": "Step 3",
+        "processStep3Desc": "You receive your optimized CV",
+        "ctaTitle": "Ready to Stand Out?",
+        "ctaDesc": "Give your career the boost it deserves with a professional CV.",
+        "ctaButton": "I Want My CV"
+      }
+    },
+    "plantillaGastos": {
+      "hero": {
+        "title": "Expense Control",
+        "subtitle": "Smart spreadsheet to track your expenses, save more, and take control of your finances."
+      },
+      "pricing": {
+        "colombia": "19.000 COP",
+        "international": "$7 USD",
+        "urgency": "Limited time offer"
+      },
+      "features": [
+        {
+          "title": "Control Diario/Semanal/Mensual",
+          "icon": "calendar"
+        },
+        {
+          "title": "Colores Inteligentes",
+          "icon": "palette"
+        },
+        {
+          "title": "Pivot Tables",
+          "icon": "chart"
+        },
+        {
+          "title": "Regla 50/30/20",
+          "icon": "scale"
+        },
+        {
+          "title": "Mobile Compatible",
+          "icon": "mobile"
+        },
+        {
+          "title": "Acceso en la nube",
+          "icon": "cloud"
+        }
+      ],
+      "mockData": {
+        "categories": [
+          {
+            "name": "Comida",
+            "emoji": "pizzaSlice",
+            "amount": 45000,
+            "status": "circleCheck"
+          },
+          {
+            "name": "Supermercado",
+            "emoji": "cart",
+            "amount": 120000,
+            "status": "circleXmark"
+          },
+          {
+            "name": "Transporte",
+            "emoji": "car",
+            "amount": 35000,
+            "status": "circleCheck"
+          },
+          {
+            "name": "Entretenimiento",
+            "emoji": "gamepad",
+            "amount": 25000,
+            "status": "circleCheck"
+          }
+        ],
+        "weekly": [
+          {
+            "day": "Lunes",
+            "percent": 85
+          },
+          {
+            "day": "Martes",
+            "percent": 92
+          },
+          {
+            "day": "Wednesday",
+            "percent": 78
+          },
+          {
+            "day": "Jueves",
+            "percent": 88
+          },
+          {
+            "day": "Viernes",
+            "percent": 95
+          },
+          {
+            "day": "Saturday",
+            "percent": 65
+          },
+          {
+            "day": "Domingo",
+            "percent": 72
+          }
+        ],
+        "distribution": [
+          {
+            "category": "Necesidades (50%)",
+            "percent": 50,
+            "color": "#4F7FFF"
+          },
+          {
+            "category": "Deseos (30%)",
+            "percent": 30,
+            "color": "#00E5C3"
+          },
+          {
+            "category": "Ahorros (20%)",
+            "percent": 20,
+            "color": "#FF6B6B"
+          }
+        ]
+      },
+      "transformations": [
+        {
+          "metric": "$1.200 USA",
+          "desc": "Ahorro promedio de nuestros usuarios"
+        },
+        {
+          "metric": "100%",
+          "desc": "Reduction in unnecessary expenses in the first month."
+        },
+        {
+          "metric": "7 days",
+          "desc": "Tiempo promedio para notar cambio"
+        },
+        {
+          "metric": "95%",
+          "desc": "Of users would recommend this template"
+        }
+      ],
+      "testimonialsGastos": [
+        {
+          "name": "Ana G.",
+          "badge": "+$200 ahorrado",
+          "text": "I finally see where my money goes"
+        },
+        {
+          "name": "Carlos M.",
+          "badge": "Sin sorpresas",
+          "text": "He mejorado mis finanzas drasticamente"
+        },
+        {
+          "name": "Laura S.",
+          "badge": "+$150/mes",
+          "text": "Herramienta fundamental"
+        },
+        {
+          "name": "Juan P.",
+          "badge": "Control total",
+          "text": "Changed my financial life"
+        },
+        {
+          "name": "Diego R.",
+          "badge": "+$180/mes",
+          "text": "Highly recommended"
+        },
+        {
+          "name": "Sofia L.",
+          "badge": "100% Útil",
+          "text": "La mejor compra que hice"
+        }
+      ],
+      "science": [
+        {
+          "title": "Finanzas Conductuales",
+          "desc": "Money decisions based on psychology"
+        },
+        {
+          "title": "Refuerzo Positivo (Dopamina)",
+          "desc": "Seeing progress motivates you to save more"
+        },
+        {
+          "title": "Progress Visualization",
+          "desc": "Clear charts = better control"
+        },
+        {
+          "title": "Consistencia",
+          "desc": "Daily habits create permanent changes"
+        }
+      ],
+      "paymentMethods": [
+        "PSE",
+        "Nequi",
+        "PayPal",
+        "Efecty",
+        "Transferencia"
+      ],
+      "warranty": "14-Day Money-Back Guarantee",
+      "faqs": [
+        {
+          "q": "When do I receive the template after paying?",
+          "a": "Immediately after confirming payment, you will receive an email with the template download in Excel."
+        },
+        {
+          "q": "Funciona en Google Sheets?",
+          "a": "Yes, you can easily convert it to Google Sheets or use it directly in Excel/LibreOffice."
+        },
+        {
+          "q": "Viene con tutoriales?",
+          "a": "Yes, it includes step-by-step tutorial videos and a complete usage guide."
+        },
+        {
+          "q": "Can I use it on mobile?",
+          "a": "Yes, it is 100% responsive and works on Excel Mobile or Google Sheets on your phone."
+        }
+      ],
+      "sectionTitles": {
+        "heroButton": "Buy Now via WhatsApp",
+        "pricingColombia": "Colombia",
+        "pricingInternational": "International",
+        "features": "Features",
+        "previewTitle": "Preview",
+        "previewMonthly": "Monthly View",
+        "previewWeekly": "Weekly View",
+        "previewDistribution": "Expense Distribution",
+        "transformations": "Transformations",
+        "testimonials": "Customer Reviews",
+        "science": "Behavioral Science",
+        "paymentMethods": "Payment Methods",
+        "warrantyDesc": "If you don't like it, we will refund your money.",
+        "faq": "Frequently Asked Questions",
+        "ctaTitle": "Ready to Control Your Expenses?",
+        "ctaDesc": "Start organizing your finances today with a simple and effective tool.",
+        "ctaButton": "I Want My Template"
+      }
+    },
+    "plantillaHabitos": {
+      "hero": {
+        "title": "Habit Tracker",
+        "subtitle": "Smart spreadsheet to build habits, measure progress, and achieve your goals. Be consistent with data."
+      },
+      "stats": [
+        {
+          "label": "Rating",
+          "value": "4.9/5"
+        },
+        {
+          "label": "Habits Tracked",
+          "value": "+1.2k"
+        },
+        {
+          "label": "Usuarios Activos",
+          "value": "+850"
+        }
+      ],
+      "features": [
+        {
+          "title": "Progreso en %",
+          "icon": "chartLine"
+        },
+        {
+          "title": "Checkboxes Visuales",
+          "icon": "circleCheck"
+        },
+        {
+          "title": "Dynamic Charts",
+          "icon": "chart"
+        },
+        {
+          "title": "Heatmap Anual",
+          "icon": "fire"
+        },
+        {
+          "title": "Metas y Rachas",
+          "icon": "bullseye"
+        },
+        {
+          "title": "Copiable Mes a Mes",
+          "icon": "clipboard"
+        }
+      ],
+      "mockData": {
+        "habits": [
+          {
+            "name": "Gym",
+            "emoji": "dumbbell",
+            "progress": [
+              true,
+              true,
+              false,
+              true,
+              true,
+              false,
+              true
+            ]
+          },
+          {
+            "name": "Leer",
+            "emoji": "book",
+            "progress": [
+              true,
+              true,
+              true,
+              false,
+              true,
+              true,
+              false
+            ]
+          },
+          {
+            "name": "Meditation",
+            "emoji": "spa",
+            "progress": [
+              false,
+              true,
+              true,
+              true,
+              true,
+              true,
+              true
+            ]
+          },
+          {
+            "name": "Escribir",
+            "emoji": "pen",
+            "progress": [
+              true,
+              false,
+              true,
+              true,
+              false,
+              true,
+              true
+            ]
+          }
+        ],
+        "yearlyMetrics": {
+          "currentStreak": 12,
+          "bestMonth": 95,
+          "totalHabits": 1200
+        }
+      },
+      "testimonialsHabitos": [
+        {
+          "name": "María G.",
+          "metric": "127 days",
+          "text": "My longest streak ever"
+        },
+        {
+          "name": "Carlos R.",
+          "metric": "+3x Productividad",
+          "text": "Completely changed my routine"
+        },
+        {
+          "name": "Sofia L.",
+          "metric": "98% Consistencia",
+          "text": "Lo mejor para mantener disciplina"
+        },
+        {
+          "name": "Andres M.",
+          "metric": "+5 Habits",
+          "text": "Now I have a solid routine"
+        },
+        {
+          "name": "Pablo D.",
+          "metric": "180 days",
+          "text": "Never thought I would make it"
+        },
+        {
+          "name": "Laura P.",
+          "metric": "100% Enero",
+          "text": "Enero fue mi mejor mes"
+        }
+      ],
+      "science": [
+        {
+          "title": "Based on Atomic Habits",
+          "desc": "James Clear - Small changes = Big results"
+        },
+        {
+          "title": "Refuerzo por Dopamina",
+          "desc": "Ver checkboxes activa recompensa cerebral"
+        },
+        {
+          "title": "Rachas y Momentum",
+          "desc": "\"Never break the chain\" - Keep the streak"
+        },
+        {
+          "title": "Daily Visualization",
+          "desc": "Lo que ves, lo haces"
+        }
+      ],
+      "price": {
+        "original": "$7 USD",
+        "current": "$5 USD"
+      },
+      "faqs": [
+        {
+          "q": "How many habits can I track?",
+          "a": "Unlimited. You can add as many habits as you need and the system adapts automatically."
+        },
+        {
+          "q": "How is the streak calculated?",
+          "a": "The streak increases each day you complete a habit. If you miss a day, it resets, but the history is maintained."
+        },
+        {
+          "q": "Can I modify the habits?",
+          "a": "Yes, it is fully customizable. Change habits, add new ones, or remove ones you do not use."
+        },
+        {
+          "q": "How do I use the heatmap charts?",
+          "a": "Colors indicate intensity. Green = completed days, red = missed days. Perfect for visualizing patterns."
+        }
+      ],
+      "sectionTitles": {
+        "heroButton": "Buy Now via WhatsApp",
+        "features": "Features",
+        "previewTitle": "Preview",
+        "previewMonthly": "Monthly View",
+        "previewYearlyTitle": "Yearly View",
+        "metricStreak": "Current Streak",
+        "metricBestMonth": "Best Month",
+        "metricTotal": "Total Logged",
+        "testimonials": "Customer Reviews",
+        "science": "The Science Behind It",
+        "pricingTitle": "Investment",
+        "pricingDesc": "One-time payment, lifetime access",
+        "pricingButton": "Get Started",
+        "faq": "Frequently Asked Questions",
+        "ctaTitle": "Ready to Transform Your Habits?",
+        "ctaDesc": "Start tracking your habits today and achieve your goals with data.",
+        "ctaButton": "I Want My Template"
+      }
+    },
+    "iaLocal": {
+      "hero": {
+        "title": "Local AI",
+        "subtitle": "Run AI models on your own computer without relying on internet or cloud services."
+      },
+      "strengths": [
+        {
+          "icon": "shield",
+          "title": "100% Privado",
+          "desc": "Your data never leaves your computer."
+        },
+        {
+          "icon": "infinity",
+          "title": "Ilimitado",
+          "desc": "Sin costo por API"
+        },
+        {
+          "icon": "money",
+          "title": "Sin Suscripciones",
+          "desc": "El modelo es tuyo"
+        },
+        {
+          "icon": "globe",
+          "title": "Offline Nativo",
+          "desc": "Works offline"
+        },
+        {
+          "icon": "bolt",
+          "title": "Velocidad Local",
+          "desc": "Uso de GPU"
+        },
+        {
+          "icon": "bullseye",
+          "title": "Modular",
+          "desc": "Choose according to your hardware"
+        }
+      ],
+      "models": [
+        {
+          "name": "Llama 3.1 8B",
+          "ram": "6-8 GB",
+          "use": "General reasoning and documentation"
+        },
+        {
+          "name": "Qwen 2.5 Coder 7B",
+          "ram": "5-6 GB",
+          "use": "Expert in programming and code"
+        },
+        {
+          "name": "Phi-3.5-mini",
+          "ram": "3-4 GB",
+          "use": "Low RAM PCs, logic and math"
+        },
+        {
+          "name": "Ministral 3 14B",
+          "ram": "10-12 GB",
+          "use": "Speed and advanced function calling"
+        }
+      ],
+      "b2b": {
+        "title": "B2B Solutions",
+        "features": [
+          "Automatizar respuestas con tono de marca",
+          "Internal document classification",
+          "Specialized code assistant",
+          "Data extraction from reports"
+        ],
+        "note": "Custom solutions for businesses and organizations."
+      },
+      "useCases": [
+        {
+          "title": "Desarrollador Independiente",
+          "desc": "Unlimited private code assistant"
+        },
+        {
+          "title": "Researcher/Academic",
+          "desc": "Procesa papers sin compartir datos"
+        },
+        {
+          "title": "Empresa de Services",
+          "desc": "Chatbot interno con datos confidenciales"
+        },
+        {
+          "title": "Analista de Datos",
+          "desc": "Process sensitive information locally"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "Necesito una GPU?",
+          "a": "Not required, but we recommend GPU for better speed. CPU works but is slower."
+        },
+        {
+          "q": "What are the minimum RAM requirements?",
+          "a": "3 GB RAM minimum for small models. 8+ GB for more powerful models."
+        },
+        {
+          "q": "Es realmente privado?",
+          "a": "Yes, 100%. Everything runs locally. No data leaves your machine."
+        },
+        {
+          "q": "Puedo usar esto para negocios?",
+          "a": "Absolutely. Businesses use local AI for chatbots, analysis, and classification without exposing data."
+        }
+      ],
+      "sectionTitles": {
+        "heroButton": "Try Local AI on My PC",
+        "strengths": "Strengths",
+        "modelsTitle": "Available Models",
+        "modelsDesc": "We install and configure the best models for your needs.",
+        "modelHeader": "Model",
+        "ramHeader": "Required RAM",
+        "useHeader": "Use Case",
+        "useCases": "Use Cases",
+        "b2bSolutions": "B2B Solutions",
+        "b2bButton": "Contact Us",
+        "howItWorks": "How It Works",
+        "howStep1": "We assess your needs",
+        "howStep1Desc": "We evaluate your hardware and requirements.",
+        "howStep2": "We select and install",
+        "howStep2Desc": "We choose and install the best models for you.",
+        "howStep3": "We configure and optimize",
+        "howStep3Desc": "We fine-tune for the best performance.",
+        "howStep4": "We train you",
+        "howStep4Desc": "We show you how to get the most out of your AI.",
+        "faq": "Frequently Asked Questions",
+        "ctaTitle": "Ready to Use Local AI?",
+        "ctaDesc": "Run powerful AI models on your PC without relying on internet or subscriptions.",
+        "ctaButton": "I Want My Local AI"
+      }
+    }
+  }
+}

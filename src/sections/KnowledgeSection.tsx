@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import { motion, useInView } from 'framer-motion'
 import {
   FaHtml5, FaReact, FaNodeJs, FaDatabase, FaGitAlt, FaMobileAlt, FaPython,
@@ -7,7 +8,6 @@ import {
 } from 'react-icons/fa'
 import { SiVite, SiCanva, SiShopify, SiWordpress } from 'react-icons/si'
 import FadeIn from '../components/FadeIn'
-import { SKILLS, SOFTWARE_TOOLS, DEV_STACK } from '../data'
 
 type IconComponent = React.ComponentType<{ className?: string; size?: number }>
 
@@ -51,6 +51,12 @@ function SkillBar({ name, pct, index, icon }: { name: string; pct: number; index
 }
 
 export default function KnowledgeSection() {
+  const { t } = useTranslation()
+
+  const skills = t('skills.items', { returnObjects: true }) as any[]
+  const softwareTools = t('softwareTools.items', { returnObjects: true }) as any[]
+  const devStack = t('devStack.items', { returnObjects: true }) as any[]
+
   return (
     <section
       id="conocimientos"
@@ -67,7 +73,7 @@ export default function KnowledgeSection() {
             className="font-syne font-black uppercase leading-none tracking-tight mb-3 break-words"
             style={{ fontSize: 'clamp(22px,4vw,56px)', color: 'var(--white)', maxWidth: '90vw', margin: '0 auto' }}
           >
-            Mis <span className="gradient-heading">conocimientos.</span>
+            {t('knowledge.heading')}<span className="gradient-heading">{t('knowledge.headingHighlight')}</span>
           </h2>
         </FadeIn>
         <FadeIn delay={0.1}>
@@ -75,7 +81,7 @@ export default function KnowledgeSection() {
             className="font-mono text-sm leading-relaxed mb-10 md:mb-8 lg:mb-10"
             style={{ color: 'var(--muted)', maxWidth: 400 }}
           >
-            Habilidades, herramientas y tecnologías que domino para crear soluciones digitales completas.
+            {t('knowledge.subtitle')}
           </p>
         </FadeIn>
 
@@ -84,11 +90,11 @@ export default function KnowledgeSection() {
           <div>
             <FadeIn y={20}>
               <span className="font-mono text-xs tracking-widest uppercase block mb-6" style={{ color: 'var(--accent2)' }}>
-                // Habilidades
+                {t('knowledge.skillsTag')}
               </span>
             </FadeIn>
             <div className="space-y-4">
-              {SKILLS.map((s, i) => (
+              {skills.map((s: any, i: number) => (
                 <FadeIn key={s.name} delay={i * 0.05} y={10}>
                   <SkillBar name={s.name} pct={s.pct} index={i} icon={s.icon} />
                 </FadeIn>
@@ -100,14 +106,14 @@ export default function KnowledgeSection() {
           <div>
             <FadeIn y={20}>
               <span className="font-mono text-xs tracking-widest uppercase block mb-6" style={{ color: 'var(--accent2)' }}>
-                // Software y Herramientas
+                {t('knowledge.toolsTag')}
               </span>
             </FadeIn>
             <div className="grid grid-cols-2 gap-3">
-              {SOFTWARE_TOOLS.map((t, i) => {
-                const Ic = t.icon ? ICONS[t.icon] : null
+              {softwareTools.map((st: any, i: number) => {
+                const Ic = st.icon ? ICONS[st.icon] : null
                 return (
-                <FadeIn key={t.name} delay={i * 0.04} y={10}>
+                <FadeIn key={st.name} delay={i * 0.04} y={10}>
                   <div
                     className="group relative p-4 rounded-xl min-h-0 transition-all duration-300 hover:-translate-y-0.5"
                     style={{
@@ -120,19 +126,19 @@ export default function KnowledgeSection() {
                     <div
                       className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                       style={{
-                        background: `radial-gradient(ellipse at 50% 0%, ${t.color}22 0%, transparent 70%)`,
+                        background: `radial-gradient(ellipse at 50% 0%, ${st.color}22 0%, transparent 70%)`,
                       }}
                     />
                     <span className="relative z-10 flex items-center gap-1.5 font-syne font-bold text-[11px] uppercase tracking-tight mb-1.5" style={{ color: 'var(--white)' }}>
                       {Ic && (
                         <div
                           className="w-7 h-7 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-                          style={{ background: `${t.color}18`, color: t.color }}
+                          style={{ background: `${st.color}18`, color: st.color }}
                         >
                           <Ic size={14} />
                         </div>
                       )}
-                      {t.name}
+                      {st.name}
                     </span>
 
                   </div>
@@ -147,11 +153,11 @@ export default function KnowledgeSection() {
         <div className="mt-10 md:mt-8 lg:mt-12">
           <FadeIn y={20}>
             <span className="font-mono text-xs tracking-widest uppercase block mb-8" style={{ color: 'var(--accent2)' }}>
-              // Mi Stack De Desarrollo
+              {t('knowledge.stackTag')}
             </span>
           </FadeIn>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-            {DEV_STACK.map((item, i) => {
+            {devStack.map((item: any, i: number) => {
               const Icon = item.icon ? ICONS[item.icon] : null
               return (
                 <FadeIn key={item.name} delay={i * 0.06} y={15}>

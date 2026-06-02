@@ -1,10 +1,21 @@
+import { useTranslation } from 'react-i18next'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
 import DataIcon from '../components/DataIcon'
-import { APOYO_ACADEMICO } from './serviceData'
 import { wa } from '../lib/whatsapp'
 
 export default function ApoyoAcademicoPage() {
+  const { t } = useTranslation()
+  const data = {
+    hero: { title: t('servicePages.apoyoAcademico.hero.title'), subtitle: t('servicePages.apoyoAcademico.hero.subtitle') },
+    quickStats: t('servicePages.apoyoAcademico.quickStats', { returnObjects: true }) as { label: string; icon: string }[],
+    helpWith: t('servicePages.apoyoAcademico.helpWith', { returnObjects: true }) as { title: string; desc: string; icon: string }[],
+    valueProposition: t('servicePages.apoyoAcademico.valueProposition', { returnObjects: true }) as { title: string; desc: string }[],
+    process: t('servicePages.apoyoAcademico.process', { returnObjects: true }) as { step: number; title: string; desc: string }[],
+    audience: t('servicePages.apoyoAcademico.audience', { returnObjects: true }) as { persona: string; desc: string }[],
+    guarantees: t('servicePages.apoyoAcademico.guarantees', { returnObjects: true }) as { title: string; desc: string }[],
+    sectionTitles: t('servicePages.apoyoAcademico.sectionTitles', { returnObjects: true }) as Record<string, string>,
+  }
   return (
     <main className="min-h-screen" style={{ background: 'var(--bg)' }}>
       {/* Hero Section */}
@@ -21,7 +32,7 @@ export default function ApoyoAcademicoPage() {
               className="font-syne font-black uppercase leading-tight tracking-tight break-words gradient-heading mb-4 md:mb-6"
               style={{ fontSize: 'clamp(28px,5vw,72px)' }}
             >
-              {APOYO_ACADEMICO.hero.title}
+              {data.hero.title}
             </h1>
           </FadeIn>
 
@@ -30,14 +41,14 @@ export default function ApoyoAcademicoPage() {
               className="font-mono text-sm md:text-base leading-relaxed mb-8 md:mb-10 max-w-3xl mx-auto px-2"
               style={{ color: 'var(--muted)' }}
             >
-              {APOYO_ACADEMICO.hero.subtitle}
+              {data.hero.subtitle}
             </p>
           </FadeIn>
 
           {/* Quick Stats */}
           <FadeIn delay={0.2}>
             <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 mb-8 md:mb-12 max-w-2xl mx-auto">
-              {APOYO_ACADEMICO.quickStats.map((stat, i) => (
+              {data.quickStats.map((stat, i) => (
                 <div
                   key={i}
                   className="group p-3 sm:p-4 md:p-6 rounded-2xl"
@@ -59,7 +70,7 @@ export default function ApoyoAcademicoPage() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <ContactButton label="Solicitar apoyo académico" href={wa('Hola, vine por el servicio de apoyo académico')} />
+            <ContactButton label={data.sectionTitles.heroButton} href={wa('Hola, vine por el servicio de apoyo académico')} />
           </FadeIn>
         </div>
       </section>
@@ -72,7 +83,7 @@ export default function ApoyoAcademicoPage() {
               className="font-syne font-black uppercase text-center mb-4 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              En qué te puedo ayudar
+              {data.sectionTitles.helpWith}
             </h2>
           </FadeIn>
 
@@ -81,12 +92,12 @@ export default function ApoyoAcademicoPage() {
               className="text-center font-mono text-sm mb-16"
               style={{ color: 'var(--muted)', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}
             >
-              Ofrezco apoyo completo en diferentes áreas académicas
+              {data.sectionTitles.helpWithDesc}
             </p>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {APOYO_ACADEMICO.helpWith.map((item, i) => (
+            {data.helpWith.map((item, i) => (
               <FadeIn key={i} delay={0.15 * i}>
                 <div
                   className="group p-6 md:p-8 rounded-2xl h-full transition-all duration-300 hover:translate-y-[-4px]"
@@ -130,12 +141,12 @@ export default function ApoyoAcademicoPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Mi propuesta de valor
+              {data.sectionTitles.valueProposition}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {APOYO_ACADEMICO.valueProposition.map((prop, i) => (
+            {data.valueProposition.map((prop, i) => (
               <FadeIn key={i} delay={0.15 * i}>
                 <div>
                   <h3
@@ -165,12 +176,12 @@ export default function ApoyoAcademicoPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Proceso de trabajo
+              {data.sectionTitles.process}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {APOYO_ACADEMICO.process.map((proc, i) => (
+            {data.process.map((proc, i) => (
               <FadeIn key={i} delay={0.15 * i}>
                 <div className="relative">
                   {/* Step number */}
@@ -216,12 +227,12 @@ export default function ApoyoAcademicoPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              ¿Para quién es?
+              {data.sectionTitles.audience}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {APOYO_ACADEMICO.audience.map((aud, i) => (
+            {data.audience.map((aud, i) => (
               <FadeIn key={i} delay={0.15 * i}>
                 <div
                   className="p-8 rounded-2xl"
@@ -257,12 +268,12 @@ export default function ApoyoAcademicoPage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Garantías
+              {data.sectionTitles.guarantees}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {APOYO_ACADEMICO.guarantees.map((guar, i) => (
+            {data.guarantees.map((guar, i) => (
               <FadeIn key={i} delay={0.15 * i}>
                 <div className="text-center">
                   <h3
@@ -297,7 +308,7 @@ export default function ApoyoAcademicoPage() {
             className="font-syne font-black uppercase mb-6 tracking-tight break-words"
             style={{ fontSize: 'clamp(24px,3.5vw,48px)', color: 'var(--white)' }}
           >
-            ¿Listo para mejorar tu desempeño académico?
+            {data.sectionTitles.ctaTitle}
           </h2>
         </FadeIn>
 
@@ -306,12 +317,12 @@ export default function ApoyoAcademicoPage() {
             className="font-mono text-sm mb-8 max-w-2xl mx-auto"
             style={{ color: 'var(--muted)' }}
           >
-            Contacta conmigo hoy y descubre cómo puedo ayudarte a alcanzar tus objetivos académicos
+            {data.sectionTitles.ctaDesc}
           </p>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <ContactButton label="Agendar Consulta Gratuita" href={wa('Hola, vine por el servicio de apoyo académico')} />
+          <ContactButton label={data.sectionTitles.ctaButton} href={wa('Hola, vine por el servicio de apoyo académico')} />
         </FadeIn>
       </section>
     </main>

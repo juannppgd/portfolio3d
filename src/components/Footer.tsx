@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import {
   FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaYoutube,
@@ -53,6 +54,7 @@ interface FooterProps {
 }
 
 export default function Footer({ onShareClick }: FooterProps) {
+  const { t } = useTranslation()
   return (
     <footer id="footer"
       className="px-6 md:px-12 pt-12 md:pt-10 lg:pt-12 pb-8 relative z-30"
@@ -69,11 +71,11 @@ export default function Footer({ onShareClick }: FooterProps) {
               className="font-syne font-black uppercase leading-none tracking-tight mb-4 break-words"
               style={{ fontSize: 'clamp(22px,4.5vw,40px)', color: 'var(--white)', maxWidth: '90vw', margin: '0 auto' }}
             >
-              ¡Conectemos y{' '}
-              <span className="gradient-heading">Crezcamos Juntos!</span>
+              {t('footer.heading')}
+              <span className="gradient-heading">{t('footer.headingHighlight')}</span>
             </h3>
             <p className="font-mono text-sm leading-relaxed mb-8 max-w-lg mx-auto" style={{ color: 'var(--muted)' }}>
-              Sígueme en mis redes sociales para contenido sobre desarrollo web, marketing digital y mucho más.
+              {t('footer.subtitle')}
             </p>
           </FadeIn>
 
@@ -88,6 +90,7 @@ export default function Footer({ onShareClick }: FooterProps) {
                   href={s.url}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label={t('footer.socialAriaLabel', { name: s.name })}
                   className="group relative flex flex-col items-center gap-1.5 p-3.5 rounded-2xl transition-all duration-300 hover:-translate-y-1"
                   style={{
                     border: '1px solid var(--border)',
@@ -137,6 +140,7 @@ export default function Footer({ onShareClick }: FooterProps) {
             {/* Compartir */}
             <motion.button
               onClick={onShareClick}
+              aria-label={t('footer.shareAriaLabel')}
               className="group relative flex flex-col items-center gap-1.5 p-3.5 rounded-2xl transition-all duration-300 hover:-translate-y-1"
               style={{
                 border: '1px solid var(--border)',
@@ -165,13 +169,13 @@ export default function Footer({ onShareClick }: FooterProps) {
                 className="font-syne font-bold text-xs uppercase tracking-tight transition-colors duration-300"
                 style={{ color: 'var(--white)' }}
               >
-                Compartir
+                {t('footer.shareLabel')}
               </span>
               <span
                 className="font-mono text-[9px] tracking-widest uppercase transition-colors duration-300"
                 style={{ color: 'var(--muted)' }}
               >
-                Esta página
+                {t('footer.shareSublabel')}
               </span>
             </motion.button>
           </div>
@@ -185,9 +189,9 @@ export default function Footer({ onShareClick }: FooterProps) {
               className="font-mono font-light leading-relaxed text-sm"
               style={{ color: 'var(--muted)' }}
             >
-              Diseñado y desarrollado por{' '}
-              <strong className="font-syne font-bold" style={{ color: 'var(--text)' }}>Juan Pablo Gutiérrez Díaz</strong>
-              , especialista en desarrollo web y marketing digital, creando experiencias digitales ágiles y orientadas a resultados.
+              {t('footer.credit')}
+              <strong className="font-syne font-bold" style={{ color: 'var(--text)' }}>{t('footer.creditName')}</strong>
+              {t('footer.creditDesc')}
             </p>
           </FadeIn>
 
@@ -195,10 +199,10 @@ export default function Footer({ onShareClick }: FooterProps) {
           <div>
             <FadeIn y={15}>
               <span className="font-mono text-[10px] tracking-widest uppercase block mb-2" style={{ color: 'var(--muted)' }}>
-                Métodos de pago aceptados
+                {t('footer.paymentLabel')}
               </span>
               <div className="flex flex-wrap gap-x-3 gap-y-1">
-                {['PayPal', 'Transferencias', 'Llaves', 'PSE', 'Efecty', 'Tarjetas'].map((m) => (
+                {(t('footer.paymentMethods', { returnObjects: true }) as string[]).map((m) => (
                   <span
                     key={m}
                     className="font-mono text-[10px] tracking-widest px-2 py-0.5 rounded-full"
@@ -209,17 +213,20 @@ export default function Footer({ onShareClick }: FooterProps) {
                 ))}
               </div>
               <div className="flex flex-wrap gap-x-3 mt-3">
-                {['Sobre mí', 'Servicios', 'Conocimientos', 'Contacto'].map((l, i) => (
+                {['about', 'services', 'skills', 'contact'].map((key, i) => {
+                  const href = key === 'about' ? '#about' : key === 'skills' ? '#conocimientos' : `#${key === 'services' ? 'servicios' : key === 'contact' ? 'contacto' : key}`
+                  return (
                   <a
-                    key={l}
-                    href={`#${l === 'Sobre mí' ? 'about' : l === 'Conocimientos' ? 'conocimientos' : l.toLowerCase()}`}
+                    key={key}
+                    href={href}
                     className="font-mono text-[10px] tracking-widest uppercase transition-colors duration-200 hover:text-accent"
                     style={{ color: 'var(--muted)' }}
                   >
                     {i > 0 && <span className="mr-3" style={{ color: 'var(--border)' }}>/</span>}
-                    {l}
+                    {t('nav.' + key)}
                   </a>
-                ))}
+                  )
+                })}
               </div>
             </FadeIn>
           </div>
@@ -230,7 +237,7 @@ export default function Footer({ onShareClick }: FooterProps) {
           className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4"
           style={{ borderTop: '1px solid var(--border)' }}>
           <span className="font-mono text-xs tracking-widest text-center sm:text-left" style={{ color: 'var(--muted)' }}>
-            © 2026 Juan Pablo Gutiérrez Díaz. Todos los derechos reservados.
+            {t('footer.copyright')}
           </span>
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-1">
             <a

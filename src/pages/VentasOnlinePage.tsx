@@ -1,10 +1,19 @@
+import { useTranslation } from 'react-i18next'
 import { FaStar, FaBox } from 'react-icons/fa6'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
-import { VENTAS_ONLINE, TESTIMONIALS } from './serviceData'
 import { wa } from '../lib/whatsapp'
 
 export default function VentasOnlinePage() {
+  const { t } = useTranslation()
+  const data = {
+    hero: { title: t('servicePages.ventasOnline.hero.title'), subtitle: t('servicePages.ventasOnline.hero.subtitle') },
+    stores: t('servicePages.ventasOnline.stores', { returnObjects: true }) as { name: string; reputation: string; sales: string; desc: string; cta: string; url: string; color: string }[],
+    whyUs: t('servicePages.ventasOnline.whyUs', { returnObjects: true }) as { title: string; desc: string }[],
+    ctas: t('servicePages.ventasOnline.ctas', { returnObjects: true }) as { label: string; action: string }[],
+    testimonials: t('servicePages.ventasOnline.testimonials', { returnObjects: true }) as { name: string; role: string; rating: number; text: string }[],
+    sectionTitles: t('servicePages.ventasOnline.sectionTitles', { returnObjects: true }) as Record<string, string>,
+  }
   return (
     <main className="min-h-screen" style={{ background: 'var(--bg)' }}>
       {/* Hero Section */}
@@ -21,7 +30,7 @@ export default function VentasOnlinePage() {
               className="font-syne font-black uppercase leading-tight tracking-tight break-words gradient-heading mb-4 md:mb-6"
               style={{ fontSize: 'clamp(28px,5.5vw,72px)' }}
             >
-              {VENTAS_ONLINE.hero.title}
+              {data.hero.title}
             </h1>
           </FadeIn>
 
@@ -30,12 +39,12 @@ export default function VentasOnlinePage() {
               className="font-mono text-xs sm:text-sm md:text-base leading-relaxed mb-10 md:mb-12 max-w-2xl mx-auto px-2"
               style={{ color: 'var(--muted)' }}
             >
-              {VENTAS_ONLINE.hero.subtitle}
+              {data.hero.subtitle}
             </p>
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <ContactButton label="Conectar con mis Tiendas" href={wa('Hola, vine por el servicio de venta de garaje en línea')} />
+            <ContactButton label={data.sectionTitles.heroButton} href={wa('Hola, vine por el servicio de venta de garaje en línea')} />
           </FadeIn>
         </div>
       </section>
@@ -54,7 +63,7 @@ export default function VentasOnlinePage() {
               className="font-syne font-black uppercase text-center mb-4 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Tiendas Verificadas
+              {data.sectionTitles.stores}
             </h2>
           </FadeIn>
 
@@ -63,12 +72,12 @@ export default function VentasOnlinePage() {
               className="text-center font-mono text-sm mb-16"
               style={{ color: 'var(--muted)', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}
             >
-              Compra con confianza en plataformas consolidadas con alta reputación
+              {data.sectionTitles.storesDesc}
             </p>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-            {VENTAS_ONLINE.stores.map((store, i) => (
+            {data.stores.map((store, i) => (
               <FadeIn key={i} delay={0.15 * i}>
                 <div
                   className="p-8 rounded-2xl h-full transition-all duration-300 hover:translate-y-[-4px]"
@@ -134,12 +143,12 @@ export default function VentasOnlinePage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Por qué elegirnos
+              {data.sectionTitles.whyUs}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {VENTAS_ONLINE.whyUs.map((reason, i) => (
+            {data.whyUs.map((reason, i) => (
               <FadeIn key={i} delay={0.15 * i}>
                 <div
                   className="p-6 md:p-8 rounded-2xl"
@@ -182,12 +191,12 @@ export default function VentasOnlinePage() {
               className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Lo que dicen nuestros clientes
+              {data.sectionTitles.testimonials}
             </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((testimonial, i) => (
+            {data.testimonials.map((testimonial, i) => (
               <FadeIn key={i} delay={0.15 * i}>
                 <div
                   className="p-6 md:p-8 rounded-2xl"
@@ -238,7 +247,7 @@ export default function VentasOnlinePage() {
               className="font-syne font-black uppercase text-center mb-4 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
-              Tu próximo paso
+              {data.sectionTitles.nextStep}
             </h2>
           </FadeIn>
 
@@ -247,12 +256,12 @@ export default function VentasOnlinePage() {
               className="text-center font-mono text-sm mb-12 max-w-2xl mx-auto"
               style={{ color: 'var(--muted)' }}
             >
-              Elige cómo quieres comenzar tu experiencia de compra
+              {data.sectionTitles.nextStepDesc}
             </p>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
-            {VENTAS_ONLINE.ctas.map((cta, i) => {
+            {data.ctas.map((cta, i) => {
               const ctaUrl = cta.action === 'buyOnline'
                 ? 'https://listado.mercadolibre.com.co/_CustId_458406036?item_id=MCO1405179747&category_id=MCO180874&seller_id=458406036&client=recoview-selleritems&recos_listing=true'
                 : cta.action === 'marketplace'
@@ -309,7 +318,7 @@ export default function VentasOnlinePage() {
             className="font-syne font-black uppercase mb-6 tracking-tight break-words"
             style={{ fontSize: 'clamp(24px,3.5vw,48px)', color: 'var(--white)' }}
           >
-            ¿Necesitas asesoría personalizada?
+            {data.sectionTitles.ctaTitle}
           </h2>
         </FadeIn>
 
@@ -318,12 +327,12 @@ export default function VentasOnlinePage() {
             className="font-mono text-sm mb-8 max-w-2xl mx-auto"
             style={{ color: 'var(--muted)' }}
           >
-            Contacta conmigo y te guiaré para maximizar tus ventas en marketplace
+            {data.sectionTitles.ctaDesc}
           </p>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <ContactButton label="Consulta Gratuita" href={wa('Hola, vine por el servicio de venta de garaje en línea')} />
+          <ContactButton label={data.sectionTitles.ctaButton} href={wa('Hola, vine por el servicio de venta de garaje en línea')} />
         </FadeIn>
       </section>
     </main>

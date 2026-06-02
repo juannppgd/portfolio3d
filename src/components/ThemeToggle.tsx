@@ -1,7 +1,9 @@
+import { useTranslation } from 'react-i18next'
 import { useTheme } from '../context/ThemeContext'
 
 export default function ThemeToggle() {
   const { theme, toggle } = useTheme()
+  const { t } = useTranslation()
 
   return (
     <button
@@ -10,7 +12,7 @@ export default function ThemeToggle() {
       style={{ border: '1px solid var(--border)', color: 'var(--muted)' }}
       onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)' }}
       onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--muted)' }}
-      aria-label={theme === 'dark' ? 'Modo claro' : 'Modo oscuro'}
+      aria-label={theme === 'dark' ? t('themeToggle.lightMode') : t('themeToggle.darkMode')}
     >
       {theme === 'dark' ? (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
