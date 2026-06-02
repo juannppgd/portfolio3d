@@ -525,6 +525,21 @@
     "creditName": "Juan Pablo Gutiérrez Díaz",
     "creditDesc": ", specialist in web development and digital marketing, creating agile and results-oriented digital experiences.",
     "paymentLabel": "Accepted payment methods",
+    "socialCats": {
+      "Facebook": "Social",
+      "Instagram": "Visual Content",
+      "LinkedIn": "Professional",
+      "X": "Social Network",
+      "TikTok": "Short Videos",
+      "YouTube": "Videos",
+      "Telegram": "Secure Chat",
+      "Pinterest": "Inspiration",
+      "Snapchat": "Add Me",
+      "Kick": "Streaming",
+      "Discord": "Community",
+      "Threads": "Social",
+      "WhatsApp": "Chat"
+    },
     "copyright": "© 2026 Juan Pablo Gutiérrez Díaz. All rights reserved.",
     "paymentMethods": [
       "PayPal",
@@ -1198,47 +1213,47 @@
           "icon": "lock"
         },
         {
-          "label": "Calidad Garantizada",
+          "label": "Guaranteed Quality",
           "icon": "check"
         },
         {
-          "label": "Entregas a Tiempo",
+          "label": "On-Time Delivery",
           "icon": "stopwatch"
         }
       ],
       "helpWith": [
         {
           "title": "Academic Work",
-          "desc": "Ensayos, investigaciones y documentos",
+          "desc": "Essays, research and documents",
           "icon": "file"
         },
         {
-          "title": "Evaluaciones y talleres",
+          "title": "Evaluations and Workshops",
           "desc": "Complete preparation and development",
           "icon": "chart"
         },
         {
-          "title": "Proyectos universitarios",
+          "title": "University Projects",
           "desc": "From any academic discipline",
           "icon": "graduation"
         },
         {
-          "title": "Entregables virtuales",
-          "desc": "Plataformas y formatos online",
+          "title": "Virtual Deliverables",
+          "desc": "Platforms and online formats",
           "icon": "laptop"
         }
       ],
       "valueProposition": [
         {
           "title": "Academic Quality",
-          "desc": "Trabajos investigados, bien estructurados y con fuentes verificadas"
+          "desc": "Well-researched, well-structured work with verified sources"
         },
         {
-          "title": "Entrega a tiempo",
-          "desc": "Cumplimiento garantizado en fechas acordadas"
+          "title": "On-Time Delivery",
+          "desc": "Guaranteed compliance with agreed deadlines"
         },
         {
-          "title": "Confidentialidad",
+          "title": "Confidentiality",
           "desc": "Your information and work are protected with maximum privacy"
         }
       ],
@@ -1246,7 +1261,7 @@
         {
           "step": 1,
           "title": "Reception",
-          "desc": "Recibimos tu solicitud y detalles del trabajo"
+          "desc": "We receive your request and work details"
         },
         {
           "step": 2,
@@ -1255,37 +1270,37 @@
         },
         {
           "step": 3,
-          "title": "Desarrollo",
+          "title": "Development",
           "desc": "We create your work with quality and academic rigor"
         },
         {
           "step": 4,
-          "title": "Entrega",
-          "desc": "Entregamos el trabajo listo y revisado"
+          "title": "Delivery",
+          "desc": "We deliver the completed and reviewed work"
         }
       ],
       "audience": [
         {
-          "persona": "Estudiantes universitarios",
-          "desc": "Con trabajos complejos y plazos ajustados"
+          "persona": "University Students",
+          "desc": "With complex work and tight deadlines"
         },
         {
-          "persona": "Estudiantes virtuales",
-          "desc": "Que requieren apoyo flexible y oportuno"
+          "persona": "Online Students",
+          "desc": "Who require flexible and timely support"
         },
         {
-          "persona": "Personas con carga laboral",
-          "desc": "Sin tiempo disponible para estudios a tiempo completo"
+          "persona": "Working Professionals",
+          "desc": "Without time for full-time studies"
         }
       ],
       "guarantees": [
         {
-          "title": "Confidentialidad",
-          "desc": "Tu privacidad es absoluta"
+          "title": "Confidentiality",
+          "desc": "Your privacy is absolute"
         },
         {
-          "title": "Entregas a tiempo",
-          "desc": "Cumplimiento garantizado"
+          "title": "On-Time Delivery",
+          "desc": "Guaranteed compliance"
         },
         {
           "title": "Constant Communication",
@@ -1312,7 +1327,7 @@
       },
       "stats": [
         {
-          "label": "100% Personalizado",
+          "label": "100% Personalized",
           "value": "100%"
         },
         {
@@ -1320,7 +1335,7 @@
           "value": "5.0"
         },
         {
-          "label": "Estudiantes",
+          "label": "Students",
           "value": "+50"
         }
       ],
@@ -1337,23 +1352,23 @@
       },
       "benefits": [
         {
-          "title": "Clases 1 a 1",
+          "title": "1-on-1 Classes",
           "desc": "Dedicated attention just for you",
           "icon": "user"
         },
         {
-          "title": "Personalizado",
-          "desc": "Adaptado a tu nivel y ritmo",
+          "title": "Personalized",
+          "desc": "Adapted to your level and pace",
           "icon": "bullseye"
         },
         {
-          "title": "Support",
-          "desc": "Apoyo continuo entre clases",
+          "title": "Ongoing Support",
+          "desc": "Continuous support between classes",
           "icon": "handshake"
         },
         {
-          "title": "Proyectos reales",
-          "desc": "Aprende aplicando tus conocimientos",
+          "title": "Real Projects",
+          "desc": "Learn by applying your knowledge",
           "icon": "briefcase"
         }
       ],
@@ -1364,10 +1379,10 @@
         },
         {
           "persona": "Engineering Students",
-          "desc": "Que necesitan reforzar conceptos"
+          "desc": "Who need to reinforce concepts"
         },
         {
-          "persona": "Cambio de carrera",
+          "persona": "Career Changers",
           "desc": "People in career transition"
         }
       ],
@@ -1375,7 +1390,7 @@
         {
           "step": 1,
           "title": "Assessment",
-          "desc": "Evaluamos tu nivel y objetivos"
+          "desc": "We assess your level and goals"
         },
         {
           "step": 2,
@@ -1385,11 +1400,11 @@
         {
           "step": 3,
           "title": "Hands-on Classes",
-          "desc": "Aprendizaje basado en proyectos"
+          "desc": "Project-based learning"
         },
         {
           "step": 4,
-          "title": "Seguimiento",
+          "title": "Follow-up",
           "desc": "Continuous evaluation and adjustment"
         }
       ],
@@ -1404,7 +1419,7 @@
       "sectionTitles": {
         "heroButton": "Start Today",
         "featuredLearnTitle": "What you will learn",
-        "featuredBonusesTitle": "Bonificaciones",
+        "featuredBonusesTitle": "Bonuses",
         "featuredButton": "See all courses",
         "benefits": "Benefits",
         "techBadge": "Tech Stack",
@@ -1429,31 +1444,31 @@
       "stores": [
         {
           "name": "MercadoLibre",
-          "reputation": "4.9/5 estrellas",
-          "sales": "+500 ventas",
+          "reputation": "4.9/5 stars",
+          "sales": "+500 sales",
           "desc": "Established reputation",
-          "cta": "Visitar Tienda",
+          "cta": "Visit Store",
           "url": "https://listado.mercadolibre.com.co/_CustId_458406036?item_id=MCO1405179747&category_id=MCO180874&seller_id=458406036&client=recoview-selleritems&recos_listing=true",
           "color": "#FFB100"
         },
         {
           "name": "Facebook Marketplace",
-          "reputation": "4.8/5 estrellas",
-          "sales": "Free shipping",
-          "desc": "Trato directo local",
-          "cta": "Ver Tienda",
+          "reputation": "4.8/5 stars",
+          "sales": "Free Shipping",
+          "desc": "Direct local deal",
+          "cta": "See Store",
           "url": "https://www.facebook.com/marketplace/profile/100028152081570/",
           "color": "#1877F2"
         }
       ],
       "whyUs": [
         {
-          "title": "Productos verificados",
-          "desc": "Calidad garantizada en cada venta"
+          "title": "Verified Products",
+          "desc": "Guaranteed quality in every sale"
         },
         {
-          "title": "Pagos seguros",
-          "desc": "Plataformas de pago confiables"
+          "title": "Secure Payments",
+          "desc": "Reliable payment platforms"
         },
         {
           "title": "Reliable Shipping",
@@ -1461,7 +1476,7 @@
         },
         {
           "title": "24/7 Support",
-          "desc": "Support directo con clientes"
+          "desc": "Direct support with customers"
         }
       ],
       "ctas": [
@@ -1481,44 +1496,44 @@
       "testimonials": [
         {
           "name": "María González",
-          "role": "Estudiante",
+          "role": "Student",
           "rating": 5,
-          "text": "Excelente servicio, muy profesional"
+          "text": "Excellent service, very professional"
         },
         {
           "name": "Sofia Ramirez",
-          "role": "Emprendedora",
+          "role": "Entrepreneur",
           "rating": 5,
           "text": "Helped me grow my online business"
         },
         {
           "name": "Carlos Rodríguez",
-          "role": "Ingeniero",
+          "role": "Engineer",
           "rating": 5,
-          "text": "Gracias a Juan mis ventas se dispararon en MercadoLibre"
+          "text": "Thanks to Juan, my sales skyrocketed on MercadoLibre"
         },
         {
           "name": "Miguel Ángel",
-          "role": "Vendedor",
+          "role": "Seller",
           "rating": 5,
           "text": "My business took off and now I have more clients"
         },
         {
           "name": "Ana López",
-          "role": "Profesional",
+          "role": "Professional",
           "rating": 5,
           "text": "Now I am the number 1 seller in my category"
         },
         {
           "name": "Roberto Silva",
-          "role": "Estudiante Virtual",
+          "role": "Online Student",
           "rating": 5,
-          "text": "Service confiable y de calidad"
+          "text": "Reliable and quality service"
         }
       ],
       "sectionTitles": {
         "heroButton": "Start Selling",
-        "storesTitle": "Tiendas Verificadas",
+        "storesTitle": "Verified Stores",
         "storesDesc": "We help you set up on the most popular platforms.",
         "whyUs": "Why us?",
         "testimonials": "Testimonials",
@@ -1533,17 +1548,17 @@
     },
     "optimizacionCV": {
       "hero": {
-        "title": "CV Optimization",
-        "subtitle": "Transform your resume into a powerful tool that stands out to recruiters."
+        "title": "Get More Interviews with an ATS-Optimized Resume",
+        "subtitle": "I adjust your profile to pass AI filters and reach real recruiters."
       },
       "problem": {
         "title": "The Problem",
-        "stat": "75% of CVs are rejected by ATS systems",
-        "desc": "Most companies now use automated systems to filter CVs before a human ever sees them."
+        "stat": "75%",
+        "desc": "75% of applications are discarded by ATS systems due to incompatible formats."
       },
       "solution": {
-        "title": "Our Solution",
-        "desc": "We optimize your CV to pass ATS filters and impress recruiters."
+        "title": "The Solution",
+        "desc": "Complete optimization, strategic keywords, and persuasive design for humans."
       },
       "includes": [
         {
@@ -1570,27 +1585,27 @@
       },
       "sectionTitles": {
         "heroButton": "Optimize My CV Now",
-        "problemFootnote": "*Based on over 100 successful reviews.",
-        "solutionFootnote": "*Results may vary by industry and experience.",
-        "includes": "Includes",
-        "pricingBadge": "Most Popular",
-        "pricingTitle": "Investment",
-        "pricingDesc": "Choose the plan that best fits your needs",
-        "pricingButton": "Start Today",
-        "trustTitle": "Why Trust Us?",
-        "trustConfidencial": "Your information is secure and will not be shared.",
-        "trustRevisiones": "We adjust your CV until you are 100% satisfied.",
-        "trustSoporte": "Get your questions answered instantly by our team.",
-        "processTitle": "Process",
-        "processStep1": "Step 1",
-        "processStep1Desc": "Send us your current CV",
-        "processStep2": "Step 2",
-        "processStep2Desc": "We analyze and redesign",
-        "processStep3": "Step 3",
-        "processStep3Desc": "You receive your optimized CV",
-        "ctaTitle": "Ready to Stand Out?",
-        "ctaDesc": "Give your career the boost it deserves with a professional CV.",
-        "ctaButton": "I Want My CV"
+        "problemFootnote": "ATS (Applicant Tracking Systems) automatically filter CVs before a human ever sees them.",
+        "solutionFootnote": "Strategic optimization that bypasses AI filters and attracts real recruiters.",
+        "includes": "What's included",
+        "pricingBadge": "Special offer",
+        "pricingTitle": "Full Optimization",
+        "pricingDesc": "Includes professional design, optimized content, ATS analysis, and presentation recommendations",
+        "pricingButton": "Reserve Now",
+        "trustTitle": "Satisfaction guarantee",
+        "trustConfidencial": "100% Confidential",
+        "trustRevisiones": "Unlimited revisions",
+        "trustSoporte": "Continuous support",
+        "processTitle": "How it works",
+        "processStep1": "Initial Analysis",
+        "processStep1Desc": "We review your current CV and define goals",
+        "processStep2": "Strategic Optimization",
+        "processStep2Desc": "We apply keywords and ATS-optimized format",
+        "processStep3": "Delivery and Support",
+        "processStep3Desc": "You receive your optimized CV with presentation recommendations",
+        "ctaTitle": "Ready to Land That Interview?",
+        "ctaDesc": "Invest in your professional future. Special offer available for a limited time.",
+        "ctaButton": "Request Optimization"
       }
     },
     "plantillaGastos": {
@@ -1605,11 +1620,11 @@
       },
       "features": [
         {
-          "title": "Control Diario/Semanal/Mensual",
+          "title": "Daily/Weekly/Monthly View",
           "icon": "calendar"
         },
         {
-          "title": "Colores Inteligentes",
+          "title": "Smart Colors",
           "icon": "palette"
         },
         {
@@ -1617,7 +1632,7 @@
           "icon": "chart"
         },
         {
-          "title": "Regla 50/30/20",
+          "title": "50/30/20 Rule",
           "icon": "scale"
         },
         {
@@ -1625,32 +1640,32 @@
           "icon": "mobile"
         },
         {
-          "title": "Acceso en la nube",
+          "title": "Cloud Access",
           "icon": "cloud"
         }
       ],
       "mockData": {
         "categories": [
           {
-            "name": "Comida",
+            "name": "Food",
             "emoji": "pizzaSlice",
             "amount": 45000,
             "status": "circleCheck"
           },
           {
-            "name": "Supermercado",
+            "name": "Groceries",
             "emoji": "cart",
             "amount": 120000,
             "status": "circleXmark"
           },
           {
-            "name": "Transporte",
+            "name": "Transport",
             "emoji": "car",
             "amount": 35000,
             "status": "circleCheck"
           },
           {
-            "name": "Entretenimiento",
+            "name": "Entertainment",
             "emoji": "gamepad",
             "amount": 25000,
             "status": "circleCheck"
@@ -1658,11 +1673,11 @@
         ],
         "weekly": [
           {
-            "day": "Lunes",
+            "day": "Monday",
             "percent": 85
           },
           {
-            "day": "Martes",
+            "day": "Tuesday",
             "percent": 92
           },
           {
@@ -1670,11 +1685,11 @@
             "percent": 78
           },
           {
-            "day": "Jueves",
+            "day": "Thursday",
             "percent": 88
           },
           {
-            "day": "Viernes",
+            "day": "Friday",
             "percent": 95
           },
           {
@@ -1682,23 +1697,23 @@
             "percent": 65
           },
           {
-            "day": "Domingo",
+            "day": "Sunday",
             "percent": 72
           }
         ],
         "distribution": [
           {
-            "category": "Necesidades (50%)",
+            "category": "Needs (50%)",
             "percent": 50,
             "color": "#4F7FFF"
           },
           {
-            "category": "Deseos (30%)",
+            "category": "Wants (30%)",
             "percent": 30,
             "color": "#00E5C3"
           },
           {
-            "category": "Ahorros (20%)",
+            "category": "Savings (20%)",
             "percent": 20,
             "color": "#FF6B6B"
           }
@@ -1706,8 +1721,8 @@
       },
       "transformations": [
         {
-          "metric": "$1.200 USA",
-          "desc": "Ahorro promedio de nuestros usuarios"
+          "metric": "$1.200 USD",
+          "desc": "Average savings of our users"
         },
         {
           "metric": "100%",
@@ -1715,7 +1730,7 @@
         },
         {
           "metric": "7 days",
-          "desc": "Tiempo promedio para notar cambio"
+          "desc": "Average time to notice a change"
         },
         {
           "metric": "95%",
@@ -1725,42 +1740,42 @@
       "testimonialsGastos": [
         {
           "name": "Ana G.",
-          "badge": "+$200 ahorrado",
+          "badge": "+$200 saved",
           "text": "I finally see where my money goes"
         },
         {
           "name": "Carlos M.",
-          "badge": "Sin sorpresas",
-          "text": "He mejorado mis finanzas drasticamente"
+          "badge": "No surprises",
+          "text": "I improved my finances drastically"
         },
         {
           "name": "Laura S.",
-          "badge": "+$150/mes",
-          "text": "Herramienta fundamental"
+          "badge": "+$150/mo",
+          "text": "A fundamental tool"
         },
         {
           "name": "Juan P.",
-          "badge": "Control total",
+          "badge": "Full control",
           "text": "Changed my financial life"
         },
         {
           "name": "Diego R.",
-          "badge": "+$180/mes",
+          "badge": "+$180/mo",
           "text": "Highly recommended"
         },
         {
           "name": "Sofia L.",
-          "badge": "100% Útil",
-          "text": "La mejor compra que hice"
+          "badge": "100% Useful",
+          "text": "The best purchase I ever made"
         }
       ],
       "science": [
         {
-          "title": "Finanzas Conductuales",
+          "title": "Behavioral Finance",
           "desc": "Money decisions based on psychology"
         },
         {
-          "title": "Refuerzo Positivo (Dopamina)",
+          "title": "Positive Reinforcement (Dopamine)",
           "desc": "Seeing progress motivates you to save more"
         },
         {
@@ -1768,7 +1783,7 @@
           "desc": "Clear charts = better control"
         },
         {
-          "title": "Consistencia",
+          "title": "Consistency",
           "desc": "Daily habits create permanent changes"
         }
       ],
@@ -1786,11 +1801,11 @@
           "a": "Immediately after confirming payment, you will receive an email with the template download in Excel."
         },
         {
-          "q": "Funciona en Google Sheets?",
+          "q": "Does it work in Google Sheets?",
           "a": "Yes, you can easily convert it to Google Sheets or use it directly in Excel/LibreOffice."
         },
         {
-          "q": "Viene con tutoriales?",
+          "q": "Does it include tutorials?",
           "a": "Yes, it includes step-by-step tutorial videos and a complete usage guide."
         },
         {
@@ -1833,17 +1848,17 @@
           "value": "+1.2k"
         },
         {
-          "label": "Usuarios Activos",
+          "label": "Active Users",
           "value": "+850"
         }
       ],
       "features": [
         {
-          "title": "Progreso en %",
+          "title": "Progress in %",
           "icon": "chartLine"
         },
         {
-          "title": "Checkboxes Visuales",
+          "title": "Visual Checkboxes",
           "icon": "circleCheck"
         },
         {
@@ -1851,15 +1866,15 @@
           "icon": "chart"
         },
         {
-          "title": "Heatmap Anual",
+          "title": "Yearly Heatmap",
           "icon": "fire"
         },
         {
-          "title": "Metas y Rachas",
+          "title": "Goals and Streaks",
           "icon": "bullseye"
         },
         {
-          "title": "Copiable Mes a Mes",
+          "title": "Copy Month to Month",
           "icon": "clipboard"
         }
       ],
@@ -1879,7 +1894,7 @@
             ]
           },
           {
-            "name": "Leer",
+            "name": "Read",
             "emoji": "book",
             "progress": [
               true,
@@ -1905,7 +1920,7 @@
             ]
           },
           {
-            "name": "Escribir",
+            "name": "Write",
             "emoji": "pen",
             "progress": [
               true,
@@ -1932,13 +1947,13 @@
         },
         {
           "name": "Carlos R.",
-          "metric": "+3x Productividad",
+          "metric": "+3x Productivity",
           "text": "Completely changed my routine"
         },
         {
           "name": "Sofia L.",
-          "metric": "98% Consistencia",
-          "text": "Lo mejor para mantener disciplina"
+          "metric": "98% Consistency",
+          "text": "The best way to stay disciplined"
         },
         {
           "name": "Andres M.",
@@ -1952,8 +1967,8 @@
         },
         {
           "name": "Laura P.",
-          "metric": "100% Enero",
-          "text": "Enero fue mi mejor mes"
+          "metric": "100% January",
+          "text": "January was my best month"
         }
       ],
       "science": [
@@ -1962,16 +1977,16 @@
           "desc": "James Clear - Small changes = Big results"
         },
         {
-          "title": "Refuerzo por Dopamina",
-          "desc": "Ver checkboxes activa recompensa cerebral"
+          "title": "Dopamine Reinforcement",
+          "desc": "Seeing checkboxes activates brain reward"
         },
         {
-          "title": "Rachas y Momentum",
+          "title": "Streaks and Momentum",
           "desc": "\"Never break the chain\" - Keep the streak"
         },
         {
           "title": "Daily Visualization",
-          "desc": "Lo que ves, lo haces"
+          "desc": "What you see, you do"
         }
       ],
       "price": {
@@ -2024,28 +2039,28 @@
       "strengths": [
         {
           "icon": "shield",
-          "title": "100% Privado",
+          "title": "100% Private",
           "desc": "Your data never leaves your computer."
         },
         {
           "icon": "infinity",
-          "title": "Ilimitado",
-          "desc": "Sin costo por API"
+          "title": "Unlimited",
+          "desc": "No API costs"
         },
         {
           "icon": "money",
-          "title": "Sin Suscripciones",
-          "desc": "El modelo es tuyo"
+          "title": "No Subscriptions",
+          "desc": "The model is yours"
         },
         {
           "icon": "globe",
-          "title": "Offline Nativo",
+          "title": "Native Offline",
           "desc": "Works offline"
         },
         {
           "icon": "bolt",
-          "title": "Velocidad Local",
-          "desc": "Uso de GPU"
+          "title": "Local Speed",
+          "desc": "GPU powered"
         },
         {
           "icon": "bullseye",
@@ -2078,7 +2093,7 @@
       "b2b": {
         "title": "B2B Solutions",
         "features": [
-          "Automatizar respuestas con tono de marca",
+          "Automate responses with brand tone",
           "Internal document classification",
           "Specialized code assistant",
           "Data extraction from reports"
@@ -2087,25 +2102,25 @@
       },
       "useCases": [
         {
-          "title": "Desarrollador Independiente",
+          "title": "Independent Developer",
           "desc": "Unlimited private code assistant"
         },
         {
           "title": "Researcher/Academic",
-          "desc": "Procesa papers sin compartir datos"
+          "desc": "Process papers without sharing data"
         },
         {
-          "title": "Empresa de Services",
-          "desc": "Chatbot interno con datos confidenciales"
+          "title": "Service Company",
+          "desc": "Internal chatbot with confidential data"
         },
         {
-          "title": "Analista de Datos",
+          "title": "Data Analyst",
           "desc": "Process sensitive information locally"
         }
       ],
       "faqs": [
         {
-          "q": "Necesito una GPU?",
+          "q": "Do I need a GPU?",
           "a": "Not required, but we recommend GPU for better speed. CPU works but is slower."
         },
         {
@@ -2113,11 +2128,11 @@
           "a": "3 GB RAM minimum for small models. 8+ GB for more powerful models."
         },
         {
-          "q": "Es realmente privado?",
+          "q": "Is it really private?",
           "a": "Yes, 100%. Everything runs locally. No data leaves your machine."
         },
         {
-          "q": "Puedo usar esto para negocios?",
+          "q": "Can I use this for business?",
           "a": "Absolutely. Businesses use local AI for chatbots, analysis, and classification without exposing data."
         }
       ],

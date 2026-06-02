@@ -131,7 +131,7 @@ export default function Footer({ onShareClick }: FooterProps) {
                     className="font-mono text-[9px] tracking-widest uppercase transition-colors duration-300"
                     style={{ color: 'var(--muted)' }}
                   >
-                    {s.cat}
+                    {t('footer.socialCats.' + s.name)}
                   </span>
                 </motion.a>
               )
