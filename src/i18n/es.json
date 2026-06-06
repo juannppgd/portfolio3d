@@ -508,54 +508,54 @@
   "reviews": {
     "items": [
       {
-        "name": "María González",
-        "role": "Emprendedora Digital — Tienda Online",
-        "text": "Juan Pablo hizo realidad mi sueño de tener una tienda en línea. Su trabajo es increíble, todo se ve perfecto y fácil de usar. Mis ventas subieron mucho gracias a él."
+        "name": "Pedro Martínez",
+        "role": "Propietario — Restaurante Local",
+        "text": "Desde que Juan Pablo me creó la página web, mi restaurante aparece en Google y los clientes llegan solos. El sitio es rápido, se ve profesional y hasta puedo actualizar el menú yo mismo. Mis reservas se duplicaron en el primer mes."
       },
       {
-        "name": "Sofia Ramírez",
-        "role": "Estudiante Universitaria — Proyecto Académico",
-        "text": "Juan Pablo me ayudó con mi tesis de grado. Su apoyo en el desarrollo académico fue excepcional, entregó todo a tiempo y con la calidad que necesitaba. ¡Altamente recomendado!"
+        "name": "María González",
+        "role": "Emprendedora Digital — Tienda Online",
+        "text": "Juan Pablo hizo realidad mi sueño de tener una tienda en línea. Todo se ve increíble, es fácil de usar y mis clientes me dicen que la navegación es muy intuitiva. Mis ventas subieron mucho gracias a él."
       },
       {
         "name": "Carlos Rodríguez",
-        "role": "Gerente de Marketing — Tech",
-        "text": "Trabajar con Juan fue una gran experiencia. Sus ideas para promocionar nuestro negocio nos dieron mucho más alcance y conexión con la gente."
-      },
-      {
-        "name": "Miguel Ángel",
-        "role": "Desarrollador Junior — Clases de Programación",
-        "text": "Las clases personalizadas de Juan Pablo fueron increíbles. Aprendí programación de manera práctica y aplicada. Los materiales y el certificado que incluye son un plus excelente."
-      },
-      {
-        "name": "Ana López",
-        "role": "Freelancer — Diseñadora Gráfica",
-        "text": "Mi nuevo portafolio luce fantástico. Juan Pa lo hizo todo tan bonito y profesional que ahora recibo más trabajos. ¡Estoy encantada!"
-      },
-      {
-        "name": "Roberto Silva",
-        "role": "Emprendedor — Venta Online",
-        "text": "Juan Pablo optimizó mi tienda en MercadoLibre y otros marketplaces. Sus estrategias de publicación y gestión hicieron que mis ventas se multiplicaran. ¡Un experto en ventas digitales!"
-      },
-      {
-        "name": "Pedro Martínez",
-        "role": "Propietario — Restaurante Local",
-        "text": "Desde que tengo mi sitio web, más personas vienen a mi restaurante. Todo está cuidado al detalle y es muy fácil de navegar tanto en móvil como en computadora."
-      },
-      {
-        "name": "Isabella Morales",
-        "role": "Profesional — Asesoría de CV",
-        "text": "Juan Pablo creó mi CV profesional y optimizado para ATS. Su asesoría fue clave para conseguir el trabajo de mis sueños. ¡Totalmente transformó mi presentación laboral!"
+        "role": "Gerente de Marketing — Empresa Tech",
+        "text": "Trabajar con Juan fue un acierto total. Sus estrategias de marketing digital nos dieron mucho más alcance y conexión con nuestra audiencia. Las campañas que diseñó superaron todas nuestras expectativas en engagement y conversión."
       },
       {
         "name": "Laura Sánchez",
         "role": "Directora de Marketing — Startup Innovadora",
-        "text": "Juan Pablo logra que cada foto y video se vean impecables. Su edición realza la calidad y aporta un toque creativo que hace destacar nuestro contenido."
+        "text": "Juan Pablo transformó nuestra presencia en redes sociales. Su enfoque en video y contenido visual hizo que nuestras campañas destacaran. Los resultados en alcance y leads fueron increíbles desde la primera semana."
       },
       {
-        "name": "Diego Torres",
-        "role": "Consultor Independiente — Consultoría Digital",
-        "text": "La mezcla de creatividad y resultados es perfecta. Mi sitio web es rápido, atractivo y realmente trae más clientes."
+        "name": "Sofia Ramírez",
+        "role": "Estudiante Universitaria",
+        "text": "Juan Pablo me ayudó con mi proyecto de grado y fue una experiencia excelente. Entregó todo a tiempo con la calidad académica que necesitaba. Obtuve una gran calificación y eso me ayudó a graduarme con honores. Muy recomendado."
+      },
+      {
+        "name": "Miguel Ángel",
+        "role": "Desarrollador Junior",
+        "text": "Las clases personalizadas de Juan Pablo fueron increíbles. Aprendí React y Python en pocas semanas con ejercicios prácticos sobre proyectos reales. El material y el certificado me ayudaron a conseguir mi primer empleo como desarrollador."
+      },
+      {
+        "name": "Roberto Silva",
+        "role": "Emprendedor — Venta Online",
+        "text": "Juan Pablo optimizó mi tienda en MercadoLibre y Facebook Marketplace. Sus estrategias de publicación y gestión de inventario multiplicaron mis ventas en el primer mes. Un verdadero experto en ventas digitales con resultados medibles."
+      },
+      {
+        "name": "Isabella Morales",
+        "role": "Profesional — Sector Corporativo",
+        "text": "Juan Pablo rediseñó mi CV profesional optimizado para filtros ATS. Su asesoría fue clave para conseguir el trabajo que quería. Me explicó cada cambio y el resultado habla solo: quedé preseleccionada en la primera ronda."
+      },
+      {
+        "name": "Andrés Torres",
+        "role": "Freelancer — Finanzas Personales",
+        "text": "La plantilla de control de gastos de Juan Pablo me ayudó a ordenar mis finanzas en cuestión de días. Los gráficos son súper intuitivos y la regla 50/30/20 me permitió ahorrar sin esfuerzo. La mejor inversión para mi productividad."
+      },
+      {
+        "name": "Felipe Herrera",
+        "role": "CEO — Startup Tecnológica",
+        "text": "Implementamos IA local con Juan Pablo y fue un antes y un después. Procesamos datos confidenciales sin enviarlos a la nube, sin suscripciones mensuales y con velocidad impresionante en nuestra propia GPU. Privacidad total y sin límites."
       }
     ],
     "ariaLabel": "Ver reseña {{n}}",
@@ -588,7 +588,8 @@
     "errorName": "El nombre es obligatorio",
     "errorEmail": "El correo es obligatorio",
     "errorEmailInvalid": "Formato de correo inválido",
-    "errorMessage": "El mensaje es obligatorio"
+    "errorMessage": "El mensaje es obligatorio",
+    "errorSubmit": "Error al enviar. Intenta de nuevo o escríbeme directamente a {{email}}"
   },
   "footer": {
     "heading": "¡Conectemos y ",
@@ -629,8 +630,8 @@
     "heading": "Comparte este ",
     "headingHighlight": "sitio",
     "subtitle": "Elige cómo quieres compartir esta página",
-    "copyLabel": "Copiar enlace",
-    "copiedLabel": "¡Copiado!",
+    "copyLink": "Copiar enlace",
+    "copied": "¡Copiado!",
     "close": "Cerrar",
     "ariaClose": "Cerrar"
   },

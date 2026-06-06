@@ -4,7 +4,7 @@ import path from 'path'
 const ROOT = path.resolve(process.cwd())
 const seoFile = path.join(ROOT, 'src', 'data', 'pageSeo.ts')
 const outputFile = path.join(ROOT, 'public', 'sitemap.xml')
-const SITE_URL = 'https://juanpablogd.com'
+const SITE_URL = process.env.VITE_SITE_URL || 'https://juanpablogd.com'
 
 const source = fs.readFileSync(seoFile, 'utf8')
 const paths = Array.from(source.matchAll(/path\s*:\s*['\"]([^'\"]+)['\"]/g))

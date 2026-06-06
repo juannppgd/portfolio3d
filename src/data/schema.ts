@@ -1,4 +1,4 @@
-const SITE_URL = 'https://juanpablogd.com'
+import { SITE_URL } from '../lib/constants'
 const BASE = ''
 
 export const personSchema = {

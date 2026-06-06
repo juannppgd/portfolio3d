@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
+import { WHATSAPP_NUMBER, CONTACT_EMAIL, SOCIAL } from '../lib/constants'
 
 type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local'
 
@@ -195,13 +196,13 @@ export default function Chatbot({
         setTimeout(() => {
           switch (action) {
             case 'email':
-              window.open('mailto:contact.juannppgd@gmail.com?subject=Consulta%20desde%20el%20chatbot&body=Hola%20Juan%20Pablo,%0A%0AMe%20contacto%20desde%20tu%20portfolio%20web.', '_blank')
+              window.open(`mailto:${CONTACT_EMAIL}?subject=Consulta%20desde%20el%20chatbot&body=Hola%20Juan%20Pablo,%0A%0AMe%20contacto%20desde%20tu%20portfolio%20web.`, '_blank')
               break
             case 'whatsapp':
-              window.open('https://wa.me/573219541241?text=Hola%20Juan%20Pablo,%20me%20contacto%20desde%20tu%20portfolio%20web.', '_blank')
+              window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Juan%20Pablo,%20me%20contacto%20desde%20tu%20portfolio%20web.`, '_blank')
               break
             case 'youtube':
-              window.open('https://www.youtube.com/@juannppgd', '_blank')
+              window.open(SOCIAL.YOUTUBE, '_blank')
               break
             case 'share':
               onShare?.()
@@ -308,6 +309,7 @@ export default function Chatbot({
               </div>
 
               <div
+                aria-live="polite"
                 className="flex-1 overflow-y-auto p-3 md:p-4 space-y-3 md:space-y-4"
                 style={{ background: 'var(--bg)' }}
               >

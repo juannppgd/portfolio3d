@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaFacebook, FaWhatsapp, FaTelegram } from 'react-icons/fa'
+import { SITE_URL } from '../lib/constants'
 
 interface ShareModalProps {
   isOpen: boolean
@@ -23,7 +24,7 @@ export default function ShareModal({ isOpen, onClose }: ShareModalProps) {
     return () => document.removeEventListener('keydown', handleKey)
   }, [isOpen, onClose])
 
-  const url = 'https://juanpablogd.com/'
+  const url = SITE_URL + '/'
   const title = 'Juan Pablo Portfolio'
 
   const shareLinks = {

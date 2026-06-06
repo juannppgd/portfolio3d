@@ -3,10 +3,11 @@ import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaLinkedin, FaInstagram } from 'react-icons/fa'
 import FadeIn from '../components/FadeIn'
+import { EMAILJS, CONTACT_EMAIL, SOCIAL } from '../lib/constants'
 
 const SOCIAL_LINKS = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/juannppgd', color: '#0A66C2', icon: 'in' },
-  { label: 'Instagram', href: 'https://www.instagram.com/juannppgd', color: '#E4405F', icon: 'ig' },
+  { label: 'LinkedIn', href: SOCIAL.LINKEDIN, color: '#0A66C2', icon: 'in' },
+  { label: 'Instagram', href: SOCIAL.INSTAGRAM, color: '#E4405F', icon: 'ig' },
 ]
 
 const validateEmail = (email: string) => {
@@ -20,6 +21,7 @@ export default function ContactSection() {
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showModal, setShowModal] = useState(false)
+  const [submitError, setSubmitError] = useState('')
   const modalRefC = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -41,7 +43,8 @@ export default function ContactSection() {
   const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const honeypot = (e.currentTarget as any).honeypot?.value ?? ''
+    const form = e.currentTarget as HTMLFormElement
+    const honeypot = (form.querySelector<HTMLInputElement>('input[name="honeypot"]')?.value ?? '')
     if (honeypot) return
 
     const newErrors: Record<string, string> = {}
@@ -57,28 +60,27 @@ export default function ContactSection() {
 
     try {
       const emailjs = await import('@emailjs/browser')
-      const serviceId = 'service_s5qyr4s'
-      const publicKey = 'gUsdYXpB3K94QxqYM'
 
       await Promise.allSettled([
-        emailjs.send(serviceId, 'template_oyoptw3', {
+        emailjs.send(EMAILJS.SERVICE_ID, EMAILJS.TEMPLATE_AUTO_REPLY, {
           to_email: formData.email,
           from_name: 'Juan Pablo',
           name: formData.name,
           message: formData.message,
-        }, publicKey),
-        emailjs.send(serviceId, 'template_1hbf3wn', {
+        }, EMAILJS.PUBLIC_KEY),
+        emailjs.send(EMAILJS.SERVICE_ID, EMAILJS.TEMPLATE_NOTIFICATION, {
           name: formData.name,
           email: formData.email,
           message: formData.message,
-        }, publicKey),
+        }, EMAILJS.PUBLIC_KEY),
       ])
 
       setFormData({ name: '', email: '', message: '' })
+      setSubmitError('')
       setShowModal(true)
       setTimeout(() => setShowModal(false), 6000)
     } catch {
-      // Silent fail
+      setSubmitError(t('contact.errorSubmit', { email: CONTACT_EMAIL }))
     } finally {
       setIsSubmitting(false)
     }
@@ -120,7 +122,7 @@ export default function ContactSection() {
                   {t('contact.emailDesc')}
                 </p>
                 <a
-                  href="mailto:contact.juannppgd@gmail.com"
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="inline-flex items-center gap-2 font-syne font-bold text-sm tracking-tight transition-colors duration-200 hover:text-accent mb-10"
                   style={{ color: 'var(--white)' }}
                 >
@@ -128,7 +130,7 @@ export default function ContactSection() {
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                     <polyline points="22,6 12,13 2,6" />
                   </svg>
-                  contact.juannppgd@gmail.com
+                  {CONTACT_EMAIL}
                 </a>
               </FadeIn>
 
@@ -306,6 +308,17 @@ export default function ContactSection() {
                     )}
                   </div>
                 </FadeIn>
+
+                {submitError && (
+                  <motion.p
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="font-mono text-xs text-center"
+                    style={{ color: '#EF4444' }}
+                  >
+                    {submitError}
+                  </motion.p>
+                )}
 
                 <FadeIn y={10} delay={0.15}>
                   <motion.button

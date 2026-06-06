@@ -452,34 +452,54 @@
     "nextAria": "Next review",
     "items": [
       {
-        "name": "María González",
-        "role": "Student",
-        "text": "Excellent service, very professional"
+        "name": "Pedro Martínez",
+        "role": "Owner — Local Restaurant",
+        "text": "Ever since Juan Pablo built my website, my restaurant shows up on Google and customers come in on their own. The site is fast, looks professional, and I can even update the menu myself. My reservations doubled in the first month."
       },
       {
-        "name": "Sofia Ramírez",
-        "role": "Entrepreneur",
-        "text": "Helped me grow my online business"
+        "name": "María González",
+        "role": "Digital Entrepreneur — Online Store",
+        "text": "Juan Pablo made my dream of having an online store come true. Everything looks incredible, it's easy to use, and my customers tell me the navigation is very intuitive. My sales went up significantly thanks to him."
       },
       {
         "name": "Carlos Rodríguez",
-        "role": "Engineer",
-        "text": "Thanks to Juan my sales skyrocketed on MercadoLibre"
+        "role": "Marketing Manager — Tech Company",
+        "text": "Working with Juan was a great decision. His digital marketing strategies gave us much more reach and a real connection with our audience. The campaigns he designed exceeded all our expectations in both engagement and conversions."
+      },
+      {
+        "name": "Laura Sánchez",
+        "role": "Marketing Director — Innovative Startup",
+        "text": "Juan Pablo transformed our social media presence. His focus on video and visual content made our campaigns stand out. The results in reach and leads were incredible from the very first week."
+      },
+      {
+        "name": "Sofia Ramírez",
+        "role": "University Student",
+        "text": "Juan Pablo helped me with my graduation project and it was an excellent experience. He delivered everything on time with the academic quality I needed. I got a great grade and it helped me graduate with honors. Highly recommended."
       },
       {
         "name": "Miguel Ángel",
-        "role": "Seller",
-        "text": "My business got a boost and now I have more clients"
-      },
-      {
-        "name": "Ana López",
-        "role": "Professional",
-        "text": "Now I'm the number 1 seller in my category"
+        "role": "Junior Developer",
+        "text": "Juan Pablo's personalized classes were amazing. I learned React and Python in just a few weeks with hands-on exercises on real projects. The materials and certificate helped me land my first job as a developer."
       },
       {
         "name": "Roberto Silva",
-        "role": "Virtual Student",
-        "text": "Reliable and quality service"
+        "role": "Entrepreneur — Online Sales",
+        "text": "Juan Pablo optimized my store on MercadoLibre and Facebook Marketplace. His listing and inventory management strategies multiplied my sales in the first month. A true digital sales expert with measurable results."
+      },
+      {
+        "name": "Isabella Morales",
+        "role": "Professional — Corporate Sector",
+        "text": "Juan Pablo redesigned my professional resume optimized for ATS filters. His consulting was key to getting the job I wanted. He explained every change and the results speak for themselves: I was shortlisted in the first round."
+      },
+      {
+        "name": "Andrés Torres",
+        "role": "Freelancer — Personal Finance",
+        "text": "Juan Pablo's expense control template helped me get my finances in order in just a few days. The charts are super intuitive and the 50/30/20 rule let me save without effort. The best investment I've made for my productivity."
+      },
+      {
+        "name": "Felipe Herrera",
+        "role": "CEO — Tech Startup",
+        "text": "Implementing local AI with Juan Pablo was a game changer. We now process sensitive data without sending it to the cloud, no monthly subscriptions, and with impressive speed on our own GPU. Total privacy and zero usage limits."
       }
     ]
   },
@@ -509,7 +529,8 @@
     "errorName": "Name is required",
     "errorEmail": "Email is required",
     "errorEmailInvalid": "Invalid email format",
-    "errorMessage": "Message is required"
+    "errorMessage": "Message is required",
+    "errorSubmit": "Something went wrong. Try again or email me directly at {{email}}"
   },
   "themeToggle": {
     "lightMode": "Switch to light mode",
@@ -1266,7 +1287,7 @@
         {
           "step": 2,
           "title": "Analysis",
-          "desc": "Evaluamos requerimientos y definimos estrategia"
+          "desc": "We assess requirements and define a strategy"
         },
         {
           "step": 3,
@@ -1394,7 +1415,7 @@
         },
         {
           "step": 2,
-          "title": "Plan Personalizado",
+          "title": "Custom Plan",
           "desc": "Learning path design"
         },
         {

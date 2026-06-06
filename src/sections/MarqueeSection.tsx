@@ -1,7 +1,8 @@
-import { useEffect, useRef, useCallback } from 'react'
+import { useEffect, useRef, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { MARQUEE_ROW1, MARQUEE_ROW2 } from '../data'
 
+const FALLBACK_GIF = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
 const COPIES = 4
 
 function buildRow(arr: string[]) {
@@ -87,6 +88,17 @@ export default function MarqueeSection() {
     }
   }, [onPointerMove, onPointerUp])
 
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set)
+
+  const handleImageError = useCallback((key: string) => {
+    setFailedImages(prev => {
+      if (prev.has(key)) return prev
+      const next = new Set(prev)
+      next.add(key)
+      return next
+    })
+  }, [])
+
   return (
     <section
       ref={sectionRef}
@@ -117,23 +129,27 @@ export default function MarqueeSection() {
           onMouseDown={(e) => onPointerDown(e, 'row1')}
           onTouchStart={(e) => onPointerDown(e, 'row1')}
         >
-          {buildRow(MARQUEE_ROW1).map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt={t('projects.alt')}
-              loading="eager"
-              decoding="async"
-              draggable={false}
-              className="flex-shrink-0 rounded-2xl object-cover pointer-events-none"
-              style={{
-                width: 340,
-                height: 210,
-                border: '1px solid var(--border)',
-                filter: 'brightness(0.8) saturate(0.9)',
-              }}
-            />
-          ))}
+          {buildRow(MARQUEE_ROW1).map((src, i) => {
+            const key = `r1-${i}`
+            return (
+              <img
+                key={key}
+                src={failedImages.has(key) ? FALLBACK_GIF : src}
+                alt={t('projects.alt')}
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+                onError={() => handleImageError(key)}
+                className="flex-shrink-0 rounded-2xl object-cover pointer-events-none"
+                style={{
+                  width: 340,
+                  height: 210,
+                  border: '1px solid var(--border)',
+                  filter: 'brightness(0.8) saturate(0.9)',
+                }}
+              />
+            )
+          })}
         </div>
       </div>
 
@@ -146,23 +162,27 @@ export default function MarqueeSection() {
           onMouseDown={(e) => onPointerDown(e, 'row2')}
           onTouchStart={(e) => onPointerDown(e, 'row2')}
         >
-          {buildRow(MARQUEE_ROW2).map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt={t('projects.alt')}
-              loading="eager"
-              decoding="async"
-              draggable={false}
-              className="flex-shrink-0 rounded-2xl object-cover pointer-events-none"
-              style={{
-                width: 340,
-                height: 210,
-                border: '1px solid var(--border)',
-                filter: 'brightness(0.8) saturate(0.9)',
-              }}
-            />
-          ))}
+          {buildRow(MARQUEE_ROW2).map((src, i) => {
+            const key = `r2-${i}`
+            return (
+              <img
+                key={key}
+                src={failedImages.has(key) ? FALLBACK_GIF : src}
+                alt={t('projects.alt')}
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+                onError={() => handleImageError(key)}
+                className="flex-shrink-0 rounded-2xl object-cover pointer-events-none"
+                style={{
+                  width: 340,
+                  height: 210,
+                  border: '1px solid var(--border)',
+                  filter: 'brightness(0.8) saturate(0.9)',
+                }}
+              />
+            )
+          })}
         </div>
       </div>
 

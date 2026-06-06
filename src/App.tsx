@@ -15,13 +15,13 @@ import {
   productSchema,
   faqPageSchema,
 } from './data/schema'
+import { GA_ID } from './lib/constants'
 
 function useGtagPageview() {
   const location = useLocation()
   useEffect(() => {
-    const gtag = (window as any).gtag
-    if (gtag) {
-      gtag('config', 'G-DY35DM1SRJ', { page_path: location.pathname + location.search })
+    if (typeof window.gtag === 'function') {
+      window.gtag('config', GA_ID, { page_path: location.pathname + location.search })
     }
   }, [location])
 }
@@ -103,7 +103,7 @@ function PageSEO({ page }: { page: Page }) {
   )
 }
 
-function HomePage() {
+function HomePage({ onShareClick }: { onShareClick?: () => void }) {
   const navigate = useNavigate()
   const location = useLocation()
   const scrollToSection = useCallback((id: string) => {
@@ -119,8 +119,6 @@ function HomePage() {
     }
   }, [location.state])
 
-  const [showShareModal, setShowShareModal] = useState(false)
-
   return (
     <>
       <HeroSection />
@@ -130,7 +128,46 @@ function HomePage() {
       <Suspense fallback={<SectionFallback />}><KnowledgeSection /></Suspense>
       <Suspense fallback={<SectionFallback />}><FaqSection /></Suspense>
       <Suspense fallback={<SectionFallback />}><ContactSection /></Suspense>
-      <Suspense fallback={<SectionFallback />}><Footer onShareClick={() => setShowShareModal(true)} /></Suspense>
+      <Suspense fallback={<SectionFallback />}><Footer onShareClick={onShareClick} /></Suspense>
+    </>
+  )
+}
+
+function AppShell() {
+  const location = useLocation()
+  const navigate = useNavigate()
+  const page = location.pathname === '/' ? 'home' : location.pathname.slice(1) as Page
+  const [showShareModal, setShowShareModal] = useState(false)
+
+  useGtagPageview()
+
+  const scrollToSection = useCallback((id: string) => {
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: id } })
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [location.pathname, navigate])
+
+  return (
+    <div style={{ overflowX: 'clip' }}>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+      <PageSEO page={page} />
+      <Navbar currentPage={page} />
+      <main id="main-content">
+        <Routes>
+          <Route path="/" element={<HomePage onShareClick={() => setShowShareModal(true)} />} />
+          <Route path="/apoyo-academico" element={<Suspense fallback={<LoadingScreen />}><ApoyoAcademicoPage /></Suspense>} />
+          <Route path="/clases-programacion" element={<Suspense fallback={<LoadingScreen />}><ClasesProgramacionPage /></Suspense>} />
+          <Route path="/ventas-online" element={<Suspense fallback={<LoadingScreen />}><VentasOnlinePage /></Suspense>} />
+          <Route path="/optimizacion-cv" element={<Suspense fallback={<LoadingScreen />}><OptimizacionCVPage /></Suspense>} />
+          <Route path="/plantilla-gastos" element={<Suspense fallback={<LoadingScreen />}><PlantillaGastosPage /></Suspense>} />
+          <Route path="/plantilla-habitos" element={<Suspense fallback={<LoadingScreen />}><PlantillaHabitosPage /></Suspense>} />
+          <Route path="/ia-local" element={<Suspense fallback={<LoadingScreen />}><IaLocalPage /></Suspense>} />
+        </Routes>
+      </main>
       <Suspense fallback={null}>
         <Chatbot
           onShare={() => setShowShareModal(true)}
@@ -142,35 +179,6 @@ function HomePage() {
       <Suspense fallback={null}>
         <ShareModal isOpen={showShareModal} onClose={() => setShowShareModal(false)} />
       </Suspense>
-    </>
-  )
-}
-
-function AppShell() {
-  const location = useLocation()
-  const page = location.pathname === '/' ? 'home' : location.pathname.slice(1) as Page
-
-  useGtagPageview()
-
-  return (
-    <div style={{ overflowX: 'clip' }}>
-      <a href="#main-content" className="skip-link">
-        {page === 'home' ? 'Skip to main content' : 'Skip to main content'}
-      </a>
-      <PageSEO page={page} />
-      <Navbar currentPage={page} />
-      <main id="main-content">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/apoyo-academico" element={<Suspense fallback={<LoadingScreen />}><ApoyoAcademicoPage /></Suspense>} />
-          <Route path="/clases-programacion" element={<Suspense fallback={<LoadingScreen />}><ClasesProgramacionPage /></Suspense>} />
-          <Route path="/ventas-online" element={<Suspense fallback={<LoadingScreen />}><VentasOnlinePage /></Suspense>} />
-          <Route path="/optimizacion-cv" element={<Suspense fallback={<LoadingScreen />}><OptimizacionCVPage /></Suspense>} />
-          <Route path="/plantilla-gastos" element={<Suspense fallback={<LoadingScreen />}><PlantillaGastosPage /></Suspense>} />
-          <Route path="/plantilla-habitos" element={<Suspense fallback={<LoadingScreen />}><PlantillaHabitosPage /></Suspense>} />
-          <Route path="/ia-local" element={<Suspense fallback={<LoadingScreen />}><IaLocalPage /></Suspense>} />
-        </Routes>
-      </main>
     </div>
   )
 }
