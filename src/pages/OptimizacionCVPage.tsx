@@ -157,7 +157,7 @@ export default function OptimizacionCVPage() {
                 <div
                   className="p-4 rounded-lg"
                   style={{
-                    background: '4F7FFF10',
+                    background: 'rgba(79,127,255,0.06)',
                     borderLeft: '4px solid #4F7FFF',
                   }}
                 >

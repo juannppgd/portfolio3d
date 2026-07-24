@@ -77,15 +77,9 @@ export function productSchema(
       '@type': 'Offer',
       price,
       priceCurrency,
-      priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],
+      priceValidUntil: '2027-12-31',
       availability: 'https://schema.org/InStock',
       url: SITE_URL + BASE + path,
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '47',
-      bestRating: '5',
     },
   }
 }

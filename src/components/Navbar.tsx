@@ -16,6 +16,7 @@ type Page =
   | 'plantilla-gastos'
   | 'plantilla-habitos'
   | 'ia-local'
+  | 'ecomp-app'
 
 interface NavbarProps {
   currentPage: Page

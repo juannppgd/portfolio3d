@@ -183,7 +183,16 @@
     "templatesDesc": "Professional Excel tools to boost your productivity and personal finances. Immediate access for only $7 USD each.",
     "localAiTitle": "Local AI",
     "localAiDesc": "Language models that run natively on your GPU or RAM. No subscriptions. Your data never leaves your machine.",
+    "benefitsButton": "Benefits",
+    "benefitsClose": "Close",
     "localAiCta": "Learn more",
+    "daguitoTitle": "AI Agent Automation",
+    "daguitoSubtitle": "Custom solutions",
+    "daguitoDesc": "Automate conversations and processes with AI agents on WhatsApp, web, ecommerce and more. Pricing agreed based on project scope.",
+    "daguitoCta": "Learn more",
+    "daguitoFeature": "Feature",
+    "daguitoPlan": "Plan",
+    "daguitoDesc2": "Description",
     "tableModel": "Model",
     "tableRam": "RAM",
     "tableUse": "Use",
@@ -592,7 +601,16 @@
           "SMBs that need digital presence",
           "Independent professionals looking to attract more clients"
         ],
-        "includes": "My websites include responsive design, SEO optimization, are completely customized to your business needs, created to stand out and much more.",
+        "benefitsTitle": "Includes:",
+        "benefits": [
+          "Free hosting and domain",
+          "Custom-built software",
+          "Speed and UX optimization",
+          "Social media and CRM integration",
+          "DNS setup and corporate emails",
+          "EmailJS and Google Analytics integration",
+          "Responsive interfaces with React and Tailwind CSS"
+        ],
         "cta": "Request your website"
       },
       {
@@ -605,10 +623,35 @@
           "Businesses that want to expand on the Web",
           "Professionals who need more leads"
         ],
-        "includes": "My services include audiovisual production, data analysis, personalized strategies, email/SMS marketing campaigns, social media management, CRM and much more.",
-        "cta": "Request your marketing consultation"
+        "benefitsTitle": "Includes:",
+        "benefits": [
+          "Professional photo and video editing",
+          "Data analysis and segmentation",
+          "A/B testing campaigns focused on results",
+          "Personalized digital strategy",
+          "Social media management",
+          "Email and SMS Marketing",
+          "SEO optimization and effective SEM campaigns"
+        ],
+        "cta": "Request your consultation"
       }
     ],
+    "ecompApp": {
+      "badge": "New App",
+      "title": "Ecomp App",
+      "subtitle": "Your Smart Body Recomposition & Nutrition Assistant",
+      "description": "Transform your body intelligently: build muscle, lose fat, and optimize performance without the hassle.",
+      "features": [
+        "Smart calorie and macronutrient adjustment (TDEE)",
+        "Nutritional tracker with Latin America food database",
+        "Interactive workout log with RPE tracking",
+        "Daily goals and habits with smart copy",
+        "Optional smartwatch integration",
+        "Dynamic at-a-glance dashboard",
+        "Full privacy and offline functionality"
+      ],
+      "cta": "Learn more"
+    },
     "serviceBenefits": [
       {
         "title": "Web Development",
@@ -672,75 +715,13 @@
       }
     ],
     "localAi": {
-      "title": "Local AI",
-      "summary": "Language models that run on your PC. No subscription, no limits, 100% private.",
-      "description": "Local AI: language models that run directly on your PC using GPU or RAM, no subscription, no question limits, and your data never leaves your machine. Ideal for companies that value privacy, technological independence, and local speed.",
-      "icon": "FaRobot",
       "features": [
-        "100% local and private",
-        "No monthly subscription",
-        "Unlimited queries",
-        "No internet needed",
-        "CPU and GPU support",
-        "Easy installation"
-      ],
-      "models": [
-        {
-          "name": "Llama 3.1 8B",
-          "ram": "6-8 GB",
-          "use": "General reasoning and documentation"
-        },
-        {
-          "name": "Qwen 2.5 Coder 7B",
-          "ram": "5-6 GB",
-          "use": "Programming and coding expert"
-        },
-        {
-          "name": "Phi-3.5-mini",
-          "ram": "3-4 GB",
-          "use": "Low RAM PCs, logic and math"
-        },
-        {
-          "name": "Ministral 3 14B",
-          "ram": "10-12 GB",
-          "use": "Speed and advanced function calling"
-        }
-      ],
-      "useCases": [
-        {
-          "title": "Independent Developer",
-          "desc": "Private code assistant without limits"
-        },
-        {
-          "title": "Researcher/Academic",
-          "desc": "Process papers without sharing data"
-        },
-        {
-          "title": "Service Company",
-          "desc": "Internal chatbot with confidential data"
-        },
-        {
-          "title": "Data Analyst",
-          "desc": "Process sensitive information locally"
-        }
-      ],
-      "faqs": [
-        {
-          "q": "Do I need a GPU?",
-          "a": "Not required, but GPU recommended for better speed. Works with CPU but slower."
-        },
-        {
-          "q": "What minimum RAM do I need?",
-          "a": "3 GB RAM minimum for small models. 8+ GB for more powerful models."
-        },
-        {
-          "q": "Is it really private?",
-          "a": "Yes, 100%. Everything runs locally. No data leaves your machine."
-        },
-        {
-          "q": "Can I use this for business?",
-          "a": "Absolutely. Companies use local AI for chatbots, analysis and classification without exposing data."
-        }
+        { "icon": "robot", "text": "Conversational agents for WhatsApp, web and ecommerce" },
+        { "icon": "bolt", "text": "Automated customer service workflows" },
+        { "icon": "plug", "text": "CRM, database and external API integration" },
+        { "icon": "brain", "text": "Multi-agent and multi-model (OpenAI, Claude, Gemini, etc.)" },
+        { "icon": "lightbulb", "text": "Assisted copilot flow design" },
+        { "icon": "chartLine", "text": "Scalable from 10 to millions of messages per month" }
       ]
     },
     "testimonials": [
@@ -797,10 +778,11 @@
       "services": {
         "text": "Juan Pablo offers main and additional services. Which would you like to know more about?",
         "options": [
-          "ia_local",
-          "additional_services",
           "web_dev",
           "digital_marketing",
+          "ia_local",
+          "ecomp_app",
+          "additional_services",
           "contact",
           "about_me"
         ]
@@ -825,7 +807,7 @@
         ]
       },
       "ia_local": {
-        "text": "Local AI: language models that run directly on your PC using GPU or RAM, no subscription, no question limits, and your data never leaves your machine. Ideal for companies that value privacy, technological independence and local speed.",
+        "text": "AI Agent Automation: design and implementation of intelligent agents for WhatsApp, web, ecommerce and more. Pricing is agreed based on project scope. Interested?",
         "options": [
           "try_ia_local",
           "contact",
@@ -833,11 +815,27 @@
         ]
       },
       "try_ia_local": {
-        "text": "Perfect, I'll take you to the contact form so you can request your local AI. This way you can get started quickly without leaving your workflow.",
+        "text": "Perfect, I'll take you to the contact form so you can request your free assessment and discover how AI can automate your business.",
         "options": [
           "back_home"
         ],
         "action": "contact",
+        "autoClose": true
+      },
+      "ecomp_app": {
+        "text": "Ecomp App: your smart body recomposition and nutrition assistant. Smart calorie adjustment, workout tracking, daily goals and dynamic dashboard. Works offline and protects your privacy.\n\nWhat would you like to know?",
+        "options": [
+          "view_ecomp_page",
+          "contact",
+          "services"
+        ]
+      },
+      "view_ecomp_page": {
+        "text": "Perfect! I'll take you to the Ecomp App page so you can discover all its features.",
+        "options": [
+          "back_home"
+        ],
+        "action": "ecomp-app",
         "autoClose": true
       },
       "contact": {
@@ -1035,6 +1033,8 @@
         "options": [
           "web_dev",
           "digital_marketing",
+          "ia_local",
+          "ecomp_app",
           "additional_services",
           "contact"
         ]
@@ -1086,6 +1086,8 @@
           "services",
           "web_dev",
           "digital_marketing",
+          "ia_local",
+          "ecomp_app",
           "contact",
           "faq",
           "send_message"
@@ -1134,8 +1136,10 @@
       "services": "Services",
       "web_dev": "Web Development",
       "digital_marketing": "Digital Marketing",
-      "ia_local": "Local AI",
-      "try_ia_local": "Try Local AI on my PC",
+      "ia_local": "AI Automation",
+      "try_ia_local": "Request free assessment",
+      "ecomp_app": "Ecomp App",
+      "view_ecomp_page": "View Ecomp App",
       "contact": "Contact",
       "view_social": "View Social Networks",
       "view_tech": "View Technologies",
@@ -1216,9 +1220,14 @@
         "keywords": "habits Excel template, habit tracker, personal productivity, daily habit management, Excel productivity, 2026 template"
       },
       "ia-local": {
-        "title": "Local AI — Language Models on Your PC Without Internet",
-        "description": "Local AI consulting with Llama, Qwen and Phi models. Runs on your GPU without internet connection. 100% private, no subscriptions, no limits. Ideal for companies in Colombia.",
-        "keywords": "local AI, offline language models, Llama, Qwen, private artificial intelligence, GPU Colombia, AI without internet, AI consulting companies"
+        "title": "AI Agent Automation — WhatsApp, Web & Ecommerce",
+        "description": "Design and implementation of intelligent agents for WhatsApp, web and ecommerce. Customer service automation, lead generation and internal processes. Custom budget.",
+        "keywords": "AI agent automation, WhatsApp chatbot, ecommerce automation, intelligent agents Colombia, AI customer service, AI for business"
+      },
+      "ecomp-app": {
+        "title": "Ecomp App — Body Recomposition & Nutrition",
+        "description": "Nutrition and fitness tracking app with smart calorie adjustment, workout logging, daily goals and dynamic dashboard. Works offline and protects your privacy.",
+        "keywords": "nutrition app, body recomposition, calorie counter, workout tracker, fitness app, smart nutrition, Ecomp App"
       }
     }
   },
@@ -2052,135 +2061,216 @@
         "ctaButton": "I Want My Template"
       }
     },
-    "iaLocal": {
+    "ecompApp": {
       "hero": {
-        "title": "Local AI",
-        "subtitle": "Run AI models on your own computer without relying on internet or cloud services."
+        "title": "Ecomp App — Body Recomposition & Nutrition",
+        "subtitle": "Your smart assistant to transform your body sustainably. Calorie adjustment, workout tracking, habit follow-up and dynamic dashboard."
       },
-      "strengths": [
+      "sectionTitles": {
+        "heroButton": "Request Info",
+        "features": "Key Features",
+        "featuresDesc": "Everything you need to achieve your best physical version, in one app.",
+        "howItWorks": "How It Works",
+        "howStep1": "Setup",
+        "howStep1Desc": "Define your goals, current weight, activity level and nutritional preferences",
+        "howStep2": "Tracking",
+        "howStep2Desc": "Log your meals, workouts and daily habits with the app",
+        "howStep3": "Smart Adjustment",
+        "howStep3Desc": "The app automatically adjusts calories, macronutrients and goals based on your progress",
+        "howStep4": "Results",
+        "howStep4Desc": "Track your evolution on the dashboard and reach your goals sustainably",
+        "benefits": "Benefits",
+        "faq": "Frequently Asked Questions",
+        "ctaTitle": "Ready to transform your body?",
+        "ctaDesc": "Download the Ecomp App and start your body recomposition journey powered by artificial intelligence.",
+        "ctaButton": "Request Information"
+      },
+      "features": [
         {
-          "icon": "shield",
-          "title": "100% Private",
-          "desc": "Your data never leaves your computer."
+          "icon": "calculator",
+          "title": "Smart Calorie Adjustment",
+          "desc": "Automatic TDEE and macronutrient calculation based on your goal and activity level"
         },
         {
-          "icon": "infinity",
-          "title": "Unlimited",
-          "desc": "No API costs"
+          "icon": "apple",
+          "title": "LATAM Nutrition Tracker",
+          "desc": "Food database focused on Latin America for accurate tracking"
         },
         {
-          "icon": "money",
-          "title": "No Subscriptions",
-          "desc": "The model is yours"
-        },
-        {
-          "icon": "globe",
-          "title": "Native Offline",
-          "desc": "Works offline"
-        },
-        {
-          "icon": "bolt",
-          "title": "Local Speed",
-          "desc": "GPU powered"
+          "icon": "dumbbell",
+          "title": "Workout Logging",
+          "desc": "Interactive tracking with RPE, sets, reps and progression"
         },
         {
           "icon": "bullseye",
-          "title": "Modular",
-          "desc": "Choose according to your hardware"
+          "title": "Daily Goals & Habits",
+          "desc": "Set and track daily habits with a smart copy system"
+        },
+        {
+          "icon": "stopwatch",
+          "title": "Smartwatch Integration",
+          "desc": "Optionally connect your smartwatch for real-time activity data"
+        },
+        {
+          "icon": "chartPie",
+          "title": "Dynamic Dashboard",
+          "desc": "View all your progress at a glance with interactive charts"
+        },
+        {
+          "icon": "shield",
+          "title": "Full Privacy",
+          "desc": "Works offline and your personal data never leaves your device"
+        },
+        {
+          "icon": "calendar",
+          "title": "Smart Notifications",
+          "desc": "Meal, hydration and workout reminders adapted to your daily routine"
+        },
+        {
+          "icon": "file",
+          "title": "Reports & Export",
+          "desc": "Export your data as PDF or CSV to share with your nutritionist or trainer"
         }
       ],
-      "models": [
+      "benefits": [
         {
-          "name": "Llama 3.1 8B",
-          "ram": "6-8 GB",
-          "use": "General reasoning and documentation"
+          "title": "Time Savings",
+          "desc": "No need to plan meals manually. The app adjusts everything for you."
         },
         {
-          "name": "Qwen 2.5 Coder 7B",
-          "ram": "5-6 GB",
-          "use": "Expert in programming and code"
+          "title": "Nutritional Precision",
+          "desc": "Calculations based on your metabolism and specific goals, not generic formulas."
         },
         {
-          "name": "Phi-3.5-mini",
-          "ram": "3-4 GB",
-          "use": "Low RAM PCs, logic and math"
+          "title": "Automatic Progression",
+          "desc": "As you advance, the app adapts goals to keep challenging you."
         },
         {
-          "name": "Ministral 3 14B",
-          "ram": "10-12 GB",
-          "use": "Speed and advanced function calling"
-        }
-      ],
-      "b2b": {
-        "title": "B2B Solutions",
-        "features": [
-          "Automate responses with brand tone",
-          "Internal document classification",
-          "Specialized code assistant",
-          "Data extraction from reports"
-        ],
-        "note": "Custom solutions for businesses and organizations."
-      },
-      "useCases": [
-        {
-          "title": "Independent Developer",
-          "desc": "Unlimited private code assistant"
-        },
-        {
-          "title": "Researcher/Academic",
-          "desc": "Process papers without sharing data"
-        },
-        {
-          "title": "Service Company",
-          "desc": "Internal chatbot with confidential data"
-        },
-        {
-          "title": "Data Analyst",
-          "desc": "Process sensitive information locally"
+          "title": "100% Offline",
+          "desc": "Your data never leaves your device. Your privacy is sacred."
         }
       ],
       "faqs": [
         {
-          "q": "Do I need a GPU?",
-          "a": "Not required, but we recommend GPU for better speed. CPU works but is slower."
+          "q": "Do I need nutrition knowledge to use the app?",
+          "a": "No. The app guides you step by step and automatically adjusts everything based on your initial responses."
         },
         {
-          "q": "What are the minimum RAM requirements?",
-          "a": "3 GB RAM minimum for small models. 8+ GB for more powerful models."
+          "q": "Does the app work without internet?",
+          "a": "Yes. The Ecomp App is designed to work completely offline. Your data never leaves your device."
         },
         {
-          "q": "Is it really private?",
-          "a": "Yes, 100%. Everything runs locally. No data leaves your machine."
+          "q": "Can I use it for both muscle gain and fat loss?",
+          "a": "Yes. Set your goal when configuring the app and it will adjust calories and macronutrients accordingly."
         },
         {
-          "q": "Can I use this for business?",
-          "a": "Absolutely. Businesses use local AI for chatbots, analysis, and classification without exposing data."
+          "q": "How are workouts logged?",
+          "a": "You can log sets, reps and RPE interactively. The app saves your history and shows your progression."
+        }
+      ]
+    },
+    "iaLocal": {
+      "hero": {
+        "title": "AI Agent Automation",
+        "subtitle": "Design and implementation of intelligent agents for WhatsApp, web, ecommerce and more. 100% custom solutions tailored to your business needs."
+      },
+      "strengths": [
+        {
+          "icon": "comments",
+          "title": "Multi-Channel",
+          "desc": "WhatsApp, web, ecommerce, social media and more"
+        },
+        {
+          "icon": "brain",
+          "title": "Multi-Model",
+          "desc": "OpenAI, Claude, Gemini or other models based on your use case"
+        },
+        {
+          "icon": "plug",
+          "title": "Integrations",
+          "desc": "CRM, databases, external APIs and your own tools"
+        },
+        {
+          "icon": "chartLine",
+          "title": "Scalable",
+          "desc": "From 10 to millions of messages per month"
+        },
+        {
+          "icon": "shield",
+          "title": "Secure",
+          "desc": "GDPR compliance, encryption and data isolation"
+        },
+        {
+          "icon": "headset",
+          "title": "Support",
+          "desc": "Guidance throughout the entire implementation process"
+        }
+      ],
+      "b2b": {
+        "title": "How is pricing determined?",
+        "features": [
+          "Free assessment of your needs and project scope",
+          "Custom budget based on automation magnitude",
+          "Flexible options for SMBs, entrepreneurs and large companies",
+          "No hidden costs — full transparency"
+        ],
+        "note": "Each project is unique. Pricing is agreed directly with you based on channels, volume and automation complexity."
+      },
+      "useCases": [
+        {
+          "title": "Customer Service",
+          "desc": "Agents that answer FAQs, schedule appointments and resolve inquiries 24/7"
+        },
+        {
+          "title": "Ecommerce",
+          "desc": "Abandoned cart recovery, order tracking and post-sale support"
+        },
+        {
+          "title": "Lead Generation",
+          "desc": "Automatic capture and qualification of prospects from WhatsApp or your website"
+        },
+        {
+          "title": "Internal Processes",
+          "desc": "Automation of reports, document classification and repetitive workflows"
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How much does an automation cost?",
+          "a": "The price depends on project scope: channels, message volume, integrations and complexity. We offer a free assessment to give you an accurate quote."
+        },
+        {
+          "q": "Do I need technical knowledge?",
+          "a": "No. We handle the design, implementation and configuration. You just enjoy the results."
+        },
+        {
+          "q": "How long does it take to set up?",
+          "a": "It depends on complexity, but typical projects are ready in 1-3 weeks."
+        },
+        {
+          "q": "Can I start small and scale later?",
+          "a": "Yes. We recommend starting with a specific use case and scaling as you get results."
         }
       ],
       "sectionTitles": {
-        "heroButton": "Try Local AI on My PC",
-        "strengths": "Strengths",
-        "modelsTitle": "Available Models",
-        "modelsDesc": "We install and configure the best models for your needs.",
-        "modelHeader": "Model",
-        "ramHeader": "Required RAM",
-        "useHeader": "Use Case",
+        "heroButton": "Request Free Assessment",
+        "strengths": "Why automate with AI?",
         "useCases": "Use Cases",
-        "b2bSolutions": "B2B Solutions",
-        "b2bButton": "Contact Us",
+        "b2bSolutions": "Custom Budget",
+        "b2bButton": "Request Quote",
         "howItWorks": "How It Works",
-        "howStep1": "We assess your needs",
-        "howStep1Desc": "We evaluate your hardware and requirements.",
-        "howStep2": "We select and install",
-        "howStep2Desc": "We choose and install the best models for you.",
-        "howStep3": "We configure and optimize",
-        "howStep3Desc": "We fine-tune for the best performance.",
-        "howStep4": "We train you",
-        "howStep4Desc": "We show you how to get the most out of your AI.",
+        "howStep1": "Assessment",
+        "howStep1Desc": "We analyze your needs, channels and current volume",
+        "howStep2": "Design",
+        "howStep2Desc": "We design workflows and select the best AI models",
+        "howStep3": "Implementation",
+        "howStep3Desc": "We develop, integrate and configure the automation",
+        "howStep4": "Support",
+        "howStep4Desc": "Ongoing guidance, adjustments and optimization",
         "faq": "Frequently Asked Questions",
-        "ctaTitle": "Ready to Use Local AI?",
-        "ctaDesc": "Run powerful AI models on your PC without relying on internet or subscriptions.",
-        "ctaButton": "I Want My Local AI"
+        "ctaTitle": "Ready to automate?",
+        "ctaDesc": "Schedule a free assessment and discover how AI can transform your business.",
+        "ctaButton": "Request Free Assessment"
       }
     }
   }

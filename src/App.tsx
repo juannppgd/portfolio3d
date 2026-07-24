@@ -41,10 +41,12 @@ const OptimizacionCVPage = lazy(() => import('./pages/OptimizacionCVPage'))
 const PlantillaGastosPage = lazy(() => import('./pages/PlantillaGastosPage'))
 const PlantillaHabitosPage = lazy(() => import('./pages/PlantillaHabitosPage'))
 const IaLocalPage = lazy(() => import('./pages/IaLocalPage'))
+const EcompAppPage = lazy(() => import('./pages/EcompAppPage'))
+const Page404 = lazy(() => import('./pages/Page404'))
 const Chatbot = lazy(() => import('./components/Chatbot'))
 const ShareModal = lazy(() => import('./components/ShareModal'))
 
-type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local'
+type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local' | 'ecomp-app'
 
 function SectionFallback() {
   return <div className="h-32" />
@@ -136,6 +138,7 @@ function HomePage({ onShareClick }: { onShareClick?: () => void }) {
 function AppShell() {
   const location = useLocation()
   const navigate = useNavigate()
+  const { t } = useTranslation()
   const page = location.pathname === '/' ? 'home' : location.pathname.slice(1) as Page
   const [showShareModal, setShowShareModal] = useState(false)
 
@@ -152,7 +155,7 @@ function AppShell() {
   return (
     <div style={{ overflowX: 'clip' }}>
       <a href="#main-content" className="skip-link">
-        Skip to main content
+        {t('skipLink', 'Ir al contenido principal')}
       </a>
       <PageSEO page={page} />
       <Navbar currentPage={page} />
@@ -166,6 +169,8 @@ function AppShell() {
           <Route path="/plantilla-gastos" element={<Suspense fallback={<LoadingScreen />}><PlantillaGastosPage /></Suspense>} />
           <Route path="/plantilla-habitos" element={<Suspense fallback={<LoadingScreen />}><PlantillaHabitosPage /></Suspense>} />
           <Route path="/ia-local" element={<Suspense fallback={<LoadingScreen />}><IaLocalPage /></Suspense>} />
+          <Route path="/ecomp-app" element={<Suspense fallback={<LoadingScreen />}><EcompAppPage /></Suspense>} />
+          <Route path="*" element={<Suspense fallback={<LoadingScreen />}><Page404 /></Suspense>} />
         </Routes>
       </main>
       <Suspense fallback={null}>

@@ -49,9 +49,15 @@ export const PAGE_META: Record<string, {
     path: '/plantilla-habitos',
   },
   'ia-local': {
-    title: 'IA Local — Modelos de Lenguaje en tu PC sin Internet',
-    description: 'Consultoría de IA local con modelos Llama, Qwen y Phi. Corre en tu GPU sin conexión a internet. 100% privado, sin suscripciones, sin límites. Ideal para empresas en Colombia.',
-    keywords: 'IA local, modelos lenguaje offline, Llama, Qwen, inteligencia artificial privada, GPU Colombia, IA sin internet, consultoría IA empresas',
+    title: 'Automatización con Agentes de IA — WhatsApp, Web y Ecommerce',
+    description: 'Diseño e implementación de agentes inteligentes para WhatsApp, web y ecommerce. Automatización de atención al cliente, generación de leads y procesos internos. Presupuesto personalizado.',
+    keywords: 'automatización agentes IA, chatbot WhatsApp, automatización ecommerce, agentes inteligentes Colombia, automatización customer service, IA para negocios',
     path: '/ia-local',
+  },
+  'ecomp-app': {
+    title: 'Ecomp App — Recomposición Corporal y Nutrición',
+    description: 'App de seguimiento nutricional y fitness con ajuste inteligente de calorías, registro de entrenamientos, metas diarias y dashboard dinámico. Funciona offline y protege tu privacidad.',
+    keywords: 'app nutrición, recomposición corporal, contador calorías, registro entrenamiento, app fitness, nutrición inteligente, Ecomp App',
+    path: '/ecomp-app',
   },
 }

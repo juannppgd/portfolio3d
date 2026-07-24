@@ -2,12 +2,15 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   FaGraduationCap, FaLaptopCode, FaStore, FaFileAlt,
-  FaClock, FaLaptop, FaChartLine, FaServer, FaComments,
+  FaClock, FaLaptop, FaChartLine, FaDumbbell,
   FaWallet, FaCalendarCheck, FaBrain, FaCheck, FaCircle,
+  FaCalculator, FaAppleAlt, FaBullseye, FaStopwatch,
+  FaChartPie, FaShieldAlt,
 } from 'react-icons/fa'
 import FadeIn from '../components/FadeIn'
+import DataIcon from '../components/DataIcon'
 
-type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local'
+type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local' | 'ecomp-app'
 
 function CountdownTimer() {
   const [time, setTime] = useState('')
@@ -52,7 +55,7 @@ export default function ServicesSection() {
   const { t } = useTranslation()
 
   const mainServices = t('data.mainServices', { returnObjects: true }) as any[]
-  const serviceBenefits = t('data.serviceBenefits', { returnObjects: true }) as any[]
+  const ecompApp = t('data.ecompApp', { returnObjects: true }) as any
   const additionalServices = t('data.additionalServices', { returnObjects: true }) as any[]
   const templates = t('data.templates', { returnObjects: true }) as any[]
   const localAi = t('data.localAi', { returnObjects: true }) as any
@@ -148,11 +151,20 @@ export default function ServicesSection() {
               </ul>
 
               <p
-                className="font-mono font-light leading-relaxed mb-6 text-sm"
-                style={{ color: 'var(--muted)' }}
+                className="font-syne font-bold text-xs tracking-widest uppercase mb-2 text-center"
+                style={{ color: 'var(--accent2)' }}
               >
-                {svc.includes}
+                {svc.benefitsTitle}
               </p>
+
+              <ul className="space-y-1 mb-4 flex-1">
+                {svc.benefits.map((item: string) => (
+                  <li key={item} className="flex items-start gap-2 font-mono text-xs" style={{ color: 'var(--text)' }}>
+                    <FaCheck size={10} style={{ color: 'var(--accent2)', marginTop: 3 }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
 
               <button
                 onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
@@ -169,59 +181,97 @@ export default function ServicesSection() {
         ))}
       </div>
 
-      {/* === BENEFITS === */}
+      {/* === ECOMP APP === */}
       <div className="max-w-5xl mx-auto mb-10 md:mb-8 lg:mb-12">
         <FadeIn y={20}>
-          <h3
-            className="font-syne font-bold uppercase tracking-tight text-center mb-6 md:mb-4 lg:mb-6"
-            style={{ fontSize: 'clamp(20px,2.2vw,28px)', color: 'var(--white)' }}
+          <div
+            className="group p-6 md:p-8 transition-all duration-300 hover:-translate-y-1"
+            style={{
+              border: '1px solid var(--border)',
+              borderRadius: 32,
+              background: 'var(--bg)',
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent)' }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
           >
-            {t('services.benefitsTitle')}
-          </h3>
-        </FadeIn>
-        <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
-          {serviceBenefits.map((b: any, i: number) => (
-            <FadeIn key={b.title} delay={i * 0.1} y={20}>
-              <div
-                className="group p-6 md:p-8 h-full flex flex-col transition-all duration-300 hover:-translate-y-0.5"
-                style={{
-                  border: '1px solid var(--border)',
-                  borderRadius: 24,
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(79,127,255,0.3)' }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
-              >
-                <div className="flex items-center gap-3 mb-4">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-3 mb-3">
                   <div
                     className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0 transition-transform duration-300 group-hover:scale-110"
                     style={{
-                      background: i === 0 ? 'rgba(79,127,255,0.12)' : 'rgba(0,229,195,0.12)',
-                      color: i === 0 ? '#4F7FFF' : '#00E5C3',
+                      background: 'rgba(79,127,255,0.12)',
+                      color: '#4F7FFF',
                     }}
                   >
-                    {i === 0 ? <FaServer size={22} /> : <FaComments size={22} />}
+                    <FaDumbbell size={22} />
                   </div>
-                  <div>
-                    <h4 className="font-syne font-bold uppercase text-sm tracking-tight" style={{ color: 'var(--white)' }}>
-                      {b.title}
-                    </h4>
-                    <span className="font-mono text-[10px] tracking-widest uppercase" style={{ color: 'var(--muted)' }}>
-                      {b.subtitle}
-                    </span>
-                  </div>
+                  <span
+                    className="inline-flex items-center font-mono text-[10px] tracking-widest uppercase px-3 py-1 rounded-full"
+                    style={{
+                      background: 'rgba(79,127,255,0.15)',
+                      color: '#4F7FFF',
+                      border: '1px solid rgba(79,127,255,0.25)',
+                    }}
+                  >
+                    {ecompApp.badge}
+                  </span>
                 </div>
-                  <ul className="space-y-2 flex-1">
-                    {b.items.map((item: string) => (
-                      <li key={item} className="flex items-start gap-2 font-mono text-sm" style={{ color: 'var(--text)' }}>
-                        <FaCheck size={12} style={{ color: 'var(--accent2)', marginTop: 3 }} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+
+                <h3
+                  className="font-syne font-bold uppercase tracking-tight mb-1"
+                  style={{ fontSize: 'clamp(18px,1.8vw,24px)', color: 'var(--white)' }}
+                >
+                  {ecompApp.title}
+                </h3>
+                <p
+                  className="font-mono text-xs tracking-wide mb-3"
+                  style={{ color: 'var(--accent2)' }}
+                >
+                  {ecompApp.subtitle}
+                </p>
+                <p
+                  className="font-mono font-light leading-relaxed mb-4 text-sm"
+                  style={{ color: 'var(--muted)' }}
+                >
+                  {ecompApp.description}
+                </p>
+
+                <button
+                  onClick={() => window.open('/ecomp-app', '_blank')}
+                  className="font-syne font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-200 hover:-translate-y-0.5"
+                  style={{
+                    background: 'linear-gradient(135deg,#A855F7,#EC4899)',
+                    color: '#FFFFFF',
+                  }}
+                >
+                  {ecompApp.cta}
+                </button>
               </div>
-            </FadeIn>
-          ))}
-        </div>
+
+              <ul className="space-y-2.5 flex-1 min-w-0">
+                {ecompApp.features.map((feat: string, j: number) => {
+                  const icons = [FaCalculator, FaAppleAlt, FaDumbbell, FaBullseye, FaStopwatch, FaChartPie, FaShieldAlt]
+                  const Icon = icons[j] || FaCheck
+                  return (
+                    <li key={feat} className="flex items-center gap-3 font-mono text-xs" style={{ color: 'var(--text)' }}>
+                      <div
+                        className="flex items-center justify-center w-8 h-8 rounded-lg shrink-0"
+                        style={{
+                          background: 'rgba(79,127,255,0.1)',
+                          color: '#4F7FFF',
+                        }}
+                      >
+                        <Icon size={14} />
+                      </div>
+                      {feat}
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          </div>
+        </FadeIn>
       </div>
 
       {/* === ADDITIONAL SERVICES === */}
@@ -249,28 +299,30 @@ export default function ServicesSection() {
                   onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent)' }}
                   onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
                 >
-                  <h4
-                    className="font-syne font-bold uppercase tracking-tight mb-2"
-                    style={{ fontSize: 'clamp(14px,1.3vw,16px)', color: 'var(--white)' }}
-                  >
-                    {svc.title}
-                  </h4>
-                  <div
-                    className="flex items-center justify-center w-14 h-14 rounded-2xl mx-auto my-3 transition-transform duration-300 group-hover:scale-110"
-                    style={{
-                      background: i === 0 ? 'rgba(168,85,247,0.12)' : i === 1 ? 'rgba(245,158,11,0.12)' : i === 2 ? 'rgba(16,185,129,0.12)' : 'rgba(236,72,153,0.12)',
-                      color: i === 0 ? '#A855F7' : i === 1 ? '#F59E0B' : i === 2 ? '#10B981' : '#EC4899',
-                    }}
-                  >
-                    {i === 0 ? (
-                      <FaGraduationCap size={24} />
-                    ) : i === 1 ? (
-                      <FaLaptopCode size={24} />
-                    ) : i === 2 ? (
-                      <FaStore size={24} />
-                    ) : (
-                      <FaFileAlt size={24} />
-                    )}
+                  <div className="flex items-center gap-3 mb-3">
+                    <div
+                      className="flex items-center justify-center w-11 h-11 rounded-2xl shrink-0 transition-transform duration-300 group-hover:scale-110"
+                      style={{
+                        background: i === 0 ? 'rgba(168,85,247,0.12)' : i === 1 ? 'rgba(245,158,11,0.12)' : i === 2 ? 'rgba(16,185,129,0.12)' : 'rgba(236,72,153,0.12)',
+                        color: i === 0 ? '#A855F7' : i === 1 ? '#F59E0B' : i === 2 ? '#10B981' : '#EC4899',
+                      }}
+                    >
+                      {i === 0 ? (
+                        <FaGraduationCap size={20} />
+                      ) : i === 1 ? (
+                        <FaLaptopCode size={20} />
+                      ) : i === 2 ? (
+                        <FaStore size={20} />
+                      ) : (
+                        <FaFileAlt size={20} />
+                      )}
+                    </div>
+                    <h4
+                      className="font-syne font-bold uppercase tracking-tight"
+                      style={{ fontSize: 'clamp(14px,1.3vw,16px)', color: 'var(--white)' }}
+                    >
+                      {svc.title}
+                    </h4>
                   </div>
                   <p
                     className="font-mono font-light leading-relaxed mb-4 flex-1"
@@ -293,6 +345,90 @@ export default function ServicesSection() {
             )
           })}
         </div>
+      </div>
+
+      {/* === AUTOMATIZACIÓN CON IA === */}
+      <div className="max-w-5xl mx-auto mb-10 md:mb-8 lg:mb-12">
+        <FadeIn y={20}>
+          <div
+            className="group p-6 md:p-8 transition-all duration-300 hover:-translate-y-1"
+            style={{
+              border: '1px solid var(--border)',
+              borderRadius: 32,
+              background: 'var(--bg)',
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent)' }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
+          >
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-3 mb-3">
+                  <div
+                    className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0 transition-transform duration-300 group-hover:scale-110"
+                    style={{
+                      background: 'rgba(16,185,129,0.12)',
+                      color: '#10B981',
+                    }}
+                  >
+                    <FaBrain size={22} />
+                  </div>
+                  <span
+                    className="inline-flex items-center font-mono text-[10px] tracking-widest uppercase px-3 py-1 rounded-full"
+                    style={{
+                      background: 'rgba(16,185,129,0.15)',
+                      color: '#10B981',
+                      border: '1px solid rgba(16,185,129,0.25)',
+                    }}
+                  >
+                    {t('services.automationSubtitle')}
+                  </span>
+                </div>
+
+                <h3
+                  className="font-syne font-bold uppercase tracking-tight mb-1"
+                  style={{ fontSize: 'clamp(18px,1.8vw,24px)', color: 'var(--white)' }}
+                >
+                  {t('services.automationTitle')}
+                </h3>
+                <p
+                  className="font-mono font-light leading-relaxed mb-4 text-sm"
+                  style={{ color: 'var(--muted)' }}
+                >
+                  {t('services.automationDesc')}
+                </p>
+
+                <button
+                  type="button"
+                  onClick={() => openPage('ia-local')}
+                  className="font-syne font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-200 hover:-translate-y-0.5"
+                  style={{
+                    background: 'linear-gradient(135deg,#10B981,#06B6D4)',
+                    color: '#FFFFFF',
+                  }}
+                >
+                  {t('services.automationCta')}
+                </button>
+              </div>
+
+              <ul className="space-y-2.5 flex-1 min-w-0">
+                {localAi.features.map((feat: { icon: string; text: string }) => (
+                  <li key={feat.text} className="flex items-center gap-3 font-mono text-xs" style={{ color: 'var(--text)' }}>
+                    <div
+                      className="flex items-center justify-center w-8 h-8 rounded-lg shrink-0"
+                      style={{
+                        background: 'rgba(16,185,129,0.1)',
+                        color: '#10B981',
+                      }}
+                    >
+                      <DataIcon icon={feat.icon} size={14} />
+                    </div>
+                    {feat.text}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </FadeIn>
       </div>
 
       {/* === TEMPLATES === */}
@@ -373,83 +509,6 @@ export default function ServicesSection() {
             )
           })}
         </div>
-      </div>
-
-      {/* === LOCAL AI === */}
-      <div className="max-w-5xl mx-auto">
-        <FadeIn y={30}>
-            <div
-              className="group p-6 md:p-8"
-              style={{
-                border: '1px solid var(--border)',
-                borderRadius: 24,
-                background: 'var(--bg)',
-              }}
-            >
-              <h3
-                className="font-syne font-bold uppercase tracking-tight mb-3 flex items-center justify-between gap-3"
-                style={{ fontSize: 'clamp(16px,1.5vw,20px)', color: 'var(--white)' }}
-              >
-                <div className="flex items-center gap-3">
-                  <div
-                    className="flex items-center justify-center w-10 h-10 rounded-xl transition-transform duration-300 group-hover:scale-110"
-                    style={{
-                      background: 'rgba(168,85,247,0.12)',
-                      color: '#A855F7',
-                    }}
-                  >
-                    <FaBrain size={20} />
-                  </div>
-                {t('services.localAiTitle')}
-              </div>
-              <button
-                type="button"
-                onClick={() => openPage('ia-local')}
-                className="font-mono text-xs tracking-widest uppercase flex items-center gap-1.5 transition-colors duration-200 hover:text-accent shrink-0"
-                style={{ color: 'var(--accent)' }}
-              >
-                {t('services.localAiCta')}
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </button>
-            </h3>
-            <p
-              className="font-mono font-light leading-relaxed mb-5 text-sm"
-              style={{ color: 'var(--muted)' }}
-            >
-              {t('services.localAiDesc')}
-            </p>
-            <div
-              className="rounded-xl overflow-hidden"
-              style={{ border: '1px solid var(--border)' }}
-            >
-              <div
-                className="grid grid-cols-3 gap-3 px-4 py-3 font-mono text-[10px] tracking-widest uppercase"
-                style={{ background: 'var(--surface)', color: 'var(--muted)' }}
-              >
-                <span>{t('services.tableModel')}</span>
-                <span>{t('services.tableRam')}</span>
-                <span>{t('services.tableUse')}</span>
-              </div>
-              {localAi.models.map((m: any, i: number) => (
-                <div
-                  key={m.name}
-                  className="grid grid-cols-3 gap-3 px-4 py-3 font-mono text-xs"
-                  style={{
-                    borderTop: '1px solid var(--border)',
-                    color: 'var(--text)',
-                    background: i % 2 === 0 ? 'transparent' : 'var(--surface)',
-                  }}
-                >
-                  <span className="font-syne font-bold uppercase tracking-tight">{m.name}</span>
-                  <span style={{ color: 'var(--accent)' }}>{m.ram}</span>
-                  <span style={{ color: 'var(--muted)' }}>{m.use}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </FadeIn>
       </div>
     </section>
   )

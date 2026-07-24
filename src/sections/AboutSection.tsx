@@ -85,7 +85,7 @@ export default function AboutSection() {
           <div className="flex gap-4 md:gap-10 mb-2 flex-wrap">
             {[
               { num: '5+', label: t('about.statYears') },
-              { num: '30+', label: t('about.statProjects') },
+              { num: '60+', label: t('about.statProjects') },
               { num: '100%', label: t('about.statCommitment') },
             ].map((s) => (
               <div key={s.label}>

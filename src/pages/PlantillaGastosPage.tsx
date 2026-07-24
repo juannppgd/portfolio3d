@@ -343,7 +343,7 @@ export default function PlantillaGastosPage() {
                   <div className="mb-4">
                     <span
                       className="inline-block px-3 py-1 rounded-full text-xs font-mono tracking-tight"
-                      style={{ background: 'var(--accent)20', color: 'var(--accent)' }}
+                      style={{ background: 'rgba(79,127,255,0.12)', color: 'var(--accent)' }}
                     >
                       {testimonial.badge}
                     </span>

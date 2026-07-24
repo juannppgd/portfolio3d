@@ -1,6 +1,6 @@
 export const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://juanpablogd.com'
 
-export const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '573219541241'
+export const WHATSAPP_USERNAME = import.meta.env.VITE_WHATSAPP_USERNAME || 'juannppgd'
 
 export const GA_ID = 'G-DY35DM1SRJ'
 

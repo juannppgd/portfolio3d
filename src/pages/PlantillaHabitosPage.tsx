@@ -281,7 +281,7 @@ export default function PlantillaHabitosPage() {
                     </p>
                     <span
                       className="px-3 py-1 rounded-full text-xs font-mono tracking-tight"
-                      style={{ background: 'var(--accent)20', color: 'var(--accent2)' }}
+                      style={{ background: 'rgba(79,127,255,0.12)', color: 'var(--accent2)' }}
                     >
                       {testimonial.metric}
                     </span>

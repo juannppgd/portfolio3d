@@ -84,7 +84,7 @@ export default function ContactSection() {
     } finally {
       setIsSubmitting(false)
     }
-  }, [formData])
+  }, [formData, t])
 
   return (
     <>

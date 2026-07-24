@@ -1,14 +1,18 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { motion, AnimatePresence } from 'framer-motion'
-import { FaStar } from 'react-icons/fa'
+import { FaStar } from 'react-icons/fa6'
 import FadeIn from '../components/FadeIn'
 
-function AccordionItem({ q, a, isOpen, toggle }: { q: string; a: string; isOpen: boolean; toggle: () => void }) {
+function AccordionItem({ q, a, isOpen, toggle, index }: { q: string; a: string; isOpen: boolean; toggle: () => void; index: number }) {
+  const answerId = `faq-home-answer-${index}`
+  const questionId = `faq-home-q-${index}`
   return (
     <div style={{ borderBottom: '1px solid var(--border)' }}>
       <button
         onClick={toggle}
+        aria-expanded={isOpen}
+        aria-controls={answerId}
+        id={questionId}
         className="w-full flex items-center justify-between gap-4 py-5 text-left transition-colors duration-200 hover:text-accent"
         style={{ color: 'var(--text)' }}
       >
@@ -20,21 +24,19 @@ function AccordionItem({ q, a, isOpen, toggle }: { q: string; a: string; isOpen:
           +
         </span>
       </button>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-            className="overflow-hidden"
-          >
-            <p className="font-mono font-light leading-relaxed pb-5 text-sm" style={{ color: 'var(--muted)' }}>
-              {a}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div
+        id={answerId}
+        role="region"
+        aria-labelledby={questionId}
+        className="overflow-hidden transition-all duration-300"
+        style={{
+          maxHeight: isOpen ? '300px' : '0',
+        }}
+      >
+        <p className="font-mono font-light leading-relaxed pb-5 text-sm" style={{ color: 'var(--muted)' }}>
+          {a}
+        </p>
+      </div>
     </div>
   )
 }
@@ -89,6 +91,7 @@ export default function FaqSection() {
                     a={item.a}
                     isOpen={openIndex === i}
                     toggle={() => setOpenIndex(openIndex === i ? null : i)}
+                    index={i}
                   />
                 ))}
               </div>
