@@ -2057,7 +2057,33 @@
           "q": "¿Cómo se registran los entrenamientos?",
           "a": "Puedes registrar series, repeticiones y RPE de forma interactiva. La app guarda tu historial y muestra tu progresión."
         }
-      ]
+      ],
+      "screenshots": {
+        "title": "Así se ve la Ecomp App",
+        "items": [
+          { "src": "/ecomp-app/1 tus datos.png", "title": "Tus Datos" },
+          { "src": "/ecomp-app/2 dasboard.png", "title": "Dashboard" },
+          { "src": "/ecomp-app/3 metas.png", "title": "Metas" },
+          { "src": "/ecomp-app/4 entrenamiento.png", "title": "Entrenamiento" },
+          { "src": "/ecomp-app/5 nutricion.png", "title": "Nutrición" },
+          { "src": "/ecomp-app/6 progreso.png", "title": "Progreso" },
+          { "src": "/ecomp-app/7 informe.png", "title": "Informe" }
+        ]
+      },
+      "noAds": {
+        "title": "Sin anuncios. Sin interrupciones.",
+        "desc": "Tu experiencia es sagrada. Sin anuncios, sin suscripciones ocultas, sin molestias. Compras una vez, la usas para siempre.",
+        "lifeChange": "Esta app va a cambiar tu vida."
+      },
+      "apkPurchase": {
+        "title": "Obtén la Ecomp App",
+        "desc": "Disponible como APK directo. Compra segura por WhatsApp.",
+        "cta": "Comprar APK"
+      },
+      "storeAvailability": {
+        "title": "Próximamente disponible en",
+        "stores": ["App Store", "Play Store", "App Gallery"]
+      }
     },
     "iaLocal": {
       "hero": {

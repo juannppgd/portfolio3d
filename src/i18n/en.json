@@ -186,10 +186,10 @@
     "benefitsButton": "Benefits",
     "benefitsClose": "Close",
     "localAiCta": "Learn more",
-    "daguitoTitle": "AI Agent Automation",
-    "daguitoSubtitle": "Custom solutions",
-    "daguitoDesc": "Automate conversations and processes with AI agents on WhatsApp, web, ecommerce and more. Pricing agreed based on project scope.",
-    "daguitoCta": "Learn more",
+    "automationTitle": "AI Agent Automation",
+    "automationSubtitle": "Custom solutions",
+    "automationDesc": "Automate conversations and processes with AI agents on WhatsApp, web, ecommerce and more. Pricing agreed based on project scope.",
+    "automationCta": "Learn more",
     "daguitoFeature": "Feature",
     "daguitoPlan": "Plan",
     "daguitoDesc2": "Description",
@@ -2167,7 +2167,33 @@
           "q": "How are workouts logged?",
           "a": "You can log sets, reps and RPE interactively. The app saves your history and shows your progression."
         }
-      ]
+      ],
+      "screenshots": {
+        "title": "This is how the Ecomp App looks",
+        "items": [
+          { "src": "/ecomp-app/1 tus datos.png", "title": "Your Data" },
+          { "src": "/ecomp-app/2 dasboard.png", "title": "Dashboard" },
+          { "src": "/ecomp-app/3 metas.png", "title": "Goals" },
+          { "src": "/ecomp-app/4 entrenamiento.png", "title": "Workout" },
+          { "src": "/ecomp-app/5 nutricion.png", "title": "Nutrition" },
+          { "src": "/ecomp-app/6 progreso.png", "title": "Progress" },
+          { "src": "/ecomp-app/7 informe.png", "title": "Report" }
+        ]
+      },
+      "noAds": {
+        "title": "No ads. No interruptions.",
+        "desc": "Your experience is sacred. No ads, no hidden subscriptions, no annoyances. Buy once, use forever.",
+        "lifeChange": "This app is going to change your life."
+      },
+      "apkPurchase": {
+        "title": "Get the Ecomp App",
+        "desc": "Available as a direct APK. Secure purchase via WhatsApp.",
+        "cta": "Buy APK"
+      },
+      "storeAvailability": {
+        "title": "Coming soon to",
+        "stores": ["App Store", "Play Store", "App Gallery"]
+      }
     },
     "iaLocal": {
       "hero": {

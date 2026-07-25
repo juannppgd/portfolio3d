@@ -1,5 +1,6 @@
-import { useState } from 'react'
-import { FaChevronDown, FaClock, FaShield, FaRocket, FaChartLine } from 'react-icons/fa6'
+import { useState, useCallback } from 'react'
+import { FaChevronDown, FaClock, FaShield, FaRocket, FaChartLine, FaBan, FaApple, FaGooglePlay } from 'react-icons/fa6'
+import { FaAppStoreIos } from 'react-icons/fa'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
 import DataIcon from '../components/DataIcon'
@@ -7,11 +8,22 @@ import { useTranslation } from 'react-i18next'
 import { wa } from '../lib/whatsapp'
 
 const BENEFIT_ICONS = [FaClock, FaShield, FaRocket, FaChartLine]
+const PLACEHOLDER_BG = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjM1NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCBmaWxsPSIjMUQyMTMwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjM1NiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNUE2NDc4IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCI+U2NyZWVuc2hvdDwvdGV4dD48L3N2Zz4='
 
 export default function EcompAppPage() {
   const { t } = useTranslation()
   const data = t('servicePages.ecompApp', { returnObjects: true }) as any
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set())
+
+  const handleImageError = useCallback((key: string) => {
+    setFailedImages(prev => {
+      if (prev.has(key)) return prev
+      const next = new Set(prev)
+      next.add(key)
+      return next
+    })
+  }, [])
 
   return (
     <main className="min-h-screen" style={{ background: 'var(--bg)' }}>
@@ -43,6 +55,108 @@ export default function EcompAppPage() {
 
           <FadeIn delay={0.2}>
             <ContactButton label={data.sectionTitles.heroButton} href={wa('Hola, vine por la Ecomp App — Recomposición Corporal y Nutrición')} />
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Screenshots Gallery */}
+      <section className="py-16 md:py-20 overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          <FadeIn>
+            <h2
+              className="font-syne font-black uppercase text-center mb-10 tracking-tight break-words gradient-heading"
+              style={{ fontSize: 'clamp(24px,3.5vw,48px)' }}
+            >
+              {data.screenshots.title}
+            </h2>
+          </FadeIn>
+        </div>
+
+        <FadeIn delay={0.1}>
+          <div className="overflow-hidden">
+            <div className="ecomp-carousel-track px-6">
+              {[...data.screenshots.items, ...data.screenshots.items].map((shot: { src: string; title: string }, i: number) => {
+                const imgKey = `shot-${i}`
+                const isFailed = failedImages.has(imgKey)
+                return (
+                  <div key={i} className="group flex flex-col items-center flex-shrink-0" style={{ width: 'clamp(140px, 18vw, 200px)' }}>
+                    <div
+                      className="relative w-full overflow-hidden transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-lg"
+                      style={{
+                        aspectRatio: '1373/2857',
+                        borderRadius: 28,
+                        border: '3px solid var(--border)',
+                        background: 'var(--surface)',
+                        boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+                      }}
+                    >
+                      <img
+                        src={isFailed ? PLACEHOLDER_BG : shot.src}
+                        alt={shot.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        draggable={false}
+                        onError={() => handleImageError(imgKey)}
+                      />
+                    </div>
+                    <span
+                      className="font-mono text-[10px] md:text-[11px] tracking-wide mt-2.5 text-center uppercase"
+                      style={{ color: 'var(--muted)' }}
+                    >
+                      {shot.title}
+                    </span>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+
+      {/* No Ads Highlight */}
+      <section
+        className="px-6 md:px-12 py-16 md:py-20"
+        style={{
+          background: 'linear-gradient(135deg, rgba(16,185,129,0.06) 0%, rgba(6,182,212,0.06) 100%)',
+          borderTop: '1px solid var(--border)',
+          borderBottom: '1px solid var(--border)',
+        }}
+      >
+        <div className="max-w-4xl mx-auto text-center">
+          <FadeIn>
+            <div
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-6"
+              style={{
+                background: 'rgba(16,185,129,0.1)',
+                border: '1px solid rgba(16,185,129,0.25)',
+              }}
+            >
+              <FaBan size={16} style={{ color: '#10B981' }} />
+              <span
+                className="font-syne font-bold text-xs tracking-widest uppercase"
+                style={{ color: '#10B981' }}
+              >
+                {data.noAds.title}
+              </span>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <p
+              className="font-mono text-sm md:text-base leading-relaxed mb-6 max-w-2xl mx-auto"
+              style={{ color: 'var(--muted)' }}
+            >
+              {data.noAds.desc}
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <p
+              className="font-syne font-black uppercase tracking-tight"
+              style={{ fontSize: 'clamp(20px,2.5vw,32px)', color: 'var(--white)' }}
+            >
+              {data.noAds.lifeChange}
+            </p>
           </FadeIn>
         </div>
       </section>
@@ -227,12 +341,59 @@ export default function EcompAppPage() {
         </div>
       </section>
 
+      {/* Buy APK CTA */}
+      <section
+        className="px-6 md:px-12 py-16 md:py-20"
+        style={{
+          background: 'var(--surface)',
+          borderTop: '1px solid var(--border)',
+          borderBottom: '1px solid var(--border)',
+        }}
+      >
+        <div className="max-w-3xl mx-auto text-center">
+          <FadeIn>
+            <h2
+              className="font-syne font-black uppercase mb-4 tracking-tight break-words"
+              style={{ fontSize: 'clamp(22px,3vw,40px)', color: 'var(--white)' }}
+            >
+              {data.apkPurchase.title}
+            </h2>
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <p
+              className="font-mono text-sm mb-8 max-w-xl mx-auto"
+              style={{ color: 'var(--muted)' }}
+            >
+              {data.apkPurchase.desc}
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <a
+              href={wa('Hola, quiero comprar la Ecomp App (APK)')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-full font-syne font-bold text-sm tracking-widest uppercase text-white transition-transform duration-200 hover:-translate-y-1"
+              style={{
+                background: 'linear-gradient(135deg,#4F7FFF,#00E5C3)',
+                boxShadow: '0 0 40px rgba(79,127,255,0.25)',
+              }}
+            >
+              {data.apkPurchase.cta}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M7 17L17 7M17 7H7M17 7v10" />
+              </svg>
+            </a>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section
         className="px-6 md:px-12 py-20 md:py-24"
         style={{
-          background: 'var(--surface)',
-          borderTop: '1px solid var(--border)',
+          background: 'var(--bg)',
         }}
       >
         <div className="max-w-4xl mx-auto">
@@ -253,7 +414,7 @@ export default function EcompAppPage() {
                 <div
                   className="rounded-2xl transition-all duration-300 overflow-hidden"
                   style={{
-                    background: isOpen ? 'var(--bg)' : 'transparent',
+                    background: isOpen ? 'var(--surface)' : 'transparent',
                     border: isOpen ? '1px solid var(--accent)' : '1px solid var(--border)',
                   }}
                 >
@@ -304,6 +465,45 @@ export default function EcompAppPage() {
               )
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Store Availability - subtle */}
+      <section className="px-6 md:px-12 py-12 md:py-16">
+        <div className="max-w-3xl mx-auto text-center">
+          <FadeIn>
+            <p
+              className="font-mono text-xs tracking-widest uppercase mb-6"
+              style={{ color: 'var(--muted)' }}
+            >
+              {data.storeAvailability.title}
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <div className="flex items-center justify-center gap-8 md:gap-12">
+              {data.storeAvailability.stores.map((store: string, i: number) => (
+                <div key={i} className="flex flex-col items-center gap-2">
+                  <div
+                    className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-xl"
+                    style={{
+                      background: 'var(--surface)',
+                      border: '1px solid var(--border)',
+                      color: 'var(--muted)',
+                    }}
+                  >
+                    {i === 0 ? <FaApple size={20} /> : i === 1 ? <FaGooglePlay size={18} /> : <FaAppStoreIos size={18} />}
+                  </div>
+                  <span
+                    className="font-mono text-[10px] md:text-[11px] tracking-wide"
+                    style={{ color: 'var(--muted)' }}
+                  >
+                    {store}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
         </div>
       </section>
 
