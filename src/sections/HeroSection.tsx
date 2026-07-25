@@ -235,6 +235,8 @@ export default function HeroSection() {
         >
           <strong style={{ color: 'var(--text)', fontWeight: 400 }}>{t('hero.devWeb')}</strong>
           {', '}
+          <strong style={{ color: 'var(--text)', fontWeight: 400 }}>{t('hero.devApps')}</strong>
+          {', '}
           <strong style={{ color: 'var(--text)', fontWeight: 400 }}>{t('hero.automation')}</strong>
           {' & '}
           <strong style={{ color: 'var(--text)', fontWeight: 400 }}>{t('hero.marketingDigital')}</strong>

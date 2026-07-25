@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
-import { WHATSAPP_USERNAME, CONTACT_EMAIL, SOCIAL } from '../lib/constants'
+import { WHATSAPP_PHONE, CONTACT_EMAIL, SOCIAL } from '../lib/constants'
 
 type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local' | 'ecomp-app'
 
@@ -202,7 +202,7 @@ export default function Chatbot({
               window.open(`mailto:${CONTACT_EMAIL}?subject=Consulta%20desde%20el%20chatbot&body=Hola%20Juan%20Pablo,%0A%0AMe%20contacto%20desde%20tu%20portfolio%20web.`, '_blank')
               break
             case 'whatsapp':
-              window.open(`https://wa.me/${WHATSAPP_USERNAME}?text=Hola%20Juan%20Pablo,%20me%20contacto%20desde%20tu%20portfolio%20web.`, '_blank')
+              window.open(`https://wa.me/${WHATSAPP_PHONE}?text=Hola%20Juan%20Pablo,%20me%20contacto%20desde%20tu%20portfolio%20web.`, '_blank')
               break
             case 'youtube':
               window.open(SOCIAL.YOUTUBE, '_blank')

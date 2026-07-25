@@ -98,25 +98,20 @@ body,
 }
 
 /* Ecomp App screenshots carousel */
-@keyframes ecomp-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
 .ecomp-carousel-track {
   display: flex;
   gap: 1.5rem;
   width: max-content;
-  animation: ecomp-scroll 30s linear infinite;
+  cursor: grab;
+  user-select: none;
 }
 
-.ecomp-carousel-track:hover {
-  animation-play-state: paused;
+.ecomp-carousel-track:active {
+  cursor: grabbing;
 }
 
 @media (max-width: 768px) {
   .ecomp-carousel-track {
     gap: 1rem;
-    animation-duration: 25s;
   }
 }

@@ -26,16 +26,17 @@
     "lastName": "Gutiérrez",
     "secondLastName": "Díaz",
     "devWeb": "Desarrollo web",
+    "devApps": "Apps Kotlin",
     "automation": "Automatización",
     "marketingDigital": "Marketing digital",
     "tagline": "Para profesionales, Emprendedores y Pymes que quieren crecer en Internet.",
     "scroll": "Scroll",
-    "alt": "Juan Pablo Gutiérrez Díaz — Desarrollador Web y Marketing Digital en Tunja, Colombia"
+    "alt": "Juan Pablo Gutiérrez Díaz — Desarrollador Web, Apps Kotlin y Marketing Digital en Tunja, Colombia"
   },
   "about": {
     "heading": "Sobre<br />mí.",
     "tag": "// Quién soy",
-    "text": "Con más de cinco años creando soluciones digitales, me especializo en desarrollo web, marketing digital y automatización. Trabajo con empresarios y emprendedores que quieren destacar en línea y ver resultados reales.",
+    "text": "Con más de cinco años creando soluciones digitales, me especializo en desarrollo web, desarrollo de apps nativas con Kotlin, marketing digital y automatización. Trabajo con empresarios y emprendedores que quieren destacar en línea y ver resultados reales.",
     "statYears": "Años de exp.",
     "statProjects": "Proyectos",
     "statCommitment": "Compromiso",
@@ -462,10 +463,10 @@
         "color": "#F05032"
       },
       {
-        "name": "React Native",
-        "desc": "Apps móviles nativas para Android y iOS",
+        "name": "Kotlin",
+        "desc": "Desarrollo de aplicaciones móviles con Kotlin",
         "icon": "FaMobileAlt",
-        "color": "#61DAFB"
+        "color": "#A97BFF"
       },
       {
         "name": "Python",
@@ -606,7 +607,7 @@
     "subtitle": "Sígueme en mis redes sociales para contenido sobre desarrollo web, marketing digital y mucho más.",
     "credit": "Diseñado y desarrollado por ",
     "creditName": "Juan Pablo Gutiérrez Díaz",
-    "creditDesc": ", especialista en desarrollo web y marketing digital, creando experiencias digitales ágiles y orientadas a resultados.",
+    "creditDesc": ", especialista en desarrollo web, apps nativas con Kotlin y marketing digital, creando experiencias digitales ágiles y orientadas a resultados.",
     "paymentLabel": "Métodos de pago aceptados",
     "shareLabel": "Compartir",
     "shareSublabel": "Esta página",
@@ -742,7 +743,7 @@
         "autoClose": true
       },
       "view_tech": {
-        "text": "Stack tecnológico:\n\n• Frontend: React + Vite + Tailwind CSS\n• Backend: Node.js\n• Bases de datos: MySQL\n• Automatización: Python (IA)\n• Control de versiones: Git & GitHub\n• Apps móviles: React Native\n\nTodo para crear soluciones modernas y escalables.",
+        "text": "Stack tecnológico:\n\n• Frontend: React + Vite + Tailwind CSS\n• Backend: Node.js\n• Bases de datos: MySQL\n• Automatización: Python (IA)\n• Control de versiones: Git & GitHub\n• Apps móviles: Kotlin\n\nTodo para crear soluciones modernas y escalables.",
         "options": [
           "web_dev",
           "view_examples",
@@ -948,7 +949,7 @@
         ]
       },
       "view_examples": {
-        "text": "Juan Pablo tiene diversos proyectos visuales:\n\n• Desarrollo web (landing pages, e-commerce, corporativos)\n• Marketing digital (campañas, redes, contenido)\n• Automatización con IA\n\nPuedes ver ejemplos visuales en sus redes sociales y canal de YouTube.",
+        "text": "Juan Pablo tiene diversos proyectos visuales:\n\n• Desarrollo web (landing pages, e-commerce, corporativos)\n• Apps nativas con Kotlin (Android)\n• Marketing digital (campañas, redes, contenido)\n• Automatización con IA\n\nPuedes ver ejemplos visuales en sus redes sociales y canal de YouTube.",
         "options": [
           "view_social",
           "youtube_channel",
@@ -958,7 +959,7 @@
         ]
       },
       "about_me": {
-        "text": "Juan Pablo es desarrollador web full-stack y experto en performance marketing. Experiencia en React, Python (IA), y marketing digital. Trabaja con clientes en toda LATAM desde Colombia. Certificado en múltiples tecnologías y metodologías.",
+        "text": "Juan Pablo es desarrollador web full-stack, desarrollador de apps nativas con Kotlin y experto en performance marketing. Experiencia en React, Python (IA), Kotlin y marketing digital. Trabaja con clientes en toda LATAM desde Colombia. Certificado en múltiples tecnologías y metodologías.",
         "options": [
           "view_tech",
           "services",
@@ -1076,8 +1077,8 @@
     "meta": {
       "home": {
         "title": "Juan Pablo Gutiérrez — Dev & Marketing Digital",
-        "description": "Desarrollo web, Automatización & Marketing digital en Tunja, Boyacá. Páginas web profesionales, SEO, marketing digital para emprendedores y Pymes en Colombia.",
-        "keywords": "desarrollo web Tunja, marketing digital Boyacá, páginas web profesionales Colombia, Juan Pablo Gutiérrez, desarrollo web Colombia, automatización, emprendedores"
+        "description": "Desarrollo web, apps nativas con Kotlin, Automatización & Marketing digital en Tunja, Boyacá. Páginas web profesionales, SEO, marketing digital para emprendedores y Pymes en Colombia.",
+        "keywords": "desarrollo web Tunja, desarrollo apps Kotlin, marketing digital Boyacá, páginas web profesionales Colombia, Juan Pablo Gutiérrez, desarrollo web Colombia, automatización, emprendedores"
       },
       "apoyo-academico": {
         "title": "Apoyo Académico Universitario — Trabajos y Proyectos",
@@ -2060,6 +2061,7 @@
       ],
       "screenshots": {
         "title": "Así se ve la Ecomp App",
+        "swipeHint": "Desliza para ver más",
         "items": [
           { "src": "/ecomp-app/1 tus datos.png", "title": "Tus Datos" },
           { "src": "/ecomp-app/2 dasboard.png", "title": "Dashboard" },

@@ -26,6 +26,7 @@
     "lastName": "Gutiérrez",
     "secondLastName": "Díaz",
     "devWeb": "Web development",
+    "devApps": "Kotlin apps",
     "automation": "Automation",
     "marketingDigital": "Digital marketing",
     "tagline": "For professionals, Entrepreneurs and SMBs that want to grow online.",
@@ -35,7 +36,7 @@
     "heading": "About ",
     "headingHighlight": "Me",
     "tag": "// Who I Am",
-    "text": "With over five years creating digital solutions, I specialize in web development, digital marketing, and automation. I work with entrepreneurs and business owners who want to stand out online and see real results.",
+    "text": "With over five years creating digital solutions, I specialize in web development, native app development with Kotlin, digital marketing, and automation. I work with entrepreneurs and business owners who want to stand out online and see real results.",
     "statYears": "Years Exp.",
     "statProjects": "Projects",
     "statCommitment": "Commitment",
@@ -374,10 +375,10 @@
         "color": "#F05032"
       },
       {
-        "name": "React Native",
-        "desc": "Native mobile apps for Android and iOS",
+        "name": "Kotlin",
+        "desc": "Mobile app development with Kotlin",
         "icon": "FaMobileAlt",
-        "color": "#61DAFB"
+        "color": "#A97BFF"
       },
       {
         "name": "Python",
@@ -553,7 +554,7 @@
     "shareSublabel": "This page",
     "credit": "Designed and developed by ",
     "creditName": "Juan Pablo Gutiérrez Díaz",
-    "creditDesc": ", specialist in web development and digital marketing, creating agile and results-oriented digital experiences.",
+    "creditDesc": ", specialist in web development, native Kotlin apps and digital marketing, creating agile and results-oriented digital experiences.",
     "paymentLabel": "Accepted payment methods",
     "socialCats": {
       "Facebook": "Social",
@@ -857,7 +858,7 @@
         "autoClose": true
       },
       "view_tech": {
-        "text": "Tech stack:\n\n• Frontend: React + Vite + Tailwind CSS\n• Backend: Node.js\n• Databases: MySQL\n• Automation: Python (AI)\n• Version control: Git & GitHub\n• Mobile apps: React Native\n\nAll to create modern and scalable solutions.",
+        "text": "Tech stack:\n\n• Frontend: React + Vite + Tailwind CSS\n• Backend: Node.js\n• Databases: MySQL\n• Automation: Python (AI)\n• Version control: Git & GitHub\n• Mobile apps: Kotlin\n\nAll to create modern and scalable solutions.",
         "options": [
           "web_dev",
           "view_examples",
@@ -1063,7 +1064,7 @@
         ]
       },
       "view_examples": {
-        "text": "Juan Pablo has various visual projects:\n\n• Web development (landing pages, e-commerce, corporate)\n• Digital marketing (campaigns, social, content)\n• AI automation\n\nYou can see visual examples on his social networks and YouTube channel.",
+        "text": "Juan Pablo has various visual projects:\n\n• Web development (landing pages, e-commerce, corporate)\n• Native Kotlin apps (Android)\n• Digital marketing (campaigns, social, content)\n• AI automation\n\nYou can see visual examples on his social networks and YouTube channel.",
         "options": [
           "view_social",
           "youtube_channel",
@@ -1073,7 +1074,7 @@
         ]
       },
       "about_me": {
-        "text": "Juan Pablo is a full-stack web developer and performance marketing expert. Experience in React, Python (AI), and digital marketing. Works with clients across LATAM from Colombia. Certified in multiple technologies and methodologies.",
+        "text": "Juan Pablo is a full-stack web developer, native Kotlin app developer and performance marketing expert. Experience in React, Python (AI), Kotlin, and digital marketing. Works with clients across LATAM from Colombia. Certified in multiple technologies and methodologies.",
         "options": [
           "view_tech",
           "services",
@@ -1186,8 +1187,8 @@
     "meta": {
       "home": {
         "title": "Juan Pablo Gutiérrez — Dev & Digital Marketing",
-        "description": "Web development, Automation & Digital marketing in Tunja, Boyacá. Professional websites, SEO, digital marketing for entrepreneurs and SMBs in Colombia.",
-        "keywords": "web development Tunja, digital marketing Boyacá, professional websites Colombia, Juan Pablo Gutiérrez, web development Colombia, automation, entrepreneurs"
+        "description": "Web development, native Kotlin apps, Automation & Digital marketing in Tunja, Boyacá. Professional websites, SEO, digital marketing for entrepreneurs and SMBs in Colombia.",
+        "keywords": "web development Tunja, Kotlin app development, digital marketing Boyacá, professional websites Colombia, Juan Pablo Gutiérrez, web development Colombia, automation, entrepreneurs"
       },
       "apoyo-academico": {
         "title": "Academic Support — University Work and Projects",
@@ -2170,6 +2171,7 @@
       ],
       "screenshots": {
         "title": "This is how the Ecomp App looks",
+        "swipeHint": "Swipe to see more",
         "items": [
           { "src": "/ecomp-app/1 tus datos.png", "title": "Your Data" },
           { "src": "/ecomp-app/2 dasboard.png", "title": "Dashboard" },

@@ -1,5 +1,5 @@
-import { useState, useCallback } from 'react'
-import { FaChevronDown, FaClock, FaShield, FaRocket, FaChartLine, FaBan, FaApple, FaGooglePlay } from 'react-icons/fa6'
+import { useState, useCallback, useRef, useEffect } from 'react'
+import { FaChevronDown, FaClock, FaShield, FaRocket, FaChartLine, FaBan, FaApple, FaGooglePlay, FaPause, FaPlay } from 'react-icons/fa6'
 import { FaAppStoreIos } from 'react-icons/fa'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
@@ -9,6 +9,7 @@ import { wa } from '../lib/whatsapp'
 
 const BENEFIT_ICONS = [FaClock, FaShield, FaRocket, FaChartLine]
 const PLACEHOLDER_BG = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjM1NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCBmaWxsPSIjMUQyMTMwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjM1NiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNUE2NDc4IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCI+U2NyZWVuc2hvdDwvdGV4dD48L3N2Zz4='
+const SPEED = 0.5
 
 export default function EcompAppPage() {
   const { t } = useTranslation()
@@ -25,10 +26,97 @@ export default function EcompAppPage() {
     })
   }, [])
 
+  // --- Carousel state ---
+  const trackRef = useRef<HTMLDivElement>(null)
+  const offsetRef = useRef(0)
+  const dragging = useRef(false)
+  const startX = useRef(0)
+  const lastDelta = useRef(0)
+  const pausedRef = useRef(false)
+  const [paused, setPaused] = useState(false)
+  const rafRef = useRef<number>(0)
+  const halfWidthRef = useRef(0)
+
+  const computeHalf = useCallback(() => {
+    if (!trackRef.current) return
+    const total = trackRef.current.scrollWidth
+    halfWidthRef.current = total / 2
+  }, [])
+
+  const applyTransform = useCallback(() => {
+    if (!trackRef.current || halfWidthRef.current === 0) return
+    const hw = halfWidthRef.current
+    const x = ((offsetRef.current % hw) + hw) % hw - hw
+    trackRef.current.style.transform = `translateX(${x}px)`
+  }, [])
+
+  useEffect(() => {
+    computeHalf()
+    window.addEventListener('resize', computeHalf)
+    return () => window.removeEventListener('resize', computeHalf)
+  }, [computeHalf, data])
+
+  useEffect(() => {
+    let lastTime = performance.now()
+    const tick = (now: number) => {
+      const dt = now - lastTime
+      lastTime = now
+      if (!pausedRef.current && !dragging.current && halfWidthRef.current > 0) {
+        offsetRef.current -= SPEED * dt * 0.06
+        applyTransform()
+      }
+      rafRef.current = requestAnimationFrame(tick)
+    }
+    rafRef.current = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(rafRef.current)
+  }, [applyTransform])
+
+  const onPointerDown = useCallback((e: React.MouseEvent | React.TouchEvent) => {
+    dragging.current = true
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
+    startX.current = clientX
+    lastDelta.current = 0
+  }, [])
+
+  useEffect(() => {
+    const onMove = (e: MouseEvent | TouchEvent) => {
+      if (!dragging.current) return
+      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
+      const delta = clientX - startX.current
+      startX.current = clientX
+      lastDelta.current = delta
+      offsetRef.current += delta
+      applyTransform()
+    }
+    const onUp = () => {
+      if (!dragging.current) return
+      dragging.current = false
+      if (lastDelta.current !== 0) {
+        offsetRef.current += lastDelta.current * 8
+        applyTransform()
+      }
+    }
+    window.addEventListener('mousemove', onMove)
+    window.addEventListener('mouseup', onUp)
+    window.addEventListener('touchmove', onMove, { passive: true })
+    window.addEventListener('touchend', onUp)
+    return () => {
+      window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('mouseup', onUp)
+      window.removeEventListener('touchmove', onMove)
+      window.removeEventListener('touchend', onUp)
+    }
+  }, [applyTransform])
+
+  const togglePause = useCallback(() => {
+    pausedRef.current = !pausedRef.current
+    setPaused(pausedRef.current)
+  }, [])
+
   return (
     <main className="min-h-screen" style={{ background: 'var(--bg)' }}>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center px-6 md:px-12 pt-24 md:pt-32 pb-16 md:pb-20 overflow-hidden">
+      <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center px-6 md:px-12 pt-24 md:pt-28 pb-10 md:pb-14 overflow-hidden">
         <div
           className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full"
           style={{ background: 'radial-gradient(ellipse,rgba(79,127,255,0.08) 0%,transparent 70%)' }}
@@ -60,11 +148,11 @@ export default function EcompAppPage() {
       </section>
 
       {/* Screenshots Gallery */}
-      <section className="py-16 md:py-20 overflow-hidden">
+      <section className="py-10 md:py-14 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 md:px-12">
           <FadeIn>
             <h2
-              className="font-syne font-black uppercase text-center mb-10 tracking-tight break-words gradient-heading"
+              className="font-syne font-black uppercase text-center mb-6 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(24px,3.5vw,48px)' }}
             >
               {data.screenshots.title}
@@ -74,14 +162,19 @@ export default function EcompAppPage() {
 
         <FadeIn delay={0.1}>
           <div className="overflow-hidden">
-            <div className="ecomp-carousel-track px-6">
-              {[...data.screenshots.items, ...data.screenshots.items].map((shot: { src: string; title: string }, i: number) => {
+            <div
+              ref={trackRef}
+              className="ecomp-carousel-track px-6"
+              onMouseDown={onPointerDown}
+              onTouchStart={onPointerDown}
+            >
+              {[...data.screenshots.items, ...data.screenshots.items, ...data.screenshots.items].map((shot: { src: string; title: string }, i: number) => {
                 const imgKey = `shot-${i}`
                 const isFailed = failedImages.has(imgKey)
                 return (
-                  <div key={i} className="group flex flex-col items-center flex-shrink-0" style={{ width: 'clamp(140px, 18vw, 200px)' }}>
+                  <div key={i} className="group flex flex-col items-center flex-shrink-0 pointer-events-none" style={{ width: 'clamp(140px, 18vw, 200px)' }}>
                     <div
-                      className="relative w-full overflow-hidden transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-lg"
+                      className="relative w-full overflow-hidden transition-shadow duration-300 group-hover:shadow-lg"
                       style={{
                         aspectRatio: '1373/2857',
                         borderRadius: 28,
@@ -110,12 +203,33 @@ export default function EcompAppPage() {
               })}
             </div>
           </div>
+
+          <div className="flex flex-col items-center gap-3 mt-6">
+            <span
+              className="font-mono text-[10px] md:text-[11px] tracking-widest uppercase"
+              style={{ color: 'var(--muted)' }}
+            >
+              {data.screenshots.swipeHint}
+            </span>
+            <button
+              onClick={togglePause}
+              className="flex items-center gap-2 px-4 py-2 rounded-full font-mono text-[11px] tracking-widest uppercase transition-all duration-200 hover:-translate-y-0.5"
+              style={{
+                border: '1px solid var(--border)',
+                color: paused ? 'var(--accent)' : 'var(--muted)',
+                background: 'var(--surface)',
+              }}
+            >
+              {paused ? <FaPlay size={10} /> : <FaPause size={10} />}
+              {paused ? 'Play' : 'Pausar'}
+            </button>
+          </div>
         </FadeIn>
       </section>
 
       {/* No Ads Highlight */}
       <section
-        className="px-6 md:px-12 py-16 md:py-20"
+        className="px-6 md:px-12 py-10 md:py-14"
         style={{
           background: 'linear-gradient(135deg, rgba(16,185,129,0.06) 0%, rgba(6,182,212,0.06) 100%)',
           borderTop: '1px solid var(--border)',
@@ -125,7 +239,7 @@ export default function EcompAppPage() {
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <div
-              className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-6"
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-4"
               style={{
                 background: 'rgba(16,185,129,0.1)',
                 border: '1px solid rgba(16,185,129,0.25)',
@@ -162,7 +276,7 @@ export default function EcompAppPage() {
       </section>
 
       {/* Features Section */}
-      <section className="px-6 md:px-12 py-20 md:py-24">
+      <section className="px-6 md:px-12 py-12 md:py-16">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <h2
@@ -175,7 +289,7 @@ export default function EcompAppPage() {
 
           <FadeIn delay={0.1}>
             <p
-              className="text-center font-mono text-sm mb-16"
+              className="text-center font-mono text-sm mb-8"
               style={{ color: 'var(--muted)', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}
             >
               {data.sectionTitles.featuresDesc}
@@ -214,7 +328,7 @@ export default function EcompAppPage() {
 
       {/* How It Works */}
       <section
-        className="px-6 md:px-12 py-20 md:py-24"
+        className="px-6 md:px-12 py-12 md:py-16"
         style={{
           background: 'var(--surface)',
           borderTop: '1px solid var(--border)',
@@ -223,7 +337,7 @@ export default function EcompAppPage() {
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <h2
-              className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
+              className="font-syne font-black uppercase text-center mb-8 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
               {data.sectionTitles.howItWorks}
@@ -290,11 +404,11 @@ export default function EcompAppPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="px-6 md:px-12 py-20 md:py-24">
+      <section className="px-6 md:px-12 py-12 md:py-16">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <h2
-              className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
+              className="font-syne font-black uppercase text-center mb-8 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
               {data.sectionTitles.benefits}
@@ -343,7 +457,7 @@ export default function EcompAppPage() {
 
       {/* Buy APK CTA */}
       <section
-        className="px-6 md:px-12 py-16 md:py-20"
+        className="px-6 md:px-12 py-10 md:py-14"
         style={{
           background: 'var(--surface)',
           borderTop: '1px solid var(--border)',
@@ -391,7 +505,7 @@ export default function EcompAppPage() {
 
       {/* FAQ */}
       <section
-        className="px-6 md:px-12 py-20 md:py-24"
+        className="px-6 md:px-12 py-12 md:py-16"
         style={{
           background: 'var(--bg)',
         }}
@@ -399,7 +513,7 @@ export default function EcompAppPage() {
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <h2
-              className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words"
+              className="font-syne font-black uppercase text-center mb-8 tracking-tight break-words"
               style={{ fontSize: 'clamp(28px,4vw,56px)', color: 'var(--white)' }}
             >
               {data.sectionTitles.faq}
@@ -469,7 +583,7 @@ export default function EcompAppPage() {
       </section>
 
       {/* Store Availability - subtle */}
-      <section className="px-6 md:px-12 py-12 md:py-16">
+      <section className="px-6 md:px-12 py-8 md:py-10">
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
             <p
@@ -504,12 +618,21 @@ export default function EcompAppPage() {
               ))}
             </div>
           </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <p
+              className="font-mono text-[10px] md:text-[11px] tracking-wide mt-8 leading-relaxed"
+              style={{ color: 'var(--muted)' }}
+            >
+              Creada y desarrollada por <span style={{ color: 'var(--text)' }}>Juan Pablo Gutiérrez Díaz</span> — Desarrollo web, Apps Kotlin, Automatización & Marketing digital. Todos los derechos reservados.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
       {/* Final CTA */}
       <section
-        className="px-6 md:px-12 py-20 md:py-24 text-center"
+        className="px-6 md:px-12 py-12 md:py-16 text-center"
         style={{
           background: 'linear-gradient(135deg, rgba(79,127,255,0.05) 0%, rgba(0,229,195,0.05) 100%)',
           borderTop: '1px solid var(--border)',
