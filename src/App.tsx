@@ -41,12 +41,12 @@ const OptimizacionCVPage = lazy(() => import('./pages/OptimizacionCVPage'))
 const PlantillaGastosPage = lazy(() => import('./pages/PlantillaGastosPage'))
 const PlantillaHabitosPage = lazy(() => import('./pages/PlantillaHabitosPage'))
 const IaLocalPage = lazy(() => import('./pages/IaLocalPage'))
-const EcompAppPage = lazy(() => import('./pages/EcompAppPage'))
+const RecompAppPage = lazy(() => import('./pages/RecompAppPage'))
 const Page404 = lazy(() => import('./pages/Page404'))
 const Chatbot = lazy(() => import('./components/Chatbot'))
 const ShareModal = lazy(() => import('./components/ShareModal'))
 
-type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local' | 'ecomp-app'
+type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local' | 'recomp-app'
 
 function SectionFallback() {
   return <div className="h-32" />
@@ -169,7 +169,7 @@ function AppShell() {
           <Route path="/plantilla-gastos" element={<Suspense fallback={<LoadingScreen />}><PlantillaGastosPage /></Suspense>} />
           <Route path="/plantilla-habitos" element={<Suspense fallback={<LoadingScreen />}><PlantillaHabitosPage /></Suspense>} />
           <Route path="/ia-local" element={<Suspense fallback={<LoadingScreen />}><IaLocalPage /></Suspense>} />
-          <Route path="/ecomp-app" element={<Suspense fallback={<LoadingScreen />}><EcompAppPage /></Suspense>} />
+          <Route path="/recomp-app" element={<Suspense fallback={<LoadingScreen />}><RecompAppPage /></Suspense>} />
           <Route path="*" element={<Suspense fallback={<LoadingScreen />}><Page404 /></Suspense>} />
         </Routes>
       </main>

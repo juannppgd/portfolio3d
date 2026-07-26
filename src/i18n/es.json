@@ -117,10 +117,10 @@
         "cta": "Solicita tu asesoría"
       }
     ],
-    "ecompApp": {
+    "recompApp": {
       "badge": "Nueva App",
-      "title": "Ecomp App",
-      "subtitle": "Tu Asistente Inteligente de Recomposición Corporal y Nutrición",
+      "title": "Recomp",
+      "subtitle": "Tu Asistente Inteligente de Recomposición Corporal y Nutrición creado por Juan Pablo Gutiérrez Díaz",
       "description": "Transforma tu físico de manera inteligente: ganar masa muscular, perder grasa y optimizar tu rendimiento sin complicaciones.",
       "features": [
         "Ajuste inteligente de calorías y macronutrientes (TDEE)",
@@ -667,7 +667,7 @@
           "web_dev",
           "digital_marketing",
           "ia_local",
-          "ecomp_app",
+          "recomp_app",
           "additional_services",
           "contact",
           "about_me"
@@ -708,20 +708,20 @@
         "action": "contact",
         "autoClose": true
       },
-      "ecomp_app": {
-        "text": "Ecomp App: tu asistente inteligente de recomposición corporal y nutrición. Ajuste inteligente de calorías, registro de entrenamientos, metas diarias y dashboard dinámico. Funciona offline y protege tu privacidad.\n\n¿Qué te gustaría saber?",
+      "recomp_app": {
+        "text": "Recomp: tu asistente inteligente de recomposición corporal y nutrición. Ajuste inteligente de calorías, registro de entrenamientos, metas diarias y dashboard dinámico. Funciona offline y protege tu privacidad.\n\n¿Qué te gustaría saber?",
         "options": [
-          "view_ecomp_page",
+          "view_recomp_page",
           "contact",
           "services"
         ]
       },
-      "view_ecomp_page": {
-        "text": "¡Perfecto! Te llevo a la página de la Ecomp App para que conozcas todas las funcionalidades.",
+      "view_recomp_page": {
+        "text": "¡Perfecto! Te llevo a la página de la Recomp para que conozcas todas las funcionalidades.",
         "options": [
           "back_home"
         ],
-        "action": "ecomp-app",
+        "action": "recomp-app",
         "autoClose": true
       },
       "contact": {
@@ -920,7 +920,7 @@
           "web_dev",
           "digital_marketing",
           "ia_local",
-          "ecomp_app",
+          "recomp_app",
           "additional_services",
           "contact"
         ]
@@ -973,7 +973,7 @@
           "web_dev",
           "digital_marketing",
           "ia_local",
-          "ecomp_app",
+          "recomp_app",
           "contact",
           "faq",
           "send_message"
@@ -1024,8 +1024,8 @@
       "digital_marketing": "Marketing Digital",
       "ia_local": "Automatización con IA",
       "try_ia_local": "Solicitar evaluación gratuita",
-      "ecomp_app": "Ecomp App",
-      "view_ecomp_page": "Ver Ecomp App",
+      "recomp_app": "Recomp",
+      "view_recomp_page": "Ver Recomp",
       "contact": "Contacto",
       "view_social": "Ver Redes Sociales",
       "view_tech": "Ver Tecnologías",
@@ -1115,10 +1115,10 @@
         "description": "Diseño e implementación de agentes inteligentes para WhatsApp, web y ecommerce. Automatización de atención al cliente, generación de leads y procesos internos. Presupuesto personalizado.",
         "keywords": "automatización agentes IA, chatbot WhatsApp, automatización ecommerce, agentes inteligentes Colombia, automatización customer service, IA para negocios"
       },
-      "ecomp-app": {
-        "title": "Ecomp App — Recomposición Corporal y Nutrición",
+      "recomp-app": {
+        "title": "Recomp — Recomposición Corporal y Nutrición",
         "description": "App de seguimiento nutricional y fitness con ajuste inteligente de calorías, registro de entrenamientos, metas diarias y dashboard dinámico. Funciona offline y protege tu privacidad.",
-        "keywords": "app nutrición, recomposición corporal, contador calorías, registro entrenamiento, app fitness, nutrición inteligente, Ecomp App"
+        "keywords": "app nutrición, recomposición corporal, contador calorías, registro entrenamiento, app fitness, nutrición inteligente, Recomp"
       }
     }
   },
@@ -1952,9 +1952,9 @@
         "ctaButton": "Obtener Plantilla Ahora"
       }
     },
-    "ecompApp": {
+    "recompApp": {
       "hero": {
-        "title": "Ecomp App — Recomposición Corporal y Nutrición",
+        "title": "Recomp — Recomposición Corporal y Nutrición",
         "subtitle": "Tu asistente inteligente para transformar tu físico de manera sostenible. Ajuste de calorías, registro de entrenamientos, seguimiento de hábitos y dashboard dinámico."
       },
       "sectionTitles": {
@@ -1973,7 +1973,7 @@
         "benefits": "Beneficios",
         "faq": "Preguntas Frecuentes",
         "ctaTitle": "¿Listo para transformar tu físico?",
-        "ctaDesc": "Descarga la Ecomp App y comienza tu proceso de recomposición corporal con el respaldo de la inteligencia artificial.",
+        "ctaDesc": "Descarga la Recomp y comienza tu proceso de recomposición corporal con el respaldo de la inteligencia artificial.",
         "ctaButton": "Solicitar Información"
       },
       "features": [
@@ -2048,7 +2048,7 @@
         },
         {
           "q": "¿La app funciona sin conexión a internet?",
-          "a": "Sí. La Ecomp App está diseñada para funcionar completamente offline. Tus datos nunca salen de tu dispositivo."
+          "a": "Sí. La Recomp está diseñada para funcionar completamente offline. Tus datos nunca salen de tu dispositivo."
         },
         {
           "q": "¿Puedo usarla tanto para ganar masa como para perder grasa?",
@@ -2060,16 +2060,16 @@
         }
       ],
       "screenshots": {
-        "title": "Así se ve la Ecomp App",
+        "title": "Así se ve la Recomp",
         "swipeHint": "Desliza para ver más",
         "items": [
-          { "src": "/ecomp-app/1 tus datos.png", "title": "Tus Datos" },
-          { "src": "/ecomp-app/2 dasboard.png", "title": "Dashboard" },
-          { "src": "/ecomp-app/3 metas.png", "title": "Metas" },
-          { "src": "/ecomp-app/4 entrenamiento.png", "title": "Entrenamiento" },
-          { "src": "/ecomp-app/5 nutricion.png", "title": "Nutrición" },
-          { "src": "/ecomp-app/6 progreso.png", "title": "Progreso" },
-          { "src": "/ecomp-app/7 informe.png", "title": "Informe" }
+          { "src": "/recomp-app/1 tus datos.webp", "title": "Tus Datos" },
+          { "src": "/recomp-app/2 dasboard.webp", "title": "Dashboard" },
+          { "src": "/recomp-app/3 metas.webp", "title": "Metas" },
+          { "src": "/recomp-app/4 entrenamiento.webp", "title": "Entrenamiento" },
+          { "src": "/recomp-app/5 nutricion.webp", "title": "Nutrición" },
+          { "src": "/recomp-app/6 progreso.webp", "title": "Progreso" },
+          { "src": "/recomp-app/7 informe.webp", "title": "Informe" }
         ]
       },
       "noAds": {
@@ -2078,7 +2078,7 @@
         "lifeChange": "Esta app va a cambiar tu vida."
       },
       "apkPurchase": {
-        "title": "Obtén la Ecomp App",
+        "title": "Obtén la Recomp",
         "desc": "Disponible como APK directo. Compra segura por WhatsApp.",
         "cta": "Comprar APK"
       },

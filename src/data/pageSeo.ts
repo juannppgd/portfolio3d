@@ -54,10 +54,10 @@ export const PAGE_META: Record<string, {
     keywords: 'automatización agentes IA, chatbot WhatsApp, automatización ecommerce, agentes inteligentes Colombia, automatización customer service, IA para negocios',
     path: '/ia-local',
   },
-  'ecomp-app': {
-    title: 'Ecomp App — Recomposición Corporal y Nutrición',
+  'recomp-app': {
+    title: 'Recomp — Recomposición Corporal y Nutrición',
     description: 'App de seguimiento nutricional y fitness con ajuste inteligente de calorías, registro de entrenamientos, metas diarias y dashboard dinámico. Funciona offline y protege tu privacidad.',
-    keywords: 'app nutrición, recomposición corporal, contador calorías, registro entrenamiento, app fitness, nutrición inteligente, Ecomp App',
-    path: '/ecomp-app',
+    keywords: 'app nutrición, recomposición corporal, contador calorías, registro entrenamiento, app fitness, nutrición inteligente, Recomp',
+    path: '/recomp-app',
   },
 }

@@ -98,7 +98,7 @@ body,
 }
 
 /* Ecomp App screenshots carousel */
-.ecomp-carousel-track {
+.recomp-carousel-track {
   display: flex;
   gap: 1.5rem;
   width: max-content;
@@ -106,12 +106,12 @@ body,
   user-select: none;
 }
 
-.ecomp-carousel-track:active {
+.recomp-carousel-track:active {
   cursor: grabbing;
 }
 
 @media (max-width: 768px) {
-  .ecomp-carousel-track {
+  .recomp-carousel-track {
     gap: 1rem;
   }
 }

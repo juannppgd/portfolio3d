@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import { WHATSAPP_PHONE, CONTACT_EMAIL, SOCIAL } from '../lib/constants'
 
-type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local' | 'ecomp-app'
+type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local' | 'recomp-app'
 
 interface ChatbotProps {
   onShare?: () => void
@@ -25,18 +25,18 @@ interface ResponseEntry {
   action?: 'contact' | 'footer' | 'share' | 'email' | 'whatsapp' | 'youtube'
     | 'plantilla-gastos' | 'plantilla-habitos' | 'apoyo-academico'
     | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv'
-    | 'ecomp-app'
+    | 'recomp-app'
   autoClose?: boolean
 }
 
 const responseMap: Record<string, ResponseEntry> = {
-  services: { textKey: 'chatbot.responses.services.text', optionKeys: ['web_dev', 'digital_marketing', 'ia_local', 'ecomp_app', 'additional_services', 'contact', 'about_me'] },
+  services: { textKey: 'chatbot.responses.services.text', optionKeys: ['web_dev', 'digital_marketing', 'ia_local', 'recomp_app', 'additional_services', 'contact', 'about_me'] },
   web_dev: { textKey: 'chatbot.responses.web_dev.text', optionKeys: ['view_tech', 'dev_timeline', 'hosting_info', 'contact'] },
   digital_marketing: { textKey: 'chatbot.responses.digital_marketing.text', optionKeys: ['email_marketing', 'social_media', 'data_analytics', 'contact', 'youtube_channel'] },
   ia_local: { textKey: 'chatbot.responses.ia_local.text', optionKeys: ['try_ia_local', 'contact', 'services'] },
   try_ia_local: { textKey: 'chatbot.responses.try_ia_local.text', optionKeys: ['back_home'], action: 'contact', autoClose: true },
-  ecomp_app: { textKey: 'chatbot.responses.ecomp_app.text', optionKeys: ['view_ecomp_page', 'contact', 'services'] },
-  view_ecomp_page: { textKey: 'chatbot.responses.view_ecomp_page.text', optionKeys: ['back_home'], action: 'ecomp-app', autoClose: true },
+  recomp_app: { textKey: 'chatbot.responses.recomp_app.text', optionKeys: ['view_recomp_page', 'contact', 'services'] },
+  view_recomp_page: { textKey: 'chatbot.responses.view_recomp_page.text', optionKeys: ['back_home'], action: 'recomp-app', autoClose: true },
   contact: { textKey: 'chatbot.responses.contact.text', optionKeys: ['share_web', 'send_email', 'send_message', 'more_info', 'view_social'] },
   view_social: { textKey: 'chatbot.responses.view_social.text', optionKeys: ['back_home'], action: 'footer', autoClose: true },
   view_tech: { textKey: 'chatbot.responses.view_tech.text', optionKeys: ['web_dev', 'view_examples', 'contact'] },
@@ -60,13 +60,13 @@ const responseMap: Record<string, ResponseEntry> = {
   view_classes_page: { textKey: 'chatbot.responses.view_classes_page.text', optionKeys: ['back_home'], action: 'clases-programacion', autoClose: true },
   view_sales_page: { textKey: 'chatbot.responses.view_sales_page.text', optionKeys: ['back_home'], action: 'ventas-online', autoClose: true },
   view_cv_page: { textKey: 'chatbot.responses.view_cv_page.text', optionKeys: ['back_home'], action: 'optimizacion-cv', autoClose: true },
-  back_services: { textKey: 'chatbot.responses.back_services.text', optionKeys: ['web_dev', 'digital_marketing', 'ia_local', 'ecomp_app', 'additional_services', 'contact'] },
+  back_services: { textKey: 'chatbot.responses.back_services.text', optionKeys: ['web_dev', 'digital_marketing', 'ia_local', 'recomp_app', 'additional_services', 'contact'] },
   youtube_channel: { textKey: 'chatbot.responses.youtube_channel.text', optionKeys: ['back_home'], action: 'youtube' },
   send_email: { textKey: 'chatbot.responses.send_email.text', optionKeys: ['back_home'], action: 'email', autoClose: true },
   more_info: { textKey: 'chatbot.responses.more_info.text', optionKeys: ['services', 'about_me', 'contact'] },
   view_examples: { textKey: 'chatbot.responses.view_examples.text', optionKeys: ['view_social', 'youtube_channel', 'web_dev', 'digital_marketing', 'contact'] },
   about_me: { textKey: 'chatbot.responses.about_me.text', optionKeys: ['view_tech', 'services', 'contact'] },
-  back_home: { textKey: 'chatbot.responses.back_home.text', optionKeys: ['services', 'web_dev', 'digital_marketing', 'ia_local', 'ecomp_app', 'contact', 'faq', 'send_message'] },
+  back_home: { textKey: 'chatbot.responses.back_home.text', optionKeys: ['services', 'web_dev', 'digital_marketing', 'ia_local', 'recomp_app', 'contact', 'faq', 'send_message'] },
   faq: { textKey: 'chatbot.responses.faq.text', optionKeys: ['maintenance', 'payments', 'contact'] },
   maintenance: { textKey: 'chatbot.responses.maintenance.text', optionKeys: ['faq', 'contact'] },
   payments: { textKey: 'chatbot.responses.payments.text', optionKeys: ['faq', 'contact'] },
@@ -74,7 +74,7 @@ const responseMap: Record<string, ResponseEntry> = {
   send_message: { textKey: 'chatbot.responses.send_message.text', optionKeys: ['back_home'], action: 'contact', autoClose: true },
 }
 
-const initialOptionKeys = ['services', 'web_dev', 'digital_marketing', 'ia_local', 'ecomp_app', 'contact', 'additional_services', 'faq']
+const initialOptionKeys = ['services', 'web_dev', 'digital_marketing', 'ia_local', 'recomp_app', 'contact', 'additional_services', 'faq']
 
 const floatingVariants = {
   initial: { opacity: 0, scale: 0.8, y: 20 },

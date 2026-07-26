@@ -10,7 +10,7 @@ import {
 import FadeIn from '../components/FadeIn'
 import DataIcon from '../components/DataIcon'
 
-type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local' | 'ecomp-app'
+type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local' | 'recomp-app'
 
 function CountdownTimer() {
   const [time, setTime] = useState('')
@@ -55,7 +55,7 @@ export default function ServicesSection() {
   const { t } = useTranslation()
 
   const mainServices = t('data.mainServices', { returnObjects: true }) as any[]
-  const ecompApp = t('data.ecompApp', { returnObjects: true }) as any
+  const recompApp = t('data.recompApp', { returnObjects: true }) as any
   const additionalServices = t('data.additionalServices', { returnObjects: true }) as any[]
   const templates = t('data.templates', { returnObjects: true }) as any[]
   const localAi = t('data.localAi', { returnObjects: true }) as any
@@ -214,7 +214,7 @@ export default function ServicesSection() {
                       border: '1px solid rgba(79,127,255,0.25)',
                     }}
                   >
-                    {ecompApp.badge}
+                    {recompApp.badge}
                   </span>
                 </div>
 
@@ -222,35 +222,35 @@ export default function ServicesSection() {
                   className="font-syne font-bold uppercase tracking-tight mb-1"
                   style={{ fontSize: 'clamp(18px,1.8vw,24px)', color: 'var(--white)' }}
                 >
-                  {ecompApp.title}
+                  {recompApp.title}
                 </h3>
                 <p
                   className="font-mono text-xs tracking-wide mb-3"
                   style={{ color: 'var(--accent2)' }}
                 >
-                  {ecompApp.subtitle}
+                  {recompApp.subtitle}
                 </p>
                 <p
                   className="font-mono font-light leading-relaxed mb-4 text-sm"
                   style={{ color: 'var(--muted)' }}
                 >
-                  {ecompApp.description}
+                  {recompApp.description}
                 </p>
 
                 <button
-                  onClick={() => window.open('/ecomp-app', '_blank')}
+                  onClick={() => window.open('/recomp-app', '_blank')}
                   className="font-syne font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-200 hover:-translate-y-0.5"
                   style={{
                     background: 'linear-gradient(135deg,#A855F7,#EC4899)',
                     color: '#FFFFFF',
                   }}
                 >
-                  {ecompApp.cta}
+                  {recompApp.cta}
                 </button>
               </div>
 
               <ul className="space-y-2.5 flex-1 min-w-0">
-                {ecompApp.features.map((feat: string, j: number) => {
+                {recompApp.features.map((feat: string, j: number) => {
                   const icons = [FaCalculator, FaAppleAlt, FaDumbbell, FaBullseye, FaStopwatch, FaChartPie, FaShieldAlt]
                   const Icon = icons[j] || FaCheck
                   return (

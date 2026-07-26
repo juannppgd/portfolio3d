@@ -11,9 +11,9 @@ const BENEFIT_ICONS = [FaClock, FaShield, FaRocket, FaChartLine]
 const PLACEHOLDER_BG = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjM1NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCBmaWxsPSIjMUQyMTMwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjM1NiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNUE2NDc4IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCI+U2NyZWVuc2hvdDwvdGV4dD48L3N2Zz4='
 const SPEED = 0.5
 
-export default function EcompAppPage() {
+export default function RecompAppPage() {
   const { t } = useTranslation()
-  const data = t('servicePages.ecompApp', { returnObjects: true }) as any
+  const data = t('servicePages.recompApp', { returnObjects: true }) as any
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set())
 
@@ -142,7 +142,7 @@ export default function EcompAppPage() {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <ContactButton label={data.sectionTitles.heroButton} href={wa('Hola, vine por la Ecomp App — Recomposición Corporal y Nutrición')} />
+            <ContactButton label={data.sectionTitles.heroButton} href={wa('Hola, vine por la Recomp — Recomposición Corporal y Nutrición')} />
           </FadeIn>
         </div>
       </section>
@@ -164,7 +164,7 @@ export default function EcompAppPage() {
           <div className="overflow-hidden">
             <div
               ref={trackRef}
-              className="ecomp-carousel-track px-6"
+              className="recomp-carousel-track px-6"
               onMouseDown={onPointerDown}
               onTouchStart={onPointerDown}
             >
@@ -485,7 +485,7 @@ export default function EcompAppPage() {
 
           <FadeIn delay={0.2}>
             <a
-              href={wa('Hola, quiero comprar la Ecomp App (APK)')}
+              href={wa('Hola, quiero comprar la Recomp (APK)')}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-10 py-5 md:px-12 md:py-6 rounded-full font-syne font-bold text-sm tracking-widest uppercase text-white transition-transform duration-200 hover:-translate-y-1"
@@ -657,7 +657,7 @@ export default function EcompAppPage() {
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <ContactButton label={data.sectionTitles.ctaButton} href={wa('Hola, vine por la Ecomp App — Recomposición Corporal y Nutrición')} />
+          <ContactButton label={data.sectionTitles.ctaButton} href={wa('Hola, vine por la Recomp — Recomposición Corporal y Nutrición')} />
         </FadeIn>
       </section>
     </main>
