@@ -349,49 +349,41 @@
     "items": [
       {
         "name": "HTML5, CSS & JavaScript",
-        "desc": "Modern web architecture",
         "icon": "FaHtml5",
         "color": "#E34F26"
       },
       {
         "name": "Frontend with ReactJS",
-        "desc": "Dynamic and responsive interfaces",
         "icon": "FaReact",
         "color": "#61DAFB"
       },
       {
         "name": "Backend with NodeJS",
-        "desc": "Efficient and reliable backend services",
         "icon": "FaNodeJs",
         "color": "#339933"
       },
       {
         "name": "SQL Databases",
-        "desc": "Smart data and information management",
         "icon": "FaDatabase",
         "color": "#4479A1"
       },
       {
         "name": "Git & GitHub",
-        "desc": "Version control and teamwork",
         "icon": "FaGitAlt",
         "color": "#F05032"
       },
       {
         "name": "Kotlin",
-        "desc": "Mobile app development with Kotlin",
         "icon": "FaMobileAlt",
         "color": "#A97BFF"
       },
       {
         "name": "Python",
-        "desc": "Automation and artificial intelligence",
         "icon": "FaPython",
         "color": "#3776AB"
       },
       {
         "name": "Vite + Tailwind CSS",
-        "desc": "Fast development and elegant design",
         "icon": "SiVite",
         "color": "#646CFF"
       }
@@ -533,7 +525,7 @@
     "formEmail": "EMAIL",
     "formEmailPlaceholder": "your@email.com",
     "formMessage": "MESSAGE",
-    "formMessagePlaceholder": "Tell me your idea or the service you need. Leave your WhatsApp... Websites, marketing, local AI, programming classes, academic support, CV consulting, online sales, and Excel templates.",
+    "formMessagePlaceholder": "Tell me your idea or the service you need. Leave your WhatsApp... Websites, marketing, AI automations, smart apps and much more.",
     "formSubmit": "SEND MESSAGE",
     "formSubmitting": "Sending...",
     "modalTitle": "Message Sent!",
@@ -558,29 +550,9 @@
     "heading": "Let's Connect and ",
     "headingHighlight": "Grow Together!",
     "subtitle": "Follow me on my social networks for content on web development, digital marketing and much more.",
-    "shareLabel": "Share",
-    "shareSublabel": "This page",
+    "shareLabel": "Share web",
     "socialAriaLabel": "Open Juan Pablo's {{name}} profile",
     "shareAriaLabel": "Share this page",
-    "credit": "Designed and developed by ",
-    "creditName": "Juan Pablo Gutiérrez Díaz",
-    "creditDesc": ", specialist in web development, native Kotlin apps and digital marketing, creating agile and results-oriented digital experiences.",
-    "paymentLabel": "Accepted payment methods",
-    "socialCats": {
-      "Facebook": "Social",
-      "Instagram": "Visual Content",
-      "LinkedIn": "Professional",
-      "X": "Social Network",
-      "TikTok": "Short Videos",
-      "YouTube": "Videos",
-      "Telegram": "Secure Chat",
-      "Pinterest": "Inspiration",
-      "Snapchat": "Add Me",
-      "Kick": "Streaming",
-      "Discord": "Community",
-      "Threads": "Social",
-      "WhatsApp": "Chat"
-    },
     "copyright": "© 2026 Juan Pablo Gutiérrez Díaz. All rights reserved.",
     "paymentMethods": [
       "PayPal",
@@ -652,14 +624,14 @@
       "title": "Useful Apps with Artificial Intelligence",
       "subtitle": "Created by Juan Pablo Gutiérrez Díaz for you",
       "description": "An ecosystem of smart apps that solve real problems: product photos that sell, copy adapted to every social network, audio turned into content and much more.",
-      "cta": "Discover the 10 apps",
+      "cta": "Discover the apps",
       "apps": [
-        { "name": "Recomp", "tagline": "Calories that adapt to your real progress" },
-        { "name": "FotoVende", "tagline": "Professional photos without a photographer" },
-        { "name": "Tono IA", "tagline": "One message, adapted to each network" },
-        { "name": "Resumo", "tagline": "From document to viral content" },
-        { "name": "Voz IA", "tagline": "Your audio, in the format you need" },
-        { "name": "MatelA", "tagline": "A tutor that learns how you learn" }
+        { "name": "Recomp", "icon": "dumbbell", "color": "#3B82F6" },
+        { "name": "FotoVende", "icon": "camera", "color": "#A855F7" },
+        { "name": "Tono IA", "icon": "pen", "color": "#EC4899" },
+        { "name": "Resumo", "icon": "comments", "color": "#10B981" },
+        { "name": "Voz IA", "icon": "microphone", "color": "#06B6D4" },
+        { "name": "MatelA", "icon": "calculator", "color": "#8B5CF6" }
       ]
     },
     "serviceBenefits": [
@@ -1522,14 +1494,20 @@
       "ctas": [
         {
           "label": "Buy Online",
+          "desc": "Browse the catalog and buy directly with secure shipping.",
+          "icon": "cart",
           "action": "buyOnline"
         },
         {
           "label": "Buy on Marketplace",
+          "desc": "Direct, local deals through Facebook Marketplace.",
+          "icon": "box",
           "action": "marketplace"
         },
         {
           "label": "Learn E-commerce Selling",
+          "desc": "Personalized guidance to sell online and scale up.",
+          "icon": "graduation",
           "action": "learn"
         }
       ],
@@ -1579,6 +1557,7 @@
         "testimonials": "Testimonials",
         "nextStepTitle": "Your Next Step",
         "nextStepDesc": "Choose how you want to start.",
+        "ctaStart": "Start",
         "ctaTitle": "Ready to scale?",
         "ctaDesc": "Take your business to the next level with a professional online store.",
         "ctaButton": "Schedule a Free Consultation",

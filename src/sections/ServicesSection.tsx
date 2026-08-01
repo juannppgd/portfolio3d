@@ -244,36 +244,30 @@ export default function ServicesSection() {
                 {recompApp.description}
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
-                {recompApp.apps.map((app: { name: string; tagline: string }, j: number) => (
+              <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 gap-2.5 sm:gap-3 mb-8">
+                {recompApp.apps.map((app: { name: string; icon: string; color: string }, j: number) => (
                   <div
                     key={app.name}
-                    className="flex items-start gap-3 p-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5"
+                    className="group flex flex-col items-center gap-2 p-3 rounded-2xl transition-all duration-200 hover:-translate-y-0.5"
                     style={{
                       background: 'var(--surface)',
                       border: '1px solid var(--border)',
                     }}
+                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = app.color }}
+                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
                   >
                     <div
-                      className="flex items-center justify-center w-9 h-9 rounded-xl shrink-0"
-                      style={{ background: 'rgba(79,127,255,0.1)', color: 'var(--accent)' }}
+                      className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl shrink-0 transition-transform duration-300 group-hover:scale-110"
+                      style={{ background: `${app.color}18`, color: app.color }}
                     >
-                      <FaCheck size={13} />
+                      <DataIcon icon={app.icon} size={20} />
                     </div>
-                    <div className="min-w-0">
-                      <h4
-                        className="font-syne font-bold uppercase tracking-tight text-xs"
-                        style={{ color: 'var(--white)' }}
-                      >
-                        {app.name}
-                      </h4>
-                      <p
-                        className="font-mono text-[11px] leading-relaxed"
-                        style={{ color: 'var(--muted)' }}
-                      >
-                        {app.tagline}
-                      </p>
-                    </div>
+                    <span
+                      className="font-syne font-bold uppercase tracking-tight text-[10px] sm:text-[11px] text-center leading-tight"
+                      style={{ color: 'var(--white)' }}
+                    >
+                      {app.name}
+                    </span>
                   </div>
                 ))}
               </div>

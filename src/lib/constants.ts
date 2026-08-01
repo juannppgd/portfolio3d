@@ -15,6 +15,7 @@ export const SOCIAL = {
   LINKEDIN: 'https://www.linkedin.com/in/juannppgd',
   INSTAGRAM: 'https://www.instagram.com/juannppgd',
   YOUTUBE: 'https://www.youtube.com/@juannppgd',
+  WHATSAPP: 'https://wa.me/juannppgd',
 } as const
 
 export const CONTACT_EMAIL = 'contact.juannppgd@gmail.com'

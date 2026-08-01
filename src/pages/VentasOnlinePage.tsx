@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { FaStar, FaBox } from 'react-icons/fa6'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
+import DataIcon from '../components/DataIcon'
 import { wa } from '../lib/whatsapp'
 
 export default function VentasOnlinePage() {
@@ -10,14 +11,14 @@ export default function VentasOnlinePage() {
     hero: { title: t('servicePages.ventasOnline.hero.title'), subtitle: t('servicePages.ventasOnline.hero.subtitle') },
     stores: t('servicePages.ventasOnline.stores', { returnObjects: true }) as { name: string; reputation: string; sales: string; desc: string; cta: string; url: string; color: string }[],
     whyUs: t('servicePages.ventasOnline.whyUs', { returnObjects: true }) as { title: string; desc: string }[],
-    ctas: t('servicePages.ventasOnline.ctas', { returnObjects: true }) as { label: string; action: string }[],
+    ctas: t('servicePages.ventasOnline.ctas', { returnObjects: true }) as { label: string; desc: string; icon: string; action: string }[],
     testimonials: t('servicePages.ventasOnline.testimonials', { returnObjects: true }) as { name: string; role: string; rating: number; text: string }[],
     sectionTitles: t('servicePages.ventasOnline.sectionTitles', { returnObjects: true }) as Record<string, string>,
   }
   return (
     <main className="min-h-screen" style={{ background: 'var(--bg)' }}>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] md:min-h-[80vh] flex items-center px-6 md:px-12 pt-24 md:pt-32 pb-16 md:pb-20 overflow-hidden">
+      <section className="relative min-h-[55vh] md:min-h-[65vh] flex items-center px-6 md:px-12 pt-24 md:pt-28 pb-12 md:pb-16 overflow-hidden">
         {/* Gradient background */}
         <div
           className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full"
@@ -36,7 +37,7 @@ export default function VentasOnlinePage() {
 
           <FadeIn delay={0.1}>
             <p
-              className="font-mono text-xs sm:text-sm md:text-base leading-relaxed mb-10 md:mb-12 max-w-2xl mx-auto px-2"
+              className="font-mono text-xs sm:text-sm md:text-base leading-relaxed mb-8 md:mb-10 max-w-2xl mx-auto px-2"
               style={{ color: 'var(--muted)' }}
             >
               {data.hero.subtitle}
@@ -51,7 +52,7 @@ export default function VentasOnlinePage() {
 
       {/* Verified Stores Section */}
       <section
-        className="px-6 md:px-12 py-20 md:py-24"
+        className="px-6 md:px-12 py-12 md:py-16"
         style={{
           background: 'var(--surface)',
           borderTop: '1px solid var(--border)',
@@ -60,7 +61,7 @@ export default function VentasOnlinePage() {
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <h2
-              className="font-syne font-black uppercase text-center mb-4 tracking-tight break-words gradient-heading"
+              className="font-syne font-black uppercase text-center mb-3 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
               {data.sectionTitles.stores}
@@ -69,18 +70,18 @@ export default function VentasOnlinePage() {
 
           <FadeIn delay={0.1}>
             <p
-              className="text-center font-mono text-sm mb-16"
+              className="text-center font-mono text-sm mb-8 md:mb-10"
               style={{ color: 'var(--muted)', maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}
             >
               {data.sectionTitles.storesDesc}
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6 max-w-2xl mx-auto">
             {data.stores.map((store, i) => (
               <FadeIn key={i} delay={0.15 * i}>
                 <div
-                  className="p-8 rounded-2xl h-full transition-all duration-300 hover:translate-y-[-4px]"
+                  className="p-6 md:p-8 rounded-2xl h-full transition-all duration-300 hover:translate-y-[-4px]"
                   style={{
                     background: 'var(--bg)',
                     border: `1px solid ${store.color}40`,
@@ -136,35 +137,37 @@ export default function VentasOnlinePage() {
       </section>
 
       {/* Why Us Section */}
-      <section className="px-6 md:px-12 py-20 md:py-24">
+      <section className="px-6 md:px-12 py-12 md:py-16">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <h2
-              className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
+              className="font-syne font-black uppercase text-center mb-8 md:mb-10 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
               {data.sectionTitles.whyUs}
             </h2>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {data.whyUs.map((reason, i) => (
-              <FadeIn key={i} delay={0.15 * i}>
+              <FadeIn key={i} delay={0.12 * i}>
                 <div
-                  className="p-6 md:p-8 rounded-2xl"
+                  className="p-5 md:p-6 rounded-2xl h-full transition-all duration-300 hover:translate-y-[-3px]"
                   style={{
                     background: 'var(--surface)',
                     border: '1px solid var(--border)',
                   }}
+                  onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent)' }}
+                  onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
                 >
                   <h3
-                    className="font-syne font-bold mb-3 tracking-tight uppercase text-sm md:text-base"
+                    className="font-syne font-bold mb-2 tracking-tight uppercase text-xs md:text-sm"
                     style={{ color: 'var(--accent)' }}
                   >
                     {reason.title}
                   </h3>
                   <p
-                    className="font-mono text-xs md:text-sm leading-relaxed"
+                    className="font-mono text-[11px] md:text-xs leading-relaxed"
                     style={{ color: 'var(--muted)' }}
                   >
                     {reason.desc}
@@ -178,7 +181,7 @@ export default function VentasOnlinePage() {
 
       {/* Testimonials Section */}
       <section
-        className="px-6 md:px-12 py-20 md:py-24"
+        className="px-6 md:px-12 py-12 md:py-16"
         style={{
           background: 'var(--surface)',
           borderTop: '1px solid var(--border)',
@@ -188,18 +191,18 @@ export default function VentasOnlinePage() {
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <h2
-              className="font-syne font-black uppercase text-center mb-16 tracking-tight break-words gradient-heading"
+              className="font-syne font-black uppercase text-center mb-8 md:mb-10 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
               {data.sectionTitles.testimonials}
             </h2>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {data.testimonials.map((testimonial, i) => (
-              <FadeIn key={i} delay={0.15 * i}>
+              <FadeIn key={i} delay={0.1 * i}>
                 <div
-                  className="p-6 md:p-8 rounded-2xl"
+                  className="p-5 md:p-7 rounded-2xl h-full"
                   style={{
                     background: 'var(--bg)',
                     border: '1px solid var(--border)',
@@ -240,11 +243,11 @@ export default function VentasOnlinePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 md:px-12 py-20 md:py-24">
+      <section className="px-6 md:px-12 py-12 md:py-16">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <h2
-              className="font-syne font-black uppercase text-center mb-4 tracking-tight break-words gradient-heading"
+              className="font-syne font-black uppercase text-center mb-3 tracking-tight break-words gradient-heading"
               style={{ fontSize: 'clamp(28px,4vw,56px)' }}
             >
               {data.sectionTitles.nextStep}
@@ -253,14 +256,14 @@ export default function VentasOnlinePage() {
 
           <FadeIn delay={0.1}>
             <p
-              className="text-center font-mono text-sm mb-12 max-w-2xl mx-auto"
+              className="text-center font-mono text-sm mb-8 md:mb-10 max-w-2xl mx-auto"
               style={{ color: 'var(--muted)' }}
             >
               {data.sectionTitles.nextStepDesc}
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto">
             {data.ctas.map((cta, i) => {
               const ctaUrl = cta.action === 'buyOnline'
                 ? 'https://listado.mercadolibre.com.co/_CustId_458406036?item_id=MCO1405179747&category_id=MCO180874&seller_id=458406036&client=recoview-selleritems&recos_listing=true'
@@ -268,35 +271,68 @@ export default function VentasOnlinePage() {
                   ? 'https://www.facebook.com/marketplace/profile/100028152081570/'
                   : wa('Hola, quiero aprender a vender e-commerce')
               return (
-                <FadeIn key={i} delay={0.15 * i}>
+                <FadeIn key={i} delay={0.12 * i}>
                   <a
                     href={ctaUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-6 md:p-8 rounded-2xl transition-all duration-300 hover:translate-y-[-4px] text-center group block"
+                    aria-label={cta.label}
+                    className="group relative flex flex-col items-center text-center gap-3 p-6 md:p-7 rounded-3xl transition-all duration-300 hover:-translate-y-1 h-full"
                     style={{
                       background: 'var(--surface)',
-                      border: '2px solid var(--accent)',
+                      border: '1px solid var(--border)',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = 'var(--accent)'
+                      e.currentTarget.style.boxShadow = '0 20px 45px -20px rgba(79,127,255,0.45)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = 'var(--border)'
+                      e.currentTarget.style.boxShadow = 'none'
                     }}
                   >
+                    <div
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110"
+                      style={{
+                        background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
+                        color: 'var(--on-accent)',
+                      }}
+                    >
+                      <DataIcon icon={cta.icon} size={24} />
+                    </div>
                     <h3
-                      className="font-syne font-bold mb-3 tracking-tight uppercase text-sm md:text-base"
-                      style={{ color: 'var(--accent)' }}
+                      className="font-syne font-bold uppercase tracking-tight text-sm md:text-base"
+                      style={{ color: 'var(--white)' }}
                     >
                       {cta.label}
                     </h3>
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      className="mx-auto group-hover:translate-x-1 transition-transform duration-300"
-                      style={{ color: 'var(--accent)' }}
+                    <p
+                      className="font-mono text-xs leading-relaxed flex-1"
+                      style={{ color: 'var(--muted)' }}
                     >
-                      <path d="M7 17L17 7M17 7H7M17 7v10" />
-                    </svg>
+                      {cta.desc}
+                    </p>
+                    <span
+                      className="inline-flex items-center gap-2 mt-1 font-syne font-bold text-[11px] tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-300"
+                      style={{
+                        background: 'rgba(79,127,255,0.1)',
+                        color: 'var(--accent)',
+                        border: '1px solid rgba(79,127,255,0.25)',
+                      }}
+                    >
+                      {data.sectionTitles.ctaStart}
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        className="transition-transform duration-300 group-hover:translate-x-0.5"
+                      >
+                        <path d="M7 17L17 7M17 7H7M17 7v10" />
+                      </svg>
+                    </span>
                   </a>
                 </FadeIn>
               )
@@ -307,7 +343,7 @@ export default function VentasOnlinePage() {
 
       {/* Final CTA */}
       <section
-        className="px-6 md:px-12 py-20 md:py-24 text-center"
+        className="px-6 md:px-12 py-12 md:py-16 text-center"
         style={{
           background: 'var(--surface)',
           borderTop: '1px solid var(--border)',

@@ -131,12 +131,6 @@ export default function Footer({ onShareClick }: FooterProps) {
                   >
                     {s.name}
                   </span>
-                  <span
-                    className="font-mono text-[9px] tracking-widest uppercase transition-colors duration-300"
-                    style={{ color: 'var(--muted)' }}
-                  >
-                    {t('footer.socialCats.' + s.name)}
-                  </span>
                 </motion.a>
               )
             })}
@@ -174,12 +168,6 @@ export default function Footer({ onShareClick }: FooterProps) {
                 style={{ color: 'var(--white)' }}
               >
                 {t('footer.shareLabel')}
-              </span>
-              <span
-                className="font-mono text-[9px] tracking-widest uppercase transition-colors duration-300"
-                style={{ color: 'var(--muted)' }}
-              >
-                {t('footer.shareSublabel')}
               </span>
             </motion.button>
           </div>

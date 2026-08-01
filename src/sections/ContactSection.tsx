@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaLinkedin, FaInstagram } from 'react-icons/fa'
+import { FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import FadeIn from '../components/FadeIn'
 import { EMAILJS, CONTACT_EMAIL, SOCIAL } from '../lib/constants'
 
 const SOCIAL_LINKS = [
-  { label: 'LinkedIn', href: SOCIAL.LINKEDIN, color: '#0A66C2', icon: 'in' },
-  { label: 'Instagram', href: SOCIAL.INSTAGRAM, color: '#E4405F', icon: 'ig' },
+  { label: 'LinkedIn', href: SOCIAL.LINKEDIN, color: '#0A66C2' },
+  { label: 'Instagram', href: SOCIAL.INSTAGRAM, color: '#E4405F' },
+  { label: 'WhatsApp', href: SOCIAL.WHATSAPP, color: '#25D366' },
 ]
 
 const validateEmail = (email: string) => {
@@ -151,7 +152,8 @@ export default function ContactSection() {
                       href={l.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="group relative flex items-center gap-3 px-5 py-3 rounded-2xl transition-all duration-300 hover:-translate-y-0.5"
+                      aria-label={l.label}
+                      className="group relative flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 hover:-translate-y-0.5"
                       style={{
                         border: '1px solid var(--border)',
                         background: 'transparent',
@@ -170,27 +172,8 @@ export default function ContactSection() {
                         className="flex items-center justify-center w-7 h-7 rounded-full transition-transform duration-300 group-hover:scale-110"
                         style={{ background: l.color + '20', color: l.color }}
                       >
-                        {l.label === 'LinkedIn' ? <FaLinkedin size={16} /> : <FaInstagram size={16} />}
+                        {l.label === 'LinkedIn' ? <FaLinkedin size={16} /> : l.label === 'Instagram' ? <FaInstagram size={16} /> : <FaWhatsapp size={16} />}
                       </div>
-                      <span
-                        className="font-syne font-bold text-xs uppercase tracking-tight transition-colors duration-300"
-                        style={{ color: 'var(--white)' }}
-                      >
-                        {l.label}
-                      </span>
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                        style={{ color: 'var(--muted)' }}
-                      >
-                        <path d="M7 17L17 7" />
-                        <path d="M7 7h10v10" />
-                      </svg>
                     </a>
                   ))}
                 </div>

@@ -123,14 +123,14 @@
       "title": "Aplicaciones útiles con Inteligencia Artificial",
       "subtitle": "Creadas por Juan Pablo Gutiérrez Díaz para ti",
       "description": "Un ecosistema de apps inteligentes que resuelven problemas reales: fotos de producto que venden, textos adaptados a cada red social, audio transformado en contenido y mucho más.",
-      "cta": "Descubre las 10 apps",
+      "cta": "Descubre las apps",
       "apps": [
-        { "name": "Recomp", "tagline": "Calorías que se ajustan a tu progreso real" },
-        { "name": "FotoVende", "tagline": "Fotos profesionales sin fotógrafo" },
-        { "name": "Tono IA", "tagline": "Un mensaje, adaptado a cada red" },
-        { "name": "Resumo", "tagline": "De documento a contenido viral" },
-        { "name": "Voz IA", "tagline": "Tu audio, en el formato que necesites" },
-        { "name": "MatelA", "tagline": "Un tutor que aprende cómo aprendes" }
+        { "name": "Recomp", "icon": "dumbbell", "color": "#3B82F6" },
+        { "name": "FotoVende", "icon": "camera", "color": "#A855F7" },
+        { "name": "Tono IA", "icon": "pen", "color": "#EC4899" },
+        { "name": "Resumo", "icon": "comments", "color": "#10B981" },
+        { "name": "Voz IA", "icon": "microphone", "color": "#06B6D4" },
+        { "name": "MatelA", "icon": "calculator", "color": "#8B5CF6" }
       ]
     },
     "serviceBenefits": [
@@ -434,49 +434,41 @@
     "items": [
       {
         "name": "HTML5, CSS y JavaScript",
-        "desc": "Arquitectura digital para sitios web modernos",
         "icon": "FaHtml5",
         "color": "#E34F26"
       },
       {
         "name": "Frontend con ReactJS",
-        "desc": "Interfaces dinámicas y adaptables",
         "icon": "FaReact",
         "color": "#61DAFB"
       },
       {
         "name": "Backend con NodeJS",
-        "desc": "Servicios backend eficientes y confiables",
         "icon": "FaNodeJs",
         "color": "#339933"
       },
       {
         "name": "Bases de datos SQL",
-        "desc": "Gestión inteligente de información y datos",
         "icon": "FaDatabase",
         "color": "#4479A1"
       },
       {
         "name": "Git & GitHub",
-        "desc": "Control de versiones y trabajo en equipo",
         "icon": "FaGitAlt",
         "color": "#F05032"
       },
       {
         "name": "Kotlin",
-        "desc": "Desarrollo de aplicaciones móviles con Kotlin",
         "icon": "FaMobileAlt",
         "color": "#A97BFF"
       },
       {
         "name": "Python",
-        "desc": "Automatización e inteligencia artificial",
         "icon": "FaPython",
         "color": "#3776AB"
       },
       {
         "name": "Vite + Tailwind CSS",
-        "desc": "Desarrollo rápido y diseño elegante",
         "icon": "SiVite",
         "color": "#646CFF"
       }
@@ -589,7 +581,7 @@
     "formEmail": "CORREO ELECTRÓNICO",
     "formEmailPlaceholder": "tuemail@ejemplo.com",
     "formMessage": "MENSAJE",
-    "formMessagePlaceholder": "Cuéntame tu idea o servicio que necesitas. Déjame tu WhatsApp ... Páginas web, marketing, IA local, clases de programación, apoyo académico, asesoría en CV, ventas online y plantillas en Excel.",
+    "formMessagePlaceholder": "Cuéntame tu idea o servicio que necesitas. Déjame tu WhatsApp ... Páginas web, marketing, automatizaciones con IA, apps inteligentes y mucho más.",
     "formSubmit": "ENVIAR MENSAJE",
     "formSubmitting": "Enviando...",
     "modalTitle": "¡Mensaje Enviado!",
@@ -609,25 +601,9 @@
     "creditName": "Juan Pablo Gutiérrez Díaz",
     "creditDesc": ", especialista en desarrollo web, apps nativas con Kotlin y marketing digital, creando experiencias digitales ágiles y orientadas a resultados.",
     "paymentLabel": "Métodos de pago aceptados",
-    "shareLabel": "Compartir",
-    "shareSublabel": "Esta página",
+    "shareLabel": "Compartir web",
     "socialAriaLabel": "Abrir perfil de {{name}} de Juan Pablo",
     "shareAriaLabel": "Compartir esta página",
-    "socialCats": {
-      "Facebook": "Social",
-      "Instagram": "Contenido Visual",
-      "LinkedIn": "Profesional",
-      "X": "Red Social",
-      "TikTok": "Videos Cortos",
-      "YouTube": "Videos",
-      "Telegram": "Chat Seguro",
-      "Pinterest": "Inspiración",
-      "Snapchat": "Agregar",
-      "Kick": "Streaming",
-      "Discord": "Comunidad",
-      "Threads": "Social",
-      "WhatsApp": "Chat"
-    },
     "copyright": "© 2026 Juan Pablo Gutiérrez Díaz. Todos los derechos reservados.",
     "paymentMethods": [
       "PayPal",
@@ -1405,14 +1381,20 @@
       "ctas": [
         {
           "label": "Compra en Línea",
+          "desc": "Explora el catálogo y compra directo con envío seguro.",
+          "icon": "cart",
           "action": "buyOnline"
         },
         {
           "label": "Compra en Marketplace",
+          "desc": "Trato directo y local a través de Facebook Marketplace.",
+          "icon": "box",
           "action": "marketplace"
         },
         {
           "label": "Aprende a vender e-commerce",
+          "desc": "Asesoría personalizada para vender en línea y escalar.",
+          "icon": "graduation",
           "action": "learn"
         }
       ],
@@ -1462,6 +1444,7 @@
         "testimonials": "Lo que dicen nuestros clientes",
         "nextStepTitle": "Tu próximo paso",
         "nextStepDesc": "Elige cómo quieres comenzar tu experiencia de compra",
+        "ctaStart": "Empezar",
         "ctaTitle": "¿Necesitas asesoría personalizada?",
         "ctaDesc": "Contacta conmigo y te guiaré para maximizar tus ventas en marketplace",
         "ctaButton": "Consulta Gratuita",
