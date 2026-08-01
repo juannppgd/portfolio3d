@@ -95,3 +95,19 @@ export function faqPageSchema(questions: { q: string; a: string }[]) {
     })),
   }
 }
+
+export function itemListSchema(items: { name: string; url: string }[], itemType: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': itemType,
+        name: item.name,
+        url: item.url,
+      },
+    })),
+  }
+}

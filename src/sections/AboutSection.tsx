@@ -126,7 +126,7 @@ export default function AboutSection() {
                     {EduIcon && <span style={{ color: 'var(--accent)' }}><EduIcon size={16} /></span>}
                     {item.title}
                   </div>
-                  <span className="font-mono text-[11px] tracking-widest uppercase" style={{ color: item.statusKey === 'enCurso' ? 'var(--accent)' : 'var(--muted)' }}>
+                  <span className="font-mono text-[11px] tracking-widest uppercase" style={{ color: item.statusKey === 'enCurso' || item.statusKey === 'in-progress' ? 'var(--accent)' : 'var(--muted)' }}>
                     {statusText}
                   </span>
                 </div>

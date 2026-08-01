@@ -16,7 +16,7 @@ type Page =
   | 'plantilla-gastos'
   | 'plantilla-habitos'
   | 'ia-local'
-  | 'recomp-app'
+  | 'ia-apps'
 
 interface NavbarProps {
   currentPage: Page

@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import FadeIn from '../components/FadeIn'
+import SEOHead from '../components/SEOHead'
 
 export default function Page404() {
   const { t } = useTranslation()
@@ -8,6 +9,7 @@ export default function Page404() {
 
   return (
     <main className="min-h-screen flex items-center justify-center px-6" style={{ background: 'var(--bg)' }}>
+      <SEOHead title={t('page404.title')} description={t('page404.description')} noindex />
       <div className="text-center max-w-md">
         <FadeIn>
           <h1
@@ -28,7 +30,7 @@ export default function Page404() {
             className="font-syne font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-200 hover:-translate-y-0.5"
             style={{
               background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
-              color: '#FFFFFF',
+              color: 'var(--on-accent)',
             }}
           >
             {t('page404.cta')}

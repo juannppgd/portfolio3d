@@ -18,9 +18,10 @@ export default function ContactButton({ label, onClick, href }: Props) {
     </>
   )
 
-  const classes = "inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-full font-syne font-bold text-sm tracking-widest uppercase text-white transition-transform duration-200 hover:-translate-y-1"
+  const classes = "inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-full font-syne font-bold text-sm tracking-widest uppercase transition-transform duration-200 hover:-translate-y-1"
   const btnStyle = {
-    background: 'linear-gradient(135deg,#4F7FFF,#00E5C3)',
+    background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
+    color: 'var(--on-accent)',
     boxShadow: '0 0 40px rgba(79,127,255,0.25)',
   } as const
 

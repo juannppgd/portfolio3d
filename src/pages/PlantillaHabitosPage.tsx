@@ -95,7 +95,7 @@ export default function PlantillaHabitosPage() {
                     border: '1px solid var(--border)',
                   }}
                 >
-                  <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl mx-auto mb-2 md:mb-4 transition-transform duration-300 group-hover:scale-110" style={{ background: 'rgba(0,229,195,0.12)', color: '#00E5C3' }}><DataIcon icon={feature.icon} size={24} /></div>
+                  <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl mx-auto mb-2 md:mb-4 transition-transform duration-300 group-hover:scale-110" style={{ background: 'rgba(0,229,195,0.12)', color: 'var(--accent2)' }}><DataIcon icon={feature.icon} size={24} /></div>
                   <h3
                     className="font-syne font-bold tracking-tight uppercase text-[11px] sm:text-sm md:text-base leading-tight"
                     style={{ color: 'var(--accent)' }}
@@ -154,10 +154,10 @@ export default function PlantillaHabitosPage() {
                           style={{
                             background: completed ? 'var(--accent)' : 'var(--bg)',
                             border: completed ? 'none' : '2px solid var(--border)',
-                            color: completed ? 'white' : 'var(--muted)',
+                            color: completed ? 'var(--on-accent)' : 'var(--muted)',
                           }}
                         >
-                          {completed ? <FaCheck size={12} className="text-white" /> : dayIdx + 1}
+                          {completed ? <FaCheck size={12} /> : dayIdx + 1}
                         </div>
                       ))}
                     </div>

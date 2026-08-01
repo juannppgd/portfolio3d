@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 import { WHATSAPP_PHONE, CONTACT_EMAIL, SOCIAL } from '../lib/constants'
 
-type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local' | 'recomp-app'
+type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local' | 'ia-apps'
 
 interface ChatbotProps {
   onShare?: () => void
@@ -25,7 +25,7 @@ interface ResponseEntry {
   action?: 'contact' | 'footer' | 'share' | 'email' | 'whatsapp' | 'youtube'
     | 'plantilla-gastos' | 'plantilla-habitos' | 'apoyo-academico'
     | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv'
-    | 'recomp-app'
+    | 'recomp-app' | 'ia-apps'
   autoClose?: boolean
 }
 
@@ -36,7 +36,7 @@ const responseMap: Record<string, ResponseEntry> = {
   ia_local: { textKey: 'chatbot.responses.ia_local.text', optionKeys: ['try_ia_local', 'contact', 'services'] },
   try_ia_local: { textKey: 'chatbot.responses.try_ia_local.text', optionKeys: ['back_home'], action: 'contact', autoClose: true },
   recomp_app: { textKey: 'chatbot.responses.recomp_app.text', optionKeys: ['view_recomp_page', 'contact', 'services'] },
-  view_recomp_page: { textKey: 'chatbot.responses.view_recomp_page.text', optionKeys: ['back_home'], action: 'recomp-app', autoClose: true },
+  view_recomp_page: { textKey: 'chatbot.responses.view_recomp_page.text', optionKeys: ['back_home'], action: 'ia-apps', autoClose: true },
   contact: { textKey: 'chatbot.responses.contact.text', optionKeys: ['share_web', 'send_email', 'send_message', 'more_info', 'view_social'] },
   view_social: { textKey: 'chatbot.responses.view_social.text', optionKeys: ['back_home'], action: 'footer', autoClose: true },
   view_tech: { textKey: 'chatbot.responses.view_tech.text', optionKeys: ['web_dev', 'view_examples', 'contact'] },
@@ -245,6 +245,7 @@ export default function Chatbot({
           className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 p-3 md:p-4 rounded-full shadow-2xl"
           style={{
             background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
+            color: 'var(--on-accent)',
           }}
           aria-label={t('chatbot.ariaOpen')}
         >
@@ -286,7 +287,7 @@ export default function Chatbot({
                 <div className="flex items-center gap-3 min-w-0">
                   <div
                     className="w-10 h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center flex-shrink-0"
-                    style={{ background: 'linear-gradient(135deg, var(--accent), var(--accent2))' }}
+                    style={{ background: 'linear-gradient(135deg, var(--accent), var(--accent2))', color: 'var(--on-accent)' }}
                   >
                     <BotIcon />
                   </div>
@@ -328,7 +329,7 @@ export default function Chatbot({
                       className="max-w-[85%] md:max-w-[80%] p-3 md:p-3.5 rounded-2xl"
                       style={
                         msg.role === 'user'
-                          ? { background: 'linear-gradient(135deg, var(--accent), var(--accent2))', color: '#fff' }
+                          ? { background: 'linear-gradient(135deg, var(--accent), var(--accent2))', color: 'var(--on-accent)' }
                           : { background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)' }
                       }
                     >

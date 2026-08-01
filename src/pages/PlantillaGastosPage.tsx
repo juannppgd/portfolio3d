@@ -114,7 +114,7 @@ export default function PlantillaGastosPage() {
                     border: '1px solid var(--border)',
                   }}
                 >
-                  <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl mx-auto mb-4 transition-transform duration-300 group-hover:scale-110" style={{ background: 'rgba(79,127,255,0.12)', color: '#4F7FFF' }}><DataIcon icon={feature.icon} size={24} /></div>
+                  <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl mx-auto mb-4 transition-transform duration-300 group-hover:scale-110" style={{ background: 'rgba(79,127,255,0.12)', color: 'var(--accent)' }}><DataIcon icon={feature.icon} size={24} /></div>
                   <h3
                     className="font-syne font-bold tracking-tight uppercase text-sm md:text-base"
                     style={{ color: 'var(--white)' }}
@@ -220,7 +220,7 @@ export default function PlantillaGastosPage() {
                         className="h-full transition-all duration-1000"
                         style={{
                           width: `${day.percent}%`,
-                          background: 'linear-gradient(90deg, #4F7FFF, #00E5C3)',
+                          background: 'linear-gradient(90deg, var(--accent), var(--accent2))',
                         }}
                       />
                     </div>

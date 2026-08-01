@@ -1,6 +1,6 @@
 import { lazy, Suspense, useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
@@ -14,8 +14,9 @@ import {
   professionalServiceSchema,
   productSchema,
   faqPageSchema,
+  itemListSchema,
 } from './data/schema'
-import { GA_ID } from './lib/constants'
+import { GA_ID, SITE_URL } from './lib/constants'
 
 function useGtagPageview() {
   const location = useLocation()
@@ -41,12 +42,12 @@ const OptimizacionCVPage = lazy(() => import('./pages/OptimizacionCVPage'))
 const PlantillaGastosPage = lazy(() => import('./pages/PlantillaGastosPage'))
 const PlantillaHabitosPage = lazy(() => import('./pages/PlantillaHabitosPage'))
 const IaLocalPage = lazy(() => import('./pages/IaLocalPage'))
-const RecompAppPage = lazy(() => import('./pages/RecompAppPage'))
+const IaAppsPage = lazy(() => import('./pages/IaAppsPage'))
 const Page404 = lazy(() => import('./pages/Page404'))
 const Chatbot = lazy(() => import('./components/Chatbot'))
 const ShareModal = lazy(() => import('./components/ShareModal'))
 
-type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local' | 'recomp-app'
+type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local' | 'ia-apps'
 
 function SectionFallback() {
   return <div className="h-32" />
@@ -89,6 +90,14 @@ function PageSEO({ page }: { page: Page }) {
   if (page === 'home') {
     const faqItems = t('faq.items', { returnObjects: true }) as { q: string; a: string }[]
     schemas.push(faqPageSchema(faqItems))
+  }
+
+  if (page === 'ia-apps') {
+    const apps = t('servicePages.recompApp.apps.items', { returnObjects: true }) as { name: string; id: string }[]
+    schemas.push(itemListSchema(
+      apps.map((app) => ({ name: app.name, url: `${SITE_URL}${meta.path}#app-${app.id}` })),
+      'MobileApplication',
+    ))
   }
 
   return (
@@ -169,7 +178,8 @@ function AppShell() {
           <Route path="/plantilla-gastos" element={<Suspense fallback={<LoadingScreen />}><PlantillaGastosPage /></Suspense>} />
           <Route path="/plantilla-habitos" element={<Suspense fallback={<LoadingScreen />}><PlantillaHabitosPage /></Suspense>} />
           <Route path="/ia-local" element={<Suspense fallback={<LoadingScreen />}><IaLocalPage /></Suspense>} />
-          <Route path="/recomp-app" element={<Suspense fallback={<LoadingScreen />}><RecompAppPage /></Suspense>} />
+          <Route path="/recomp-app" element={<Navigate to="/ia-apps" replace />} />
+          <Route path="/ia-apps" element={<Suspense fallback={<LoadingScreen />}><IaAppsPage /></Suspense>} />
           <Route path="*" element={<Suspense fallback={<LoadingScreen />}><Page404 /></Suspense>} />
         </Routes>
       </main>

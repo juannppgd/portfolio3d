@@ -2,15 +2,14 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   FaGraduationCap, FaLaptopCode, FaStore, FaFileAlt,
-  FaClock, FaLaptop, FaChartLine, FaDumbbell,
+  FaClock, FaLaptop, FaChartLine,
   FaWallet, FaCalendarCheck, FaBrain, FaCheck, FaCircle,
-  FaCalculator, FaAppleAlt, FaBullseye, FaStopwatch,
-  FaChartPie, FaShieldAlt,
 } from 'react-icons/fa'
+import { FaWandMagicSparkles } from 'react-icons/fa6'
 import FadeIn from '../components/FadeIn'
 import DataIcon from '../components/DataIcon'
 
-type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local' | 'recomp-app'
+type Page = 'home' | 'apoyo-academico' | 'clases-programacion' | 'ventas-online' | 'optimizacion-cv' | 'plantilla-gastos' | 'plantilla-habitos' | 'ia-local' | 'recomp-app' | 'ia-apps'
 
 function CountdownTimer() {
   const [time, setTime] = useState('')
@@ -110,7 +109,7 @@ export default function ServicesSection() {
                   className="flex items-center justify-center w-14 h-14 rounded-2xl shrink-0 transition-transform duration-300 group-hover:scale-110"
                   style={{
                     background: svc.id === 'web' ? 'rgba(79,127,255,0.12)' : 'rgba(0,229,195,0.12)',
-                    color: svc.id === 'web' ? '#4F7FFF' : '#00E5C3',
+                    color: svc.id === 'web' ? 'var(--accent)' : 'var(--accent2)',
                   }}
                 >
                   {svc.id === 'web' ? <FaLaptop size={26} /> : <FaChartLine size={26} />}
@@ -170,8 +169,8 @@ export default function ServicesSection() {
                 onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
                 className="self-center font-syne font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-200 hover:-translate-y-0.5"
                 style={{
-                  background: 'linear-gradient(135deg,#4F7FFF,#00E5C3)',
-                  color: '#FFFFFF',
+                  background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
+                  color: 'var(--on-accent)',
                 }}
               >
                 {svc.cta}
@@ -181,11 +180,11 @@ export default function ServicesSection() {
         ))}
       </div>
 
-      {/* === ECOMP APP === */}
+      {/* === APPS CON IA === */}
       <div className="max-w-5xl mx-auto mb-10 md:mb-8 lg:mb-12">
         <FadeIn y={20}>
           <div
-            className="group p-6 md:p-8 transition-all duration-300 hover:-translate-y-1"
+            className="group relative p-6 md:p-8 overflow-hidden transition-all duration-300 hover:-translate-y-1"
             style={{
               border: '1px solid var(--border)',
               borderRadius: 32,
@@ -194,81 +193,105 @@ export default function ServicesSection() {
             onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent)' }}
             onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border)' }}
           >
-            <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-3 mb-3">
-                  <div
-                    className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0 transition-transform duration-300 group-hover:scale-110"
-                    style={{
-                      background: 'rgba(79,127,255,0.12)',
-                      color: '#4F7FFF',
-                    }}
-                  >
-                    <FaDumbbell size={22} />
-                  </div>
-                  <span
-                    className="inline-flex items-center font-mono text-[10px] tracking-widest uppercase px-3 py-1 rounded-full"
-                    style={{
-                      background: 'rgba(79,127,255,0.15)',
-                      color: '#4F7FFF',
-                      border: '1px solid rgba(79,127,255,0.25)',
-                    }}
-                  >
-                    {recompApp.badge}
-                  </span>
-                </div>
+            <div
+              className="pointer-events-none absolute -top-24 -right-24 w-80 h-80 rounded-full"
+              style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.09) 0%, rgba(236,72,153,0.05) 50%, transparent 70%)' }}
+            />
+            <div className="pointer-events-none absolute -bottom-24 -left-24 w-80 h-80 rounded-full"
+              style={{ background: 'radial-gradient(circle, rgba(79,127,255,0.08) 0%, rgba(0,229,195,0.05) 50%, transparent 70%)' }}
+            />
 
-                <h3
-                  className="font-syne font-bold uppercase tracking-tight mb-1"
-                  style={{ fontSize: 'clamp(18px,1.8vw,24px)', color: 'var(--white)' }}
-                >
-                  {recompApp.title}
-                </h3>
-                <p
-                  className="font-mono text-xs tracking-wide mb-3"
-                  style={{ color: 'var(--accent2)' }}
-                >
-                  {recompApp.subtitle}
-                </p>
-                <p
-                  className="font-mono font-light leading-relaxed mb-4 text-sm"
-                  style={{ color: 'var(--muted)' }}
-                >
-                  {recompApp.description}
-                </p>
-
-                <button
-                  onClick={() => window.open('/recomp-app', '_blank')}
-                  className="font-syne font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-200 hover:-translate-y-0.5"
+            <div className="relative">
+              <div className="flex items-center gap-3 mb-4">
+                <div
+                  className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0 transition-transform duration-300 group-hover:scale-110"
                   style={{
-                    background: 'linear-gradient(135deg,#A855F7,#EC4899)',
-                    color: '#FFFFFF',
+                    background: 'linear-gradient(135deg, rgba(168,85,247,0.14), rgba(236,72,153,0.12))',
+                    color: '#A855F7',
                   }}
                 >
-                  {recompApp.cta}
-                </button>
+                  <FaWandMagicSparkles size={22} />
+                </div>
+                <span
+                  className="inline-flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase px-3 py-1 rounded-full"
+                  style={{
+                    background: 'rgba(168,85,247,0.15)',
+                    color: '#A855F7',
+                    border: '1px solid rgba(168,85,247,0.25)',
+                  }}
+                >
+                  <FaBrain size={11} />
+                  {recompApp.badge}
+                </span>
               </div>
 
-              <ul className="space-y-2.5 flex-1 min-w-0">
-                {recompApp.features.map((feat: string, j: number) => {
-                  const icons = [FaCalculator, FaAppleAlt, FaDumbbell, FaBullseye, FaStopwatch, FaChartPie, FaShieldAlt]
-                  const Icon = icons[j] || FaCheck
-                  return (
-                    <li key={feat} className="flex items-center gap-3 font-mono text-xs" style={{ color: 'var(--text)' }}>
-                      <div
-                        className="flex items-center justify-center w-8 h-8 rounded-lg shrink-0"
-                        style={{
-                          background: 'rgba(79,127,255,0.1)',
-                          color: '#4F7FFF',
-                        }}
+              <h3
+                className="font-syne font-bold uppercase tracking-tight mb-2"
+                style={{ fontSize: 'clamp(18px,1.8vw,26px)', color: 'var(--white)' }}
+              >
+                {recompApp.title}
+              </h3>
+              <p
+                className="font-mono text-xs tracking-wide mb-3"
+                style={{ color: 'var(--accent2)' }}
+              >
+                {recompApp.subtitle}
+              </p>
+              <p
+                className="font-mono font-light leading-relaxed mb-6 text-sm max-w-3xl"
+                style={{ color: 'var(--muted)' }}
+              >
+                {recompApp.description}
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
+                {recompApp.apps.map((app: { name: string; tagline: string }, j: number) => (
+                  <div
+                    key={app.name}
+                    className="flex items-start gap-3 p-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5"
+                    style={{
+                      background: 'var(--surface)',
+                      border: '1px solid var(--border)',
+                    }}
+                  >
+                    <div
+                      className="flex items-center justify-center w-9 h-9 rounded-xl shrink-0"
+                      style={{ background: 'rgba(79,127,255,0.1)', color: 'var(--accent)' }}
+                    >
+                      <FaCheck size={13} />
+                    </div>
+                    <div className="min-w-0">
+                      <h4
+                        className="font-syne font-bold uppercase tracking-tight text-xs"
+                        style={{ color: 'var(--white)' }}
                       >
-                        <Icon size={14} />
-                      </div>
-                      {feat}
-                    </li>
-                  )
-                })}
-              </ul>
+                        {app.name}
+                      </h4>
+                      <p
+                        className="font-mono text-[11px] leading-relaxed"
+                        style={{ color: 'var(--muted)' }}
+                      >
+                        {app.tagline}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                onClick={() => window.open('/ia-apps', '_blank')}
+                className="inline-flex items-center gap-3 font-syne font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-200 hover:-translate-y-0.5"
+                style={{
+                  background: 'linear-gradient(135deg,#A855F7,#EC4899)',
+                  color: '#0A0D14',
+                  boxShadow: '0 0 30px rgba(168,85,247,0.25)',
+                }}
+              >
+                {recompApp.cta}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </button>
             </div>
           </div>
         </FadeIn>
@@ -335,7 +358,7 @@ export default function ServicesSection() {
                     className="self-center font-syne font-bold text-[11px] tracking-widest uppercase px-5 py-2.5 rounded-full transition-all duration-200 hover:-translate-y-0.5 mt-auto"
                     style={{
                       background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
-                      color: '#fff',
+                      color: 'var(--on-accent)',
                     }}
                   >
                     {svc.cta}
@@ -403,7 +426,7 @@ export default function ServicesSection() {
                   className="font-syne font-bold text-xs tracking-widest uppercase px-6 py-3 rounded-full transition-all duration-200 hover:-translate-y-0.5"
                   style={{
                     background: 'linear-gradient(135deg,#10B981,#06B6D4)',
-                    color: '#FFFFFF',
+                    color: '#0A0D14',
                   }}
                 >
                   {t('services.automationCta')}
@@ -465,7 +488,7 @@ export default function ServicesSection() {
                     className="flex items-center justify-center w-12 h-12 rounded-2xl shrink-0 transition-transform duration-300 group-hover:scale-110"
                     style={{
                       background: i === 0 ? 'rgba(79,127,255,0.12)' : 'rgba(0,229,195,0.12)',
-                      color: i === 0 ? '#4F7FFF' : '#00E5C3',
+                      color: i === 0 ? 'var(--accent)' : 'var(--accent2)',
                     }}
                   >
                     {i === 0 ? <FaWallet size={22} /> : <FaCalendarCheck size={22} />}

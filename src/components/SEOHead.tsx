@@ -12,6 +12,7 @@ interface SEOHeadProps {
   ogImage?: string
   ogType?: string
   keywords?: string
+  noindex?: boolean
 }
 
 export default function SEOHead({
@@ -21,6 +22,7 @@ export default function SEOHead({
   ogImage = DEFAULT_OG_IMAGE,
   ogType = 'website',
   keywords,
+  noindex,
 }: SEOHeadProps) {
   const { i18n } = useTranslation()
   const fullUrl = `${SITE_URL}${BASE}${path}`
@@ -32,7 +34,7 @@ export default function SEOHead({
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
       <meta name="format-detection" content="telephone=no" />
       <meta name="mobile-web-app-capable" content="yes" />
       {keywords && <meta name="keywords" content={keywords} />}

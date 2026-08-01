@@ -54,10 +54,10 @@ export const PAGE_META: Record<string, {
     keywords: 'automatización agentes IA, chatbot WhatsApp, automatización ecommerce, agentes inteligentes Colombia, automatización customer service, IA para negocios',
     path: '/ia-local',
   },
-  'recomp-app': {
-    title: 'Recomp — Recomposición Corporal y Nutrición',
-    description: 'App de seguimiento nutricional y fitness con ajuste inteligente de calorías, registro de entrenamientos, metas diarias y dashboard dinámico. Funciona offline y protege tu privacidad.',
-    keywords: 'app nutrición, recomposición corporal, contador calorías, registro entrenamiento, app fitness, nutrición inteligente, Recomp',
-    path: '/recomp-app',
+  'ia-apps': {
+    title: 'Apps con Inteligencia Artificial — Recomp y más',
+    description: 'Descubre las 10 apps con IA creadas por Juan Pablo Gutiérrez Díaz: Recomp, FotoVende, Tono IA, Resumo, Voz IA, ContratOS, ClaseCards, MatelA, Swipe Clean y Escáner PDF. ¿Interesado? Escríbeme por WhatsApp.',
+    keywords: 'apps con IA, apps inteligentes, Recomp, FotoVende, Tono IA, Resumo, Voz IA, ContratOS, ClaseCards, MatelA, Swipe Clean, Escáner PDF, apps Android Colombia',
+    path: '/ia-apps',
   },
 }

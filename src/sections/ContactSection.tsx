@@ -328,8 +328,8 @@ export default function ContactSection() {
                     whileTap={{ scale: 0.98 }}
                     className="w-full font-syne font-bold text-xs tracking-widest uppercase px-8 py-4 rounded-full transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none"
                     style={{
-                      background: 'linear-gradient(135deg,#4F7FFF,#00E5C3)',
-                      color: '#FFFFFF',
+                      background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
+                      color: 'var(--on-accent)',
                     }}
                   >
                     {isSubmitting ? (
@@ -379,7 +379,7 @@ export default function ContactSection() {
                 className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5"
                 style={{ background: 'linear-gradient(135deg, var(--accent), var(--accent2))' }}
               >
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--on-accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
               </div>
@@ -396,7 +396,7 @@ export default function ContactSection() {
                 className="px-6 py-3 rounded-full font-syne font-bold text-xs tracking-widest uppercase"
                 style={{
                   background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
-                  color: '#fff',
+                  color: 'var(--on-accent)',
                 }}
               >
                 {t('contact.modalClose')}

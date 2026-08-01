@@ -137,7 +137,7 @@ export default function OptimizacionCVPage() {
                 className="p-8 md:p-12 rounded-2xl"
                 style={{
                   background: 'var(--bg)',
-                  border: '2px solid #4F7FFF40',
+                  border: '2px solid color-mix(in srgb, var(--accent) 25%, transparent)',
                 }}
               >
                 <h2
@@ -158,7 +158,7 @@ export default function OptimizacionCVPage() {
                   className="p-4 rounded-lg"
                   style={{
                     background: 'rgba(79,127,255,0.06)',
-                    borderLeft: '4px solid #4F7FFF',
+                    borderLeft: '4px solid var(--accent)',
                   }}
                 >
                   <p
@@ -351,8 +351,8 @@ export default function OptimizacionCVPage() {
                   <div
                     className="w-14 h-14 rounded-full flex items-center justify-center font-syne font-bold text-xl mb-4 mx-auto"
                     style={{
-                      background: 'linear-gradient(135deg,#4F7FFF,#00E5C3)',
-                      color: 'white',
+                      background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
+                      color: 'var(--on-accent)',
                     }}
                   >
                     {proc.step}

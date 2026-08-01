@@ -10,6 +10,8 @@ import {
   FaInfinity, FaMoneyBillWave, FaGlobe, FaBolt, FaStar,
   FaFaceSmile, FaBox, FaComments, FaBrain, FaPlug, FaHeadset,
   FaCalculator, FaApple, FaChartPie,
+  FaCamera, FaMicrophone, FaFilePdf, FaImages, FaUserGroup,
+  FaBroom, FaWandMagicSparkles, FaHeartPulse, FaRocket,
 } from 'react-icons/fa6'
 
 const ICON_MAP: Record<string, IconType> = {
@@ -59,6 +61,15 @@ const ICON_MAP: Record<string, IconType> = {
   calculator: FaCalculator,
   apple: FaApple,
   chartPie: FaChartPie,
+  camera: FaCamera,
+  microphone: FaMicrophone,
+  filePdf: FaFilePdf,
+  images: FaImages,
+  userGroup: FaUserGroup,
+  broom: FaBroom,
+  magic: FaWandMagicSparkles,
+  heartPulse: FaHeartPulse,
+  rocket: FaRocket,
 }
 
 export default function DataIcon({ icon, size = 20, className, style }: { icon: string; size?: number; className?: string; style?: React.CSSProperties }) {

@@ -188,8 +188,8 @@ export default function ApoyoAcademicoPage() {
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center font-syne font-bold text-lg mb-4 mx-auto"
                     style={{
-                      background: 'linear-gradient(135deg,#4F7FFF,#00E5C3)',
-                      color: 'white',
+                      background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
+                      color: 'var(--on-accent)',
                     }}
                   >
                     {proc.step}

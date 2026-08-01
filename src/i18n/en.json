@@ -19,6 +19,7 @@
     "ariaLabel": "Switch language",
     "title": "Español"
   },
+  "skipLink": "Skip to main content",
   "hero": {
     "available": "Available for projects",
     "firstName": "Juan",
@@ -30,10 +31,11 @@
     "automation": "Automation",
     "marketingDigital": "Digital marketing",
     "tagline": "For professionals, Entrepreneurs and SMBs that want to grow online.",
-    "scroll": "Scroll to learn more"
+    "scroll": "Scroll to learn more",
+    "alt": "Juan Pablo Gutiérrez Díaz — Web Developer, Kotlin Apps and Digital Marketing in Tunja, Colombia"
   },
   "about": {
-    "heading": "About ",
+    "heading": "About<br />Me.",
     "headingHighlight": "Me",
     "tag": "// Who I Am",
     "text": "With over five years creating digital solutions, I specialize in web development, native app development with Kotlin, digital marketing, and automation. I work with entrepreneurs and business owners who want to stand out online and see real results.",
@@ -226,6 +228,7 @@
   "knowledge": {
     "heading": "Knowledge & ",
     "headingHighlight": "Skills.",
+    "subtitle": "Skills, tools and technologies I master to build complete digital solutions.",
     "subtitleSkills": "Skills",
     "subtitleTools": "Software Tools",
     "subtitleDev": "Development Stack",
@@ -546,12 +549,19 @@
     "lightMode": "Switch to light mode",
     "darkMode": "Switch to dark mode"
   },
+  "page404": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "cta": "Back to home"
+  },
   "footer": {
     "heading": "Let's Connect and ",
     "headingHighlight": "Grow Together!",
     "subtitle": "Follow me on my social networks for content on web development, digital marketing and much more.",
     "shareLabel": "Share",
     "shareSublabel": "This page",
+    "socialAriaLabel": "Open Juan Pablo's {{name}} profile",
+    "shareAriaLabel": "Share this page",
     "credit": "Designed and developed by ",
     "creditName": "Juan Pablo Gutiérrez Díaz",
     "creditDesc": ", specialist in web development, native Kotlin apps and digital marketing, creating agile and results-oriented digital experiences.",
@@ -638,20 +648,19 @@
       }
     ],
     "recompApp": {
-      "badge": "New App",
-      "title": "Recomp",
-      "subtitle": "Your Smart Body Recomposition & Nutrition Assistant created by Juan Pablo Gutiérrez Díaz",
-      "description": "Transform your body intelligently: build muscle, lose fat, and optimize performance without the hassle.",
-      "features": [
-        "Smart calorie and macronutrient adjustment (TDEE)",
-        "Nutritional tracker with Latin America food database",
-        "Interactive workout log with RPE tracking",
-        "Daily goals and habits with smart copy",
-        "Optional smartwatch integration",
-        "Dynamic at-a-glance dashboard",
-        "Full privacy and offline functionality"
-      ],
-      "cta": "Learn more"
+      "badge": "My AI Apps",
+      "title": "Useful Apps with Artificial Intelligence",
+      "subtitle": "Created by Juan Pablo Gutiérrez Díaz for you",
+      "description": "An ecosystem of smart apps that solve real problems: product photos that sell, copy adapted to every social network, audio turned into content and much more.",
+      "cta": "Discover the 10 apps",
+      "apps": [
+        { "name": "Recomp", "tagline": "Calories that adapt to your real progress" },
+        { "name": "FotoVende", "tagline": "Professional photos without a photographer" },
+        { "name": "Tono IA", "tagline": "One message, adapted to each network" },
+        { "name": "Resumo", "tagline": "From document to viral content" },
+        { "name": "Voz IA", "tagline": "Your audio, in the format you need" },
+        { "name": "MatelA", "tagline": "A tutor that learns how you learn" }
+      ]
     },
     "serviceBenefits": [
       {
@@ -824,7 +833,7 @@
         "autoClose": true
       },
       "recomp_app": {
-        "text": "Recomp: your smart body recomposition and nutrition assistant. Smart calorie adjustment, workout tracking, daily goals and dynamic dashboard. Works offline and protects your privacy.\n\nWhat would you like to know?",
+        "text": "Juan Pablo created apps with artificial intelligence to solve real problems: Recomp (body recomposition and nutrition), FotoVende, Tono IA, Resumo, Voz IA, ContratOS, ClaseCards, MatelA, Swipe Clean and PDF Scanner.\n\nWhat would you like to know?",
         "options": [
           "view_recomp_page",
           "contact",
@@ -832,11 +841,11 @@
         ]
       },
       "view_recomp_page": {
-        "text": "Perfect! I'll take you to the Recomp page so you can discover all its features.",
+        "text": "Perfect! I'll take you to the AI apps page so you can discover them all.",
         "options": [
           "back_home"
         ],
-        "action": "recomp-app",
+        "action": "ia-apps",
         "autoClose": true
       },
       "contact": {
@@ -1139,8 +1148,8 @@
       "digital_marketing": "Digital Marketing",
       "ia_local": "AI Automation",
       "try_ia_local": "Request free assessment",
-      "recomp_app": "Recomp",
-      "view_recomp_page": "View Recomp",
+      "recomp_app": "AI Apps",
+      "view_recomp_page": "View my apps",
       "contact": "Contact",
       "view_social": "View Social Networks",
       "view_tech": "View Technologies",
@@ -1225,10 +1234,10 @@
         "description": "Design and implementation of intelligent agents for WhatsApp, web and ecommerce. Customer service automation, lead generation and internal processes. Custom budget.",
         "keywords": "AI agent automation, WhatsApp chatbot, ecommerce automation, intelligent agents Colombia, AI customer service, AI for business"
       },
-      "recomp-app": {
-        "title": "Recomp — Body Recomposition & Nutrition",
-        "description": "Nutrition and fitness tracking app with smart calorie adjustment, workout logging, daily goals and dynamic dashboard. Works offline and protects your privacy.",
-        "keywords": "nutrition app, body recomposition, calorie counter, workout tracker, fitness app, smart nutrition, Recomp"
+      "ia-apps": {
+        "title": "AI Apps — Recomp and more",
+        "description": "Discover the 10 AI apps created by Juan Pablo Gutiérrez Díaz: Recomp, FotoVende, Tono IA, Resumo, Voz IA, ContratOS, ClaseCards, MatelA, Swipe Clean and PDF Scanner. Interested? Write me on WhatsApp.",
+        "keywords": "AI apps, smart apps, Recomp, FotoVende, Tono IA, Resumo, Voz IA, ContratOS, ClaseCards, MatelA, Swipe Clean, PDF Scanner, Android apps Colombia"
       }
     }
   },
@@ -2064,138 +2073,228 @@
     },
     "recompApp": {
       "hero": {
-        "title": "Recomp — Body Recomposition & Nutrition",
-        "subtitle": "Your smart assistant to transform your body sustainably. Calorie adjustment, workout tracking, habit follow-up and dynamic dashboard."
+        "badge": "My AI Apps",
+        "title": "Smart apps for your everyday life",
+        "subtitle": "Meet the apps I created with artificial intelligence to solve real problems: sell more, study better, save time and get organized. Built for Latin America.",
+        "heroButton": "I want to know more"
       },
-      "sectionTitles": {
-        "heroButton": "Request Info",
-        "features": "Key Features",
-        "featuresDesc": "Everything you need to achieve your best physical version, in one app.",
-        "howItWorks": "How It Works",
-        "howStep1": "Setup",
-        "howStep1Desc": "Define your goals, current weight, activity level and nutritional preferences",
-        "howStep2": "Tracking",
-        "howStep2Desc": "Log your meals, workouts and daily habits with the app",
-        "howStep3": "Smart Adjustment",
-        "howStep3Desc": "The app automatically adjusts calories, macronutrients and goals based on your progress",
-        "howStep4": "Results",
-        "howStep4Desc": "Track your evolution on the dashboard and reach your goals sustainably",
-        "benefits": "Benefits",
-        "faq": "Frequently Asked Questions",
-        "ctaTitle": "Ready to transform your body?",
-        "ctaDesc": "Download the Recomp and start your body recomposition journey powered by artificial intelligence.",
-        "ctaButton": "Request Information"
+      "stats": [
+        { "value": "10", "label": "AI apps" },
+        { "value": "100%", "label": "Built by me" },
+        { "value": "24/7", "label": "Direct support" }
+      ],
+      "featured": {
+        "badge": "Main App",
+        "title": "Recomp",
+        "subtitle": "Your Smart Body Recomposition & Nutrition Assistant",
+        "description": "Transform your body intelligently: Recomp adjusts your calories and macronutrients based on your real progress, logs your workouts and supports you every day.",
+        "cta": "I'm interested in Recomp",
+        "features": [
+          "Smart calorie and macronutrient adjustment (TDEE)",
+          "Nutritional tracker with Latin America food database",
+          "Interactive workout log with RPE tracking",
+          "Daily goals and habits with smart copy",
+          "Optional smartwatch integration",
+          "Dynamic at-a-glance dashboard",
+          "Full privacy and offline functionality"
+        ],
+        "gallery": {
+          "hint": "Use the arrows to see every screenshot",
+          "items": [
+            { "src": "/ia-apps/1 tus datos.webp", "title": "Your Data" },
+            { "src": "/ia-apps/2 dasboard.webp", "title": "Dashboard" },
+            { "src": "/ia-apps/3 metas.webp", "title": "Goals" },
+            { "src": "/ia-apps/4 entrenamiento.webp", "title": "Workout" },
+            { "src": "/ia-apps/5 nutricion.webp", "title": "Nutrition" },
+            { "src": "/ia-apps/6 progreso.webp", "title": "Progress" },
+            { "src": "/ia-apps/7 informe.webp", "title": "Report" }
+          ]
+        }
       },
-      "features": [
-        {
-          "icon": "calculator",
-          "title": "Smart Calorie Adjustment",
-          "desc": "Automatic TDEE and macronutrient calculation based on your goal and activity level"
-        },
-        {
-          "icon": "apple",
-          "title": "LATAM Nutrition Tracker",
-          "desc": "Food database focused on Latin America for accurate tracking"
-        },
-        {
-          "icon": "dumbbell",
-          "title": "Workout Logging",
-          "desc": "Interactive tracking with RPE, sets, reps and progression"
-        },
-        {
-          "icon": "bullseye",
-          "title": "Daily Goals & Habits",
-          "desc": "Set and track daily habits with a smart copy system"
-        },
-        {
-          "icon": "stopwatch",
-          "title": "Smartwatch Integration",
-          "desc": "Optionally connect your smartwatch for real-time activity data"
-        },
-        {
-          "icon": "chartPie",
-          "title": "Dynamic Dashboard",
-          "desc": "View all your progress at a glance with interactive charts"
-        },
-        {
-          "icon": "shield",
-          "title": "Full Privacy",
-          "desc": "Works offline and your personal data never leaves your device"
-        },
-        {
-          "icon": "calendar",
-          "title": "Smart Notifications",
-          "desc": "Meal, hydration and workout reminders adapted to your daily routine"
-        },
-        {
-          "icon": "file",
-          "title": "Reports & Export",
-          "desc": "Export your data as PDF or CSV to share with your nutritionist or trainer"
-        }
-      ],
-      "benefits": [
-        {
-          "title": "Time Savings",
-          "desc": "No need to plan meals manually. The app adjusts everything for you."
-        },
-        {
-          "title": "Nutritional Precision",
-          "desc": "Calculations based on your metabolism and specific goals, not generic formulas."
-        },
-        {
-          "title": "Automatic Progression",
-          "desc": "As you advance, the app adapts goals to keep challenging you."
-        },
-        {
-          "title": "100% Offline",
-          "desc": "Your data never leaves your device. Your privacy is sacred."
-        }
-      ],
-      "faqs": [
-        {
-          "q": "Do I need nutrition knowledge to use the app?",
-          "a": "No. The app guides you step by step and automatically adjusts everything based on your initial responses."
-        },
-        {
-          "q": "Does the app work without internet?",
-          "a": "Yes. The Recomp is designed to work completely offline. Your data never leaves your device."
-        },
-        {
-          "q": "Can I use it for both muscle gain and fat loss?",
-          "a": "Yes. Set your goal when configuring the app and it will adjust calories and macronutrients accordingly."
-        },
-        {
-          "q": "How are workouts logged?",
-          "a": "You can log sets, reps and RPE interactively. The app saves your history and shows your progression."
-        }
-      ],
-      "screenshots": {
-        "title": "This is how the Recomp looks",
-        "swipeHint": "Swipe to see more",
+      "apps": {
+        "title": "Meet all my apps",
+        "subtitle": "Every app is designed to solve a specific problem. Pick yours and message me on WhatsApp.",
+        "interested": "I'm interested",
+        "audienceLabel": "For",
+        "highlightLabel": "Highlight",
         "items": [
-          { "src": "/recomp-app/1 tus datos.webp", "title": "Your Data" },
-          { "src": "/recomp-app/2 dasboard.webp", "title": "Dashboard" },
-          { "src": "/recomp-app/3 metas.webp", "title": "Goals" },
-          { "src": "/recomp-app/4 entrenamiento.webp", "title": "Workout" },
-          { "src": "/recomp-app/5 nutricion.webp", "title": "Nutrition" },
-          { "src": "/recomp-app/6 progreso.webp", "title": "Progress" },
-          { "src": "/recomp-app/7 informe.webp", "title": "Report" }
+          {
+            "id": "fotovende",
+            "shot": "/ia-apps/fotovende.webp",
+            "icon": "camera",
+            "color": "#A855F7",
+            "platform": "Android",
+            "name": "FotoVende",
+            "tagline": "Professional product photos without a photographer or studio.",
+            "desc": "Analyzes your product photos and recommends light, framing and background so they sell more.",
+            "audience": "Online sellers, e-commerce and marketplaces."
+          },
+          {
+            "id": "tono-ia",
+            "shot": "/ia-apps/tono-ia.webp",
+            "icon": "pen",
+            "color": "#EC4899",
+            "platform": "Android",
+            "name": "Tono IA",
+            "tagline": "One message, adapted to each social network in seconds.",
+            "desc": "Rewrites texts and copy adapted to the tone, audience and social network you need.",
+            "audience": "Community managers, businesses and marketing freelancers."
+          },
+          {
+            "id": "resumo",
+            "shot": "/ia-apps/resumo.webp",
+            "icon": "comments",
+            "color": "#10B981",
+            "platform": "Android",
+            "name": "Resumo",
+            "tagline": "From document to viral content in one click.",
+            "desc": "Turns articles, PDFs and links into X threads or carousels ready to publish.",
+            "audience": "Content creators, personal brands and infoproduct sellers."
+          },
+          {
+            "id": "voz-ia",
+            "shot": "/ia-apps/voz-ia.webp",
+            "icon": "microphone",
+            "color": "#06B6D4",
+            "platform": "Android",
+            "name": "Voz IA",
+            "tagline": "Your audio, transformed into the format you need.",
+            "desc": "Transcribes audio and turns it into meeting notes, subtitles, professional messages or study summaries.",
+            "audience": "Students, professionals in meetings and video or podcast creators."
+          },
+          {
+            "id": "contratos",
+            "shot": "/ia-apps/contratos.webp",
+            "icon": "scale",
+            "color": "#F59E0B",
+            "platform": "Android",
+            "name": "ContratOS",
+            "tagline": "Protect your business before you sign.",
+            "desc": "Detects and fixes errors or risks in legal contracts before they cost you money.",
+            "audience": "Freelancers, SMBs and agencies in Latin America."
+          },
+          {
+            "id": "clase-cards",
+            "shot": "/ia-apps/clase-cards.webp",
+            "icon": "graduation",
+            "color": "#F43F5E",
+            "platform": "Android",
+            "name": "ClaseCards",
+            "tagline": "From recorded class to active memory.",
+            "desc": "Turns the audio of your classes into question-and-answer flashcards for active studying.",
+            "audience": "University students and exam candidates."
+          },
+          {
+            "id": "matela",
+            "shot": "/ia-apps/matela.webp",
+            "icon": "calculator",
+            "color": "#8B5CF6",
+            "platform": "Android",
+            "name": "MatelA",
+            "tagline": "A tutor that learns how you learn.",
+            "desc": "AI math tutor that identifies your error patterns, explains step by step and adapts practice.",
+            "audience": "Students of all levels and parents looking for academic support."
+          },
+          {
+            "id": "swipe-clean",
+            "shot": "/ia-apps/swipe-clean.webp",
+            "icon": "broom",
+            "color": "#22C55E",
+            "platform": "Android",
+            "name": "Swipe Clean",
+            "tagline": "Free up space, swipe by swipe.",
+            "desc": "Organizes your gallery with gestures: detects duplicates, manages the trash and monitors storage.",
+            "audience": "Any smartphone user."
+          },
+          {
+            "id": "scanner-pdf",
+            "shot": "/ia-apps/scanner-pdf.webp",
+            "highlight": true,
+            "icon": "filePdf",
+            "color": "#3B82F6",
+            "platform": "Android",
+            "name": "PDF Scanner",
+            "tagline": "Professional scanner, one-time payment, no subscription traps.",
+            "desc": "Turns photos and documents into PDFs with automatic cropping. Pay once, no monthly fees.",
+            "audience": "Students, office workers and anyone managing paperwork."
+          }
         ]
       },
-      "noAds": {
-        "title": "No ads. No interruptions.",
-        "desc": "Your experience is sacred. No ads, no hidden subscriptions, no annoyances. Buy once, use forever.",
-        "lifeChange": "This app is going to change your life."
+      "howItWorks": {
+        "title": "Getting them is this easy",
+        "steps": [
+          {
+            "icon": "user",
+            "title": "Choose your app",
+            "desc": "Browse the catalog and find the app that solves your problem."
+          },
+          {
+            "icon": "comments",
+            "title": "Message me on WhatsApp",
+            "desc": "Click 'I'm interested' and tell me which app you want."
+          },
+          {
+            "icon": "rocket",
+            "title": "Get your app",
+            "desc": "I confirm price and availability, send you the APK and help you with the setup."
+          }
+        ]
       },
-      "apkPurchase": {
-        "title": "Get the Recomp",
-        "desc": "Available as a direct APK. Secure purchase via WhatsApp.",
-        "cta": "Buy APK"
+      "why": {
+        "title": "Why trust my apps?",
+        "benefits": [
+          {
+            "icon": "globe",
+            "title": "Built for LatAm",
+            "desc": "Designed for the Latin American reality: fair prices and features that actually matter."
+          },
+          {
+            "icon": "shield",
+            "title": "One-time payment, no subscriptions",
+            "desc": "Pay once and use it forever. No surprises or hidden traps."
+          },
+          {
+            "icon": "brain",
+            "title": "AI that really works",
+            "desc": "Every app uses artificial intelligence to solve a specific problem. Not just marketing."
+          },
+          {
+            "icon": "heartPulse",
+            "title": "Direct support",
+            "desc": "I personally assist you on WhatsApp. No bots or middlemen."
+          }
+        ]
       },
-      "storeAvailability": {
-        "title": "Coming soon to",
-        "stores": ["App Store", "Play Store", "App Gallery"]
-      }
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "items": [
+          {
+            "q": "Are the apps available on Google Play?",
+            "a": "For now all apps are delivered as a direct APK; they are not in the stores yet. I'll let you know as soon as they are available on the Play Store."
+          },
+          {
+            "q": "How do I buy an app?",
+            "a": "Click 'I'm interested' on the app you want and I'll assist you on WhatsApp to arrange payment and delivery."
+          },
+          {
+            "q": "Do the apps work without internet?",
+            "a": "Most work offline to protect your privacy. It depends on each app; I'll confirm before you buy."
+          },
+          {
+            "q": "Can I request a custom app?",
+            "a": "Yes. If none of my apps covers your need, message me and we'll build one tailored to you."
+          }
+        ]
+      },
+      "ctaInterested": "Hi, I'm interested in the {{name}} app",
+      "ctaMain": "Hi, I want to know all your AI apps",
+      "finalCta": {
+        "title": "Ready to try an AI app?",
+        "desc": "Choose the app you need and message me on WhatsApp. I'll explain everything and answer your questions in minutes.",
+        "button": "Let's talk on WhatsApp"
+      },
+      "footerCreated": "Created and developed by",
+      "footerSuffix": " — Web development, Kotlin apps, Automation & Digital marketing. All rights reserved."
     },
     "iaLocal": {
       "hero": {

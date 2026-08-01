@@ -18,19 +18,21 @@
   --accent: #4F7FFF;
   --accent2: #00E5C3;
   --text: #E8EDF5;
-  --muted: #5A6478;
+  --muted: #707D99;
   --white: #F0F4FF;
+  --on-accent: #0A0D14;
 }
 
 .light {
   --bg: #F4F6FA;
   --surface: #FFFFFF;
   --border: #E0E4EA;
-  --accent: #4F7FFF;
-  --accent2: #00C4A2;
+  --accent: #3D63DD;
+  --accent2: #007C60;
   --text: #1A1D26;
-  --muted: #6B7280;
+  --muted: #5E6775;
   --white: #1A1D26;
+  --on-accent: #FFFFFF;
 }
 
 * {
@@ -70,7 +72,7 @@ body,
   transform: translateX(-50%);
   padding: 12px 24px;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   font-family: 'Syne', sans-serif;
   font-weight: 700;
   font-size: 14px;
@@ -84,7 +86,7 @@ body,
 
 /* Gradient heading */
 .gradient-heading {
-  background: linear-gradient(135deg, #4f7fff 0%, #00e5c3 60%, #4f7fff 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 60%, var(--accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -95,23 +97,4 @@ body,
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-/* Ecomp App screenshots carousel */
-.recomp-carousel-track {
-  display: flex;
-  gap: 1.5rem;
-  width: max-content;
-  cursor: grab;
-  user-select: none;
-}
-
-.recomp-carousel-track:active {
-  cursor: grabbing;
-}
-
-@media (max-width: 768px) {
-  .recomp-carousel-track {
-    gap: 1rem;
-  }
 }

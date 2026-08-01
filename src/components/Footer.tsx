@@ -7,6 +7,7 @@ import {
 } from 'react-icons/fa'
 import { SiX, SiKick, SiThreads } from 'react-icons/si'
 import FadeIn from './FadeIn'
+import { useTheme } from '../context/ThemeContext'
 import { SOCIAL_LINKS_FULL } from '../data'
 
 type IconComponent = React.ComponentType<{ className?: string; size?: number }>
@@ -55,6 +56,9 @@ interface FooterProps {
 
 export default function Footer({ onShareClick }: FooterProps) {
   const { t } = useTranslation()
+  const { theme } = useTheme()
+  const isDark = theme === 'dark'
+  const iconColor = (c: string) => (isDark || !c.startsWith('#')) ? c : `color-mix(in srgb, ${c} 55%, #000000)`
   return (
     <footer id="footer"
       className="px-6 md:px-12 pt-12 md:pt-10 lg:pt-12 pb-8 relative z-30"
@@ -114,7 +118,7 @@ export default function Footer({ onShareClick }: FooterProps) {
                   {/* Brand icon */}
                   <div
                     className="flex items-center justify-center w-8 h-8 rounded-full transition-transform duration-300 group-hover:scale-110"
-                    style={{ background: brandBg, color: brandColor }}
+                    style={{ background: brandBg, color: iconColor(brandColor) }}
                   >
                     {(() => {
                       const Ic = s.icon ? SOCIAL_ICONS[s.icon] : null

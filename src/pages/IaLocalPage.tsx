@@ -261,7 +261,7 @@ export default function IaLocalPage() {
                     className="w-12 h-12 rounded-full flex items-center justify-center font-syne font-bold text-lg mb-4 mx-auto"
                     style={{
                       background: 'linear-gradient(135deg,#10B981,#06B6D4)',
-                      color: 'white',
+                      color: '#0A0D14',
                     }}
                   >
                     {proc.step}

@@ -90,7 +90,7 @@ export default function ShareModal({ isOpen, onClose }: ShareModalProps) {
                 className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4"
                 style={{ background: 'linear-gradient(135deg, var(--accent), var(--accent2))' }}
               >
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--on-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="18" cy="5" r="3" />
                   <circle cx="6" cy="12" r="3" />
                   <circle cx="18" cy="19" r="3" />
@@ -234,7 +234,7 @@ export default function ShareModal({ isOpen, onClose }: ShareModalProps) {
               className="w-full mt-4 px-6 py-3 rounded-full font-syne font-bold text-xs tracking-widest uppercase"
               style={{
                 background: 'linear-gradient(135deg, var(--accent), var(--accent2))',
-                color: '#fff',
+                color: 'var(--on-accent)',
               }}
             >
               {t('shareModal.close')}
