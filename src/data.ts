@@ -323,5 +323,5 @@ export const SOCIAL_LINKS_FULL = [
   { name: 'Kick', url: 'https://kick.com/juannppgd', cat: 'Streaming', icon: 'SiKick' },
   { name: 'Discord', url: 'https://discord.com/users/juannppgd', cat: 'Community', icon: 'FaDiscord' },
   { name: 'Threads', url: 'https://www.threads.com/@juannppgd', cat: 'Social', icon: 'SiThreads' },
-  { name: 'WhatsApp', url: 'https://wa.me/573219541241', cat: 'Chat', icon: 'FaWhatsapp' },
+  { name: 'WhatsApp', url: 'https://wa.me/juannppgd', cat: 'Chat', icon: 'FaWhatsapp' },
 ]
